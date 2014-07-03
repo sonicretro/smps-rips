@@ -1,0 +1,64 @@
+General Pointer List:	N/A (everything is hardcoded into the driver)
+Music Pointer List:	055114 (U) / 05695A (J) (Z80 Driver: 0D58)
+SFX Pointer List:	N/A (there are only DAC SFX)
+Mod. Pointer List:	N/A
+PSG Pointer List:	054DF5 (U) / 05663B (J) (Z80 Driver: 0A39)
+Z80 Snd Driver Offset:	0543BC (U) / 055C02 (J)
+DAC Pointer List:	05501B (U) / 056861 (J) (Z80 Driver: 0C5E)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Music Pointer Format
+--------------------
+1 byte  - bank (00 - 1F0000, 01 - 1F80000)
+2 bytes - song address (Z80 Bank Offset)
+
+Thanks to the Sonic Retro for the music pointer list address and format.
+
+
+DAC List Format: (all little endian values)
+2 bytes - Start Offset (Z80 Bank Offset)
+2 bytes - Data Length
+1 byte  - Bank (bits 22-15)
+	Note: Before setting the bank, 30h is added to the bank value.
+	      e.g. Bank 06 + 30 = 36 * 8000 = 1B0000
+
+DAC Drum List:
+At Z80 Offset 065F there's a lookup-table (with 0C bytes) for the DAC sounds used by the SMPS drum track.
+
+
+Coordination Flags
+------------------
+This evil thing uses it own set of coordination flags. It's a "light" version of the usual SMPS command set.
+
+Flag/Params	FlagCnv	Description
+E0 pp		E0	Set Pan
+E1 dd		E1	Set Detune (adds raw value to final frequency value)
+E2 vv		E6	Change FM Volume
+E3		E7	No Attack for next note
+E4 ff		E8	Set Note Fill
+E5 vv		EC	Change PSG Volume [points to same code as E6, but no song uses it]
+E6 vv		EC	Change PSG Volume
+E7 ii		EF	Set FM Instrument
+E8 ww mm cc ss	F0	Modulation Setup
+E9		F2	Track End
+EA nn		F3	Set PSG Noise Mode
+EB tt		F4	Set Modulation Type [has no effect, since it is never read back]
+EC ii		F5	Set PSG Instrument
+ED oooo		F6	Jump
+EE ii tt oooo	F7	Repeat section (ii - Loop Index, tt - Loop Times, oooo - Jump Offset)
+EF oooo		F8	GoSub
+F0		F9	Return
+F1 dd		FB	Change Transposition (makes notes higer or lower)
+F2			sets 1C1C to 00 (1C1C contains the current song ID, so this marks the end of the song)
+F3 dd		FF 00	Set Tempo
+
+The Instrument Operator order follows the chip register order, i.e. it's the same Sonic 2 uses.
+
+
+Notes:
+- The driver completely ignores the DAC/FM and PSG track count and always assumes 5 DAC/FM tracks and 3 PSG tracks.
+- There are no FM/PSG SFX. All SFX are DAC.
+- A song is played by writing a number (01..29) to 1C00. The sound engine writes DAC drum sounds to 1C03.
+- SFX are played by writing a number (01..2B) to 1C01 (1st channel) or 1C02 (2nd channel)
+- The driver behaves like most SMPS 68k drivers and the FM instruments are stored in the same format as Sonic 2.

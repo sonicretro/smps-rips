@@ -1,0 +1,51 @@
+; --- Tempo 32X/J. League Pro Striker Final Stage Command Definition ---
+; modified SMPS Z80 Type 2
+; based on a disassembly of J. League Pro Striker Final Stage
+
+; Note: IGNORE flags do nothing unless noted otherwise.
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PANAFMS 	PAFMS_PAN	02
+E1	DETUNE  	        	02
+E2	SET_COMM	        	02
+E3	COND_JUMP	CJMP_Z_RESET	03	01	; conditional jump (jumps if 1C22 is zero or resets it to zero)
+;E4	VOLUME  	VOL_ABS_TMP	02	; sets Volume and calls FM RefreshVolume
+E4	VOLUME  	VOL_ABS 	02	; make it work as intended
+E5	IGNORE  	        	02
+;E6	VOLUME  	VOL_SPC_TMP	02	; FM track: add, PSG track: set
+E6	VOLUME  	VOL_NN_FMP1	02	; make it work as intended
+E7	HOLD    	        	01
+E8	NOTE_STOP	NSTOP_MULT	02
+E9	TRANSPOSE	TRNSP_RAND	01	; random transpose
+EA	PLAY_DAC	        	02
+EB	IGNORE  	        	03	; does nothing 
+EC	VOLUME  	VOL_CC_PSG	02
+ED	IGNORE  	        	03	; both ED and EE read 2 bytes (register and data),
+EE	IGNORE  	        	03	; but don't send it to the FM chip
+EF	INSTRUMENT	INS_C_FM	82
+F0	MOD_SETUP	        	05
+F1	MOD_ENV 	MENV_GEN2	03	; broken, ignores first byte
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SRES	02
+F4	MOD_ENV 	MENV_GEN	02
+F5	INSTRUMENT	INS_C_PSG	02
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	TRANSPOSE	TRNSP_SET	02
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	TRANSPOSE	TRNSP_GADD	01	; Special Transpose 1 - adds value in 1C1E to transpose
+FD	PLAY_PWM	        	03	; Parameters: Volume (L/R), Sample
+FE	TRANSPOSE	TRNSP_GSET	01	; Special Transpose 2 - sets transpose to value in 1C21
+FF	META_CF 	        	01
+
+[Meta]
+00	TEMPO   	TEMPO_SET	02
+01	IGNORE  	        	02
+02	IGNORE  	        	02
+03	IGNORE  	        	02
+04	IGNORE  	        	02
+05	SSG_EG  	SEG_NORMAL	05
+06	IGNORE  	        	02

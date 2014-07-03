@@ -1,0 +1,29 @@
+General Pointer List:	0F0000 (JUE)
+Music Pointer List:	0F027A (JUE)
+SFX Pointer List:	0F029E (JUE)
+Mod. Pointer List:	0F0012 (JUE)
+PSG Pointer List:	0F0158 (JUE)
+DAC Drum Pointer List:	0F41A1 (JUE)
+DAC Voice Pointer List:	0F4631 (JUE)
+Z80 Snd Driver Offset:	027B3A (U) / 027A18 (J) / 027AB6 (E)
+Pan Animation List:	03E9 (Z80 Driver) (JUE)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC List Format: (all little endian values)
+2 bytes - Start Offset (Z80 Bank Offset)
+2 bytes - Data Length
+1 byte  - Pitch
+1 byte  - YM2612 Pan Register (can be C0, 40 or 80, all voices have C0)
+
+
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0093)
+
+
+
+Notes:
+- Like Flicky, this game uses YM2612's Timer A for music timing. So command EA (SetTempo) has 2 parameter bytes.
+  Because of this, the tempo value in the SMPS header is always 00.
+- This driver performs a 4-fraction linear interpolation on its DAC samples before sending them to the YM2612.

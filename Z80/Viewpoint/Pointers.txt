@@ -1,0 +1,29 @@
+General Pointer List:	010000 (U / Beta)
+Music Pointer List:	010237 (U / Beta)
+SFX Pointer List:	028000 (U / Beta) (copied to Z80 Driver: 1100)
+Mod. Pointer List:	01000E (U / Beta)
+PSG Pointer List:	01014B (U / Beta)
+Z80 Snd Driver Offset:	0015AE (U / Beta)
+Pan Animation List:	0018D9 (U / Beta) (Z80 Driver: 032B)
+FM Drum Pointer List:	0A6A (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A7C (Z80 RAM)
+PSG Drum Pointer List:	0A50 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+Z80 Banks with DAC sounds are 018000h and 020000h.
+The format is the same one as used in Mighty Morphin Power Rangers.
+
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 107C)
+
+
+Notes:
+- The 68k writes the DAC sound bank to Z80 RAM 1FFE when playing a song.
+  The bank list is at 001512, starting with sound ID 80h. (It checks for Sound ID < 90h, but the list has 20h bytes.)
+  00 = 018000, FF = 020000
+  The only song that has bank value FF is song 84 (F. O. B. (Boss)).
+  The only songs that use DAC sounds are 83, 84 and 8A.

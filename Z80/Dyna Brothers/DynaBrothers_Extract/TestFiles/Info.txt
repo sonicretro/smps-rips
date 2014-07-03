@@ -1,0 +1,4 @@
+Ext.	Description
+.cmp	compressed data from ROM
+.raw	decompressed data, dumped from the game's RAM
+.bin	decompressed data made with dynabdec.exe

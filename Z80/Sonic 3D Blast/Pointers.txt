@@ -1,0 +1,22 @@
+General Pointer List:	0D2ED7 (W) (Z80 Driver: 1300)
+Music Bank List:	0D287D (W) (Z80 Driver: 0B65)
+Music Pointer List:	0D3233 (W) (Z80 Driver: 165C)
+SFX Pointer List:	0D3297 (W) (Z80 Driver: 16C0) (points to bank 0F8000)
+Mod. Pointer List:	0D2EE5 (W) (Z80 Driver: 130E)
+PSG Pointer List:	0D2F5E (W) (Z80 Driver: 1387)
+DAC Bank List:		0D1DEE (W) (Z80 Driver: 00D6)
+DAC Drum Pointer List:	0F0000 (W)
+SEGA sound:		0F8000 (W)
+Z80 Snd Driver Offset:	0D1D18 (W)
+Additional Z80 Data:	0D2ED7 (W) (goes to Z80 RAM 1300)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+The Z80 Bank with DAC sounds is 0F0000h.
+The format is the same one as used in Sonic and Knuckles.
+
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 1115)

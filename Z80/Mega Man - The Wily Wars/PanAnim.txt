@@ -1,0 +1,4 @@
+	dc.b	$C0		; 02F5 (JE)
+	dc.b	$80		; 02F6 (JE)
+	dc.b	$C0		; 02F7 (JE)
+	dc.b	$40, $C0, $80	; 02F8 (JE)

@@ -1,0 +1,125 @@
+General Pointer List:	N/A (everything is hardcoded into the driver)
+Music Pointer List:	0E78FC (JU) / 0E8AAE (E) (4-byte pointers)
+SFX Pointer List:	0C0E48 (JUE) (Z80 Driver: 0E48)
+Mod. Pointer List:	0C0FF2 (JUE) (Z80 Driver: 0FF2)
+PSG Pointer List:	N/A
+DAC Pointer List:	0C0B30 (JU) / 0C0B3F (E) (Z80 Driver: 0B30 / 0B3F)
+DAC SFX Pointer List:	0E77E0 (JU) / 0E8992 (E) (each entry has 2 4-byte pointers, start and end offset)
+Z80 Snd Driver Offset:	0C0000 (JUE)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+DAC List Format: (all little endian values)
+00/1 byte  - unknown (always 80, DAC Control Byte?)
+01/1 byte  - unknown (always 00)
+02/2 bytes - Start Offset (in Z80 RAM)
+04/2 bytes - Data Length
+06/1 byte  - DPCM Start Value (always 80)
+07/1 byte  - Pitch
+-> 8 bytes
+
+Notes:
+- When a DAC sound is loaded, the sound driver copies the 8 entry bytes to 1F83.
+- The 68k requests a DAC sound by writing a DAC sound ID to 1F80 and a 00 byte to 1F81. Their table starts at 0B60.
+- For the DAC entries, the driver uses the note/sound value as index into the DAC table, but doesn't perform any multiplication on it.
+  So the only usable DAC notes are 90, 98, A0, A8, B0 and B8.
+- The usual drums (with DAC List at 0B30) start with sound 90, all lower sounds are FM drums.
+  Their table starts at 0DB1 and consists of 2-byte pointers (81-86) to mini-tracks for the FM drums.
+  When playing a DAC sound, FM drum 86 is played to stop the FM drum.
+- The DAC Update Track routine starts at 0D11.
+- For playing DAC SFX, the 68k copies the actual sound data to 1E80..1EF7.
+- All entries in the Z80 DAC table but the first 6 are pointing to offset 1E80 and need to be streamed by the 68k.
+- When playing a song, the 68k puts either the data for DAC sounds 82-85 or 86 at Z80 RAM 1550-1871.
+  For all songs but one it puts the Tom (DAC 82-85), for song 10 (Pit In) it puts a "Go!" (DAC 86) there.
+  The code that reads from the music list and decides between the 2 sounds is located at 0320AC.
+  The routine that writes the actual data is at 034AFC and copies $322 bytes. (1550-1871)
+  The offset of the Tom is 0C1550, the offset of the "Go!" is 0C5678.
+- Some DAC sound length values are a bit off. The actual data is usually a bit longer than the specified length.
+- The driver send a 1B6 C0 (force both speakers on DAC channel) before playing any DAC sound.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0100)
+
+
+Coordination Flags
+------------------
+This evil thing uses it own set of coordination flags. But it's not the same set as used in OutRunners.
+
+Flag/Params	FlagCnv	Description
+E0 pp		E0	Set Pan
+E1 vv		E6	Change FM Volume
+E2		E7	No Attack for next note
+E3 ii		EF	Set FM Instrument
+E4		F2	Track End
+E5 xx		F4	Set Modulation Type
+E6 oooo		F6	Jump
+E7 ii tt oooo	F7	Repeat section (ii - Loop Index, tt - Loop Times, oooo - Jump Offset)
+E8 oooo		F8	GoSub
+E9		F9	Return
+EA dd		FB	Change Transposition
+EB pp		FC	Portamento Enable/Disable
+			pp == 01: Enable (each SMPS note of followed by a portamento speed!)
+			pp != 01: disable portamento (also erases portamento speed at TrkRAM+10h)
+EC			Track End and play song queued in 1F97
+ED			set Fading Parameters 1C0D/1C0E/1C0F to A0/03/03
+EE			set Fading Parameters 1C0D/1C0E/1C0F to AA/04/04
+EF			set Fading Parameters 1C0D/1C0E/1C0F to A0/01/01 [JU version]
+EF			set Fading Parameters 1C0D/1C0E/1C0F to A0/04/04 [E version]
+F0			set Fading Parameters 1C0D/1C0E/1C0F to AA/05/05 [only present in Eversion]
+
+Note: The Coordination Flag Handler is at Z80 RAM: 0733
+
+How Fading works:
+1C0D - Fade Counter (ticks after the song is stopped)
+1C0E - Fade Speed (frames per Fade Tick)
+1C0F - Fade Delay (remaining frames until next Fade Tick)
+
+if (1C0D != 0x00)
+{
+	if (Bit_Test_7(1C0D))
+	{
+		StopDACTrack();
+		Bit_Clear_7(1C0D);
+	}
+	
+	1C0F --;
+	if (1C0F == 0)
+	{
+		1C0F = 1C0E;
+		1C0D --;
+		ChangeAllTrackVolume(+1);	// higher value = more quiet
+	}
+}
+
+In order to disable fading, patch the following bytes in the Z80 sound driver:
+	0764	A0 -> 00	(disables command ED)
+	0770	AA -> 00	(disables command EE)
+	077C	A0 -> 00	(disables command EF)
+
+Fade command ED is used in songs 06, 08 and 0B to 12.
+EE and EF don't seem to be used anywhere.
+
+
+SFX Header
+----------
+1 byte    - Tracks Count n
+9*n bytes - Track Headers
+
+SFX Track Header
+2 bytes - SFX Track Pointer (1D90, 1DC0, ... - order is FM1, FM3, FM2, FM5, FM4, FM6)
+7 bytes - Data that gets directly copied to the Track RAM
+    1 byte  - Playback Flags (always 80h)
+    1 byte  - Channel Bits (00 = FM1, 01 = FM2, ...)
+    1 byte  - Tick Multipler
+    2 bytes - Start Offset
+    1 byte  - Transpose
+    1 byte  - Volume
+
+
+General Notes:
+- Before playing an SMPS file, the 68k copies its data to offset 1872 in Z80 RAM.
+- The driver seems to lack any PSG related features. (It still checks for the PSG-bit though at a few places though.)
+- Sound Test Music List: 1DB93C (2-byte values)
+- The E version has an additional Coordination Flag.

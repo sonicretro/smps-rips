@@ -1,0 +1,25 @@
+General Pointer List:	070000 (JU)
+Music Pointer List:	070255 (JU)
+SFX Pointer List:	0764A0 (JU) (Z80 RAM: 1000)
+Mod. Pointer List:	07000E (JU)
+PSG Pointer List:	07014B (JU)
+Z80 Snd Driver Offset:	07552A (JU)
+DAC Voice Pointer List:	078000 (JU)
+Pan Animation List:	07580B (JU) (Z80 Driver: 02E1)
+FM Drum Pointers:	09A0 (Z80 RAM)
+PSG Drum Pointers:	0986 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC List Format:
+The format is the same one as used in Mighty Morphin Power Rangers.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0F66)
+
+
+Notes:
+- The Sound Test -> Sound ID list locations are:
+    BGM:   002E00 (U) / 002BBE (J)
+    SFX:   002EFC (U) / 002C8C (J)
+    Voice: 002FEA (U) / 002D66 (J)

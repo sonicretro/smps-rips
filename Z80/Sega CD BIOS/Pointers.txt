@@ -1,0 +1,20 @@
+General Pointer List:	1300 (J) / 1100 (UE) (Z80 RAM)
+Music Pointer List:	150E (J) / 1305 (E, U v1) / 1304 (U v2) / 1117 (U LaserActive) (Z80 RAM)
+SFX Pointer List:	1000 (J) / 0D00 (UE) (Z80 RAM)
+Mod. Pointer List:	1314 (J) / 1114 (UE) (Z80 RAM) / -- invalid -- (U LaserActive, points to 1114)
+PSG Pointer List:	145A (J) / 125A (UE) (Z80 RAM) / -- invalid -- (U LaserActive, points to 1114)
+Z80 Driver/Data Offset:	-- see SCD BIOS Extractor Log -- (Kosinski-compressed)
+Pan Animation List:	02B0 (J) / 0263 (UE) (Z80 RAM)
+FM Drum Pointer List:	0A11 (J) / 087D (U v1) / 087B (E) / 0878 (U v2) (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A25 (J) / 0891 (U v1) / 088F (E) / 088C (U v2) (Z80 RAM)
+PSG Drum Pointer List:	09F7 (J) / -- missing -- (UE) (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Notes:
+- Modulation and PSG/Volume Envelopes match for all drivers.
+- All drivers but the J one have PSG support removed.
+- There are a few minor differences between the drivers. They liked to tweak the FadeOut parameters.
+  Also, the X'Eye BIOS one has FM Drum Instrument 04 (and the FadeOut parameters) modified, but the rest is byte-identical with US v2.
+- Except for the difference in X'Eye, the FM/PSG drums (if present) and the Modulation/Volume Envelopes are the same in all versions.
+- Envelopes (Mod/Vol) are missing in LaserActive.

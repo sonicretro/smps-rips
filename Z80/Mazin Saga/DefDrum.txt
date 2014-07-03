@@ -1,0 +1,10 @@
+; --- Mazin Saga SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 81
+
+[Drums]
+;Note	Type    DrumID	Pitch
+81..9F	DAC	81
+BB..D4	DAC	BB

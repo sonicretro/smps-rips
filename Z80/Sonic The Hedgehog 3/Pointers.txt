@@ -1,0 +1,26 @@
+General Pointer List:	0E7300 (JUE) (Z80 Driver: 1300)
+Global Instrument Data:	0E77D8 (JUE) (Z80 Driver: 17D8)
+Music Bank List:	0E6B48 (JUE) (Z80 Driver: 0B48) (bank value is ORed with 10h, so everything is 080000+)
+Music Pointer List:	0E761A (JUE) (Z80 Driver: 161A)
+SFX Pointer List:	0E767E (JUE) (Z80 Driver: 167E) (points to bank 0F8000)
+Mod. Pointer List:	0E730E (JUE) (Z80 Driver: 130E)
+PSG Pointer List:	0E7387 (JUE) (Z80 Driver: 1387)
+DAC Bank List:		0E60DC (JUE) (Z80 Driver: 00DC) [Note: starts with entry for note 80]
+DAC Drum Pointer List:	8000 (JUE) (Z80 Bank Offset) [Note: starts with entry for note 81]
+SEGA sound:		0F8000 (JUE)
+Z80 Snd Driver Offset:	0E6000 (JUE)
+Sound RAM:		1C00 (Z80 RAM)
+
+All 3 versions of the Sonic 3 ROM (J, U, E) match byte-by-byte, except for the country code byte at 0001F0.
+
+
+DAC List Format:
+The format is the same one as used in Mighty Morphin Power Rangers.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 10EE)
+
+
+Notes:
+- A few songs use a global instrument table, but not all of them.
+- There is data for an unused and unreferenced DAC sound at 0F1584. This is between DAC sound AF/B0 and B1.

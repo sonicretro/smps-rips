@@ -1,0 +1,9 @@
+; --- The Hybrid Front (beta) SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 01
+
+[Drums]
+;Note	Type    DrumID	Pitch
+81..8F	DAC	01

@@ -1,0 +1,38 @@
+General Pointer List:	N/A (everything is hardcoded into the driver)
+Music Bank List:	3A417C (W) (Z80 Driver: 117A)
+Music Pointer List:	3A419B (W) (Z80 Driver: 1199)
+SFX Pointer List:	3A41D9 (W) (Z80 Driver: 11D7) (points to bank 3A8000)
+Mod. Pointer List:	3A403F (W) (Z80 Driver: 103D)
+PSG Pointer List:	3A3F91 (W) (Z80 Driver: 0F8F)
+DAC Drum Pointer List:	3A42D0 (W) (Z80 Driver: 12CE)
+Z80 Snd Driver Offset:	3A3002 (W)
+Pan Animation List:	02EA (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC List Format: (all little endian values)
+2 bytes - Start Offset (Z80 Bank Offset)
+2 bytes - Data Length
+1 byte  - Bank (bits 22-15)
+-> 5 bytes
+
+This is the same format as used in OutRunners, except that OutRunners' Bank value is relative and this one is absolute.
+
+
+Notes:
+- The coordination flag handler is at 09E4, the cf. jump table at 09F4.
+- The driver supports 2-channel DAC mixing incl. automatic bank switching.
+  When no sound is playing on a DAC channel, data is read from an array at 0F7F that is filled with the null-sample value 80h.
+  (The array is 10h bytes long, but it loops over the first 8 bytes only.)
+- The Sound Test list has the format:
+    0E bytes - Name
+    01 byte  - Sound ID
+  List locations:
+    S.E. list:  006C72
+    Voice list: 006D9E
+    BGM list:   006FE8
+- The songs 10-1C have the same headers as songs 01-0C (10/11 uses song header 01).
+  The only difference is the slightly faster tempo.
+- All songs use one shared instrument library that's stored after the last song in each of the two banks.
+  The instrument library matches in both banks.
+  Songs 01-09/11-19 use the first instrument library (at E7E6), songs 0A-0C/1A-1C use the second one (at FD2B).

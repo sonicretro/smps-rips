@@ -1,0 +1,44 @@
+General Pointer List:	8000 (J, Rev 01) (Z80 Bank Offset)
+Music Pointer List:	8407 (J, Rev 01) (Z80 Bank Offset)
+SFX Pointer List:	1000 (J, Rev 01) (Z80 RAM)
+Mod. Pointer List:	8012 (J, Rev 01) (Z80 Bank Offset)
+PSG Pointer List:	8152 (J, Rev 01) (Z80 Bank Offset)
+DAC Drums Pointer List:	--see pointer at 800E-- (J, Rev 01) (Z80 Bank Offset)
+DAC SFX Pointer List:	--see pointer at 8010-- (J, Rev 01) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	000792 (J, Rev 01) (custom compression, type 03)
+Additional Z80 Data:	00158A (J, Rev 01) (custom compression, type 01, goes to Z80 RAM 1000)
+Pan Animation List:	0375 (J, Rev 01) (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+All tracks use the same instrument set, which is placed at the end of the first song, at 8446 (Z80 Bank).
+
+Each one of the 6 music banks (040000 to 068000) contains redundant copies of some general data like PSG envelopes, the instrument set, and pointers.
+The first 0407h bytes match exactly in each bank. (e.g. all data before the music pointers, minus the 2 DAC list pointers)
+
+
+DAC Table
+---------
+DAC List Format: (all little endian values)
+2 bytes - Start Offset (Z80 Bank Offset)
+2 bytes - Data Length
+1 byte  - Pitch
+1 byte  - YM2612 Pan Register
+
+The format is the same one as used in Mazin Saga.
+
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0093, ROM offset 000826)
+
+
+Notes:
+- Even though the driver supports DAC drums, the game uses FM drums.
+- The routine that decompresses the sound driver is at 009828, the code that loads the sound driver at 000482.
+  The compression header is:
+	2 bytes - final data size (Big Endian)
+	1 byte  - compression type (01..03)
+  The decompression routine locations are:
+	01 - 009858
+	02 - 0098F0
+	03 - 009996

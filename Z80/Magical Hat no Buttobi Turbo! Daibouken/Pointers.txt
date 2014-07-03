@@ -1,0 +1,28 @@
+General Pointer List:	038000 (J)
+Music Pointer List:	0381A5 (J)
+SFX Pointer List:	03D128 (J)
+Mod. Pointer List:	03800E (J)
+PSG Pointer List:	0380B0 (J)
+Z80 Snd Driver Offset:	03DFFC (J)
+Pan Animation List:	02F1 (J) (Z80 RAM)
+FM Drum Pointer List:	0A5A (J) (Z80 RAM)
+PSG Drum Pointer List:	0A40 (J) (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Notes:
+- The Pan Animation Data is different than in most other SMPS Z80 games.
+- It uses an S1-style PSG frequency table.
+- EB is the Tempo Command and takes 2 parameters (+1 optional). [command handler is at 0CA8]
+  Its behaviour depends on the bits 4-7 of the second parameter. They're checked on the order below:
+  Bit 4 set:
+   Bit 5 clear:	clear 1C07 (makes SFX use Music Timing/Timer A), load tempo into MusTempo
+   Bit 5 set:	set 1C07 = 80 (makes SFX use Timer B), load tempo into 1C04/1C05, read additional parameter and load into SFXTempo
+  Bit 5 set:	1C07 = 40; SFXTempo = Param1
+  Bit 7 set:	MusTempo = MusTempo + NewTempo
+  Bit 6 set:	MusTempo = MusTempo - NewTempo
+  all clear:	MusTempo = NewTempo
+  
+  NewTempo - (Param1 + Param2 * 0x100) & 
+  MusTempo - 16-bit tempo value at 1C04/1C05
+  SFXTempo - 8-bit tempo value at 1C06

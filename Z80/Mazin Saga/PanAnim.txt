@@ -1,0 +1,4 @@
+	dc.b	$C0		; 03F1 (JUE)
+	dc.b	$80		; 03F2 (JUE)
+	dc.b	$C0		; 03F3 (JUE)
+	dc.b	$40, $80, $C0	; 03F4 (JUE)

@@ -1,0 +1,46 @@
+; --- Mystic Defender SMPS Command Definition ---
+; early SMPS Z80 Type 1
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PANAFMS 	PAFMS_PAN	02
+E1	TEMPO   	TEMPO_ADD	02
+E2	SET_COMM	        	02
+E3	TRK_END 	TEND_MUTE	01	; Actually this just silences the FM track and prevents it from executing again this frame. (Assumed to be broken.)
+E4	PAN_ANIM	        	06
+E5	VOLUME  	VOL_NN_FMP	03	; different from other SMPS Z80 (FMVol += 2nd parameter instead of 1st+2nd)
+E6	VOLUME  	VOL_CN_FM	02
+E7	HOLD    	        	01	; ignored on PSG channels
+E8	IGNORE  	        	01	; conditional TRK_END: track is stopped if 1C3C is nonzero
+E9	SET_LFO_SPD	        	02
+EA	IGNORE  	        	01	; reads Note and Volume from a table, when makes the engine continue as if the Note was part of the sequence.
+EB	PANAFMS 	PAFMS_AMS	02
+EC	VOLUME  	VOL_CN_PSG	02
+ED	FM_COMMAND	FMW_CHN 	03
+EE	FM_COMMAND	FMW_FM1 	03
+EF	INSTRUMENT	INS_C_FM	82	; The "read-from-other-song" feature was removed from the FM-part actually, but in PSG handler still skips one byte in that case.
+F0	MOD_SETUP	        	05
+F1	MOD_SETUP	        	05	; same pointer as F0 - The actual code for the usual F1 is there, but half-broken.
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SRES	02
+F4	MOD_ENV 	MENV_GEN	02
+F5	INSTRUMENT	INS_C_PSG	02
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	TICK_MULT	TMULT_CUR	02
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	PITCH_SLIDE	        	02
+FD	IGNORE  	        	01	; sets 1C3E to 80h
+FE	SPC_FM3 	        	05
+FF	META_CF 	        	01
+
+[Meta]
+00	TIMING_MODE	        	02
+01	TIMING  	TIME_SET	04
+02	TIMING  	TIME_ADD	04
+03	SND_CMD 	        	02
+04	MUS_PAUSE	MUSP_Z80	02
+05	COPY_MEM	        	04
+06	TICK_MULT	TMULT_ALL	02

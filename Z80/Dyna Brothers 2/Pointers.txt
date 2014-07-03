@@ -1,0 +1,67 @@
+General Pointer List:	8000 (J) (Z80 Bank Offset)
+Music Pointer List:	81DF (J) (Z80 Bank Offset)
+SFX Pointer List:	002EC7 (J) (Z80 Driver: 1100)
+Mod. Pointer List:	800E (J) (Z80 Bank Offset)
+PSG Pointer List:	809F (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	00207E (J) (custom compression, type 03, same as Dyna Brothers 1)
+FM Drum Pointer List:	0A2C (J) (Z80 RAM)
+Pan Animation List:	0363 (J) (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+All tracks use the same instrument set, which is placed at the end of the first track, at 822E in every Z80 music bank. The FM drums also use this instrument set.
+
+Each one of the 3 music banks (1D0000 / 1D8000 / 1E0000) contains redundant copies of some general data like PSG envelopes, the instrument set, and pointers.
+The first 01DFh bytes match exactly in each bank. (e.g. all data before the music pointers)
+
+
+DAC Table
+---------
+Z80 Banks with DAC sounds are 1E8000h (7), 1F0000h (6) and 1F8000h (6)
+The format is the same one as used in Mighty Morphin Power Rangers.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0FC1, ROM offset 002EB6)
+
+
+Notes:
+- The current DAC sound bank is stored at 1C04/1C05 (Big Endian order) and is set by the 68k. The sound driver itself only reads it.
+  The music bank works the same, but is stored at 1C06/1C07.
+- The routine that decompresses the sound driver is at 000E98, the code that loads the sound driver at 00092A.
+- 68k Sound ID -> Z80 Bank/Sound ID lists:
+	Music	001F36 (routine at 001E22)
+	SFX	00201C (routine at 001E56, sound test starts with SFX 0D)
+    Format:
+	1 byte - Bank (FF - no change, 00 = 1C0000 ... 07 = 1F8000)
+- 68000 sound routines:
+	001CE4	set DAC Bank
+	001D06	set Music Bank
+	001D28	set DAC Bank to 05
+	001E22	Play Music
+	001E56	Play SFX
+- Sound Test Lists (for 68k Sound IDs)
+	04B314	Music (2-byte Sound IDs)
+	04C2F6	SFX (2-byte offset list, points to Sound ID and text)
+
+FM Drums
+--------
+Drum	Offset		TrkOfs	Trans	Vol	ModType	Ins
+81	0A4E		0A7E	00	00	00	01
+82	0A54		0A88	00	00	00	01
+83	0A5A		0A92	00	00	00	01
+84	0A60		0A9C	00	02	00	01
+85	0A66		0AA6	00	00	00	01
+86	0A6C		0AB0	00	04	00	06
+87	0A72		0ABA	00	04	00	06
+88	0A78		0AC4	00	00	00	06
+89-91	0ACB		-- invalid --
+
+FM Drum Track Data
+81	EF 93 81  E0 C0  F4 01  A2 18 F2
+82	EF 9A 81  E0 C0  F4 01  99 18 F2
+83	EF 94 81  E0 80  F4 01  A2 18 F2
+84	EF 94 81  E0 C0  F4 01  9D 18 F2
+85	EF 94 81  E0 40  F4 01  96 18 F2
+86	EF 95 81  E0 C0  F4 06  A5 18 F2
+87	EF 96 81  E0 C0  F4 06  A5 18 F2
+88	EF 9F 81         F4 06  A8 18 [Note: F2 coord. flag is missing]

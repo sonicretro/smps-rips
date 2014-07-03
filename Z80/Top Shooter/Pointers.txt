@@ -1,0 +1,16 @@
+General Pointer List:	8000 (Unl) (Z80 Bank Offset)
+Music Pointer List:	816D (Unl) (Z80 Bank Offset)
+SFX Pointer List:	B6D6 (Unl) (Z80 Bank Offset)
+Mod. Pointer List:	800E (Unl) (Z80 Bank Offset)
+PSG Pointer List:	8082 (Unl) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0022F0 (Unl)
+Pan Animation List:	02F1 (Unl) (Z80 RAM)
+FM Drum Pointer List:	0A56 (Unl) (Z80 RAM)
+PSG Drum Pointer List:	0A3C (Unl) (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Each one of the 2 music banks (0B0000 / 0B8000) contains redundant copies of some general data like PSG envelopes, the instrument set, and pointers.
+The first 016Fh bytes match exactly in each bank. (e.g. all data before the music pointers)
+
+There are 3 global instrument sets (9072 in bank 0B0000 and B36B and B4C9 in bank 0B8000) that are shared between all songs.

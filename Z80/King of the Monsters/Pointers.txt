@@ -1,0 +1,32 @@
+General Pointer List:	8000 (UE) (Z80 Bank Offset)
+Music Pointer List:	8273 (UE) (Z80 Bank Offset)
+SFX Pointer List:	1000 (UE) (Z80 RAM, see Additional Z80 Data)
+Mod. Pointer List:	8012 (UE) (Z80 Bank Offset)
+PSG Pointer List:	8158 (UE) (Z80 Bank Offset)
+DAC Drum Pointer List:	A3C4 (UE) (Z80 Bank Offset)
+DAC Voice Pointer List:	C87B (UE) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0174FE (U) / 0174D6 (E)
+Additional Z80 Data:	01841E (U) / 0183F6 (E) (goes to Z80 RAM 1000)
+Pan Animation List:	0375 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Each one of the 2 music banks (0F0000 and 0F8000) contains redundant copies of some general data like PSG envelopes, the instrument set, and pointers.
+The first 487Bh bytes match exactly in each bank. The only data that seems different are some DAC SFX sounds.
+
+The complete sound-related data (0F0000-0FFFFF) matches exactly in the U and E versions.
+
+
+DAC Table
+---------
+The format is the same one as used in Mazin Saga.
+
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0093)
+
+
+Notes:
+- The sound driver switches to Bank 0F0000 when playing DAC SFX D0-D4 and to Bank 0F8000 for DAC SFX >= D5.
+  In the latter case, D5 causes the first entry in the DAC table to be read.
+

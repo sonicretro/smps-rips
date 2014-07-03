@@ -1,0 +1,376 @@
+SegaCD Data Extractor
+---------------------
+File name: jp_lsr_930329
+Z80 Data:
+    Loader code: 00106C
+	ROM Ofs 019900, Z80 Ofs 0000, Size 0F82
+	ROM Ofs 01A882, Z80 Ofs 1000, Size 00D2
+	ROM Ofs 01A954, Z80 Ofs 1300, Size 02DE
+CD 68k Data:
+    Loader code: 00078E
+    Kosinski Decompression routine: 0008F6
+	ROM Ofs 01AD00, CD Ofs 000000, Size 3956 (cmp), 53DA (uncmp)
+	ROM Ofs 01EB00, CD Ofs 006000, Size 145B (cmp), 1BAE (uncmp)
+    Loader code: 0007E4
+	ROM Ofs 00D500, CD Ofs 000000, Size 3312 (cmp), 4EC0 (uncmp)
+	ROM Ofs 00B800, CD Ofs 006000, Size 1B74 (cmp), 288C (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: us_lsr_930329
+Z80 Data:
+    Loader code: 001166
+	ROM Ofs 019900, Z80 Ofs 0000, Size 0CA6
+	ROM Ofs 01A5A6, Z80 Ofs 0D00, Size 017A
+	ROM Ofs 01A720, Z80 Ofs 1100, Size 00E0
+    Loader code: 0011D8
+	ROM Ofs 019900, Z80 Ofs 0000, Size 0CA6
+CD 68k Data:
+    Loader code: 000868
+    Kosinski Decompression routine: 0009F0
+	ROM Ofs 01AD00, CD Ofs 000000, Size 3DE9 (cmp), 57F2 (uncmp)
+	ROM Ofs 01EB00, CD Ofs 006000, Size 1496 (cmp), 1C24 (uncmp)
+    Loader code: 0008BE
+	ROM Ofs 00D500, CD Ofs 000000, Size 33B2 (cmp), 4F50 (uncmp)
+	ROM Ofs 00B800, CD Ofs 006000, Size 1B7A (cmp), 288C (uncmp)
+
+ 
+ 
+SegaCD Data Extractor
+---------------------
+File name: eu_mcd1_921027
+Z80 Data:
+    Loader code: 00106E
+	ROM Ofs 00F800, Z80 Ofs 0000, Size 0CA4
+	ROM Ofs 0104A4, Z80 Ofs 0D00, Size 017A
+	ROM Ofs 01061E, Z80 Ofs 1100, Size 05F2
+    Loader code: 0010E0
+	ROM Ofs 00F800, Z80 Ofs 0000, Size 0CA4
+CD 68k Data:
+    Loader code: 000666
+    Kosinski Decompression routine: 0008F0
+	ROM Ofs 015800, CD Ofs 000000, Size 3DDE (cmp), 5800 (uncmp)
+	ROM Ofs 013400, CD Ofs 006000, Size 217B (cmp), 37F6 (uncmp)
+	ROM Ofs 019800, CD Ofs 018000, Size 5540 (cmp), 8000 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: jp_mcd1_911217
+Z80 Data:
+    Loader code: 000F42
+	ROM Ofs 011000, Z80 Ofs 0000, Size 0F82
+	ROM Ofs 011F82, Z80 Ofs 1000, Size 00D2
+	ROM Ofs 012054, Z80 Ofs 1300, Size 02DE
+CD 68k Data:
+    Loader code: 0006B6
+    Kosinski Decompression routine: 0007CC
+	ROM Ofs 016000, CD Ofs 000000, Size 394A (cmp), 53DA (uncmp)
+	ROM Ofs 013000, CD Ofs 006000, Size 1DA2 (cmp), 2C32 (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5540 (cmp), 8000 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: jp_mcd1_911228
+Z80 Data:
+    Loader code: 000F30
+	ROM Ofs 011000, Z80 Ofs 0000, Size 0F82
+	ROM Ofs 011F82, Z80 Ofs 1000, Size 00D2
+	ROM Ofs 012054, Z80 Ofs 1300, Size 02DE
+CD 68k Data:
+    Loader code: 0006B6
+    Kosinski Decompression routine: 0007BA
+	ROM Ofs 016000, CD Ofs 000000, Size 394A (cmp), 53DA (uncmp)
+	ROM Ofs 013000, CD Ofs 006000, Size 1DE6 (cmp), 2CA2 (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5540 (cmp), 8000 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: jp_wmg_920206
+Z80 Data:
+    Loader code: 000F42
+	ROM Ofs 011000, Z80 Ofs 0000, Size 0F82
+	ROM Ofs 011F82, Z80 Ofs 1000, Size 00D2
+	ROM Ofs 012054, Z80 Ofs 1300, Size 02DE
+CD 68k Data:
+    Loader code: 0006B6
+    Kosinski Decompression routine: 0007CC
+	ROM Ofs 016000, CD Ofs 000000, Size 35A9 (cmp), 4F28 (uncmp)
+	ROM Ofs 013000, CD Ofs 006000, Size 281F (cmp), 3E3A (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5544 (cmp), 8000 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: [BIOS] Mega-CD (Japan) (1.00l)
+Z80 Data:
+    Loader code: 000E8A
+	ROM Ofs 011000, Z80 Ofs 0000, Size 0F82
+	ROM Ofs 011F82, Z80 Ofs 1000, Size 00D2
+	ROM Ofs 012054, Z80 Ofs 1300, Size 02DE
+CD 68k Data:
+    Loader code: 0006B4
+    Kosinski Decompression routine: 000714
+	ROM Ofs 016000, CD Ofs 000000, Size 394A (cmp), 53DA (uncmp)
+	ROM Ofs 013000, CD Ofs 006000, Size 1DC4 (cmp), 2C5A (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5540 (cmp), 8000 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: [BIOS] Mega-CD (Japan) (1.00S)
+Z80 Data:
+    Loader code: 000F42
+	ROM Ofs 011000, Z80 Ofs 0000, Size 0F82
+	ROM Ofs 011F82, Z80 Ofs 1000, Size 00D2
+	ROM Ofs 012054, Z80 Ofs 1300, Size 02DE
+CD 68k Data:
+    Loader code: 0006B6
+    Kosinski Decompression routine: 0007CC
+	ROM Ofs 016000, CD Ofs 000000, Size 394A (cmp), 53DA (uncmp)
+	ROM Ofs 013000, CD Ofs 006000, Size 1DE6 (cmp), 2CA2 (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5540 (cmp), 8000 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: [BIOS] Sega CD (USA) (v1.00)
+Z80 Data:
+    Loader code: 001036
+	ROM Ofs 010400, Z80 Ofs 0000, Size 0CA6
+	ROM Ofs 0110A6, Z80 Ofs 0D00, Size 017A
+	ROM Ofs 011220, Z80 Ofs 1100, Size 05F8
+    Loader code: 0010A8
+	ROM Ofs 010400, Z80 Ofs 0000, Size 0CA6
+CD 68k Data:
+    Loader code: 000666
+    Kosinski Decompression routine: 0008C0
+	ROM Ofs 015800, CD Ofs 000000, Size 3DEC (cmp), 5800 (uncmp)
+	ROM Ofs 013400, CD Ofs 006000, Size 212D (cmp), 37E8 (uncmp)
+	ROM Ofs 019800, CD Ofs 018000, Size 667C (cmp), 8000 (uncmp)
+
+ 
+ 
+SegaCD Data Extractor
+---------------------
+File name: us_mld_930922
+Z80 Data:
+    Loader code: 001190
+	ROM Ofs 019900, Z80 Ofs 0000, Size 0CA6
+	ROM Ofs 01A5A6, Z80 Ofs 0D00, Size 017A
+	ROM Ofs 01A720, Z80 Ofs 1100, Size 00E0
+    Loader code: 001202
+	ROM Ofs 019900, Z80 Ofs 0000, Size 0CA6
+CD 68k Data:
+    Loader code: 00081A
+    Kosinski Decompression routine: 000A1A
+	ROM Ofs 01AD00, CD Ofs 000000, Size 3DE9 (cmp), 57F2 (uncmp)
+	ROM Ofs 01EB00, CD Ofs 006000, Size 1496 (cmp), 1C24 (uncmp)
+    Loader code: 00087C
+	ROM Ofs 00D500, CD Ofs 000000, Size 33B2 (cmp), 4F50 (uncmp)
+	ROM Ofs 00B900, CD Ofs 006000, Size 1BBD (cmp), 2974 (uncmp)
+
+ 
+ 
+SegaCD Data Extractor
+---------------------
+File name: us_scd1_921011
+Z80 Data:
+    Loader code: 001078
+	ROM Ofs 010400, Z80 Ofs 0000, Size 0CA6
+	ROM Ofs 0110A6, Z80 Ofs 0D00, Size 017A
+	ROM Ofs 011220, Z80 Ofs 1100, Size 05F8
+    Loader code: 0010EA
+	ROM Ofs 010400, Z80 Ofs 0000, Size 0CA6
+CD 68k Data:
+    Loader code: 00066E
+    Kosinski Decompression routine: 000902
+	ROM Ofs 015800, CD Ofs 000000, Size 3DEC (cmp), 5800 (uncmp)
+	ROM Ofs 013400, CD Ofs 006000, Size 212D (cmp), 37E8 (uncmp)
+	ROM Ofs 019800, CD Ofs 018000, Size 667C (cmp), 8000 (uncmp)
+
+ 
+ 
+SegaCD Data Extractor
+---------------------
+File name: eu_mcd2_930330
+Z80 Data:
+    Loader code: 000FD2
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 0CA4
+	ROM Ofs 00FCA4, Z80 Ofs 0D00, Size 017A
+	ROM Ofs 00FE1E, Z80 Ofs 1100, Size 05F2
+    Loader code: 001044
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 017A
+CD 68k Data:
+    Loader code: 00073C
+    Kosinski Decompression routine: 000858
+	ROM Ofs 016000, CD Ofs 000000, Size 3A4B (cmp), 5800 (uncmp)
+	ROM Ofs 013400, CD Ofs 006000, Size 19C6 (cmp), 237C (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5540 (cmp), 8000 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: eu_mcd2_930601
+Z80 Data:
+    Loader code: 000FD2
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 0CA4
+	ROM Ofs 00FCA4, Z80 Ofs 0D00, Size 017A
+	ROM Ofs 00FE1E, Z80 Ofs 1100, Size 05F2
+    Loader code: 001044
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 017A
+CD 68k Data:
+    Loader code: 00073C
+    Kosinski Decompression routine: 000858
+	ROM Ofs 016000, CD Ofs 000000, Size 3A4B (cmp), 5800 (uncmp)
+	ROM Ofs 013400, CD Ofs 006000, Size 19C6 (cmp), 237C (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5540 (cmp), 8000 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: jp_mcd2_921222
+Z80 Data:
+    Loader code: 000F52
+	ROM Ofs 00F800, Z80 Ofs 0000, Size 0F82
+	ROM Ofs 010782, Z80 Ofs 1000, Size 00D2
+	ROM Ofs 010854, Z80 Ofs 1300, Size 02DE
+CD 68k Data:
+    Loader code: 0006BC
+    Kosinski Decompression routine: 0007D8
+	ROM Ofs 016000, CD Ofs 000000, Size 358F (cmp), 5800 (uncmp)
+	ROM Ofs 013400, CD Ofs 006000, Size 1939 (cmp), 22A6 (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5540 (cmp), 8000 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: us_scd2_930314
+Z80 Data:
+    Loader code: 000FDC
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 0CA0
+	ROM Ofs 00FCA0, Z80 Ofs 0D00, Size 017A
+	ROM Ofs 00FE1A, Z80 Ofs 1100, Size 04BA
+    Loader code: 00104E
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 017A
+CD 68k Data:
+    Loader code: 00073C
+    Kosinski Decompression routine: 000862
+	ROM Ofs 016000, CD Ofs 000000, Size 3A54 (cmp), 5800 (uncmp)
+	ROM Ofs 013400, CD Ofs 006000, Size 1988 (cmp), 233C (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5449 (cmp), 7028 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: us_scd2_930601
+Z80 Data:
+    Loader code: 000FDC
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 0CA0
+	ROM Ofs 00FCA0, Z80 Ofs 0D00, Size 017A
+	ROM Ofs 00FE1A, Z80 Ofs 1100, Size 04BA
+    Loader code: 00104E
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 017A
+CD 68k Data:
+    Loader code: 00073C
+    Kosinski Decompression routine: 000862
+	ROM Ofs 016000, CD Ofs 000000, Size 3A54 (cmp), 5800 (uncmp)
+	ROM Ofs 013400, CD Ofs 006000, Size 1988 (cmp), 233C (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5449 (cmp), 7028 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: us_xeye_931227
+Z80 Data:
+    Loader code: 000FDA
+	ROM Ofs 011000, Z80 Ofs 0000, Size 0CA0
+	ROM Ofs 011CA0, Z80 Ofs 0D00, Size 017A
+	ROM Ofs 011E1A, Z80 Ofs 1100, Size 04BA
+    Loader code: 00104C
+	ROM Ofs 011000, Z80 Ofs 0000, Size 017A
+CD 68k Data:
+    Loader code: 000744
+    Kosinski Decompression routine: 000860
+	ROM Ofs 016000, CD Ofs 000000, Size 3B71 (cmp), 5800 (uncmp)
+	ROM Ofs 013000, CD Ofs 006000, Size 28EB (cmp), 3F70 (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5544 (cmp), 8000 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: WONDERMEGA-G303
+Z80 Data:
+    Loader code: 000F4C
+	ROM Ofs 011000, Z80 Ofs 0000, Size 0F82
+	ROM Ofs 011F82, Z80 Ofs 1000, Size 00D2
+	ROM Ofs 012054, Z80 Ofs 1300, Size 02DE
+CD 68k Data:
+    Loader code: 0006BC
+    Kosinski Decompression routine: 0007D2
+	ROM Ofs 016000, CD Ofs 000000, Size 36A4 (cmp), 5800 (uncmp)
+	ROM Ofs 013000, CD Ofs 006000, Size 28E8 (cmp), 3F70 (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5544 (cmp), 8000 (uncmp)
+
+ 
+ 
+SegaCD Data Extractor
+---------------------
+File name: MPR-15768-T
+Z80 Data:
+    Loader code: 000F50
+	ROM Ofs 00F800, Z80 Ofs 0000, Size 0F82
+	ROM Ofs 010782, Z80 Ofs 1000, Size 00D2
+	ROM Ofs 010854, Z80 Ofs 1300, Size 02DE
+CD 68k Data:
+    Loader code: 0006BC
+    Kosinski Decompression routine: 0007D6
+	ROM Ofs 016000, CD Ofs 000000, Size 3916 (cmp), 5800 (uncmp)
+	ROM Ofs 013400, CD Ofs 006000, Size 1939 (cmp), 22A6 (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5540 (cmp), 8000 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: us_scd2_930621
+Z80 Data:
+    Loader code: 000FDC
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 0CA0
+	ROM Ofs 00FCA0, Z80 Ofs 0D00, Size 017A
+	ROM Ofs 00FE1A, Z80 Ofs 1100, Size 04BA
+    Loader code: 00104E
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 017A
+CD 68k Data:
+    Loader code: 00073C
+    Kosinski Decompression routine: 000862
+	ROM Ofs 016000, CD Ofs 000000, Size 3DA4 (cmp), 5800 (uncmp)
+	ROM Ofs 013400, CD Ofs 006000, Size 1988 (cmp), 233C (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5449 (cmp), 7028 (uncmp)
+
+ 
+ 
+SegaCD Data Extractor
+---------------------
+File name: eu_mmg_930916
+Z80 Data:
+    Loader code: 000FD2
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 0CA4
+	ROM Ofs 00FCA4, Z80 Ofs 0D00, Size 017A
+	ROM Ofs 00FE1E, Z80 Ofs 1100, Size 05F2
+    Loader code: 001044
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 017A
+CD 68k Data:
+    Loader code: 00073C
+    Kosinski Decompression routine: 000858
+	ROM Ofs 016000, CD Ofs 000000, Size 3D97 (cmp), 5800 (uncmp)
+	ROM Ofs 013400, CD Ofs 006000, Size 19C6 (cmp), 237C (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5540 (cmp), 8000 (uncmp)
+
+SegaCD Data Extractor
+---------------------
+File name: us_cdx_930907
+Z80 Data:
+    Loader code: 000FDC
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 0CA0
+	ROM Ofs 00FCA0, Z80 Ofs 0D00, Size 017A
+	ROM Ofs 00FE1A, Z80 Ofs 1100, Size 04BA
+    Loader code: 00104E
+	ROM Ofs 00F000, Z80 Ofs 0000, Size 017A
+CD 68k Data:
+    Loader code: 00073C
+    Kosinski Decompression routine: 000862
+	ROM Ofs 016000, CD Ofs 000000, Size 3DA4 (cmp), 5800 (uncmp)
+	ROM Ofs 013400, CD Ofs 006000, Size 1988 (cmp), 233C (uncmp)
+	ROM Ofs 01A000, CD Ofs 018000, Size 5449 (cmp), 7028 (uncmp)
+
+ 
+ 

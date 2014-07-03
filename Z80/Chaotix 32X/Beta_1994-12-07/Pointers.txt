@@ -1,0 +1,29 @@
+General Pointer List:	007D1C (JUE) (Z80 Driver: 1000)
+Music Bank List:	007D2E (JUE) (Z80 Driver: 1012)
+Music Pointer List:	007D56 (JUE) (Z80 Driver: 103A)
+SFX Pointer List:	007DA7 (JUE) (Z80 Driver: 108B)
+Mod. Pointer List:	007F96 (JUE) (Z80 Driver: 127A)
+PSG Pointer List:	007D6A (JUE) (Z80 Driver: 114E)
+PWM Pointer List:	058000 (JUE)
+Z80 Snd Driver Offset:	006DDE (JUE)
+Additional Z80 Data:	007D1C (JUE) (goes to Z80 RAM 1000)
+PWM Driver Offset:	07F800 (JUE) (goes to SH-2 RAM 0603F800)
+Pan Animation List:	030F (Z80 RAM)
+
+
+PWM List Format:
+see Chaotix (final)
+
+
+Notes:
+- The last 2 PWM sounds a tiny bit longer than in the final.
+- The intro of "Oriental Legend" is a lot longer than in the final.
+- "Decision" is split into 2 parts in the final. In this beta it just loops once and finishes then.
+- In the final, "This Horizon" has an additional intro that is missing here.
+- All other songs either match exactly or have a slightly higher PSG 3 volume.
+- PWM Driver Loader offset: 0782A0
+- In order to fix the buggy PWM sounds:
+	1. search for D013 4420 4620
+	2. replace 2041 2061 with 2061 2061
+	3. 6 bytes later, replace 2051 2071 with 2071 2071
+	4. Fix the checksum (at 018E, change E857 to E897)

@@ -1,0 +1,10 @@
+; --- GO-NET SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 81
+
+[Drums]
+;Note	Type    DrumID	Pitch
+81..9F	DAC	81
+C0..C3	DAC	C0

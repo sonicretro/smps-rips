@@ -1,0 +1,37 @@
+; --- Golden Axe SMPS Command Definition ---
+; early SMPS Z80 (looks like a heavily stripped Arnold Palmer Tournament Golf command set)
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	IGNORE  	        	02
+E1	IGNORE  	        	02
+E2	IGNORE  	        	02
+E3	IGNORE  	        	02
+E4	IGNORE  	        	02
+E5	VOLUME  	VOL_NN_FMP1	02
+E6	VOLUME  	VOL_NN_FMP1	02
+E7	HOLD    	        	01	; Note: ignored on PSG channels
+E8	IGNORE  	        	02
+E9	IGNORE  	        	02
+EA	IGNORE  	        	02
+EB	IGNORE  	        	02
+EC	IGNORE  	        	02
+ED	IGNORE  	        	02
+EE	IGNORE  	        	02
+EF	INSTRUMENT	INS_C_FM	02
+F0	VOLUME  	VOL_ABS 	02
+F1	IGNORE  	        	02
+F2	TRK_END 	TEND_STD	01
+F3	IGNORE  	        	02
+F4	IGNORE  	        	02
+F5	IGNORE  	        	02
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	IGNORE  	        	02
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	PITCH_SLIDE	        	02
+FD	RAW_FREQ	        	02
+FE	SPC_FM3 	        	05
+FF	IGNORE  	        	02

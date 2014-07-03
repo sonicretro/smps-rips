@@ -1,0 +1,46 @@
+General Pointer List:	8000 (J) (Z80 Bank Offset)
+Music Pointer List:	8220 (J) (Z80 Bank Offset)
+SFX Pointer List:	1F0250 / 1F825E (J)
+Mod. Pointer List:	8012 (J) (Z80 Bank Offset)
+PSG Pointer List:	805C (J) (Z80 Bank Offset)
+DAC Drum Pointer List:	1F60B6 / 1FABFD (J)
+DAC Voice Pointer List:	1F71BC / 1FBD03 (J)
+Z80 Snd Driver Offset:	1BE000/1BF000 (J) (data of the two drivers matches exactly)
+Pan Animation List:	0375 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Each one of the 2 music banks (1F0000 and 1F8000) contains redundant copies of some general data like PSG envelopes, the instrument set, and pointers.
+The first 0220h bytes match exactly in each bank. (except for the 3 pointers at 8006, 800E and 8010)
+The data of the DAC sounds and sfx matches, too.
+
+
+DAC List Format:
+The format is the same one as used in Mazin Saga.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0093)
+
+
+Notes:
+- The Z80 driver is very similar to the one used in Battletoads.
+- Right at the beginning of the songs there's an "EA aa bb" command.
+  This sets up the YM2612 Timer A, which is used for timing. (affects both music and SFX speed)
+- The current bank is written to 1C00 by the 68k.
+- It looks like everytime a song is played, the 68k copies the complete sound driver to the Z80 plus 8 bytes to 1C00.
+  For bank 1F0000, it loads the Z80 driver from 1BE000 and initialization value from 0040CC.
+  For bank 1F8000, it loads the Z80 driver from 1BF000 and initialization value from 0040D4.
+- The Sound Test -> Z80 bank + song in bank table is located at 004216.
+  Format is:
+  1 byte - Bank
+	00 - doesn't matter (doesn't change bank, for SFX)
+	01 - Bank 1F0000
+	02 - Bank 1F8000
+  1 byte - sound ID for Z80
+  
+  The assignment is like this:
+	01..16 - Bank == 01/02 (depending on what exists), sound ID 81..97 (89 is skipped)
+	17 - Bank 02, sound ID 8C
+	18 - Bank 02, sound ID 9F
+	19 - Bank 02, sound ID 85
+	1A+ - Bank 00, Sound ID A0..FD (F7-F9 and FB skipped)

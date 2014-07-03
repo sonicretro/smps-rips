@@ -1,0 +1,19 @@
+General Pointer List:	8000 (J) (Z80 Bank Offset)
+Music Pointer List:	831D (J) (Z80 Bank Offset)
+SFX Pointer List:	1000 (J) (Z80 RAM)
+Mod. Pointer List:	800E (J) (Z80 Bank Offset)
+PSG Pointer List:	81CC (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	023F8E (J)
+Pan Animation List:	02F8 (J) (Z80 RAM)
+FM Drum Pointer List:	0A4F (Z80 RAM)
+PSG Drum Pointer List:	0A35 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 008000
+
+
+Notes:
+- In Song 01, the 6th FM track has a jump at the very beginning to offset EA6D (far away from the song), which is invalid (68k code).
+  That jump is never reached though, because the drum track overwrites this track's data before it can process it.
+- Song 0E uses out-of-range PSG notes (resulting in frequency value 02ABh) and an invalid PSG instrument.

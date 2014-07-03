@@ -1,0 +1,40 @@
+General Pointer List:	8000 (JU) (Z80 Bank Offset)
+Music Pointer List:	8222 (JU) (Z80 Bank Offset)
+SFX Pointer List:	07B230 (JU) (Z80 Driver: 003A)
+Mod. Pointer List:	800E (JU) (Z80 Bank Offset)
+PSG Pointer List:	8154 (JU) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	07B1F6 (JU)
+Z80 DAC Driver Offset:	07C114 (J) / 07C122 (U)
+Additional Z80 Data:	07C206 (J) / 07C214 (U) (DAC driver data, goes to Z80 RAM 0100)
+Pan Animation List:	01DD (J) / 01E7 (U) (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+
+The sound data matches in all game versions (J and U), but there are differences in the sound driver.
+
+
+DAC Sounds:
+Sound 1:	Start at 0108, Length = (0100)
+Sound 2:	Start at 0108 + (0100), Length = (0104)
+Sound 3:	Start at 0108 + (0100), Length = (0102) + random(00h..0Fh) * (0107)
+
+The sample pitch is always read from 0106.
+
+
+Data is DPCM compressed with the delta-array:
+00 01 02 04 08 10 20 40 80 FF FD FC F8 F0 E0 C0 (Z80 Driver offset 00E2)
+
+
+Notes:
+- Unlike most other SMPS Z80, the sound trigger is at 1C04..1C07, which is the preSMPS offset.
+- The timing for both drivers is different.
+  The J driver uses VInt (60 Hz), the U driver uses YM2612 Timer B (value 0CBh, 62.81 Hz).
+  This makes the U music 4.7 % faster.
+- The Instrument Register order differs from the usual SMPS Z80:
+  B0 B4 40 48 44 4C 30 38 34 3C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C
+- The driver still looks like preSMPS Z80 at some points.
+   Examples are memory offsets in general, the way the PSG volume works, the instrument register order.
+   There are separate coordination flags for LFO speed, the AMS and FMS amounts (like Space Harrier II and Ghostbusters) and the flag that sets the Pan bits is flag FF. That means there are no meta coordination flags yet.

@@ -1,0 +1,41 @@
+General Pointer List:	190000 (J)
+Music Pointer List:	19026B (J)
+SFX Pointer List:	194000 (J)
+Mod. Pointer List:	19000E (J)
+PSG Pointer List:	19014B (J)
+DAC Drum Pointer List:	9000 (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0200C6 (J)
+Pan Animation List:	0390 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+In every Z80 Bank with DAC sounds (198000h to 1F8000h), there are two tables:
+
+At Z80 Offset 9000h (in every bank), there is a simple offset-list of 27h entries. Each offset is a 2-byte bank offset and points to an entry in the actual DAC Table.
+
+The DAC Table starts at 904Eh and has this format:
+
+1 byte  - Looping sound (00 - not looping, 01-FF - looping)
+1 byte  - DAC sound bank
+2 bytes - sound data size
+2 bytes - sound data start offset (bank-offset)
+-> 6 bytes
+
+Note: The first sound is some stadium-noise and is in the background most of the time. Therefore it's present in every bank.
+The sound bank byte of (only) this sound always points to the current bank.
+
+
+Notes:
+- The driver supports 2-channel mixing with volume control for each of the 2 channels.
+  For volume control, every DAC bank has 10h volume lookup tables at offset 8000-8FFF.
+  The volume tables cover -24 db (80xx) to +6 db (8Fxx), with increments in 2 db.
+- The driver has a few additional Meta Coordination Flags.
+    FF 07 xx - Reversed Note Timeout: stop note after (NoteLength - xx) frames
+    FF 08 xx - Play sound xx on DAC channel 1
+    FF 09 xx - Play sound xx on DAC channel 2
+    FF 0A xx - Change volume of DAC channel 1 by xx
+    FF 0B xx - Change volume of DAC channel 2 by xx
+    FF 0C xx - Set volume of DAC channel 1 by xx
+    FF 0D xx - Set volume of DAC channel 2 by xx

@@ -1,0 +1,10 @@
+; --- Yuu Yuu Hakusho Gaiden SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 01
+
+[Drums]
+;Note	Type    DrumID	Pitch
+81..DF	DAC	01
+F8..F9	DAC	78

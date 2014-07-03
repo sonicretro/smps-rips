@@ -1,0 +1,42 @@
+Arnold Palmer Tournament Golf			--- (no DAC)
+Battletoads					Mazin Saga
+Bonanza Bros					--- (only 2 hardcoded DAC voices)
+Chaotix 32X					--- (no DAC, just PWM)
+Chou Yakyuu Miracle Nine			Chou Yakyuu Miracle Nine [2 channel mixing]
+Columns III - Revenge of Columns		Mighty Morphin Power Rangers
+Dyna Brothers					Mazin Saga
+Dyna Brothers 2					Mighty Morphin Power Rangers
+Flicky						--- (no DAC)
+Ghostbusters					--- (no DAC)
+Golden Axe					--- (no DAC)
+GO-NET						Mazin Saga
+The Hybrid Front				Mighty Morphin Power Rangers [modified]
+J. League Pro Striker Final Stage		Mighty Morphin Power Rangers (with ROM Bank list)
+King of the Monsters				Mazin Saga
+King of the Monsters 2				Mazin Saga
+Majikaru Hashito no Butsutobi Turbo! Daibouken	--- (no DAC)
+Mazin Saga					Mazin Saga
+Mega Man - The Wily Wars			--- (no DAC)
+Mighty Morphin Power Rangers			Mighty Morphin Power Rangers
+OutRun						Mazin Saga (slightly modified)
+OutRun 2019					Mazin Saga
+OutRunners					OutRunners
+Phantasy Star III - Generations of Doom		--- (no DAC)
+Sega CD BIOS					--- (no DAC)
+Sega Channel BIOS (J)				--- (no DAC)
+Shura no Mon					Mazin Saga
+Sonic 2						Sonic 2
+Sonic 3						Mighty Morphin Power Rangers (with ROM Bank list)
+Sonic 3D Blast					Mighty Morphin Power Rangers (with ROM Bank list)
+Sonic and Crackers				Sonic and Crackers (similar to Virtua Racing Deluxe 32X)
+Sonic and Knuckles				Mighty Morphin Power Rangers (with ROM Bank list)
+Sorcerian					--- (no DAC)
+Super Monaco Grand Prix				Virtua Racing
+Tecmo World Cup '92				Mazin Saga
+Tempo 32X					Mighty Morphin Power Rangers (with ROM Bank list)
+Top Shooter					--- (no DAC)
+Viewpoint					Mighty Morphin Power Rangers
+Virtua Fighter 2				OutRunners [modified, absolute bank offsets]
+Virtua Racing					Virtua Racing
+Wani Wani World					--- (no DAC)
+Yuu Yuu Hakusho Gaiden				Mazin Saga

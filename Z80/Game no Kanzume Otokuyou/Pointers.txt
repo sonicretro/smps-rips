@@ -1,0 +1,27 @@
+General Pointer List:	1100 (J) (Z80 RAM)
+Music Pointer List:	114D (J) (Z80 RAM)
+SFX Pointer List:	114F (J) (Z80 RAM)
+Mod. Pointer List:	-- invalid -- (J) (Z80 RAM) (points to 110E)
+PSG Pointer List:	1110 (J) (Z80 RAM)
+DAC Voice Pointer List:	N/A
+Z80 Snd Driver Offset:	041110 (J)
+Additional Z80 Data:	0420F0 (J) (goes to Z80 RAM 1100)
+Pan Animation List:	N/A
+FM Drum Pointer List:	09BC (Z80 RAM)
+FM Drum Ins. Ptr. List:	09BE (Z80 RAM)
+PSG Drum Pointer List:	09BA (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+This game has no DAC sounds, so there are no Z80 Banks with DAC sounds.
+The format is the same one as used in Mighty Morphin Power Rangers.
+
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0FD0)
+
+
+Notes:
+-

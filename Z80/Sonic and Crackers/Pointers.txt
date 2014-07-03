@@ -1,0 +1,30 @@
+General Pointer List:	N/A (everything is hardcoded into the driver)
+Music Pointer List:	00633F (Beta) (Z80 Driver: 1153) (points to bank 010000)
+SFX Pointer List:	00634B (Beta) (Z80 Driver: 115F) (points to bank 018000, see notes)
+Mod. Pointer List:	0061FC (Beta) (Z80 Driver: 1010)
+PSG Pointer List:	006160 (Beta) (Z80 Driver: 0F74)
+DAC Drum Pointer List:	0063CA (Beta) (Z80 Driver: 11DE)
+Z80 Snd Driver Offset:	0051EC (Beta)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+The Z80 Bank with DAC sounds is 020000h.
+
+DAC List Format: (all little endian values)
+1 byte  - Pitch
+1 byte  - Z80 Bank (bits 22-15), bit 23 is always 0
+2 bytes - Data Length
+2 bytes - Start Offset (Z80 Bank Offset)
+-> 6 bytes
+
+This is the same format as used in Virtua Racing Deluxe 32X.
+
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0F64)
+
+
+Notes:
+- The offsets of the SFX are C000-FFFF, but they are actually stored at 018000-01BFFF, so they don't work.

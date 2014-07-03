@@ -1,0 +1,46 @@
+General Pointer List:	8000 (W) (Z80 Bank Offset)
+Music Pointer List:	8069 (W) (Z80 Bank Offset)
+SFX Pointer List:	8087 (W) (Z80 Bank Offset)
+Mod. Pointer List:	800E (W) (Z80 Bank Offset)
+PSG Pointer List:	8012 (W) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	01D2F0 (W)
+DAC Voice #1:		01E0E8 (W) (goes to Z80 RAM 0F00, playback rate 1Fh)
+DAC Voice #2:		01EAB8 (W) (goes to Z80 RAM 0F00, playback rate 20h)
+Pan Animation List:	N/A
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 018000
+
+
+The sound data matches in all game versions (REV 00, REV 01 and REV 02 from Sega Smash Packs).
+
+
+DAC Table
+---------
+The DAC voices are copied to the Z80 RAM at 0F00 before being played.
+The sound driver then plays it using these values:
+
+Start Offset = 0F08 (register HL)
+Data Size = value at 0F00/0F01 (register DE)
+Playback Rate = value at 0F06
+
+Notes:
+- The 68k routines that load the DAC voices are at 003CAC (voice 1) and 003CB4 (voice 2).
+- The Playback Rate is copied to register D7, the start offset to D1.
+- The routine always copies 09D0h bytes to offset 0F00.
+- After it finished copying the DAC data, it writes the (hardcoded) Playback Rate to 0F06. (although this is redundant here)
+- Although 09D0h bytes are copied, which is correct, the data size at 0F00 says 09C0, so the last 8 bytes of the DAC sounds are missed.
+
+
+Data is DPCM compressed with the delta-array:
+00 01 02 04 08 10 20 40 80 FF FD FC F8 F0 E0 C0 (Z80 Driver offset 0DE8)
+
+
+Notes:
+- Like Arnold Palmer Tournament Golf, this is an early SMPS driver, which is somewhere between preSMPS Z80 and the final SMPS Z80.
+  That means:
+	- The sound trigger is at 1C04..1C07.
+	- The Instrument Register order differs from the usual SMPS Z80:
+	  B0 B4 40 48 44 4C 30 38 34 3C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C
+- The DAC playback loop is similar to Bonanza Bros.

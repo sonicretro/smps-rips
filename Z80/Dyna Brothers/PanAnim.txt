@@ -1,0 +1,4 @@
+	dc.b	$C0		; 037D (J, Rev 01)
+	dc.b	$80		; 037E (J, Rev 01)
+	dc.b	$C0		; 037F (J, Rev 01)
+	dc.b	$40, $80, $C0	; 0380 (J, Rev 01)

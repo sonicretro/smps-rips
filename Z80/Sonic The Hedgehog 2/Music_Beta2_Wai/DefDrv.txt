@@ -1,0 +1,27 @@
+; --- Sonic 2 Beta SMPS Driver Definition ---
+; SMPS Z80, ported from SMPS 68k/Sonic 1
+; valid for Sonic 2 Simon Wai Beta
+
+[Settings]
+DefTimingMode = 00
+LockTimingMode = True
+
+[Main]
+PtrFmt = Z80
+InsMode = Hardware
+;FMChnOrder = 16 0 1 2 4 5 6
+TempoMode = Timeout
+FMBaseNote = B
+FMBaseOctave = 0
+DetuneOctWrap = False
+NoteOnPrevent = Rest
+DelayFreq = Reset
+ModAlgo = 68k
+EnvMult = 68k	; actually unused
+VolMode = Algo
+FMFreqs = Def_68k	; actually the driver stores 96 separate frequency values, but the effect is the exactly same
+PSGFreqs = Def_68k
+FM3Freqs = $000	; actually unused
+
+[EnvelopeCmds]
+80 = Hold

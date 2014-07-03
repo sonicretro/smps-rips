@@ -1,0 +1,95 @@
+General Pointer List:	060000 (UE)
+Music Pointer List:	060270 (UE)
+SFX Pointer List:	06D41D (Z80 Driver: 1100, moved there from 106B)
+Mod. Pointer List:	06000E (UE)
+PSG Pointer List:	06014B (UE)
+Z80 Snd Driver Offset:	06C3B2 (UE)
+Pan Animation List:	0380 (Z80 Driver) (UE)
+FM Drum Pointer List:	0A8F (Z80 RAM)
+FM Drum Ins. Ptr. List:	0AA1 (Z80 RAM)
+PSG Drum Pointer List:	0A75 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+In every Z80 Bank with DAC sounds (68000h to A0000h), there are two tables:
+
+At Z80 Offset 8000h (in every bank), there is a simple offset-list of some entries. Each offset is a 2-byte bank offset and points to an entry in the actual DAC Table.
+
+DAC List Format: (all little endian values)
+1 byte  - Pitch
+2 bytes - Data Length
+2 bytes - Start Offset (in Z80 Address Space)
+
+
+Bank	Entries
+68000	09h (03h valid)
+70000	09h (01h valid)
+78000	0Bh (0Ah valid)
+80000	09h (05h valid)
+88000	09h (06h valid)
+90000	09h (08h valid)
+98000	08h (05h valid)
+A0000	08h (05h valid)
+
+Bank Select code: (Bank ID / Code Offset - Bank Address)
+1/00BD - 07 0000
+2/00CE - 07 8000
+3/00DF - 08 0000
+4/00F0 - 08 8000
+5/0101 - 09 0000
+6/0112 - 09 8000
+7/0123 - 0A 0000
+0/0134 - 06 8000
+
+DAC Sounds are DPCM compressed: (06D40D, Z80 Driver: 105B)
+00 01 02 04 08 10 20 40
+80 FF FE FC F8 F0 E0 C0
+
+
+FM Drums
+--------
+This game has a very interesting way of handling its drums.
+Unlike most other games, playing a note on the first track doesn't start a DAC sound, but loads an SMPS track with the following header:
+
+Pos	Len	Description
+00	02	Track Data Pointer (Little Endian RAM offset)
+02	01	Transpose
+03	01	Track Volume (added to the drum track volume)
+04	01	Modulation Envelope (00 - off)
+05	01	Drum Instrument
+
+The track data itself is usual SMPS data.
+
+
+All in all there are 9 tracks (drum 81-89). Interestingly the drums are just FM versions of the first few Sonic 3 DAC drums.
+
+
+It's worth noting that while loading the drum track, the Pan register (B4) gets initialized to C0 (both speakers).
+So each drum sound plays on both speakers by default, even if the previous sound was panned to the left or right speaker.
+
+
+Z80 Drum Addresses:
+Trk	Addr		Ins	Addr
+----------------	----------------
+List	0A8F		List	0AA1
+81	0AAD		00	0AB6
+82	0AF1		01	0B3D
+83	0AFC		02	0AD8
+84	0B05		03	0B1B
+85	0B10		04	0B5F
+86	0B34		05	0B81
+87	0ACF
+88	0B56
+89	0B78
+
+
+Misc. Stuff
+-----------
+Sound Trigger:	1C0A
+Code that selects between Music/Sound/Special Command:	0535
+
+Playing DAC sounds seem to work this way:
+- set DAC bank (00-07) using command ED
+- play DAC sound in bank using command EA

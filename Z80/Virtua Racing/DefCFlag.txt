@@ -1,0 +1,21 @@
+; --- Virtua Racing SMPS Command Definition ---
+; reduced SMPS Z80 Type 1
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PANAFMS 	PAFMS_PAN	02
+E1	VOLUME  	VOL_CN_FM	02
+E2	HOLD    	        	01
+E3	INSTRUMENT	INS_C_FM	82
+E4	TRK_END 	TEND_STD	01
+E5	MOD_ENV 	MENV_GEN	02
+E6	GOTO    	        	03	01
+E7	LOOP    	        	05	03
+E8	GOSUB   	        	03	01
+E9	RETURN  	        	01
+EA	TRANSPOSE	TRNSP_ADD	02
+EB	PITCH_SLIDE	        	02
+EC	TRK_END 	TEND_STD	01
+ED	IGNORE  	        	01	; Fade out: A0 03 03
+EE	IGNORE  	        	01	; Fade out: AA 04 04
+EF	IGNORE  	        	01	; Fade out: A0 01 01

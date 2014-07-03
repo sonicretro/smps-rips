@@ -1,0 +1,29 @@
+General Pointer List:	076AAE (JUE) (Z80 Driver: 1000)
+Music Bank List:	076AC0 (JUE) (Z80 Driver: 1012)
+Music Pointer List:	076AE9 (JUE) (Z80 Driver: 103B)
+SFX Pointer List:	076B3B (JUE) (Z80 Driver: 108D)
+Mod. Pointer List:	076D34 (JUE) (Z80 Driver: 1286)
+PSG Pointer List:	076C08 (JUE) (Z80 Driver: 115A)
+PWM Pointer List:	058000 (JUE)
+Z80 Snd Driver Offset:	075B6A (JUE)
+Additional Z80 Data:	076AAE (JUE) (goes to Z80 RAM 1000)
+PWM Driver Offset:	07FC00 (JUE) (goes to SH-2 RAM C0000000)
+Pan Animation List:	030F (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+The complete sound related part of the ROM (040000-076E71) matches byte-by-byte in both revisions (JU and E).
+
+
+PWM List Format: (all big endian values)
+4 bytes - Start Offset (SH2 Offset, strip first byte)
+4 bytes - Data Length
+4 bytes - Loop Offset (SH2 Offset, offset 0 means no loop)
+4 bytes - Sample Rate (0x0800 = 11025 Hz, 0x1000 = 22050 Hz, etc.)
+
+
+Notes:
+- The PWM driver is the standard PWM driver from the 32X SDK and allows 4 channel mixing.
+  Note: The sample volume byte controls the volume for the left and right channel.
+        LeftVol = HIGH_NIBBLE(Volume) + 1
+        RightVol = LOW_NIBBLE(Volume) + 1
+- PWM Driver Loader offset: 077A84 (SH-2 offset: 06000284)

@@ -1,0 +1,24 @@
+General Pointer List:	8000 (J) (Z80 Bank Offset)
+Music Pointer List:	019AC0 (J) (16-bit pointers, relative to Ptr List, to LZSS-compressed SMPS data)
+SFX Pointer List:	8384 (J) (Z80 Bank Offset)
+Mod. Pointer List:	800E (J) (Z80 Bank Offset)
+PSG Pointer List:	8108 (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	018C64 (J) (LZSS-compressed)
+Pan Animation List:	02F6 (J) (Z80 RAM)
+FM Drum Pointer List:	0A6A (J) (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A7E (J) (Z80 RAM)
+PSG Drum Pointer List:	0A50 (J) (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 018000
+
+
+Notes:
+- The code that loads the driver and its settings is at 007A0C.
+- The PlayMusic routine for the 68k is at 0071B6.
+  Parameter is D0, first song is 01
+  The final sound ID is stored to 68k RAM F510.
+- The music list at 832C (Z80 Bank Offset) is invalid and contains only null-entries.
+- Decompressed SMPS songs are written to Z80 RAM at 1000.
+- Song 20 and 21 are pointing to the same data.

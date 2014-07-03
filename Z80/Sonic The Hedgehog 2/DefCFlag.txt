@@ -1,0 +1,32 @@
+; --- Sonic 2 SMPS Command Definition ---
+; slightly modified SMPS 68k/Sonic 1
+; valid for Sonic 2 Beta 5-8 and Final
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PANAFMS 	PAFMS_PAN	02
+E1	DETUNE  	        	02
+E2	SET_COMM	        	02
+E3	RETURN  	        	01
+E4	FADE_IN 	        	01
+E5	TICK_MULT	TMULT_CUR	02
+E6	VOLUME  	VOL_NN_FM	02
+E7	HOLD    	        	01
+E8	NOTE_STOP	NSTOP_NORMAL	02
+E9	TRANSPOSE	TRNSP_ADD	02
+EA	TEMPO   	TEMPO_SET	02
+EB	TICK_MULT	TMULT_ALL	02
+EC	VOLUME  	VOL_NN_PSG	02
+ED	IGNORE  	        	02
+EE	IGNORE  	        	01
+EF	INSTRUMENT	INS_N_FM	02
+F0	MOD_SETUP	        	05
+F1	MOD_SET 	MODS_ON 	01
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SET	02
+F4	MOD_SET 	MODS_OFF	01
+F5	INSTRUMENT	INS_N_PSG	02
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	SND_OFF 	        	01

@@ -1,0 +1,36 @@
+General Pointer List:	8000 (JUE) (Z80 Bank Offset)
+Music Pointer List:	8273 (JUE) (Z80 Bank Offset)
+SFX Pointer List:	1000 (JUE) (Z80 RAM)
+Mod. Pointer List:	8012 (JUE) (Z80 Bank Offset)
+PSG Pointer List:	8158 (JUE) (Z80 Bank Offset)
+DAC Drum Pointer List:	074782 / 07CFC0 (JUE) (Pointer is at Z80 Bank Offset 800E)
+Z80 Snd Driver Offset:	0755F2 (JUE)
+Additional Z80 Data:	0765F2 (JUE) (goes to Z80 RAM 1000, part of the Z80 driver data block)
+Pan Animation List:	0344 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Each one of the 2 music banks (070000 to 078000) contains redundant copies of some general data like PSG envelopes, pointers and DAC sounds.
+The PSG envelope and frequency flutter data matches exactly, but the priority array differs.
+
+All data between 020000 and 0FFFFF matches exactly between all verions (J, U, E and U Beta) of the ROM. This includes the sound related part of the ROM (070000-07FFFF).
+
+
+DAC Table
+---------
+Z80 Banks with DAC sounds are 018000h and 020000h.
+The format is the same one as used in Mazin Saga.
+
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 007E)
+
+
+
+Notes:
+- The 68k tells the Z80 driver which bank it has to use by writing to Z80 RAM 1C00/1C01 (MSB/LSB).
+		U Beta	J	U	E
+  Code Address	0006B8	0006B8	0006D2	0006F0
+  Bank Table	00070C	00070C	000726	000744
+  The table consists of 2 bytes per entry (for Z80 RAM 1C00/1C01), MSB first.
+- Although every SMPS has 6 FM/DAC and no PSG channels, the headers contain data for 07/03.

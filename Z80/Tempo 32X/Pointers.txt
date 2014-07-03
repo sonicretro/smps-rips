@@ -1,0 +1,63 @@
+General Pointer List:	1F1000 (JU) (Z80 Driver: 1000)
+Music Bank List:	1F0921 (JU) (Z80 Driver: 0921)
+Music Pointer List:	1F11EB (JU) (Z80 Driver: 11EB)
+SFX Pointer List:	1F123D (JU) (Z80 Driver: 123D)
+Mod. Pointer List:	1F100E (JU) (Z80 Driver: 100E)
+PSG Pointer List:	1F1109 (JU) (Z80 Driver: 1109)
+DAC Bank List:		1F0E20 (JU) (Z80 Driver: 0E20) [Note: starts with entry for note 80]
+DAC Drum Pointer List:	1F0E3A (JU) (Z80 Driver: 0E3A) [Note: starts with entry for note 81]
+PWM Pointer List:	2C0000 (JU)
+Z80 Snd Driver Offset:	1F0000 (JU)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+
+DAC Table
+---------
+The format is the same one as used in Sonic and Knuckles.
+
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0E00)
+
+
+PWM List Format: (all big endian values)
+4 bytes - Start Offset (SH2 Offset, strip first byte)
+4 bytes - Data Length
+4 bytes - Loop Offset (SH2 Offset, offset 0 means no loop)
+4 bytes - Sample Rate (0x0800 = 11025 Hz, 0x1000 = 22050 Hz, etc.)
+
+
+Notes:
+- The 68k's memory area 9x xxxx is mapped to ROM 1x xxxx.
+  This affects both, Music and DAC pointers.
+- The sound driver is exactly the same as the one used in J. League Pro Striker Final Stage, except for a few changed instructions and moved offsets.
+- Tempo has a few custom coordination flags:
+  E3 oooo - Conditional Jump (depends on value at 1C22 which is controlled by the 68k)
+  E4 vv - Set volume (on PSG channel this causes bugs)
+  E5 xx - does nothing
+  E6 vv - FM: change volume (as usual), PSG: set volume
+  E9 - sets Transpose to a random value
+  EB xx xx - does nothing
+  ED/EE rr dd - do nothing (leftover from cfED_FMChnWrite and cfEE_FM1Write)
+  F1 tt xx - sets Modulation Type to tt (ignores xx)
+  FA tt - Set Transpose to tt
+  FC - Special Transpose 1: adds the value of 1C1E (written by 68k) to the channel's Transpose value
+  FD ss vv - requests the 32X PWM driver to play sound ss with volume vv (1C1F = ss, 1C20 = vv)
+             (high nibble = left channel, low nibble = right channel)
+  FE - Special Transpose 1: set Transpose to value of 1C21
+  additionally, all Meta Coordination Flags do nothing (except for FF 00 and FF 05, which behave normally)
+- Song 25 uses data from songs 26, 28, 24, 27, 22 and 23, (in that order), i.e. everything from 22 to 28.
+- In order to play PWM sounds, the 68k reads the value at 1C1F/1C20 (Z80 RAM) and copies it to the 32X communication area, offset 0C/0D.
+- various 68k offsets:
+	Z80 RAM: A0xxxx
+	32X communication: A1512x
+    SMPS driver modifier: (see code at 68k offset 888424)
+	FF8003 -> 1C10 - Pause Mode
+	FF8004 -> 1C04 - has something to do with Music Update, 1C1A is incremented by this value
+	FF8005 -> 1C07 - Music Volume
+	FF8006 -> 1C1E - transpose for FC
+	FF8007 -> 1C08 - forced Pan (for Mono mode?)
+	FF8012 -> 1C21 - transpose for FE
+	FF8016 -> 1C02 - Bass Only mode
+

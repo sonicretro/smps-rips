@@ -1,0 +1,37 @@
+General Pointer List:	038000 (Rev 00/01)
+Music Pointer List:	038254 (Rev 00/01)
+SFX Pointer List:	03418C (Rev 00/01) (copied to Z80 Driver: 1200)
+Mod. Pointer List:	03800E (Rev 00/01)
+PSG Pointer List:	038154 (Rev 00/01)
+DAC Voice Pointer List:	N/A (hardcoded into the driver)
+Z80 Snd Driver Offset:	033000 (Rev 00/01)
+Pan Animation List:	03C7 (Rev 00/01) (Z80 RAM)
+FM Drum Pointer List:	0B66 (Rev 00/01) (Z80 RAM)
+FM Drum Ins. Ptr. List:	0B82 (Rev 00/01) (Z80 RAM)
+PSG Drum Pointer List:	0B3F (Rev 00/01) (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Notes:
+- The sound test -> SMPS sound ID lookup table is at 003D8C.
+  The sound test numbers are BCD code, so the entries for xA to xF are blanked out.
+- Sound IDs:
+	00-7F	Stop All Sound
+	81-97	Music (81-8C are valid)
+	98-C5	SFX (98-BD are valid)
+	C6-DF	Special SFX (first index is D0, but all are invalid anyway)
+	E0-F8	Special Commands (E0-E5 are valid)
+	F9-FF	Stop All Sound
+- The DAC SFX are hardcoded into the driver. (see routine at 0111) They are:
+    Sound ID E4 -> DAC 81
+	Loader Code:	0118
+	Start offset:	A87C (Z80 ROM Bank, points to 03A87C in ROM)
+	Data Length:	03C0
+	Playback Rate:	  1C
+	DPCM Table:	0196 (00 01 02 04 08 10 20 40 80 FF FD FC F8 F0 E0 C0)
+    Sound ID E5 -> DAC 82
+	Loader Code:	0128
+	Start offset:	AC3C (Z80 ROM Bank, points to 03AC3C in ROM)
+	Data Length:	0D40
+	Playback Rate:	  1C
+	DPCM Table:	01A6 (00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0)

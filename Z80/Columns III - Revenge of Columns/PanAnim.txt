@@ -1,0 +1,4 @@
+	dc.b	$40		; 02E9 (JU)
+	dc.b	$80		; 02EA (JU)
+	dc.b	$C0		; 02EB (JU)
+	dc.b	$40, $C0, $80	; 02EC (JU)

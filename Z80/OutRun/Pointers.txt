@@ -1,0 +1,40 @@
+General Pointer List:	0F0000 (W)
+Music Pointer List:	0F0479 (W)
+SFX Pointer List:	0F70A8 (W) (Z80 Driver: 1000)
+Mod. Pointer List:	0F000E (W)
+PSG Pointer List:	0F00C0 (W)
+DAC Voice Pointer List:	0F8000 (W)
+Z80 Snd Driver Offset:	0F60A8 (W)
+Pan Animation List:	0403 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+The complete sound related part of the ROM (0F0000-0FFFFF) matches byte-by-byte in both, the normal and the [a1] version, except for some garbage data in areas of the [a1] version where the normal one has only FF bytes.
+
+
+DAC List Format: (all little endian values)
+2 bytes - Start Offset (Z80 Bank Offset)
+2 bytes - Data Length
+1 byte  - Pitch
+1 byte  - Flags
+          Bits 6-7: YM2612 Pan Register (can be C0, 40 or 80, all voices have C0)
+          Bit   0:  Compression (0 - on/DPCM, 1 - off/PCM)
+
+The format is the same one as used in Mazin Saga, except for the compression feature.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0063)
+
+
+Notes:
+- Sound ID list:
+	81-8A - Music (only 81-85 used)
+	8B-8D - DAC Voices (note: sound ID is directly used as DAC drum index)
+	8E-8F - crash (jumps to SFX routine, results in negative index)
+	8E-9A - SFX
+	9B-9F - crash (jumps to Special Command routine, results in negative index)
+	A0-A3 - Special Commands
+	A4-A8 - crash (Special Command routine reads beyond jump table)
+	A9-FF - Stop All
+- The sound driver uses YM2612 Timer A for timing.
+  The frequency is set to 025A by the 68k CPU and never changed by the songs.
+  This affects both, SFX and music timing.

@@ -1,0 +1,24 @@
+General Pointer List:	0103A8 (W) (1200 in Z80 RAM)
+Music Pointer List:	0103F5 (W) (124D in Z80 RAM)
+SFX Pointer List:	0101E0 (W) (1000 in Z80 RAM)
+Mod. Pointer List:	--invalid (points to Z80 RAM 120E)
+PSG Pointer List:	--invalid (points to Z80 RAM 120E)
+Z80 Snd Driver Offset:	001316 (W)
+Music Data:		0103A8 (W) (gets copied to Z80 RAM 1200)
+SFX Data:		0101E0 (W) (gets copied to Z80 RAM 1000)
+Pan Animation List:	02F6 (Z80 Driver) (W)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Note:
+- This game uses YM2612's Timer A and B for timing.
+  Because of this, the EA command (SetTempo) has 3 parameter bytes.
+  Parameter 00/01 is sent to register 24/25 and parameter 02 is sent to register 26.
+  The value of TimerA is (parameter 00 + parameter 01 * 256).
+  Register 25 gets (TimerA & 0x03), register 24 gets (TimerA >> 2).
+  
+  The SMPS driver runs, if one of both timers expired.
+  (i.e. reading from 4000 and ANDing the result with 03h is nonzero)
+  If Timer A expired, the music is processed.
+  If Timer B expired, the sound effects are processed.
+  

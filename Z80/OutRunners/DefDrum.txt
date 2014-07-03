@@ -1,0 +1,20 @@
+; --- Outrunners SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 01
+
+[Drums]
+;Note	Type	DrumID	Pitch
+81	DAC	01
+82	DAC	02
+83	DAC	03
+84	DAC	04
+85	DAC	05
+86	DAC	06
+87	DAC	07
+88	DAC	2A
+89	DAC	2B
+8A	DAC	2C
+8B	DAC	2D
+8C	DAC	32

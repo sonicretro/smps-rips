@@ -1,0 +1,16 @@
+; --- Virtua Racing SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 00
+
+[Drums]
+;Note	Type    DrumID	Pitch
+81..86	FM	00
+
+90	DAC	00	;0E
+98	DAC	01	;10
+A0	DAC	02	;0C
+A8	DAC	03	;10
+B0	DAC	04	;14
+B8	DAC	05	;11

@@ -1,0 +1,28 @@
+General Pointer List:	8000 (J) (Z80 Bank Offset)
+Music Pointer List:	822E (J) (Z80 Bank Offset)
+SFX Pointer List:	-- missing -- (original offset was maybe 1400, since this is what was written there)
+Mod. Pointer List:	800E (J) (Z80 Bank Offset)
+PSG Pointer List:	814C (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	-- missing --
+DAC Drum Pointer List:	040000/048000 (J)
+
+
+There is only 1 music bank: 058000
+
+
+DAC List Format: (offsets are Big Endian!)
+1 byte  - pitch
+1 byte  - Pan (not 100% sure, because the 2nd DAC bank has 6Ah here)
+2 bytes - unused
+2 bytes - Data Length
+2 bytes - Start Offset (relative to table, i.e. without Z80 Bank Bit)
+
+
+Data is stored uncompressed, i.e. 8-bit LPCM.
+
+
+Notes:
+- The actual pointer list was partly overwritten with something.
+- The SMPS musics are in SMPS Z80 Type 1 format, as proven by track 07. (which uses the commands FF05 and FF01)
+- The DAC drums don't match with the drums used in the SMPS.
+- There is sound data for another sound driver at offset 050000. I assume that it is the Wolf Team sound driver.

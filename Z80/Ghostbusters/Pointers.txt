@@ -1,0 +1,14 @@
+General Pointer List:	078000 (W, Rev 00/01)
+Music Pointer List:	078268 (W, Rev 00/01)
+SFX Pointer List:	07C2F8 (W, Rev 00/01)
+Mod. Pointer List:	07800E (W, Rev 00/01)
+PSG Pointer List:	078154 (W, Rev 00/01)
+Z80 Snd Driver Offset:	07CFBC (W, Rev 00/01)
+FM Drum Pointers:	0ADC (Z80 RAM)
+PSG Drum Pointers:	0AC2 (Z80 RAM)
+Pan Animation List:	N/A
+Sound RAM:		1C00 (Z80 RAM)
+
+Notes:
+- This SMPS driver features modulation via LFO and FMS, using coordination flag E2.
+- This is one of the earlier SMPS Z80 drivers, as there are separate coord. flags for LFO speed (E9), channel FMS (EA) and AMS (EB).

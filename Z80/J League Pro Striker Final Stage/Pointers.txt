@@ -1,0 +1,24 @@
+General Pointer List:	1000 (J) (Z80 RAM)
+Music Bank List:	0925 (J) (Z80 RAM)
+Music Pointer List:	11EB (J) (Z80 RAM)
+SFX Pointer List:	1221 (J) (Z80 RAM)
+Mod. Pointer List:	100E (J) (Z80 RAM)
+PSG Pointer List:	1109 (J) (Z80 RAM)
+DAC Bank List:		1CFE39 (J) (Z80 Driver: 0E39) [Note: starts with entry for note 80]
+DAC Drum Pointer List:	1CFE55 (J) (Z80 Driver: 0E55) [Note: starts with entry for note 81]
+Z80 Snd Driver Offset:	1CF000 (J)
+Additional Z80 Data:	1CED00 (J) (goes to Z80 RAM 1000)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC List Format:
+The format is the same one as used in Mighty Morphin Power Rangers.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0E19)
+
+
+Notes:
+- Song 04 and 05 share some data.
+- The sound driver is exactly the same as the one used in Tempo 32X, except for a few changed instructions and moved offsets.
+  See there for changed coordination flags.

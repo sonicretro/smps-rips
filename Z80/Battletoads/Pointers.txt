@@ -1,0 +1,25 @@
+General Pointer List:	078000 (W)
+Music Pointer List:	078273 (W)
+SFX Pointer List:	07EBE6 (W) (Z80 Driver: 1000)
+Mod. Pointer List:	078012 (W)
+PSG Pointer List:	078158 (W)
+DAC Drum Pointer List:	07CCA0 (W)
+DAC Voice Pointer List:	07DC86 (W)
+Z80 Snd Driver Offset:	07DCE4 (W)
+Additional Z80 Data:	07EBE6 (W) (goes to Z80 RAM 1000)
+Pan Animation List:	0375 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC List Format:
+The format is the same one as used in Mazin Saga.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0093)
+
+
+Notes:
+- Right at the beginning of the songs there's an "EA aa bb" command.
+  This sets up the YM2612 Timer A, which is used for timing. (affects both music and SFX speed)
+  When Timer A expires, the V_INT interrupt routine is called manually to allow a higher range of timing.
+- Music 0F..12 share the instruments.

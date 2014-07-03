@@ -1,0 +1,10 @@
+; --- King of the Monsters 2 SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 01
+
+[Drums]
+;Note	Type    DrumID	Pitch
+81..DF	DAC	01
+E2..EA	DAC	62

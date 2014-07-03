@@ -1,0 +1,10 @@
+; --- Battletoads SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 01
+
+[Drums]
+;Note	Type    DrumID	Pitch
+81..9F	DAC	01
+DE	DAC	5E

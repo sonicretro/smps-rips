@@ -1,0 +1,35 @@
+General Pointer List:	076517 (Z80 Driver: 0127)
+Music Bank List:	0765E7 (Z80 Driver: 01F7, bank is 07x000)
+Music Pointer List:	0765F8 (Z80 Driver: 0208)
+SFX Pointer List:	0778AC (Z80 Driver: 14BC)
+Mod. Pointer List:	076525 (Z80 Driver: 0135)
+PSG Pointer List:	076594 (Z80 Driver: 01A4)
+DAC Voice Pointer List:	0774D8 (Z80 Driver: 10E8)
+Z80 Snd Driver Offset:	0763F0
+Pan Animation List:	045D (Z80 RAM)
+FM Drum Pointer List:	0AB7 (Z80 RAM)
+PSG Drum Pointer List:	0A9D (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+The complete sound related part of the ROM (070000-07FFFF) matches byte-by-byte in all 4 known revisions: Rev 00 (W), 01 (W), 02 (W) and 03 (U)
+
+
+DAC List Format: (all little endian values)
+00/1 byte  - unknown (always 80, DAC Control Byte?)
+01/1 byte  - Priority (high value = high priority)
+02/2 bytes - Start Offset (in Z80 Bank 078000)
+04/2 bytes - Data Length
+06/1 byte  - DPCM Start Value (always 80)
+07/1 byte  - Pitch
+-> 8 bytes
+When playing a sound, all 8 bytes get copied to 1FB8 to work with them.
+
+The format is the same one as used in Virtua Racing.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0100)
+
+
+Notes:
+- The Music Pointers are split over 2 banks (7 and 6 songs respectively) and the Z80 RAM (2 songs).
+- There seems to be an unused SFX at 1500. (referenced in the General Pointer List, SFX entry, but seems to be never used)

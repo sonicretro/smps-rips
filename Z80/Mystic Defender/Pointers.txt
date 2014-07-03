@@ -1,0 +1,24 @@
+General Pointer List:	8000 (J, W) (Z80 Bank Offset)
+Music Pointer List:	822A (J, W) (Z80 Bank Offset)
+SFX Pointer List:	1100 (J, W) (Z80 RAM)
+Mod. Pointer List:	800E (J, W) (Z80 Bank Offset)
+PSG Pointer List:	8154 (J, W) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	04A79E (J, w)
+Additional Z80 Data:	04B7AE (J) / 04B7BA (W) (goes to Z80 RAM 1100)
+Pan Animation List:	0277 (J, W) (Z80 RAM)
+FM Drum Pointer List:	0AA8 (J) / 0AB0 (W) (Z80 RAM)
+FM Drum Ins. Ptr. List:	0ABC (J) / 0AC4 (W) (Z80 RAM)
+PSG Drum Pointer List:	0A8E (J) / 0A96 (W) (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 048000
+
+
+027000-04A806 matches in the J and W versions. All sound data matches, except for a few minor differences in SFX. The sound driver received a few changes.
+000000-0539B2 matches in Rev 00 and Rev 01 of the W version, except for the checksum a few pointers referencing later parts of the ROM.
+
+
+Notes:
+- This is the first game with a full SMPS Z80 Type 1 driver that was released.
+  So like Ghostbusters it has some remains of preSMPS. Examples are the way envelopes are stopped and separate coord. flags for LFO Speed, the AMS and FMS amounts. (The code for FMS is there but unferenced, because of a custom coord. flag.)

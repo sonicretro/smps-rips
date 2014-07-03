@@ -1,0 +1,21 @@
+General Pointer List:	038000 (J)
+Music Pointer List:	03827E (J)
+SFX Pointer List:	1090 (J) (Z80 RAM)
+Mod. Pointer List:	038012 (J)
+PSG Pointer List:	038158 (J)
+DAC Drum Pointer List:	0399EF (J)
+DAC Voice Pointer List:	03D009 (J)
+Z80 Snd Driver Offset:	03D3CC (J)
+Additional Z80 Data:	03E2CE (J) (goes to Z80 RAM 1090)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC List Format:
+The format is the same one as used in Mazin Saga.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 008A)
+
+
+Notes:
+-

@@ -1,0 +1,39 @@
+General Pointer List:	8000 (U, Z80 Bank Offset)
+Music Pointer List:	8275 (U, Z80 Bank Offset)
+SFX Pointer List:	82B3 (U, Z80 Bank Offset)
+Mod. Pointer List:	8012 (U, Z80 Bank Offset)
+PSG Pointer List:	80AD (U, Z80 Bank Offset)
+DAC Drum Pointer List:	--see 800E-- (U, Z80 Bank Offset)
+DAC Voice Pointer List:	--see 8010-- (U, Z80 Bank Offset)
+Z80 Snd Driver Offset:	000A8E (U)
+Z80 Bank List:		00333C (U)
+Pan Animation List:	0375 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+
+DAC List Format:
+The format is the same one as used in Mazin Saga.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0093)
+
+
+Banks are:
+090000 - DAC voices (8331) / DAC sounds (91D3)
+098000 - music / SFX / DAC drums (B743) / DAC SFX voices (C5E5)
+0A0000 - music / SFX / DAC drums (B06B) / DAC SFX voices (C171)
+
+The DAC drums in bank 0A0000 have an additional DAC sound in slot 86, but else they are the same as in bank 098000.
+The DAC SFX voices in bank 098000 and 0A0000 are the same.
+
+
+
+Notes:
+- Like Flicky, this game uses YM2612's Timer A for music timing. So command EA (SetTempo) has 2 parameter bytes.
+- The routine that refreshes the Z80 bank is at 0032C2.
+  The value of the current bank ID is stored in 68k RAM at 0724.
+- Sound test list locations for Music/S.E./Voice -> SMPS Sound ID/Bank ID:
+	Music:	01AD3A (2-byte Sound ID, 2 byte Bank ID)
+	S.E.:	01AEAC (2-byte Sound ID)
+	Voice:	01B03C (2-byte Sound ID)

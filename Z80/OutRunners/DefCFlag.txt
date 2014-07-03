@@ -1,0 +1,25 @@
+; --- Outrunners SMPS Command Definition ---
+; SMPS 68k->Z80 port
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PANAFMS 	PAFMS_PAN	02
+E1	DETUNE  	        	02
+E2	VOLUME  	VOL_NN_FM	02
+E3	HOLD    	        	01
+E4	NOTE_STOP	NSTOP_NORMAL	02
+E5	VOLUME  	VOL_NN_PSG	02
+E6	VOLUME  	VOL_NN_PSG	02
+E7	INSTRUMENT	INS_N_FM	02
+E8	MOD_SETUP	        	05
+E9	TRK_END 	TEND_STD	01
+EA	PSG_NOISE	PNOIS_SRES	02
+EB	MOD_ENV 	MENV_GEN	02	; has no effect in the actual driver
+EC	INSTRUMENT	INS_N_PSG	02
+ED	GOTO    	        	03	01
+EE	LOOP    	        	05	03
+EF	GOSUB   	        	03	01
+F0	RETURN  	        	01
+F1	TRANSPOSE	TRNSP_ADD	02
+F2	IGNORE  	        	01	; mark Song End
+F3	TEMPO   	TEMPO_SET	02
