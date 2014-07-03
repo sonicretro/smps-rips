@@ -1,0 +1,34 @@
+Sound Check Code:	0C46FC (U beta)
+Driver Base Address:	0C1360 (U beta)
+Tempo List:		0C5036 (U beta)
+Music Pointer List:	0C5282 (U beta)
+SFX Pointer List:	0C52DE (U beta)
+Instr. Register List:	0C4AA2 (U beta)
+Instr. Pointer List:	0CE15A (U beta)
+Mod. Pointer List:	0C5066 (U beta)
+PSG Pointer List:	0CE9B8 (U beta)
+Z80 Snd Driver Offset:	0006DE (U beta)
+Z80 Add. Data Pointers:	0CEB10 (U beta)
+DAC Pointer Table:	--see pointer at 0210-- (Z80 RAM) (U, beta)
+DAC Pitch Ptr. Table:	0212 (Z80 RAM) (U, beta)
+
+
+DAC Tables
+----------
+The DAC Pointer Table has this format:
+2 bytes - Data Length
+2 bytes - Start Offset (Z80 RAM Offset)
+
+The DAC Pitch Table is a simple array of 2-byte pointers. These point to the actual pitch value in Z80 RAM.
+
+Note: The first entry in both tables is reserved for sound 80.
+
+If the first byte of the copied data (Z80 RAM at 0200) is 00, it is compressed. If it is FF, it is uncompressed.
+There are compressed and uncompressed sound banks. The sounds in the drums bank for music are compressed, the SFX banks aren't.
+
+Data is DPCM compressed with the delta-array:
+00 03 06 0C 18 28 48 70 90 B8 D8 E8 F4 FA FD FF (Z80 Driver offset 0200)
+
+
+
+Rent A Hero uses the same version (or at least a very similar one), so see there for more information.

@@ -1,0 +1,15 @@
+Sound Check Code:	077F40
+Driver Base Address:	079800
+Tempo List:		0788DC
+Music Pointer List:	078BD8
+SFX Pointer List:	078BF6
+Instr. Register List:	078334
+Instr. Pointer List:	07C294
+PSG Pointer List:	07DE96
+Z80 Snd Driver Offset:	00047E
+Z80 Add. Data Pointers:	07E05E
+DAC Pointer Table:	--see pointer at 0200-- (Z80 RAM) (J)
+DAC Pitch Ptr. Table:	0202 (Z80 RAM) (J)
+
+Rent A Hero uses the same version (or at least a very similar one), so see there for more information.
+

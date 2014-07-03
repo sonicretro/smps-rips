@@ -1,0 +1,15 @@
+Conversion Notes:
+
+Main Header:
+	1 byte - Number of Tracks tc  ---> copy to 02h/03h
+	9*tc bytes - Track Header (get copied to RAM)
+
+Track Header:
+00	playback_control [ignore]
+01	voice_control	[for channel sorting] (80 = DAC, 00-06 = FM)
+02	timing_divisor	[set global 04h]
+03-04	cur_pos		[channel init pos]
+05	tranpose	[--> track header 02h]
+06	vol		[--> track header 03h]
+07	pan_ams_fms	[--> command E0h]
+08	current_voice	[--> command EFh]

@@ -1,0 +1,90 @@
+Conversion Notes:
+
+Main Header:
+	1 byte - Number of Tracks tc  ---> copy to 02h/03h
+	9*tc bytes - Track Header (get copied to RAM)
+
+Track Header:
+00	playback_ctrl	[ignore]
+			Bit 1 (02) is "at rest"
+			Bit 2 (04) is "overridden"
+			Bit 5 (20) is "pitch slide"
+			Bit 6 (40) is "lock frequency" [PSG only] (prevents any frequency change)
+			Bit 7 (80) is "active"
+01	voice_control	[for channel sorting] (00-06 = FM, 16 = DAC, 80-C0 = PSG)
+02	timing_divisor	[set global 04h]
+			Bit 1 causes driver to double delays, everything else is ignored.
+03-04	cur_pos		[channel init pos]
+05	tranpose	[--> track header 02h]
+06	modulation_type	
+07	current_voice	[--> command EFh, has to be set again to have effect on FM channels]
+08	vol		[--> track header 03h]
+
+Automatically set:
+09	stack_index	[set to 30]
+0A-0B	note_timeout	[set to 0001]
+0C-0D	frequency
+0E-0F	last_note_time
+10	slide frequency	if in "pitch slide" mode, it gets added to the frequency every frame
+11	freq_flut_idx
+13	psg_index
+14	psg related	set to 1Fh to prevent further PSG processing
+16	mod_freq_mult	multipler for modulation frequency
+			Final NoteFreq = Note FNum + (ModFreq * FreqMult)
+1C	fm algorithm
+1D-20	TL level cache
+21	pan_ams_fms	[--> command E0h]
+22-2F	loop_stack_mem
+
+
+Command List
+------------
+E0 - unused
+E1 - unused
+E2 - unused
+E3 - unused
+E4 xx - Change Tempo
+	-> adds xx to the current tempo
+E5 - Enable DAC
+	-> sets Bit 4 in Trk+01h (Channel Bits)
+E6 - Disable DAC
+	-> clear Bit 4 in Trk+01h (Channel Bits)
+	-> then disables the YM2612 DAC by writing Register 2B, Data 00
+E7 - unused
+E8 xx - locks (xx > 00) or unlocks (xx == 00) the PSG frequency (by setting Bit 6 in Trk+00h)
+E9 xx - writes to Trk+13h, loads DAC data (pointers are at 0F5F8C), also forces resend of pan_ams_fms
+EA xx - same as ED (SMPS files only use ED though)
+EB xx - same as ED
+EC xx - Change Volume
+	-> adds xx to the volume
+ED xx - xx gets doubled, if Trk+02h Bit 1 is set
+	Then it gets written (as a word) to Trk+0Eh and Trk+0Ah.
+	Finally, it returns instantly without processing more track data.
+	-> This is effectively the same as "no attack".
+EE - unused
+EF xx - set instrument
+	-> FM loads from the global instrument table
+	-> DAC/PSG just return after setting the value
+F0 xx - Set Volume to xx
+F1 - unused
+F2 - Stop Track
+F3 xx - Set Noise Type (broken in Rent A Hero, because it does AND instead of OR)
+	-> writes (xx | 0xE0) to the PSG chip and that's it
+F4 tt - Set Modulation Type
+F5 - unused
+F6 xxxx - GoTo address
+F7 ii cc xxxx - Loop cc times (slot ii) back to address xxxx
+F8 xxxx - GoSub address
+F9 - Return from GoSub
+FA xx - set Tempo Divider
+FB xx - Change Transposition
+	-> adds xx to the track's transpose value
+FC xx - disables (xx == 00) or enables (xx > 00) the Pitch Slide feature (by setting Bit 5 in Trk+00h)
+	after every note command, there is a 1-byte signed frequency following that gets added to the current frequency every frame
+FD - set pan_ams_fms to C0h (LR)
+FE - set pan_ams_fms to 40h (R)
+FF - set pan_ams_fms to 80h (L)
+
+Addresses are Big Endian and relative to a constant value (driver base).
+The coordination flags (and it seems the RAM locations, too) match with Metal Fangs.
+Flag F3 is broken in Super Street Fighter 2 Turbo Beta, too.

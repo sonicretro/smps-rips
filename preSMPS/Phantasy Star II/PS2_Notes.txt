@@ -1,0 +1,48 @@
+Sound Check Code:	0BADC6 (J) / 0BA3CC (UE)
+Driver Base Address:	0B8000 (JUE)
+Tempo List:		0B8066 (JUE)
+Music Pointer List:	0B8100 (J) / 0B8140 (UE) (2-byte LE pointers to music headers)
+SFX Pointer List:	0B813E (J) / 0B817E (UE)
+Instr. Register List:	0BA818 (UE only)
+Instr Pointer List:	0B8528 (J) / 0B8568 (UE)
+Mod. Pointer List:	0B8086 (JUE)
+Z80 Snd Driver Offset:	0BE552 (J) / 0BDC2A (UE)
+Coord. Flag Handler:	0BA8D8 (J) / 0B9EDE (UE)
+
+
+Music Header:
+1 byte - Number of Tracks tc
+9*tc bytes - Track Header (get copied to RAM)
+
+Track Header:
+00	playback_bits
+01	channel_bits	(80 = DAC, 00-06 = FM)
+02	tick_multiplier
+03-04	cur_pos		(current position, i.e. where the track starts)
+05	tranpose
+06	vol
+07	pan_ams_fms
+08	instrument
+
+
+Check for Coordination Flags (FM):	0BA422
+Coordination Flags Jump Table:		0BA8E2
+
+FM Instrument Pointers:			0B8528
+Instrument Format:
+1 byte - Register ID
+1 byte - Data
+ repeat until you find Register 83, that's the terminator
+
+B0 B4 30 38 34 3C 40 48 44 4C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C 83
+
+There's additional code executed for Registers 83, B0, 40, 48, 44 and 4C. (see 0BB1B8)
+
+
+Notes:
+- Based on how it looks, I'd say this preSMPS driver is a Z80->68k port.
+  The code looks terribly confusing at some places, all pointers are Little Endian and the base address matches with the beginning of a Z80 bank.
+- The instrument format differs between the J and the UE version.
+  The J version uses the format above, the UE version stores the registers in a separate array.
+  B0 B4 40 48 44 4C 30 38 34 3C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C
+- All PSG-related features were stripped from the driver.

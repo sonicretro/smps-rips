@@ -1,0 +1,34 @@
+Music Pointer List:	010035 (REV 00/01/02)
+SFX Pointer List:	01A66D (Z80 Driver: 14CF) (REV 00/01/02)
+PSG Pointer List:	010008 (REV 00/01/02)
+Instrument List:	010051 (REV 00/01/02)
+Z80 Snd Driver Offset:	01919E (REV 00/01/02)
+DAC driver list:	004A3C (REV 00) / 004A50 (REV 01/02)
+DAC Driver Offsets:	01376C (1), 0153AC (3), 017234 (4), 01AE54 (1), 01CDD6 (1), 01ED58 (1) (REV 00/01/02)
+Sound RAM:		1D00 (Z80 RAM)
+
+
+DAC driver list format:
+2 bytes - DAC driver size (in 10h byte units)
+4 bytes - DAC driver ROM offset
+
+
+Code to copy pre-SMPS Z80 driver: 00492E
+Code to copy (generic) DAC driver: 004A1C
+Play DAC sound code: 0049F2
+
+
+DAC drivers:
+There's a seperate DAC driver for every larger sound.
+(1) They load the start offset to HL at 0009, the sound length to BC at 000C and the playback rate to A at 000F.
+(3) The code for HL/BC/A starts at 0068, 0076 and 0084. The byte at 017F decides between 3 different sound sizes, 03 = 0084 = longest.
+(4) The code for HL/BC/A starts at 0068, 0076, 0084 and 0092. The byte at 017F decides between 4 different sound speeds (01 = high .. 04 = low).
+
+The SMPS driver can play a DAC sound, too. The routine is at 11B4.
+(11B4: HL = 11F3, 11B7: BC = 0268, 11BA: A = 40)
+
+
+Note:
+- When playing a larger sound, the current SMPS driver is unloaded and a DAC driver is loaded instead.
+  Also the SMPS driver it reloaded everytime a new song is played.
+- In Rev 00, the length value of the first DAC driver is invalid. (is 1C40 instead of 01C4)

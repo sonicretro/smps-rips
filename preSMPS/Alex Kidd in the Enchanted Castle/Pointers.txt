@@ -1,0 +1,23 @@
+Driver Bank:		010000 (U/K)
+General Pointer List:	8000 (U/K) (Z80 Bank Offset)
+Tempo List:		11C7 (U/K) (Z80 RAM)
+Music Pointer List:	805B (U/K) (Z80 Bank Offset)
+SFX Pointer List:	11EA (U/K) (Z80 RAM)
+Spc. SFX Pointer List:	11E6 (U/K) (Z80 RAM)
+Instr. Pointer List:	8081 (U/K) (Z80 Bank Offset)
+Mod. Pointer List:	8008 (U/K) (Z80 Bank Offset)
+PSG Pointer List:	8056 (U/K) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	013CFA (U/K)
+DAC Driver Offsets:	015220 (U) (plays 1959 bytes from offset 0180 on)
+Sound Check Code:	1028 (Z80 RAM)
+Coord. Flag Handler:	0867 (Z80 RAM)
+Sound RAM:		1D00 (Z80 RAM)
+
+
+There is only 1 music bank: 010000
+
+The sound-related data (010000-01521F) matches exactly in the U and K versions. The "Jenken" DAC voice got removed in the K version.
+
+
+Notes:
+-
