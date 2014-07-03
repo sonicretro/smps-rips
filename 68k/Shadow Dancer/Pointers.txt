@@ -1,0 +1,24 @@
+General Pointer List:	062B40 (W)
+Sound Update Routine:	062BA4 (W)
+Music Pointer List:	062AF4 (W)
+Spc. SFX Pointer List:	068AE8 (W)
+SFX Pointer List:	068A34 (W)
+Mod. Pointer List:	-- invalid, feature removed -- (W) (points to 062B40)
+PSG Pointer List:	062A50 (W)
+Z80 DAC Driver Offset:	063FFC (W)
+DAC Pointer List:	06415C (W) (Z80 RAM: 0160)
+DAC Voice Pointer List:	060000 (W)
+DAC Pitch Modifier:	062D2E (W) (plays DAC sound 85)
+Pan Animation List:	062FEB (W)
+
+
+DAC Table
+---------
+The DAC table format is the same as Fatal Fury.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001A)
+
+
+Notes:
+-

@@ -1,0 +1,27 @@
+General Pointer List:	02298A (J)
+Music Pointer List:	022BD0 (J)
+SFX Pointer List:	02D146 (J)
+Mod. Pointer List:	0229AA (J)
+PSG Pointer List:	022AFC (J)
+Z80 DAC Driver Offset:	02156C (J)
+DAC Pointer List:	02165B (J) (Z80 Driver: 00EF)
+Pan Animation List:	020470 (J)
+
+
+DAC Table
+---------
+DAC Pointer Table:
+2 bytes - List Entry Offset (Z80 RAM Offset, Little Endian)
+
+DAC Entry Format: (all Little Endian)
+2 bytes - Start Offset (Z80 Offset, can be RAM or bank)
+2 bytes - Data Length
+1 byte  - pitch
+1 byte  - Z80 Bank (lower 7 bits are Bank Bits 21-15, Bits 22 and 23 is always 0)
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 00DF)
+
+
+Notes:
+- The PSG frequency table has additional values for a lower octave.

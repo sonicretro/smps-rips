@@ -1,0 +1,18 @@
+General Pointer List:	030000 (UE)
+Music Pointer List:	0301EC (UE)
+SFX Pointer List:	03A108 (UE)
+Mod. Pointer List:	03002C (UE)
+PSG Pointer List:	030144 (UE)
+Z80 DAC Driver Offset:	031716 (UE)
+DAC Pointer List:	0318F0 (UE) (Z80 Driver: 01DA)
+Pan Animation List:	030744 (UE)
+
+There are additional DAC lists at the start of banks 040000, 048000, 050000 and 058000.
+
+
+DAC List Format:
+see Magical Taruruuto-Kun
+
+Additional Notes:
+- The main drums don't use banks.
+- All banks have x unused entries, where x is the number of entries in the previous bank. (the first bank has no unused entries, of course)

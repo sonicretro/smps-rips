@@ -1,0 +1,53 @@
+General Pointer List:	0C20B6 (JUE)
+Music Pointer List:	0C2868 (JUE)
+SFX Pointer List:	0C193A (JUE)
+PSG Pointer List:	0C21C2 (JUE)
+Mod. Pointer List:	0C20D2 (JUE)
+DAC Pointer Table:	0C17B9 (JUE) (Z80 Driver: 01E5)
+Z80 DAC Driver Offset:	0C15D4 (JUE)
+Pan Animation List:	08046C (JUE)
+Sound RAM:		F000 (68k RAM)
+
+
+DAC Table
+---------
+The DAC table format is the same as Metal Head 32X.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 01CD)
+
+
+Notes:
+- Pan Animation data??
+- You need to subtract 900000 from all pointers (including Z80 Bank Offset) to get the actual ROM offsets.
+- The DAC driver seems to be the same as used in Metal Head 32X, but without Volume Control.
+- All sound data (from 0C0000 on) matches exactly in the UE and J versions.
+- Tempo Algorithm:
+    Tempo #1
+	Tempo 00..7F
+	    Tempo Counter += Tempo, Delay on Overflow
+	Tempo 80..FF
+	    no delay
+    UpdateAll
+    Tempo #2
+	Tempo 00..7F
+	    continue
+	Tempo 80..FF
+	    Tempo Counter += Tempo, UpdateAll again if not overflowed
+
+  Summarized:
+    Tempo 00..7F
+	-> Delay on Overflow
+    Tempo 80..FF
+	-> update twice if not overflowed
+
+- The game's music and sound is optimized for PAL mode. In NTSC mode, sound processing is skipped every 6th frame.
+	if (NTSC Mode)
+	{
+		if (SndRAM[0] == 1)
+		{
+			SndRAM[0] = 6;
+			return;
+		}
+		SndRAM[0] --;
+	}

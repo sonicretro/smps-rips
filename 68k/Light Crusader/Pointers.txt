@@ -1,0 +1,21 @@
+General Pointer List:	069D3E (JUEK)
+Music Pointer List:	06A00A (JUEK)
+SFX Pointer List:	06A188 (JUEK)
+Mod. Pointer List:	069D62 (JUEK)
+PSG Pointer List:	069E26 (JUEK)
+Z80 DAC Driver Offset:	068F0A (JUEK)
+DAC Drum Pointer List:	06754C (JUEK)
+DAC Voice Pointer List:	067E86 (JUEK)
+Pan Animation List:	06791E (JUEK)
+Coord. Flag Handler:	0688BA (JUEK)
+
+
+The complete sound-related part of the ROM matches in all 4 versions of the ROM (JE, U, E and K).
+
+
+DAC Table
+---------
+The DAC table format is the same as used in Dynamite Headdy.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0

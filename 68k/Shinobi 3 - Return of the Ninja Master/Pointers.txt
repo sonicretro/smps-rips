@@ -1,0 +1,26 @@
+General Pointer List:	06CC28 (JUE) / 06BA4A (Beta)
+Music Pointer List:	06CE3C (JUE) / 06BC5E (Beta)
+SFX Pointer List:	06CF2C (JUE) / 06BD4E (Beta)
+Mod. Pointer List:	06CC48 (JUE) / 06BA6A (Beta)
+PSG Pointer List:	06CD0C (JUE) / 06BB2E (Beta)
+Z80 DAC Driver Offset:	06AD3E (JUE) / 069B60 (Beta)
+DAC Pointer Table:	06AEA9 (JUE) / 069CCB (Beta) (Z80 Driver: 016B)
+DAC Pitch Modifier:	0698E8 (JUE) / 068712 (Beta)
+DAC Voice Pointer List:	078D86 (JUE) / 078028 (Beta)
+Pan Animation List:	069C3A (JUE) / 068A64 (Beta)
+
+
+DAC Table
+---------
+The DAC table format is the same as Fatal Fury.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001D)
+
+
+Notes:
+- DAC sounds 81-86 are drums and are read from Z80 RAM 016B.
+- DAC sounds 87+ are sound effects with internal ID (SoundID - 88), so sound 87 is invalid.
+  The address of the table is read from Z80 RAM 1FF8/1FF9, the bank is stored in 1FFA/1FFB.
+  The 68k writes these 4 values during the init phase, before the Z80 gets startet. The code that writes them is at 06A3A2 (JUE) / 0691C4 (Beta).
+- The coordination flag handler is at 06A7A8 (JUE) / 0695CA (Beta).

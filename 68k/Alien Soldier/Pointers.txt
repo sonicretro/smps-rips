@@ -1,0 +1,45 @@
+General Pointer List:	084CA4 (JE)
+Music Pointer List:	084E78 (JE)
+SFX Pointer List:	084FF2 (JE)
+Spc. SFX Pointer List:	085156 (JE) (points to SFX Pointer List, entry 59h)
+Mod. Pointer List:	084CC8 (JE)
+PSG Pointer List:	084D8C (JE)
+DAC Pointer Table:	0824A2 (JE)
+DAC Voice Pointer List:	082DEC (JE)
+Z80 DAC Driver Offset:	083E70 (JE)
+Pan Animation List:	082884 (JE)
+
+
+DAC Table
+---------
+The DAC table format is the same as Dynamite Headdy.
+
+
+Notes:
+- Sound IDs:
+	00	Stop All Sound
+	01-0F	Special Commands (05-0F do nothing)
+	10-3F	DAC SFX
+	40-7F	SFX (table entry is ID + 1Dh, i.e. 5D..9C)
+	81-9F	Music
+	A0-F8	SFX (table entry is ID - A0h, i.e. 00..58)
+	F9-FC	Special SFX (table entry is ID - F9h, i.e. 00..03 into Spc. SFX Pointer List, i.e. 59..FC into SFX list)
+	FD-FF	does nothing
+- Sound Test:
+    MUSIC TEST	00998C (20h bytes per entry)
+	The first byte is Music ID, the words from byte 02 on (A3xx) point to the letter data.
+	Letters:
+		00 = space
+		16 = A, 18 = B, ..., 48 = Z
+		4A = ., 4E = ', 52 = !, 58 = /, 5C = -, 
+    S,E TEST	00A2AA
+	000..063 -> 40..7F
+	064..152 -> A0..F8
+	153..154 -> FB..FC
+	   155   ->   FF
+    VOICE TEST	00A284
+	00..16 -> 10..20
+	17..20 -> 23..26
+	  21   ->   28
+	22..31 -> 2A..33
+	32..37 -> 35..3A

@@ -1,0 +1,22 @@
+General Pointer List:	05E09A (JUE) / 05F54A (Beta)
+Music Pointer List:	05E536 (JUE) / 05F9B8 (Beta)
+SFX Pointer List:	05DE92 (JUE) / 05FAB2 (Beta)
+Mod. Pointer List:	05E0BE (JUE) / 05F56A (Beta)
+PSG Pointer List:	05E184 (JUE) / 05F62E (Beta)
+Z80 DAC Driver Offset:	05D892 (JUE) / 05D55A (Beta)
+DAC Pitch Modifier:	05C0D0 (Beta)
+DAC Drum Pointer List:	05BF08 (J) / 05B542 (UE) / 05D6C5 (Beta, Magical Taruruuto-Kun format, Z80 Driver: 016B)
+DAC Voice Pointer List:	05C736 (J) / 05C0C0 (UE) / 078A3E (Beta, Magical Taruruuto-Kun format)
+Pan Animation List:	05C492 (J) / 05BAB4 (UE) / 05C422 (Beta)
+
+DAC List Format:
+2 bytes - Bank Offset (Big Endian, ROM Offset = Bank Ofs * 100h)
+2 bytes - Z80 Sound Info Offset (Little Endian Bank Pointer)
+1 byte  - pitch
+1 byte  - Sound Priority? (always 00, 80 or E0 for voices, 00 for drums)
+1 byte  - YM2612 Pan Register (always C0 for voices, though 40/80 possible, always 00 for drums)
+1 byte  - unused (00)
+
+Z80 Sound Info: (all little endian values)
+2 bytes - Start Offset (in Z80 Memory)
+2 bytes - Data Length

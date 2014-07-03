@@ -1,0 +1,29 @@
+General Pointer List:	03A232 (J)
+Music Pointer List:	03A492 (J)
+SFX Pointer List:	03A60C (J)
+Mod. Pointer List:	03A256 (J)
+PSG Pointer List:	03A31A (J)
+Z80 DAC Driver Offset:	0393FE (J)
+DAC Pointer List:	037724 (J)
+DAC Voice Pointer List:	0380A8 (J)
+Pan Animation List:	037B1E (J)
+
+
+DAC List Format: (all Little Endian)
+2 bytes - Bank Offset (Big Endian, ROM Offset = Bank Ofs * 100h)
+2 bytes - Start Offset (Z80 Offset, relative)
+1 byte  - pitch (always 14 for voices)
+1 byte  - unknown (always 01, 41, 81 or C1 for voices, 00 for drums)
+1 byte  - YM2612 Pan Register (can be 40/80/C0 for voices, always 00 for drums)
+1 byte  - unused (00)
+
+Z80 Sound Info: (all little endian values)
+2 bytes - Start Offset (in Z80 Memory)
+2 bytes - Data Length
+
+This is exactly the same format as used in Dynamite Headdy.
+
+
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0A00)

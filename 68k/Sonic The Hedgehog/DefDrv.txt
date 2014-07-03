@@ -1,0 +1,26 @@
+; --- Sonic 1 SMPS Driver Definition ---
+; SMPS 68k (reduced version)
+
+[Settings]
+DefTimingMode = 00
+LockTimingMode = True
+
+[Main]
+PtrFmt = 68k
+InsMode = DEFAULT
+;FMChnOrder = 16 0 1 2 4 5 6
+TempoMode = TIMEOUT
+FMBaseNote = B
+FMBaseOctave = 0
+DetuneOctWrap = False
+NoteOnPrevent = Rest
+DelayFreq = RESET
+ModAlgo = 68k
+EnvMult = 68k	; actually unused
+VolMode = ALGO
+FMFreqs = DEF_68K	; actually the driver stores 96 separate frequency values, but the effect is the exactly same
+PSGFreqs = DEF_68K
+FM3Freqs = $000	; actually unused
+
+[EnvelopeCmds]
+80 = HOLD

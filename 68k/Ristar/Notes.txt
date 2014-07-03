@@ -1,0 +1,2 @@
+15 Opening Theme 2 - Pray!! Pray!! Play!! contains an additional variation of the song.
+It gets selected by a conditional jump (command FF 06) at the very beginning and can be heard, if you press 'J' in SMPSPlay.

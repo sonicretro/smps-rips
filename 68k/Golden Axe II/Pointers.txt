@@ -1,0 +1,25 @@
+General Pointer List:	076000 (W / Beta)
+Music Pointer List:	0760F4 (W / Beta)
+SFX Pointer List:	07BFB4 (W / Beta)
+Mod. Pointer List:	-- invalid, feature removed -- (W / Beta) (points to 076134)
+PSG Pointer List:	076020 (W / Beta)
+Z80 DAC Driver Offset:	077504 (W / Beta)
+DAC Pointer Table:	07766F (W / Beta) (Z80 Driver: 016B)
+DAC Pitch Modifier:	0762D2 (W / Beta)
+DAC Voice Pointer List:	07C8D4 (W / Beta)
+Pan Animation List:	07657A (W / Beta)
+
+
+DAC Table
+---------
+The DAC table format is the same as Fatal Fury.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001E)
+
+
+Notes:
+- The PSG Volume Envelope control bytes are a bit different:
+	80 - reset envelope
+	83 - hold envelope
+	85 xx - jump to envelope index xx

@@ -1,0 +1,45 @@
+DAC Channel Notes:
+
+Coord. Flag EE dd [Z80 Mem 1F00] selects the DAC sound to play. (01 is the first sound)
+The actual note sets the DAC frequency.
+It's also possible to play the sounds backwards by using Coord. Flag FA mm. [Z80 Mem 1F06] (00 - forward, 01 - backward)
+Coord. Flag E3 ee [Z80 Mem 1F01] enables DAC volume control. 01 - disable, FF - enable, 00 - disable DAC
+	(Since the driver only checks for zero, negative and positive, 02-7F are equal to 01 and 80-FE are equal to FF.)
+Coord. Flag FC vv [Z80 Mem 1F03] sets the DAC volume (if enabled), which is 00 (min) to 10 (max, default).
+	-> The driver performs a correct multiplication of (sample * volume / 10h).
+
+Coord. Flag ?? vv [Z80 Mem 1F05] makes it possible to loop the sound. (00 - off, 01 - on)
+
+See also Z80 RAM Offset 0x1F00.
+
+
+
+DAC Sounds are stored uncompressed in ROM Banks 0xE0000-0xF8000.
+The DAC Sound Table is located at the beginning of each bank.
+Each entry consists of two 16-bit values in Z80 (Little Endian) byte order:
+- Z80 Start Offset
+- Data Length
+- Z80 Start Offset (again)
+- Data Length (again)
+
+Bank Offset	Entries
+0xE0000		0Ah
+0xE8000		02h
+0xF0000		04h
+0xF8000		01h
+-> 11h sounds.
+
+There is a lookup-table for Sound ID -> Sound+Bank at offset 0500 in Z80 RAM.
+The format is:
+1 byte - Z80 Bank ID (00 - E0000, 01 - E8000, 02 - F0000, 03 - F8000)
+1 byte - sound number in bank (table offset is sound number * 8)
+
+
+
+DAC Frequencies:
+The driver uses a look-up table to of jump offsets, which is located at offset 0170.
+It jumps into a section of NOPs, which cause a delay between the DAC commands.
+The next actual code is at offset 0314.
+
+There are 1Dh entries in the table, that so the only valid frequencies are 81-9D.
+The resulting DAC sample rate ranges from 2000 Hz (81) to 10300 Hz (9D) in approximate half-tone steps.

@@ -1,0 +1,15 @@
+; --- SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 81
+
+[Drums]
+;Note	Type	DrumID	Pitch
+81..87	DAC	81
+; Note: Because the pitch modifier goes to the wrong byte, (0374 instead of 01BA)
+;       all these sounds play with the original frequency of DAC 85 ingame.
+88	DAC	85	01
+89	DAC	85	05
+8A	DAC	85	0B
+8B	DAC	85	00

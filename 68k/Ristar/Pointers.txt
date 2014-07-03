@@ -1,0 +1,37 @@
+General Pointer List:	0C8020
+Music Pointer List:	0C852A
+SFX Pointer List:	0CA2F6
+Mod. Pointer List:	0C8050
+PSG Pointer List:	0C8114
+Z80 DAC Driver A Ofs:	0CC4B0 (simple driver)
+Z80 DAC Driver B Ofs:	0CC599 (driver with 2-channel software mixing)
+DAC Master List:	0C83E2
+DAC SFX Master List:	0C849A
+DAC Z80 RAM List:	0CC875 (Z80 Driver B RAM: 02DC)
+DAC ROM List:		0CC100
+Pan Animation List:	0C8E2C
+
+The complete sound related part of the ROM (0C8000-11BFFF) matches byte-by-byte in all checked revisions: final (J), final (UE) and beta 1994-08 (UE).
+
+
+DAC Master List Format:
+1 byte - Sound Index
+		01-7F - use DAC ROM List (68k reads offsets and prepares them for the Z80)
+		81-FF - use DAC Z80 RAM List (Z80 driver reads offsets by itself)
+1 byte - Sound Priority (sounds with a lower priority than currently playing ones are discarded)
+1 byte - unused (read but never used)
+1 byte - unused/padding
+
+DAC ROM List Format: (all Big Endian values)
+4 bytes - Start Offset
+4 bytes - Data Length
+8 bytes - unused
+
+DAC Z80 List Format: (all Little Endian values)
+2 bytes - Start Offset (points to Z80 RAM)
+2 bytes - Data Length
+4 bytes - unused
+
+
+Notes:
+- Thanks to Andlabs for disassembling the Ristar sound driver. It made my life a bit easier with this game.

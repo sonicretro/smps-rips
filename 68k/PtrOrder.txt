@@ -1,0 +1,8 @@
+- Priority Array
+- Special SFX Pointers
+- Music Pointers
+- SFX Pointers
+- Modulation Envelope Pointers
+- Volume Envelope Pointers
+- Music ID Limit (often 000000A0)
+- UpdateMusic-Routine

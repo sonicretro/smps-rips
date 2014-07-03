@@ -1,0 +1,42 @@
+; --- Phantasy Star IV SMPS Command Definition ---
+; modified SMPS 68k
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PANAFMS 	PAFMS_PAN	02
+E1	DETUNE  	        	02
+E2	SET_COMM	        	02
+E3	DAC_PS4 	PS4_VOLCTRL	02
+E4	DAC_PS4 	PS4_LOOP	02
+E5	VOLUME  	VOL_NN_FMP	03
+E6	VOLUME  	VOL_NN_FM	02
+E7	HOLD    	        	01
+E8	NOTE_STOP	NSTOP_NORMAL	02
+E9	SET_LFO 	LFO_AMSEN	03
+EA	TEMPO   	TEMPO_SET	02
+EB	SND_CMD 	        	02
+EC	VOLUME  	VOL_NN_PSG	02
+ED	PANAFMS 	PAFMS_PAN	02	; actually a feature of the DAC driver
+EE	DAC_PS4 	PS4_SET_SND	02
+EF	INSTRUMENT	INS_N_FM	02
+F0	MOD_SETUP	        	05
+F1	MOD_ENV 	MENV_FMP	03
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SET	02
+F4	MOD_ENV 	MENV_GEN	02
+F5	INSTRUMENT	INS_N_PSG	02
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	DAC_PS4 	PS4_REVERSE	02
+FB	TRANSPOSE	TRNSP_ADD	02
+; Note: linear volume, 00h (silent) .. 10h (normal)
+;       Final Sample = Sample * Volume / 10h
+FC	DAC_PS4 	PS4_VOLUME	02
+FD	DAC_PS4 	PS4_TRKMODE	02
+FE	SPC_FM3 	        	05
+FF	META_CF 	        	01
+
+[Meta]
+00	PAN_ANIM	        	82

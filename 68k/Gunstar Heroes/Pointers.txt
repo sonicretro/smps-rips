@@ -1,0 +1,18 @@
+General Pointer List:	068BB4 (JUE) / 0692EE (Sample J)
+Music Pointer List:	068F42 (JUE) / 06967C (Sample J)
+SFX Pointer List:	069028 (JUE) / 06975E (Sample J)
+Mod. Pointer List:	068BD4 (JUE) / 06930E (Sample J)
+PSG Pointer List:	068C98 (JUE) / 0693D2 (Sample J)
+Z80 DAC Driver Offset:	0666B4 (JUE) / 0672AC (Sample J)
+DAC Pointer Table:	06681F (JUE) / 067417 (Sample J) (Z80 Driver: 016B, both)
+DAC Pitch Modifier:	06575A (JUE) / 06635A (Sample J)
+DAC Voice Pointer List:	078914 (JUE) / 0781D4 (Sample J)
+Pan Animation List:	065AB4 (JUE) / 0666B4 (Sample J)
+
+
+DAC Table
+---------
+The DAC table format is the same as Fatal Fury.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001E)

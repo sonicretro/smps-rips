@@ -1,0 +1,177 @@
+SMPS 68k
+--------
+A Ressha de Ikou MD				SMPS/MNM 68k
+Aa Harimanada					SMPS 68k (banked)
+Alien Soldier					SMPS/Treasure
+Ayrton Senna's Super Monaco GP II		SMPS 68k
+Battle Golfer Yui				SMPS 68k
+Bishoujo Senshi Sailor Moon			SMPS 68k
+Crayon Shin-Chan				SMPS 68k
+Doraemon: Yume Dorobouto 7-nin no Gozansu	SMPS 68k
+Dragon's Eye Plus: Shanghai 3			SMPS 68k
+Dynamite Headdy					SMPS/Treasure
+Fatal Fury (Garou Densetsu)			SMPS 68k
+Fatal Fury 2 (Garou Densetsu 2)			SMPS 68k
+Golden Axe II					SMPS 68k
+Golden Axe III					SMPS 68k
+Gunstar Heroes					SMPS/Treasure
+Light Crusader					SMPS/Treasure
+Magical Taruruuto-kun				SMPS 68k
+McDonald's Treasure Land Adventure		SMPS/Treasure
+Mega Games 2/3 menu				SMPS 68k
+Mega Q: Party Quiz				SMPS 68k
+Michael Jackson's Moonwalker			SMPS 68k
+Mighty Morphin' Power Rangers: The Movie	SMPS 68k
+Nekketsu Koukou Dodgeball Bu Soccer Hen MD	SMPS 68k
+Ninja Burai Densetsu				SMPS 68k
+Phantasy Star: The End of the Millenium		SMPS 68k
+Pulseman					SMPS 68k/mod
+Ristar						SMPS 68k/mod
+Samurai Shodown (Samurai Spirits)		SMPS 68k
+Shadow Dancer: The Secret of Shinobi		SMPS 68k
+Shinobi III (The Super Shinobi II)		SMPS 68k
+Sonic the Hedgehog				SMPS 68k
+Streets of Rage (Bare Knuckle)			SMPS/MNM 68k
+Strider (Strider Hiryuu)			SMPS 68k
+Toki: Going Ape Spit (JuJu Densetsu)		SMPS 68k
+Yuu Yuu Hakusho: Makyou Touitsusen		SMPS/Treasure
+Cosmic Carnage (Cyber Brawl)			[32x] SMPS 68k
+Metal Head					[32x] SMPS 68k
+Shadow Squadron (Stellar Assault)		[32x] SMPS 68k
+Virtua Racing Deluxe				[32x] SMPS 68k [GDRI was wrong here]
+----------------
+39 games
+
+
+SMPS Z80
+--------
+Advanced Daisenryaku				SMPS Z80
+Air Buster (Aero Blasters)			SMPS Z80
+Alien Storm					SMPS Z80
+Arnold Palmer Tournament Golf (Super Masters)	early SMPS Z80 [incorrectly detected as pre-SMPS Z80]
+Arrow Flash					SMPS Z80
+Art of Fighting (Ryuuko no Ken)			SMPS Z80
+Atomic Robo-Kid					SMPS Z80 (banked)
+ATP Tour Championship Tennis			SMPS Z80
+Bahamut Senki					SMPS Z80
+Battletoads					SMPS Z80
+Bonanza Brothers				SMPS Z80
+Cadash						SMPS Z80
+Castle of Illusion				SMPS Z80
+Chou Kyuukai Miracle Nine			SMPS Z80/mod
+Columns						SMPS Z80
+Columns III					SMPS Z80
+Cyberball					SMPS Z80
+Dahna: Megami Tanjou				SMPS Z80
+Dangerous Seed					SMPS Z80
+Dick Tracy					SMPS Z80
+DJ Boy						SMPS Z80
+Dyna Brothers					SMPS Z80 (banked)
+Dyna Brothers 2					SMPS Z80 (banked)
+Dynamite Duke					SMPS Z80
+ESWAT Cyber Police				SMPS Z80
+F1 Circus MD					SMPS Z80
+Fatal Labyrinth					SMPS Z80
+Fighting Masters				SMPS Z80
+Flicky						SMPS Z80
+Gain Ground					SMPS Z80
+Game no Kandzume Otokuyou			SMPS Z80
+Ghostbusters					SMPS Z80
+Go-Net						SMPS Z80
+Golden Axe					early SMPS Z80 [incorrectly detected as pre-SMPS Z80]
+Gouketsuji Ichizoku				SMPS Z80/mod
+Honoo no Toukyuuji Dodge Danpei			SMPS Z80
+J.League Pro Striker/Perfect Edition		SMPS Z80
+J.League Pro Striker 2				SMPS Z80
+King of the Monsters				SMPS Z80
+King of the Monsters 2				SMPS Z80
+Magical Hat no Buttobi Turbo! Daibouken		SMPS Z80
+Marvel Land (Talmit's Adventure)		SMPS Z80
+Mazin Saga (Mazin Wars)				SMPS Z80
+Mega Anser					SMPS Z80
+Megaman: The Wily Wars (Rockman Megaworld)	SMPS Z80 (banked)
+Mercs (Senjou no Ookami II)			SMPS Z80
+Mighty Morphin' Power Rangers			SMPS Z80
+Mystic Defender (Kujaku Ou II)			SMPS Z80
+Nikkan Sports Pro Yakyuu VAN			SMPS Z80
+OutRun						SMPS Z80
+OutRun 2019					SMPS Z80
+OutRunners					SMPS Z80 ('SMPS light' mod)
+Pat Riley Basketball (Super Real Basketball)	SMPS Z80
+Phantasy Star III: Generations of Doom		SMPS Z80
+Pro Striker Final Stage				SMPS Z80/mod
+Puzzle & Action: Ichidant-R			SMPS Z80
+Puzzle & Action: Tant-R				SMPS Z80
+QuackShot					SMPS Z80
+Rastan Saga II					SMPS Z80
+Saint Sword					SMPS Z80
+Sangokushi Retsuden				SMPS Z80
+Sega Channel (JP)				SMPS Z80
+Shogi no Hoshi					SMPS Z80
+Shura no Mon					SMPS Z80
+Slam Dunk					SMPS Z80
+Sonic & Knuckles				SMPS Z80/mod
+Sonic 3D Blast (Sonic 3D Flickies' Island)	SMPS Z80
+Sonic Eraser					SMPS Z80 [missing on GDRI]
+Sonic the Hedgehog 2				SMPS Z80/mod
+Sonic the Hedgehog 3				SMPS Z80/mod
+Sorcerian					SMPS Z80 (banked)
+Super League '91				SMPS Z80
+Super Monaco GP					SMPS Z80
+Surging Aura					SMPS Z80
+Syd of Valis (Valis SD)				SMPS Z80
+Taiga Drama Taiheiki				SMPS Z80
+Tecmo Cup (Captain Tsubasa) (beta)		SMPS Z80
+Tecmo World Cup					SMPS Z80
+The Hybrid Front				SMPS Z80
+Ultimate Qix (Volfied)				SMPS Z80
+Uzu Keobukseon					SMPS Z80
+Viewpoint					SMPS Z80
+Virtua Fighter 2				SMPS Z80
+Virtua Racing					SMPS Z80 (banked)
+Wani Wani World					SMPS Z80
+Whip Rush					SMPS Z80
+Wimbledon Championship Tennis			SMPS Z80
+Wonder Boy III: Monster Lair			SMPS Z80
+World of Illusion				SMPS Z80
+Yuu Yuu Hakusho Gaiden				SMPS Z80
+Knuckles' Chaotix				[32x] SMPS Z80/mod
+Tempo						[32x] SMPS Z80/mod
+Zaxxon's Motherbase 2000 (Parasquad)		[32x] SMPS Z80
+----------------
+92 games
+
+
+pre-SMPS
+--------
+Alex Kidd in the Enchanted Castle		pre-SMPS Z80 [incorrectly detected as SMPS Z80] [sound RAM at 1D00]
+Altered Beast (Juuouki)				pre-SMPS Z80
+Darwin 4081					pre-SMPS Z80 (banked)
+Forgotten Worlds				pre-SMPS Z80
+Ghouls 'n Ghosts (Dai Makaimura)		pre-SMPS Z80
+Jantei Monogatari				pre-SMPS 68k/FM
+Last Battle (Hokuto no Ken)			pre-SMPS 68k/FM
+Mahjong Cop Ryuu				pre-SMPS 68k/FM
+Metal Fangs					pre-SMPS 68k/PCM [incorrectly detected as SMPS 68k]
+Osomatsu-kun					pre-SMPS Z80
+Phantasy Star II				pre-SMPS 68k/mod
+Rambo III					pre-SMPS Z80
+Rent-a-Hero					pre-SMPS 68k/PCM
+Space Harrier II				pre-SMPS Z80 [sound RAM at 1800]
+Street Fighter II' Turbo (beta)			pre-SMPS 68k/PCM
+Super Daisenryaku				pre-SMPS 68k/PCM
+Super Hang-On					pre-SMPS Z80
+Super Thunder Blade				pre-SMPS Z80/mod [sound RAM at 1E00]
+Sword of Vermilion (Vermilion)			pre-SMPS 68k/PCM
+Tetris						pre-SMPS Z80
+The Revenge of Shinobi (The Super Shinobi)	pre-SMPS/MNM 68k
+Tommy Lasorda Baseball (Super League)		pre-SMPS 68k (PCM? there are no drums)
+World Championship Soccer (World Cup Soccer)	pre-SMPS 68k/PCM
+Wrestle War					pre-SMPS 68k/FM
+Zoom!						pre-SMPS Z80
+----------------
+26 games
+
+
+
+Compiled from http://gdri.smspower.org/wiki/index.php/Mega_Drive/Genesis_Sound_Engine_List

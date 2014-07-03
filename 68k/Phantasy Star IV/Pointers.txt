@@ -1,0 +1,19 @@
+General Pointer List:	0D1A60 (JU)
+Music Pointer List:	0D1C40 (JU)
+SFX Pointer List:	0DE4B6 (JU)
+Mod. Pointer List:	0D1A80 (JU)
+PSG Pointer List:	0D1B44 (JU)
+Z80 DAC Driver Offset:	0D153E (JU)
+DAC Sound/Bank List:	0D1A3E (JU) (Z80 Driver: 0500)
+Pan Animation List:	0D0530 (JU)
+
+DAC Sound/Bank List Format:
+1 byte - Z80 Bank (first bank is 0E0000)
+1 byte - sound number in this bank (info offset = Bank Offset + byte*8)
+
+
+Z80 Sound Info: (all little endian values)
+2 bytes - Start Offset (in Z80 Memory)
+2 bytes - Data Length
+2 bytes - Start Offset (again)
+2 bytes - Data Length (again)

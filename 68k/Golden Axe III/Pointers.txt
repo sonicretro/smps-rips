@@ -1,0 +1,49 @@
+General Pointer List:	0F0000 (JE)
+Music Pointer List:	0F0116 (JE)
+SFX Pointer List:	0F93E4 (JE)
+Mod. Pointer List:	0F002C (JE)
+PSG Pointer List:	0F004E (JE)
+Z80 DAC Driver Offset:	0FACC8 (JE)
+DAC Pointer Table:	0FAE5E (JE)
+Pan Animation List:	0F06CC (JE)
+
+
+DAC Table
+---------
+DAC List Format: (all little endian values)
+2 bytes - Data Length
+1 byte  - Pitch
+2 bytes - Start Offset (relative to entry offset)
+-> 5 bytes
+
+The DAC pitch calculation is different compared to other SMPS drivers.
+Every loop, the pitch value gets added to a counter. On overflow, a sample is processed.
+So high pitch values mean a high frequency.
+
+The DAC driver also is able to do 2-channel mixing.
+
+
+Notes:
+- Song 0E uses the data of song 01.
+- The DAC driver knows 3 "channels".
+  SMPS notes 81-90 get sent to BGM channel 1. (Z80 RAM 1FFC/FD)
+  SMPS notes 91-A0 get sent to BGM channel 2. (Z80 RAM 1FFE/FF)
+  SMPS notes A1-B0 get sent to both BGM channels. (and so they are twice as loud)
+  DAC SFX get sent to their own channel and overridde BGM channel 2. (Z80 RAM 1FFA/B)
+  
+  The DAC driver ANDs BGM sounds with 0F before playing them, so 81 = 91 = A1.
+  This isn't done with SFX sounds, because there are valid SFX sounds from 88 to 92.
+- The Sound Test -> Sound ID list locations are:
+    BGM:   0154A4 (JE)
+    SE:    0154BE (JE)
+- The Sound RAM begins at C000. (68k RAM)
+- There are a few special coordination flags. There is also a special DAC mode, where it reads 2 notes (one for each channel)
+  E5 - set DAC channel to 2-note mode (temporarily, disabled after the reading the note)
+  E9 - set DAC channel to 2-note mode (permanently)
+  ED - turn DAC channel's to 2-note mode off
+  EE vv oo oo - Conditional Jump (condition is true when vv == SndRAM+0Eh)
+  F1 - sets TrkRAM+08h = SndRAM+32h
+  F4 - sets SndRAM+32h = TrkRAM+08h and adds a random value to TrkRAM+08h (The random value can be 01..0F or F0.)
+  FF 01 xx [xx] - pauses and resumes music, but seems to be able to fade it in/out, too
+- SFX CD (sound test SE 45) uses command F1/F4
+- Music 99 (sound test BGM 24) uses command E9/ED

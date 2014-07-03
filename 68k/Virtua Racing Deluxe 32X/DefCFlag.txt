@@ -1,0 +1,80 @@
+; --- SMPS 68k/32X Command Definition ---
+; based on a disassembly of Virtua Racing Deluxe 32X
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PANAFMS 	PAFMS_PAN	02
+E1	DETUNE  	        	02	; set 8-bit Detune (sign-extended to 16-bit)
+E2	SET_COMM	        	02
+E3	TRK_END 	TEND_MUTE	01
+E4	PAN_ANIM	        	82
+E5	VOLUME  	VOL_NN_FMP	03
+E6	VOLUME  	VOL_NN_FM	02	; can also update the DAC volume
+E7	HOLD    	        	01
+E8	NOTE_STOP	NSTOP_NORMAL	02
+E9	SET_LFO 	LFO_AMSEN	03
+EA	TEMPO   	TEMPO_SET	02
+EB	SND_CMD 	        	02
+EC	VOLUME  	VOL_NN_PSG	02
+ED	FM_COMMAND	FMW_CHN 	03
+EE	FM_COMMAND	FMW_FM1 	03
+EF	INSTRUMENT	INS_N_FM	02
+F0	MOD_SETUP	        	05
+F1	MOD_ENV 	MENV_FMP	03
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SET	02
+F4	MOD_ENV 	MENV_GEN	02
+F5	INSTRUMENT	INS_N_PSG	02
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	TICK_MULT	TMULT_CUR	02
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	MOD_SET 	MODS_ON 	01
+FD	MOD_SET 	MODS_OFF	01
+FE	IGNORE  	        	01	; resets the current Sound Priority and that's is
+FF	META_CF 	        	01
+
+[Meta]
+00	SSG_EG  	SEG_FULLATK	05
+01	MUS_PAUSE	MUSP_68K	02
+02	TICK_MULT	TMULT_ALL	02
+03	FADE_IN 	FDIN_START	03
+04	FADE_IN 	FDIN_CANCEL	01
+05	IGNORE  	        	02	; change Detune, dependend on global variables
+06	DETUNE  	        	03	; set 16-bit Detune (byte order is MSB, LSB)
+07	PLAY_DAC	        	02
+08	IGNORE  	        	02	; change Volume, dependend on global variables
+
+; Flag FF 05:
+;	Idx = Param1;
+;	DetuneMode = ((INT8*)SndRAM+10h) [Idx];
+;	if (! DetuneMode)
+;		return;
+;	if (DetuneMode > 0)
+;	{
+;		DetuneVal = ((INT16*)SndRAM+12h) [Idx];
+;		TrkDetune += DetuneVal;
+;	}
+;	else if (DetuneMode < 0)
+;	{
+;		DetuneVal = ((INT16*)SndRAM+12h) [Idx];
+;		TrkDetune += DetuneVal;
+;	}
+;	((INT8*)SndRAM+10h) [Idx*2] = 0;	// reset Detune Mode (Note: buggy - should probably not be Idx*2 but Idx)
+;	return;
+
+; Flag FF 08:
+;	Idx = Param1;
+;	VolumeMode = ((INT8*)SndRAM+16h) [Idx];
+;	VolumeVal = ((INT8*)SndRAM+18h) [Idx];
+;	if (! VolumeVal)
+;		return;
+;	if (VolumeVal > 0)
+;		TrkVolume += VolumeVal;
+;	else if (VolumeVal < 0)
+;		TrkVolume -= VolumeVal;
+;	((INT8*)SndRAM+16h) [Idx] = 0;	// reset Volume Mode
+;	RefreshVolume();
+;	return;

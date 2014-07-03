@@ -1,0 +1,27 @@
+General Pointer List:	04A65E (JUE)
+Music Pointer List:	04A7F8 (JUE)
+SFX Pointer List:	04A7F8 (JUE) (invalid?)
+PSG Pointer List:	04A742 (JUE)
+Mod. Pointer List:	04A67E (JUE)
+DAC Pointer Table:	0494D6 (JUE) (Z80 Driver: 0226)
+Z80 DAC Driver Offset:	0492B0 (JUE)
+Z80 Add. Data Offset:	04965E (JUE) (gets copied to Z80 RAM: 1000)
+Pan Animation List:	08046C (JUE)
+Sound RAM:		FC00 (68k RAM)
+
+
+DAC Table
+---------
+1 byte  - Z80 Bank
+2 bytes - Data Start
+2 bytes - Data Length
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0216)
+
+
+Notes:
+- Pan Animation data??
+- You need to subtract 880000 from all pointers (including Z80 Bank Offset) to get the actual ROM offsets.
+- Unlike other SMPS 68k drivers in 32X games, the PSG frequency table has the usual number of frequencies.
+- All sound data (from 048000 on) matches exactly, except for two F4 xx commands in one of the songs.

@@ -1,0 +1,34 @@
+General Pointer List:	070000 (J)
+Music Pointer List:	0701A6 (J)
+SFX Pointer List:	07D174 (J)
+Mod. Pointer List:	07002C (J)
+PSG Pointer List:	0700F0 (J)
+Z80 DAC Driver Offset:	07B326 (J)
+DAC Pointer List:	07B55D (J) (Z80 Driver: 0237)
+Pan Animation List:	07A35C (J)
+
+There are additional DAC lists at the start of banks 050000, 058000 and 060000.
+
+
+DAC List Format: (all Little Endian)
+2 bytes - Start Offset (Z80 Offset, can be Z80 RAM or ROM Bank)
+          Note: The entries in the bank-specific DAC lists lack the Z80 Bank bit (8000). [see also notes for Fatal Fury]
+2 bytes - Data Length
+6 bytes - all 00
+1 byte  - YM2612 Pan Register (can be 40/80/C0)
+1 byte  - pitch
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001A)
+
+
+
+Additional notes:
+
+Music IDs are 81-9B
+Sound IDs are 9C-DA
+Voice IDs are DB-EB
+
+The sound with ID D9 is read from RAM at offset FD00. It's origin is 075A5E. The code that copies it is at 000FB6.
+
+1B Stage 4-3 ~Residence 2~ uses parts of 0A Stage 3-2 ~Cloud~. I appended the latter song so that it works in SMPSPlay.

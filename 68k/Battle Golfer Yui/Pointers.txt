@@ -1,0 +1,31 @@
+General Pointer List:	077420 (J)
+Music Pointer List:	0774D8 (J)
+SFX Pointer List:	0773A8 (J)
+Mod. Pointer List:	-- invalid, feature removed -- (J) (points to 077554)
+PSG Pointer List:	077440 (J)
+Global Instrument Data:	07759A (J)
+Z80 DAC Driver Offset:	073EEA (J)
+Z80 Add. Data Offset:	074049 (J) (gets copied to Z80 RAM: 0160)
+DAC Pointer Table:	074049 (J) (Z80 Driver: 0160)
+DAC Pitch Modifier:	0760BE (J)
+DAC Voice Pointer List:	070000 (J)
+Pan Animation List:	076374 (J)
+
+
+DAC Table
+---------
+The DAC table format is the same as Fatal Fury.
+
+Data is DPCM compressed with the delta-array:
+00 01 02 04 08 10 20 40 80 FF FD FC F8 F0 E0 C0 (Z80 Driver offset 001E)
+(usually used for voices)
+
+
+Notes:
+- This game uses a global instrument table for all songs.
+  The instrument pointer of each song points to the song's End Of File and is ignored.
+- When setting the FM volume for a channel, the Total Level gets set (not added, as usual) to the Volume value for output operators.
+- The PSG Volume Envelope control bytes are a bit different:
+	80 - reset envelope
+	83 - hold envelope
+	85 xx - jump to envelope index xx

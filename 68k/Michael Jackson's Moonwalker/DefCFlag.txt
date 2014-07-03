@@ -1,0 +1,37 @@
+; --- Michael Jackson's Moonwalker Command Definition ---
+; early SMPS 68k Type 1
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PANAFMS 	PAFMS_PAN	02
+E1	DETUNE  	        	02
+E2	SET_COMM	        	02
+E3	IGNORE  	        	01	; prevent SFX BD from playing
+E4	PAN_ANIM	        	82
+E5	VOLUME  	VOL_NN_FMP	03
+E6	VOLUME  	VOL_NN_FM	02
+E7	HOLD    	        	01
+E8	NOTE_STOP	NSTOP_NORMAL	02
+E9	SET_LFO 	LFO_AMSEN	03
+EA	DETUNE  	        	02
+EB	SND_CMD 	        	02
+EC	VOLUME  	VOL_NN_PSG	02
+ED	DETUNE  	        	02
+EE	DETUNE  	        	02
+EF	INSTRUMENT	INS_N_FM	02
+F0	MOD_SETUP	        	05
+F1	MOD_SET 	MODS_ON 	01
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SET	02
+F4	MOD_SET 	MODS_OFF	01
+F5	INSTRUMENT	INS_N_PSG	02
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	TICK_MULT	TMULT_CUR	02
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	IGNORE  	        	01	; allow SFX BD able to play again
+FD	SSG_EG  	SEG_FULLATK	05
+FE	SPC_FM3 	        	09
+FF	PANAFMS 	PAFMS_PAN	02	; this is actually beyond the jump table

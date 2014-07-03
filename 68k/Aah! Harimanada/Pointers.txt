@@ -1,0 +1,40 @@
+General Pointer List:	034C26 (1) / 043C92 (2) (J)
+Music Pointer List:	034EEE (1) / 043F5A (2) (J)
+SFX Pointer List:	03777E (1) / 0475D6 (2) (J)
+Mod. Pointer List:	034C46 (1) / 043CB2 (2) (J)
+PSG Pointer List:	034D7A (1) / 043DE6 (2) (J)
+Z80 DAC Driver Offset:	032FBC (1) / 042028 (2) (J)
+DAC Pointer Table:	033127 (1) / 042193 (2) (J) (Z80 Driver: 016B)
+DAC Pitch Modifier:	031B6E (1) / 040BDA (2) (J)
+DAC Voice Pointer List:	03824E (1) / 0480E6 (2) (J)
+Pan Animation List:	031EC0 (1) / 040F2C (2) (J)
+
+
+DAC Table
+---------
+The DAC table format is the same as Fatal Fury.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001E)
+
+
+Notes:
+- The game stores the complete sound driver 2 times.
+  Code at 0029BE decides whether it updates driver 1 (UpdateSound at 031A1E) or driver 2 (UpdateSound at 040A8A). It checks the RAM at 2CBC for that.
+  The routine that writes to 2CBC is at 2964.
+- Differences between the 2 sound drivers are:
+    - (2) has $10 additional dummy SFX
+    - There are minor differences between (1) and (2) in SFX A7, A9 and AC.
+    - There set of songs is completely different.
+    - The 2 DAC drivers match exactly, but they are loaded with a different DAC SFX pointer.
+    - The DAC SFX are different.
+- PlaySound routines: 031FDA (1), 041046 (2)
+- Sound IDs:
+	(1)	(2)	Description
+	00-7F	00-7F	Stop All Sound
+	81-91	81-8B	Music
+	A0-BF	A0-CF	SFX
+	 D0	 D0	Special SFX
+	D1-EB	D1-EB	DAC SFX (D1-EB -> 88-A2)
+	EC-EF	EC-EF	Special Commands
+    All unlisted Sound IDs do nothing.

@@ -1,0 +1,25 @@
+General Pointer List:	02D000 (J)
+Music Pointer List:	02D0D6 (J)
+SFX Pointer List:	03720A (J)
+Mod. Pointer List:	-- invalid, feature removed -- (J) (points to 02D152)
+PSG Pointer List:	02D020 (J)
+Z80 DAC Driver Offset:	02E510 (J)
+DAC Pointer Table:	02E673 (J) (Z80 Driver: 0163)
+DAC Pitch Modifier:	02D2EE (J)
+DAC Voice Pointer List:	038000 (J) 
+Pan Animation List:	02D586 (J)
+
+
+DAC Table
+---------
+The DAC table format is the same as Fatal Fury.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001E)
+
+
+Notes:
+- The PSG Volume Envelope control bytes are a bit different:
+	80 - reset envelope
+	83 - hold envelope
+	85 xx - jump to envelope index xx

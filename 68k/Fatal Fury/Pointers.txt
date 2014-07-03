@@ -1,0 +1,38 @@
+General Pointer List:	161596 (JUE)
+Music Pointer List:	161730 (JUE)
+SFX Pointer List:	166B58 (JUE)
+Mod. Pointer List:	1615B6 (JUE)
+PSG Pointer List:	16167A (JUE)
+Z80 DAC Driver Offset:	167524 (JUE)
+DAC Pointer List:	1676A3 (JUE) (Z80 Driver: 017F)
+DAC Pitch Modifier:	160150 (JUE)
+Pan Animation List:	1604A2 (JUE)
+
+There are additional DAC lists for voices at Z80 Offset 9486 in the banks 168000, 170000 and 178000.
+
+
+DAC List Format: (all Little Endian)
+2 bytes - Start Offset (Z80 Offset, relative)
+          Note: The drums are relative to Z80 Offset 0000. (i.e. absolute)
+                The voices are relative to their table offset, 9486.
+2 bytes - Data Length
+7 bytes - all 00
+1 byte  - pitch
+
+This is quite similar to Magical Taruruuto-Kun, but lacks the Pan Register setting.
+
+See The Revenge of Shinobi for information about the unused bytes.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001E)
+
+
+The SMPS engine sends the DAC sounds 81-84 untranslated to the DAC driver, 88-8B get translated to 85.
+But because the pitch byte is written to Z80 RAM 0374, instead of 01BA, the pitch of the drum doesn't change.
+
+
+Before playing a voice, the Z80 Bank address is written to 1FFA-1FFB. The offset of the DAC table is stored at 1FF8-1FF9.
+
+The IDs of the voices start with 07. That's because IDs 01-06 are occupied by the DAC drums.
+
+Note: The DAC drums' ID has bit 7 set, while the voices' ID don't. I assume this is the "can be overridden" flag.

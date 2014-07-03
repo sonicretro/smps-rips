@@ -1,0 +1,24 @@
+General Pointer List:	0828B0 (JUE)
+Music Pointer List:	082AAC (JUE)
+SFX Pointer List:	082B6C (JUE)
+PSG Pointer List:	08299E (JUE)
+Mod. Pointer List:	0828D0 (JUE)
+DAC Pointer Table:	081817 (JUE) (Z80 Driver: 0105)
+Z80 DAC Driver Offset:	081712 (JUE)
+Z80 Add. Data Offset:	0818AF (JUE) (gets copied to Z80 RAM: 1000)
+Pan Animation List:	08046C (JUE)
+
+
+DAC Table
+---------
+The DAC table format is the same as Virtua Racing Deluxe 32X.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 00F5)
+
+
+Notes:
+- The Pan Animation data differs from the standard values.
+- You need to subtract 900000 from all pointers (including Z80 Bank Offset) to get the actual ROM offsets.
+- The PSG frequency table has a lot more entries at the end than in any other SMPS game.
+- The SMPS driver (both 68k and Z80 parts) seems to be identical to Virtua Racing Deluxe 32X.

@@ -1,0 +1,38 @@
+; --- Bishoujo Senshi Sailor Moon Driver Definition ---
+; SMPS 68k Type 2
+
+[Settings]
+DefTimingMode = 00
+LockTimingMode = True
+
+[Main]
+PtrFmt = 68k
+InsMode = Default
+;FMChnOrder = 16 0 1 2 4 5 6
+TempoMode = Overflow	; actually Overflow with (Tempo & $7F)
+FMBaseNote = B
+FMBaseOctave = 0
+DetuneOctWrap = False
+NoteOnPrevent = Rest
+DelayFreq = Reset
+ModAlgo = 68k
+EnvMult = 68k
+VolMode = Algo
+FMFreqs = Def_68k
+PSGFreqs = {
+	$3FF $3FF $3FF $3FF $3FF $3FF $3FF $3FF $3FF $3F7 $3BE $388
+	$356 $326 $2F9 $2CE $2A5 $280 $25C $23A $21A $1FB $1DF $1C4
+	$1AB $193 $17D $167 $153 $140 $12E $11D $10D $0FE $0EF $0E2
+	$0D6 $0C9 $0BE $0B4 $0A9 $0A0 $097 $08F $087 $07F $078 $071
+	$06B $065 $05F $05A $055 $050 $04B $047 $043 $040 $03C $039
+	$036 $033 $030 $02D $02B $028 $026 $024 $022 $020 $01F $01D
+	$01B $01A $018 $017 $016 $015 $013 $012 $011 $000 }
+
+FM3Freqs = $000 $180 $1F4 $260
+
+[EnvelopeCmds]
+80 = RESET
+81 = HOLD
+82 = LOOP
+83 = STOP
+84 = CHG_MULT

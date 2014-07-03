@@ -1,0 +1,34 @@
+; --- Golden Axe III Driver Definition ---
+; modified SMPS 68k
+
+[Settings]
+DefTimingMode = 00
+LockTimingMode = True
+
+[Main]
+PtrFmt = 68k
+InsMode = Default
+;FMChnOrder = 16 0 1 2 4 5 6
+TempoMode = Tout+Oflw	; 00-7F - Timeout, 80-FF - Overflow
+FMBaseNote = B
+FMBaseOctave = 0
+DetuneOctWrap = False
+NoteOnPrevent = Rest
+DelayFreq = Reset
+ModAlgo = 68k
+EnvMult = 68k
+VolMode = Algo
+FMFreqs = Def_68k
+PSGFreqs = Def_68k
+FM3Freqs = $000 $180 $1F4 $260
+
+DrumChMode = GAxe3
+DACChns = 2
+DACVolDiv = 2
+
+[EnvelopeCmds]
+80 = RESET
+81 = HOLD
+82 = LOOP
+83 = STOP
+84 = CHG_MULT

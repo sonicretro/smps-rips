@@ -1,0 +1,42 @@
+; --- Golden Axe III SMPS Command Definition ---
+; modified SMPS 68k
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PANAFMS 	PAFMS_PAN	02
+E1	DETUNE  	        	02
+E2	SET_COMM	        	02
+E3	TRK_END 	TEND_MUTE	01
+E4	PAN_ANIM	        	82
+E5	DAC_GAXE3	GA3_2NOTE_TEMP	01	; enable 2-note DAC mode (temporarily)
+E6	VOLUME  	VOL_NN_FM	02
+E7	HOLD    	        	01
+E8	NOTE_STOP	NSTOP_NORMAL	02
+E9	DAC_GAXE3	GA3_2NOTE_PERM	01	; enable 2-note DAC mode (permanently)
+EA	TEMPO   	TEMPO_SET	02
+EB	SND_CMD 	        	02
+EC	VOLUME  	VOL_NN_PSG	02
+ED	DAC_GAXE3	GA3_2NOTE_OFF	01	; disable 2-note DAC mode
+EE	COND_JUMP	CJMP_EQ 	04	02	; conditional jump (jump if C00E == parameter)
+EF	INSTRUMENT	INS_N_FM	02
+F0	MOD_SETUP	        	05
+F1	IGNORE  	        	01	; SFX related
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SET	02
+F4	IGNORE  	        	01	; SFX related
+F5	INSTRUMENT	INS_N_PSG	02
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	TICK_MULT	TMULT_CUR	02
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	MOD_SET 	MODS_ON 	01
+FD	MOD_SET 	MODS_OFF	01
+FE	SPC_FM3 	        	05
+FF	META_CF 	        	01
+
+[Meta]
+00	SSG_EG  	SEG_FULLATK	05
+01	MUS_PAUSE	MUSP_68K	82	; Pause/Resume Music, Note: if param is 81-FF, length is 03
+02	TICK_MULT	TMULT_ALL	02

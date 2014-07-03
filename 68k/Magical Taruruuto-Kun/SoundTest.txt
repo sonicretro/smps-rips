@@ -1,0 +1,54 @@
+Music IDs
+---------
+Real	SndTst
+81	02
+82	03
+83	07
+84	05
+85	12
+86	10
+87	04
+88	01
+89	26
+8A	08
+8B	23
+8C	22
+8D	24
+8E	16
+8F	14
+90	13
+91	06
+92	17
+93	27
+94	18
+95	25
+96	21
+97	20
+98	09
+99	15
+9A	19
+9B	11
+
+Sound IDs
+---------
+They seem to follow the actual ingame order.
+
+Voice IDs
+---------
+DB	03
+DC	04
+DD	07
+DE	08
+DF	10
+E0	15
+E1	[snare drum sound]
+E2	[another drum sound]
+E3	01
+E4	13
+E5	12
+E6	02
+E7	09
+E8	11
+E9	06
+EA	05
+EB	14

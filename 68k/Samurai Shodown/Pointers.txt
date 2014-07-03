@@ -1,0 +1,26 @@
+General Pointer List:	2F7548 (JUE)
+Music Pointer List:	2F782A (JUE)
+SFX Pointer List:	2FFC52 (JUE)
+Mod. Pointer List:	2F7568 (JUE)
+PSG Pointer List:	2F762C (JUE)
+Z80 DAC Driver Offset:	2F708E (JUE)
+DAC SFX Pointer List:	2F71D3 (JUE) (Z80 Driver: 0145)
+Pan Animation List:	2F5F64 (JUE)
+
+
+DAC List Format: (all Little Endian)
+2 bytes - Start Offset (Z80 Bank Offset, but without bit 15)
+2 bytes - Data Length
+2 bytes - Bank Offset (ROM Offset = Bank Ofs * 100h)
+1 byte  - Sound Priority (always 10 or 20)
+1 byte  - pitch (always 18 or 14)
+
+
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 000F)
+
+
+
+Notes:
+Song 08 and 1B share some data.

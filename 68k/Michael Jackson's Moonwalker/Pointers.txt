@@ -1,0 +1,50 @@
+General Pointer List:	060000 (Rev 00/01)
+Sound Update Routine:	060166 (Rev 00/01)
+Music Pointer List:	0600A4 (Rev 00/01)
+SFX Pointer List:	067CC2 (Rev 00) / 067BC4 (Rev 01)
+Mod. Pointer List:	-- invalid, feature removed -- (Rev 00/01) (points to 060100)
+PSG Pointer List:	060020 (Rev 00/01)
+Z80 DAC Driver Offset:	06166A (Rev 00/01)
+Z80 Add. Data Offset:	061876 (Rev 00/01) (gets copied to Z80 RAM: 0210)
+DAC Pointer List:	061876 (Rev 00/01) (Z80 RAM: 0210)
+DAC Voice Pointer List:	068800 (Rev 00/01)
+DAC Pitch Modifier:	0602FA (Rev 00/01)
+Pan Animation List:	0605D0 (Rev 00/01)
+
+
+DAC Table
+---------
+The DAC table format is the same as Fatal Fury.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001A)
+
+
+Notes:
+- Song 14 uses the data from Song 08.
+- Like Sonic 1, Flag F4 disables modulation and F1 enables it.
+- It uses the S3K-style Note-Rest-Duration-Duration way.
+- The Note Fill value is stores unmodified, like in S1.
+- The FA flag sets the Tick Multiplier.
+- Song 0B has the same pointer as song 07.
+- The code that handles the DAC is located at 06296.
+- Special DAC sounds:
+  DAC sounds 88-8F (bit 3 set) play sound 85 at 8 different rates (see rate data at 0602FA)
+  DAC sounds 90-97 (bit 4 set) play sound 82 at rate 1E (sound 90) or 16 (others)
+  Both command type change the playback rate value of the respective sounds, so they affect the frequency of 82 and 85.
+  The songs use 90 and 91 to set up the default pitch of the snare and use 82 for the rest of the song.
+- The PSG Volume Envelope control bytes are a bit different:
+	80 - reset envelope
+	83 - hold envelope
+	85 xx - jump to envelope index xx
+- The Dance Attack song list is at 00F420 (Rev 00) / 00F5E4 (Rev 01). The list is:
+	8C 8D 8E - Round 1
+	8F 90 91 - Round 2
+	95 96 97 - Round 3
+	92 93 94 - Round 4
+	8C 91 96 - Round 5
+	96       - Round 6
+	92 93 94 - Round 4 (inside of a Cavern)
+- for Round A-B, the modifiers at are DE40 (A) and DE5A (B) (both 2-byte words in 68k RAM)
+- The RefreshFMVolume routine ignores the TL levels of the Output Operators completely. (i.e. the instrument's TL isn't added to the track volume)
+  This behaviour is in Battle Golfer Yui, too.

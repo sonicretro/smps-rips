@@ -1,0 +1,29 @@
+General Pointer List:	071990
+Music Pointer List:	071A9C
+Special SFX Ptr. List:	078C04
+SFX Pointer List:	078B44
+Mod. Pointer List:	-- invalid, feature removed --
+PSG Pointer List:	0719A8
+Speed Shoes Tempo List:	071A94
+Z80 DAC Driver Offset:	072E7C (Kosinski? compressed)
+DAC Pointer Table:	072F47 (Z80 Driver: 00D6)
+DAC Pitch Modifier:	071CC4 (DAC sound 83)
+SEGA sound:		079688
+Pan Animation List:	N/A
+Sound RAM:		F000 (68k RAM)
+
+The complete sound related part of the ROM (071990-07FFFF) matches byte-by-byte in all 3 known revisions: Rev 00 (W), 01 (W), MegaPlay
+It also matches with the Sonic 2 Nick Arcade Beta.
+
+
+DAC Table
+---------
+The DAC table format is the same as ??.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0022)
+
+
+Notes:
+- The PSG Volume Envelope control bytes are a bit different:
+	80 - hold envelope
