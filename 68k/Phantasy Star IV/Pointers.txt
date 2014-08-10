@@ -6,6 +6,7 @@ PSG Pointer List:	0D1B44 (JU)
 Z80 DAC Driver Offset:	0D153E (JU)
 DAC Sound/Bank List:	0D1A3E (JU) (Z80 Driver: 0500)
 Pan Animation List:	0D0530 (JU)
+Sound RAM:		5000 (68k RAM)
 
 DAC Sound/Bank List Format:
 1 byte - Z80 Bank (first bank is 0E0000)

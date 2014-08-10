@@ -1,0 +1,41 @@
+; --- Space Harrier II SMPS Command Definition ---
+; pre-SMPS Z80
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PSG_NOISE	PNOIS_SET2	02
+E1	PSG_NOISE	PNOIS_SET2	02
+E2	PSG_NOISE	PNOIS_SET2	02
+E3	PSG_NOISE	PNOIS_SET2	02
+E4	PSG_NOISE	PNOIS_SET2	02
+E5	PSG_NOISE	PNOIS_SET2	02
+E6	PSG_NOISE	PNOIS_SET2	02
+E7	SET_LFO_SPD	        	02
+E8	MUS_PAUSE	MUSP_68K	02	; actually just sets/resets the "pause driver" byte
+E9	SET_COMM	        	02
+EA	PANAFMS 	PAFMS_FMS	02
+EB	PANAFMS 	PAFMS_AMS	02
+EC	IGNORE  	        	01	; enables FM 3 Special Mode
+ED	IGNORE  	        	01	; disables FM 3 Special Mode
+EE	HOLD    	        	02
+EF	INSTRUMENT	INS_C_FM	02
+F0	VOLUME  	VOL_ABS 	02
+F1	VOLUME  	VOL_ABS 	02
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SET2	02	; Note: songs use 00-07 and expect the driver to add the E0h bits
+F4	MOD_ENV 	MENV_GEN	02
+F5	INSTRUMENT	INS_C_PSG	02
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	TICK_MULT	TMULT_CUR	02
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	PITCH_SLIDE	        	02
+FD	RAW_FREQ	        	02
+FE	VOLUME  	VOL_NN_FM	02
+FF	PANAFMS 	PAFMS_PAN	02
+
+; Note about Flag EE (Hold):
+; Unlike later versions of SMPS, the current note is stopped.
+; Also, the flag enforces a legato over all notes until is it is disabled.

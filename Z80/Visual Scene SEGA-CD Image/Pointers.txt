@@ -24,5 +24,5 @@ Data is stored uncompressed, i.e. 8-bit LPCM.
 Notes:
 - The actual pointer list was partly overwritten with something.
 - The SMPS musics are in SMPS Z80 Type 1 format, as proven by track 07. (which uses the commands FF05 and FF01)
-- The DAC drums don't match with the drums used in the SMPS.
-- There is sound data for another sound driver at offset 050000. I assume that it is the Wolf Team sound driver.
+- The whole ROM is actually data from the Earnest Evans ROM, offset 0A0000-0FFFFF.
+- There is sound and DAC data for Earnest Evans at offset 040000/048000/050000.

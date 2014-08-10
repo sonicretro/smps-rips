@@ -1,4 +1,4 @@
-; --- Michael Jackson's Moonwalker Driver Definition ---
+; --- Battle Golfer Yui Driver Definition ---
 ; early SMPS 68k Type 1
 
 [Settings]

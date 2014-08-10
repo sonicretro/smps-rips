@@ -13,6 +13,20 @@ There are additional DAC lists at the start of banks 040000, 048000, 050000 and 
 DAC List Format:
 see Magical Taruruuto-Kun
 
-Additional Notes:
+
+Notes:
 - The main drums don't use banks.
 - All banks have x unused entries, where x is the number of entries in the previous bank. (the first bank has no unused entries, of course)
+- Song 04 was originally supposed to loop. Each F2 (Track End) command is followed by 2 bytes representing a pointer.
+  In 04 Happy Ending_looping.tra, all F2 commands were replaced by F6 (GoTo) to give you an idea how it was supposed to be. (minus the transpose bug in the melody, of course)
+
+
+Cheats ROM Patches and misc locations:
+  002C4C: 6700 0152 [BEQ.W] -> 6700 0002 - Character Select: same character for both players
+  003144: 6700 00E2 [BEQ.W] -> 6700 0002 - Continue: same character for both players
+  00336A: 6614 [BNE.S] -> 6014 [BRA.S] - Zord Select: same character for both players
+  
+  002DB4: Character Select: character order
+  0071E2: Pointer list (2-byte): points to Character Order Script for various locations
+	-> IDs are 0x, 8x means "jump to index 0x and try that ID"
+  003032: more Character Order Scripts (003036/37 is the lower/higher bound for Zord Select)

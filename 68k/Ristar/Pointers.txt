@@ -5,11 +5,12 @@ Mod. Pointer List:	0C8050
 PSG Pointer List:	0C8114
 Z80 DAC Driver A Ofs:	0CC4B0 (simple driver)
 Z80 DAC Driver B Ofs:	0CC599 (driver with 2-channel software mixing)
-DAC Master List:	0C83E2
+DAC Drum Master List:	0C83E2
 DAC SFX Master List:	0C849A
 DAC Z80 RAM List:	0CC875 (Z80 Driver B RAM: 02DC)
 DAC ROM List:		0CC100
 Pan Animation List:	0C8E2C
+Sound RAM:		E000 (68k RAM)
 
 The complete sound related part of the ROM (0C8000-11BFFF) matches byte-by-byte in all checked revisions: final (J), final (UE) and beta 1994-08 (UE).
 

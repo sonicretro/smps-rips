@@ -1,7 +1,7 @@
 Sound Check Code:	0AA6 (Z80 RAM) (W, Beta)
 Driver Bank:		010000 (W, Beta)
 Tempo List:		0107E3 (W, Beta)
-Music Pointer List:	011839 (W, Beta)
+Music Pointer List:	0107FC (W, Beta)
 SFX Pointer List:	14BF (Z80 RAM) (W, Beta)
 Instr. Pointer List:	01083A (W, Beta)
 Mod. Pointer List:	01063B (W, Beta)
@@ -17,3 +17,17 @@ Notes:
   Order is usually: B0 B4 30 38 34 3C 40 48 44 4C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C 83
   83 is the terminator.
 - Pointers are absolute and in Little Endian format.
+- preSMPS header:
+	1 byte - Track Count n
+	n*9 bytes - Track Headers (copied directly to Track RAM)
+	
+  Track Header:
+	00 - Flags
+	01 - Channel Bits
+	02 - Tick Multiplier
+	03 - Track Pointer LSB
+	04 - Track Pointer MSB
+	05 - Transpose
+	06 - Modulation Envelope
+	07 - FM/PSG instrument
+	08 - Volume

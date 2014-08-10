@@ -8,6 +8,7 @@ DAC Pointer Table:	07766F (W / Beta) (Z80 Driver: 016B)
 DAC Pitch Modifier:	0762D2 (W / Beta)
 DAC Voice Pointer List:	07C8D4 (W / Beta)
 Pan Animation List:	07657A (W / Beta)
+Sound RAM:		0000 (68k RAM)
 
 
 DAC Table

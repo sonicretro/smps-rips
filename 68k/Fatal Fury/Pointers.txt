@@ -7,6 +7,7 @@ Z80 DAC Driver Offset:	167524 (JUE)
 DAC Pointer List:	1676A3 (JUE) (Z80 Driver: 017F)
 DAC Pitch Modifier:	160150 (JUE)
 Pan Animation List:	1604A2 (JUE)
+Sound RAM:		F000 (68k RAM)
 
 There are additional DAC lists for voices at Z80 Offset 9486 in the banks 168000, 170000 and 178000.
 

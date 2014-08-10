@@ -8,6 +8,7 @@ DAC Pitch Modifier:	05C0D0 (Beta)
 DAC Drum Pointer List:	05BF08 (J) / 05B542 (UE) / 05D6C5 (Beta, Magical Taruruuto-Kun format, Z80 Driver: 016B)
 DAC Voice Pointer List:	05C736 (J) / 05C0C0 (UE) / 078A3E (Beta, Magical Taruruuto-Kun format)
 Pan Animation List:	05C492 (J) / 05BAB4 (UE) / 05C422 (Beta)
+Sound RAM:		F800 (68k RAM)
 
 DAC List Format:
 2 bytes - Bank Offset (Big Endian, ROM Offset = Bank Ofs * 100h)

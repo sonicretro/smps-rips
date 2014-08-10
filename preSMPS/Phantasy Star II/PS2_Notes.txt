@@ -8,6 +8,7 @@ Instr Pointer List:	0B8528 (J) / 0B8568 (UE)
 Mod. Pointer List:	0B8086 (JUE)
 Z80 Snd Driver Offset:	0BE552 (J) / 0BDC2A (UE)
 Coord. Flag Handler:	0BA8D8 (J) / 0B9EDE (UE)
+Sound RAM:		D000 (68k RAM)
 
 
 Music Header:

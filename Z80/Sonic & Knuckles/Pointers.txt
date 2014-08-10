@@ -20,7 +20,7 @@ DAC List Format:
 The format is the same one as used in Mighty Morphin Power Rangers.
 
 Data is DPCM compressed with the usual delta-array.
-00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 10EE)
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 10EE [Sonic 3C] / 1116 [S&K])
 
 
 Notes:
@@ -33,7 +33,7 @@ Notes:
 	- PAL Update Counter 1C04 is reset to 6 [offset 0051]
 	- S&K-specific Music and DAC bank values are different due to the sound data being stored at different offsets.
 	- The DAC bank for sounds B2/B3 point to the S3-part of the ROM. All other DAC sounds are the same.
-	- After the SEGA sound is finished, the beta makes an additional call to zFillSoundQueue.[offset 1167] 
+	- After the SEGA sound is finished, the beta makes an additional call to zFillSoundQueue. [offset 1167]
 	- PSG envelope 26h is 2 frames longer (like S3).
 - The following songs differ between the May 25 beta and the final:
 	09 Flying Battery 1 (same as Sonic 3, lacks S&K bugfix)
@@ -43,6 +43,8 @@ Notes:
 	2F Level Select Screen (same as Sonic 3, lacks S&K bugfix)
 	32 All Clear
 	33 Staff Roll
+- The sound drivers "Sonic 3C Beta 0408" and "Sonic 3C Beta 0517" match the one of vanilla Sonic 3 exactly. (except for 2 non-code bytes)
+- The "S&K Beta 0525" sound driver is the same as final S&K, except for different bank values and an additional instruction in the Beta 0525.
 
 Notes about Sonic 3C:
 - The DAC sounds are exactly the same as in Sonic 3 in both Betas.

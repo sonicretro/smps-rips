@@ -1,0 +1,16 @@
+General Pointer List:	06D7 (JUE, 720 Beta) / 1900 (510 Beta) (Z80 RAM)
+Music Pointer List:	-- invalid -- (feature removed)
+SFX Pointer List:	06EB (JUE, 720 Beta) / 0B00 (510 Beta) (Z80 RAM)
+Mod. Pointer List:	-- invalid -- (feature removed)
+PSG Pointer List:	-- invalid -- (feature removed)
+Z80 Snd Driver Offset:	0001DA (JUE, 720 Beta) / 000B10 (510 Beta)
+Additional Z80 Data #1:	0015F8 (510 Beta only) (goes to Z80 RAM 0B00)
+Additional Z80 Data #2:	001D90 (510 Beta only) (goes to Z80 RAM 1900)
+Pan Animation List:	N/A (JUE, 720 Beta) / 0272 (510 Beta) (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Notes:
+- The sound driver was stripped from everything related to music or PSG, probably to get space for the sound effects, which are all stored in the small Z80 RAM.
+- The 510 beta still supports playing music and the Music List Pointer (at 1904) points to the only (empty) song. (PSG features were already removed)
+- The 720 beta's code matches the final. There are some differences in the SFX data.

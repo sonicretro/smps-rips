@@ -1,15 +1,16 @@
-General Pointer List:	062B40 (W)
+General Pointer List:	062A30 (W)
 Sound Update Routine:	062BA4 (W)
 Music Pointer List:	062AF4 (W)
 Spc. SFX Pointer List:	068AE8 (W)
 SFX Pointer List:	068A34 (W)
-Mod. Pointer List:	-- invalid, feature removed -- (W) (points to 062B40)
+Mod. Pointer List:	-- invalid, feature missing -- (W) (points to 062B40)
 PSG Pointer List:	062A50 (W)
 Z80 DAC Driver Offset:	063FFC (W)
 DAC Pointer List:	06415C (W) (Z80 RAM: 0160)
 DAC Voice Pointer List:	060000 (W)
 DAC Pitch Modifier:	062D2E (W) (plays DAC sound 85)
 Pan Animation List:	062FEB (W)
+Sound RAM:		0000 (68k RAM)
 
 
 DAC Table

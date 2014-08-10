@@ -7,6 +7,7 @@ Z80 DAC Driver Offset:	031688 (UE) / 03169A (J)
 Z80 Add. Data Offset:	031915 (UE) / 031927 (J) (DAC volume tables, gets copied to Z80 RAM: 1000)
 DAC Pointer Table:	03178D (UE) / 03179F (J) (Z80 Driver: 0105)
 Pan Animation List:	03046C (JUE)
+Sound RAM:		8500 (68k RAM)
 
 
 DAC Table

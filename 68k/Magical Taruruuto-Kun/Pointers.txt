@@ -6,6 +6,7 @@ PSG Pointer List:	0700F0 (J)
 Z80 DAC Driver Offset:	07B326 (J)
 DAC Pointer List:	07B55D (J) (Z80 Driver: 0237)
 Pan Animation List:	07A35C (J)
+Sound RAM:		F000 (68k RAM)
 
 There are additional DAC lists at the start of banks 050000, 058000 and 060000.
 

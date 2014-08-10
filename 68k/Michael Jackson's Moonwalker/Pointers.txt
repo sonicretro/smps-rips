@@ -10,6 +10,7 @@ DAC Pointer List:	061876 (Rev 00/01) (Z80 RAM: 0210)
 DAC Voice Pointer List:	068800 (Rev 00/01)
 DAC Pitch Modifier:	0602FA (Rev 00/01)
 Pan Animation List:	0605D0 (Rev 00/01)
+Sound RAM:		D300 (68k RAM)
 
 
 DAC Table

@@ -5,9 +5,10 @@
 ; SegaCD BIOS (J) hardcoded values:
 ; 1C02 - 00 13 - Global Pointer List Offset (1300h)
 ; The rest is left at 00.
-; Timing is mainly done by VInt.
+; Timing is done by VInt/Timer A.
 ; (Interrupts are disabled in VInt and reenabled when YM2612 Timer A expires, which
-;  runs at a rate of 248h = 121.1 Hz. So it effectively updates every VInt.)
+;  runs at a rate of 248h = 121.1 Hz. So it effectively updates twice every VInt.
+;  The best approximation of this would be Timer A at 244h = 119.97 Hz.)
 
 ; SegaCD BIOS (U) doesn't use any of the configuration values.
 ; Timing is done by VInt.
