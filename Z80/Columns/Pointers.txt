@@ -1,0 +1,23 @@
+General Pointer List:	8000 (W) (Z80 Bank Offset)
+Music Pointer List:	821F (W) (Z80 Bank Offset)
+SFX Pointer List:	1000 (W) (Z80 RAM)
+Mod. Pointer List:	800E (W) (Z80 Bank Offset)
+PSG Pointer List:	8154 (W) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	011D1C (W)
+Additional Z80 Data:	012970 (W) (goes to Z80 RAM 1000)
+Pan Animation List:	02DD (Z80 RAM)
+FM Drum Pointer List:	N/A
+FM Drum Ins. Ptr. List:	N/A
+PSG Drum Pointer List:	N/A
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 010000
+
+
+The sound data matches in all game versions (Rev 00 and Rev 01).
+
+
+Notes:
+- The sound driver has many special coordination flags.
+- The sound driver skips the drum channel.

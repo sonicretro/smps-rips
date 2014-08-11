@@ -1,0 +1,47 @@
+; --- Columns Command Definition ---
+; SMPS Z80 Type 1/FM
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PANAFMS 	PAFMS_PAN	02	; Note: also disables the Pan Animation effect
+E1	DETUNE  	        	02
+E2	COND_JUMP	CJMP_Z  	05	01,03	; Jump if 1C17 is 00, jump to first address. Else jump to second one.
+E3	TRANSPOSE	TRNSP_GSET	01	; Special Transpose - sets transpose to value in 1C12
+E4	PAN_ANIM	        	06
+E5	VOLUME  	VOL_ABS_TMP	02	; sets Volume and calls FM RefreshVolume
+E6	VOLUME  	VOL_CN_FM	02
+E7	HOLD    	        	01
+E8	NOTE_STOP	NSTOP_MULT	02
+E9	INSTRUMENT	INS_N_FM	03	; if 1C18 == 0, set first instrument, else set second one
+EA	TIMING  	TIME_SET	04
+EB	DETUNE  	        	02
+EC	VOLUME  	VOL_CN_PSG	02
+ED	MOD_SETUP	        	05
+EE	MOD_SETUP	        	05
+EF	INSTRUMENT	INS_C_FM	82
+F0	MOD_SETUP	        	05
+F1	GOTO    	        	03	01
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SRES	02
+F4	GOTO    	        	03	01
+F5	GOTO    	        	03	01
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	IGNORE  	        	02	; set Volume to 1C13, negate volume if parameter != 0
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	IGNORE  	        	03	; first parameter: see FA, second parameter: additional volume increment
+FD	COND_JUMP	CJMP_Z  	05	01,02	; set 1C17 = 1C08 and continue like E2
+FE	INSTRUMENT	INS_C_FM	82
+FF	META_CF 	        	01
+
+[Meta]
+00	TIMING_MODE	        	02
+01	VOLUME  	VOL_CN_PSG	02
+02	DETUNE  	        	02
+03	DETUNE  	        	02
+04	DETUNE  	        	02
+05	TIMING_MODE	        	02
+06	TIMING_MODE	        	02
+07	VOLUME  	VOL_CN_PSG	02
