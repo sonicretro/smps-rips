@@ -11,6 +11,7 @@ PtrFmt = Z80
 InsMode = Hardware
 ;FMChnOrder = 16 0 1 2 4 5 6
 TempoMode = Timeout
+Tempo1Tick = DoTempo
 FMBaseNote = B
 FMBaseOctave = 0
 DetuneOctWrap = False

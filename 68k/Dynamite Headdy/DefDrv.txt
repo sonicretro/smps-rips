@@ -1,5 +1,4 @@
-; --- Shadow Dancer Driver Definition ---
-; early SMPS 68k Type 1
+; --- SMPS 68k Driver Definition ---
 
 [Settings]
 DefTimingMode = 00
@@ -10,20 +9,22 @@ PtrFmt = 68k
 InsMode = Default
 ;FMChnOrder = 16 0 1 2 4 5 6
 TempoMode = Timeout
-Tempo1Tick = PlayMusic
+Tempo1Tick = DoTempo
 FMBaseNote = B
 FMBaseOctave = 0
 DetuneOctWrap = False
 NoteOnPrevent = Rest
-DelayFreq = Keep
+DelayFreq = Reset
 ModAlgo = 68k
-EnvMult = 68k	; actually N/A
-VolMode = AlgoSet
+EnvMult = 68k
+VolMode = Algo
 FMFreqs = Def_68k
 PSGFreqs = Def_68k
-FM3Freqs = 000h	; not used - the FM3 frequencies are loaded directly from the coordination flag
+FM3Freqs = $000 $180 $1F4 $260
 
 [EnvelopeCmds]
-80 = RESET
-83 = HOLD
-85 = LOOP
+80 = Reset
+81 = Hold
+82 = Loop
+83 = Stop
+84 = Chg_Mult

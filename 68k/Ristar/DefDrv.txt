@@ -10,6 +10,7 @@ PtrFmt = Rst
 InsMode = Default
 FMChnOrder = 16 17 0 1 2 4 5 6	; driver actually uses 10 11 0 1 2 4 5 6, but this would break panning.
 TempoMode = Overflow
+Tempo1Tick = PlayMusic
 FMBaseNote = B
 FMBaseOctave = 0
 DetuneOctWrap = False

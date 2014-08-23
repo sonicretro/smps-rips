@@ -1,26 +1,26 @@
 1988
 ----
-Altered Beast (Juuouki)				pre-SMPS Z80
-Osomatsu-kun					pre-SMPS Z80
-Space Harrier II				pre-SMPS Z80 [sound RAM at 1800]
-Super Thunder Blade				pre-SMPS Z80/mod [sound RAM at 1E00]
-Tetris						pre-SMPS Z80
+Altered Beast (Juuouki)				pre-SMPS Z80/Type 1
+Osomatsu-kun					pre-SMPS Z80/Type 2
+Space Harrier II				pre-SMPS Z80/Type 1 [sound RAM at 1800]
+Super Thunder Blade				pre-SMPS Z80/Type 1 (mod) [sound RAM at 1E00]
+Tetris						pre-SMPS Z80/Type 2
 
 1989
 ----
-Alex Kidd in the Enchanted Castle		pre-SMPS Z80 [incorrectly detected as SMPS Z80] [sound RAM at 1D00]
-Arnold Palmer Tournament Golf (Super Masters)	early SMPS Z80 [incorrectly detected as pre-SMPS Z80]
-Forgotten Worlds				pre-SMPS Z80
-Ghouls 'n Ghosts (Dai Makaimura)		pre-SMPS Z80
-Golden Axe					early SMPS Z80 [incorrectly detected as pre-SMPS Z80]
+Alex Kidd in the Enchanted Castle		pre-SMPS Z80/Type 1 [sound RAM at 1D00]
+Arnold Palmer Tournament Golf (Super Masters)	early SMPS Z80
+Forgotten Worlds				pre-SMPS Z80/Type 2
+Ghouls 'n Ghosts (Dai Makaimura)		pre-SMPS Z80/Type 2
+Golden Axe					early SMPS Z80
 Last Battle (Hokuto no Ken)			pre-SMPS 68k/FM
 Mahjong Cop Ryuu				pre-SMPS 68k/FM
 Mystic Defender (Kujaku Ou II)			SMPS Z80/Type 1 FM (early)
 Phantasy Star II				pre-SMPS 68k/mod (pre-SMPS Z80 port)
-Rambo III					pre-SMPS Z80
+Rambo III					pre-SMPS Z80/Type 2
 Super Daisenryaku				pre-SMPS 68k/PCM
 The Revenge of Shinobi (The Super Shinobi)	pre-SMPS/MNM 68k
-Super Hang-On					pre-SMPS Z80
+Super Hang-On					pre-SMPS Z80/Type 2
 Sword of Vermilion (Vermilion)			pre-SMPS 68k/PCM
 Tommy Lasorda Baseball (Super League)		pre-SMPS 68k (PCM? there are no drums)
 World Championship Soccer (World Cup Soccer)	pre-SMPS 68k/PCM
@@ -28,12 +28,12 @@ World Championship Soccer (World Cup Soccer)	pre-SMPS 68k/PCM
 1990
 ----
 Arrow Flash					SMPS Z80/Type 1 FM
-Atomic Robo-Kid					SMPS Z80 (banked) (preSMPS?)
+Atomic Robo-Kid					pre-SMPS Z80/Type 2
 Castle of Illusion				SMPS Z80 FM
 Columns						SMPS Z80/Type 1 FM
 Cyberball					SMPS Z80 FM
 Dangerous Seed					SMPS Z80/Type 1 FM
-Darwin 4081					pre-SMPS Z80 (banked)
+Darwin 4081					pre-SMPS Z80/Type 2 (banked)
 Dick Tracy					SMPS Z80 FM
 DJ Boy						SMPS Z80 FM
 Dynamite Duke					SMPS Z80 FM
@@ -58,7 +58,7 @@ Zoom!						pre-SMPS Z80
 ----
 Advanced Daisenryaku				SMPS Z80 FM
 Air Buster (Aero Blasters)			SMPS Z80 FM
-Alien Storm					SMPS Z80 DAC
+Alien Storm					SMPS Z80/Type 1 DAC
 Bahamut Senki					SMPS Z80 FM
 Battle Golfer Yui				SMPS 68k/Type 1a
 Bonanza Brothers				SMPS Z80/Type 1 FM
@@ -188,7 +188,7 @@ Virtua Fighter 2				SMPS Z80/Type 2 DAC
 
 ----
 Sega Game Toshokan				SMPS Z80/Type 1 FM [missing on GDRI]
-Top Shooter (Unl)				SMPS Z80 Type 1/FM [missing on GDRI]
+Top Shooter (Unl)				SMPS Z80 Type 1 FM [missing on GDRI]
 
 
 Compiled from http://gdri.smspower.org/wiki/index.php/Mega_Drive/Genesis_Sound_Engine_List

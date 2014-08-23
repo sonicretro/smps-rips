@@ -7,7 +7,7 @@ E0	PANAFMS 	PAFMS_PAN	02
 E1	DETUNE  	        	02
 E2	SET_COMM	        	02
 E3	RETURN  	        	01
-E4	FADE_IN 	        	01
+E4	FADE_IN_SONG	        	01
 E5	TICK_MULT	TMULT_CUR	02
 E6	VOLUME  	VOL_NN_FM	02
 E7	HOLD    	        	01

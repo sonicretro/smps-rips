@@ -5,7 +5,7 @@
 [Main]
 E0	PANAFMS 	PAFMS_PAN	02
 E1	DETUNE  	        	02
-E2	FADE_IN 	        	02	; fade previous track in
+E2	FADE_IN_SONG	        	02	; fade previous track in
 E3	TRK_END 	TEND_MUTE	01
 E4	VOLUME  	VOL_ABS_S3K	02
 E5	VOLUME  	VOL_CC_FMP2	03
