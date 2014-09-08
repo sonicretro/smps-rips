@@ -1,0 +1,25 @@
+General Pointer List:	8000 (W) (Z80 Bank Offset)
+Music Pointer List:	8064 (W) (Z80 Bank Offset)
+SFX Pointer List:	0F00 (W) (Z80 RAM)
+Mod. Pointer List:	-- invalid -- (W) (Z80 Bank Offset) (points to 8012)
+PSG Pointer List:	8012 (W) (Z80 Bank Offset)
+DAC Drum Pointer List:	07B981 (W)
+DAC Voice Pointer List:	07D4EB (W)
+Z80 Snd Driver Offset:	07E47A (W)
+Additional Z80 Data:	07F376 (W) (goes to Z80 RAM 0F00)
+Pan Animation List:	0370 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+
+DAC List Format:
+The format is the same one as used in Mazin Saga.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0081)
+
+
+Notes:
+-

@@ -16,13 +16,13 @@ Golden Axe					early SMPS Z80
 Last Battle (Hokuto no Ken)			pre-SMPS 68k/FM
 Mahjong Cop Ryuu				pre-SMPS 68k/FM
 Mystic Defender (Kujaku Ou II)			SMPS Z80/Type 1 FM (early)
-Phantasy Star II				pre-SMPS 68k/mod (pre-SMPS Z80 port)
+Phantasy Star II				pre-SMPS 68k/Type 1 (pre-SMPS Z80 port)
 Rambo III					pre-SMPS Z80/Type 2
 Super Daisenryaku				pre-SMPS 68k/PCM
 The Revenge of Shinobi (The Super Shinobi)	pre-SMPS/MNM 68k
 Super Hang-On					pre-SMPS Z80/Type 2
 Sword of Vermilion (Vermilion)			pre-SMPS 68k/PCM
-Tommy Lasorda Baseball (Super League)		pre-SMPS 68k (PCM? there are no drums)
+Tommy Lasorda Baseball (Super League)		pre-SMPS 68k/Type 1 (pre-SMPS Z80 port)
 World Championship Soccer (World Cup Soccer)	pre-SMPS 68k/PCM
 
 1990

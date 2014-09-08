@@ -61,4 +61,6 @@ Notes:
 - There are no FM/PSG SFX. All SFX are DAC.
 - A song is played by writing a number (01..29) to 1C00. The sound engine writes DAC drum sounds to 1C03.
 - SFX are played by writing a number (01..2B) to 1C01 (1st channel) or 1C02 (2nd channel)
-- The driver behaves like most SMPS 68k drivers and the FM instruments are stored in the same format as Sonic 2.
+- The driver is a port of SMPS 68k to the Z80 and thus behaves like SMPS 68k regarding Modulation and other effects.
+- The PSG envelope command hints that it was based on SMPS 68k Type 1. (used in Golden Axe II for example)
+- The FM instruments are stored the same format that is used in Sonic 2 (also an SMPS 68k->Z80 port).
