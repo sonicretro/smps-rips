@@ -6,6 +6,7 @@ PSG Pointer List:	N/A
 DAC Pointer List:	0C0B30 (JU) / 0C0B3F (E) (Z80 Driver: 0B30 / 0B3F)
 DAC SFX Pointer List:	0E77E0 (JU) / 0E8992 (E) (each entry has 2 4-byte pointers, start and end offset)
 Z80 Snd Driver Offset:	0C0000 (JUE)
+Z80 Test Driver Offset:	01B428 (JUE) (apparently unused, does some bankswitching and that's it, contains DPCM table leftovers)
 Sound RAM:		1C00 (Z80 RAM)
 
 

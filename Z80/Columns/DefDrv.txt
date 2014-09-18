@@ -3,7 +3,7 @@
 
 [Settings]
 ; Columns Default values:
-; 1C00 - 01 00 - ROM Bank (078000h)
+; 1C00 - 01 00 - ROM Bank (010000h)
 ; 1C02 - 00 80 - Global Pointer List Offset (8000h)
 ; 1C0A - 80 00 00 00
 ; 1C10 - 80

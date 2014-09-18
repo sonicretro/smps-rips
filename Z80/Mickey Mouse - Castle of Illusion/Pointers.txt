@@ -1,0 +1,24 @@
+General Pointer List:	8000 (JU) (Z80 Bank Offset)
+Global Instrument Data:	078000 (JU)
+Music Pointer List:	808D (JU) (Z80 Bank Offset)
+SFX Pointer List:	0F00 (JU) (Z80 RAM)
+Mod. Pointer List:	-- invalid, feature removed -- (JU) (Z80 Bank Offset) (points to 800E)
+PSG Pointer List:	800E (JU) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0784B0 (JU)
+Additional Z80 Data #1:	0793A0 (JU) (goes to Z80 RAM 0F00, SFX data)
+Additional Z80 Data #2:	079C20 (JU) (goes to Z80 RAM 1900, one of the songs)
+Pan Animation List:	0327 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 070000
+
+
+Notes:
+- The developers went crazy and didn't just remove and change many parts in the sound driver,
+  but they also replaced the PSG volume envelopes with an ADSR system that reads instrument data in the format
+  that is used by FM instruments and uses lookup tables to convert them to values that fit with the ADSR system.
+- The instrument libary (used by all songs) is stored in a separate bank.
+- The only difference between the J and U versions of song 0B is an additional Modulation command (F0) in the U version.
+- Song 14 uses data from song 07.
+- Song 10 uses data from song ??.

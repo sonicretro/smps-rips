@@ -1,0 +1,38 @@
+; --- Mickey Mouse - Castle of Illusion Command Definition ---
+; modified SMPS Z80 Type 1/FM
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PANAFMS 	PAFMS_PAN	02
+E1	DETUNE  	        	02
+E2	SET_COMM	        	02
+E3	TRK_END 	TEND_MUTE	01
+E4	PAN_ANIM	        	06
+E5	DETUNE  	DET_HOLD	82	; Note: like HOLD+DETUNE on FM channels, eats 2 parameters on PSG channels
+E6	VOLUME  	VOL_CN_FM	02	; actually this also adds an additional Volume Base value (TrkRAM+19h)
+E7	HOLD    	        	01
+E8	NOTE_STOP	NSTOP_MULT	02
+E9	SET_LFO 	LFO_NORMAL	03
+EA	TIMING  	TIME_SET_BE	03	; unlike other Z80 Type 1/FM, it's Timer A only (SFX speed is locked) and Big Endian
+EB	SND_CMD 	        	02
+EC	VOLUME  	VOL_CN_PSG	02
+ED	HOLD_LOCK	        	02
+EE	TEMPO   	TEMPO_ADD	02
+EF	INSTRUMENT	INS_C_FM	02	; TODO: change to INS_C_COI
+						; FM channels: acts as usual, PSG channels: sets special ADSR envelope parameters
+F0	MOD_SETUP	        	05
+F1	VOLUME  	VOL_ABS_COI	02	; PSG channels: sets volume, FM channels: sets to (parameter/4 + Volume Base)
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SRES	02
+F4	SND_CMD 	        	02	; can actually only play BGMs, but this does its job
+F5	TIMING  	TIME_ADD_0A	02	; adds the parameter as an unsigned byte to the Timer A value
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	TRANSPOSE	TRNSP_SET	02
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	MUS_PAUSE	MUSP_COI	02	; acts similar to MUSP_68K, but does some additional stuff
+FD	COND_JUMP	CJMP_Z_RESET	03	01	; conditional jump (jumps if 1C08 is zero or resets it to zero)
+FE	SPC_FM3 	        	05
+FF	VOLUME  	VOL_SET_BASE	02

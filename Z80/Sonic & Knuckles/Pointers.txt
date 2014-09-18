@@ -53,3 +53,34 @@ Notes about Sonic 3C:
 	15 Sky Sanctuary (bugfix?)
 	26 Staff Roll
 - Between offset 265AA6 and 27FFFF, the S3C ROM from May 17 contains leftover data from the Sonic 2 ROM. (0E5AA6 .. 0FFFFF)
+
+
+How the Speed Shoes work:
+- Setting the byte at 1C08 speeds the music up. This is used by the Speed Shoes and done by updating the music multiple times a frame.
+  In every frame, it does the speed shoe check this twice - once after updating the SFX tracks and once after updating the music tracks:
+	if (1C2F > 0)
+		1C2F --;
+	else
+	{
+		1C2F = 1C08;
+		UpdateMusicTracks();
+	}
+  So, the counter is processed up to 2-4 times every frame and the music can update up to 1-3 times per frame.
+  The number of music updates per frame can be calculated using this formula:
+	NumUpdates = ((val_1C08/2) + 1) / (val_1C08/2)
+  or simplified:
+	NumUpdates = (val_1C08 + 2) / val_1C08
+- Example values:
+	1C08	music updates per frame
+	01	 3 / 1 = 3
+	02	 4 / 2 = 2
+	03	 5 / 3 = 1.6667
+	04	 6 / 4 = 1.5
+	05	 7 / 5 = 1.4
+	06	 8 / 6 = 1.3333
+	07	 9 / 7 = 1.2857
+	08	10 / 8 = 1.25
+	10h	18 /16 = 1.125
+- When collecting speed shoes, the main game sets 1C08 to 08, i.e. 125% speed.
+- The special stage speedup values are: 00h, 20h, 18h, 10h, 08h.
+  The special stage move speed is located in 68k RAM at E444. 10h is default and gets incremented in steps of 04h until 20h is reached.

@@ -4,7 +4,8 @@ SFX Pointer List:	1E4000 (JE)
 Mod. Pointer List:	1E4D66 (JE) (Z80 RAM: 190E)
 PSG Pointer List:	1E4ED1 (JE) (Z80 RAM: 1A79)
 Z80 Snd Driver Offset:	1E505A (JE)
-Additional Data:	1E4D58 (JE) (0300 bytes, get copied to Z80 RAM 1900-1BFF)
+Additional Z80 Data #1:	1E5FCE (JE) (055E bytes, first song, gets copied to Z80 RAM 1000)
+Additional Z80 Data #2:	1E4D58 (JE) (0302 bytes, gets copied to Z80 RAM 1900)
 Pan Animation List:	1E5347 (JE) (Z80 Driver: 02ED)
 FM Drum Pointer List:	0A01 (Z80 RAM Offset)
 PSG Drum Pointer List:	09E7 (Z80 RAM Offset)
@@ -13,7 +14,7 @@ Sound RAM:		1C00 (Z80 RAM)
 
 Music Wrapper Format
 --------------------
-The music pointers points to data with this format:
+The music pointers point to data with this format:
 2 bytes - song length (Big Endian, includes song address)
 2 bytes - song address (Little Endian, Z80 Offset for Sound Driver)
 ? bytes - actual song data

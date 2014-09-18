@@ -1,0 +1,35 @@
+Tempo Algorithm: n / 256
+-> in 256 frames, the music processes n ticks
+
+ID	Normal	Fast	Ratio
+01 2-12	68	68	1.0	2P Results
+02 2-01	9E	BE	1.20253	Emerald Hill
+03 2-05	EC	FF	1.08051	Mystic Cave 2P
+04 2-0F	D0	F0	1.15385	Oil Ocean
+05 2-02	EA	FF	1.08974	Metropolis
+06 2-14	BE	DE	1.16842	Hill Top
+07 2-06	E0	FF	1.13839	Aquatic Ruin
+08 2-00	BD	DD	1.16931	Casino Night 2P
+09 2-03	48	68	1.44444	Casino Night
+0A 2-07	60	80	1.33333	Death Egg
+0B 2-04	B6	D6	1.17582	Mystic Cave
+0C 2-11	5B	7B	1.35165	Emerald Hill 2P
+0D 2-0E	5B	7B	1.35165	Sky Chase
+0E 2-0C	EE	FF	1.07143	Chemical Plant
+0F 2-10	88	A8	1.23529	Wing Fortress
+10 2-1B	E0	FF	1.13839	Hidden Palace
+11 2-09	87	87	1.0	Option Screen
+12 2-08	FF	FF	1.0	Special Stage
+13 2-0D	E3	FF	1.12335	Boss
+14 2-0B	A9	C9	1.18935	Final Boss
+15 2-0A	97	97	1.0	Ending
+16 2-13	FA	FF	1.02	Super Sonic
+17 2-19	E8	FF	1.02823	Invincibility
+18 2-15	CD	CD	1.0	1-Up
+19 2-16	CD	CD	1.0	Title Screen
+1A 2-17	AA	AA	1.0	Act Clear
+1B 2-18	F2	F2	1.0	Game Over
+1C 1-00	DB	DB	1.0	Continue
+1D 2-1A	D5	D5	1.0	Chaos Emerald
+1E 2-1D	F0	F0	1.0	Credits
+1F 2-1C	80	80	1.0	Drowning

@@ -1,18 +1,18 @@
-General Pointer List:	0C8020
-Music Pointer List:	0C852A
-SFX Pointer List:	0CA2F6
-Mod. Pointer List:	0C8050
-PSG Pointer List:	0C8114
-Z80 DAC Driver A Ofs:	0CC4B0 (simple driver)
-Z80 DAC Driver B Ofs:	0CC599 (driver with 2-channel software mixing)
-DAC Drum Master List:	0C83E2
-DAC SFX Master List:	0C849A
-DAC Z80 RAM List:	0CC875 (Z80 Driver B RAM: 02DC)
-DAC ROM List:		0CC100
-Pan Animation List:	0C8E2C
+General Pointer List:	0C8020 (final) / 1C0020 (Beta 1994-07)
+Music Pointer List:	0C852A (final) / 1C04DA (Beta 1994-07)
+SFX Pointer List:	0CA2F6 (final) / 1C2198 (Beta 1994-07)
+Mod. Pointer List:	0C8050 (final) / 1C0050 (Beta 1994-07)
+PSG Pointer List:	0C8114 (final) / 1C0114 (Beta 1994-07)
+Z80 DAC Driver A Ofs:	0CC4B0 (final) / 1C41A8 (Beta 1994-07) (simple driver)
+Z80 DAC Driver B Ofs:	0CC599 (final) / 1C4291 (Beta 1994-07) (driver with 2-channel software mixing)
+DAC Drum Master List:	0C83E2 (final) / 1C03E2 (Beta 1994-07)
+DAC SFX Master List:	0C849A (final) / 1C0496 (Beta 1994-07)
+DAC Z80 RAM List:	0CC875 (final) / 1C456D (Beta 1994-07) (Z80 Driver B RAM: 02DC)
+DAC ROM List:		0CC100 (final) / 1C3F28 (Beta 1994-07)
+Pan Animation List:	0C8E2C (final) / 1C0D8A (Beta 1994-07)
 Sound RAM:		E000 (68k RAM)
 
-The complete sound related part of the ROM (0C8000-11BFFF) matches byte-by-byte in all checked revisions: final (J), final (UE) and beta 1994-08 (UE).
+The complete sound related part of the ROM (0C8000-11BFFF) matches byte-by-byte in these revisions: final (J), final (UE) and beta 1994-08 (UE).
 
 
 DAC Master List Format:
@@ -36,3 +36,6 @@ DAC Z80 List Format: (all Little Endian values)
 
 Notes:
 - Thanks to Andlabs for disassembling the Ristar sound driver. It made my life a bit easier with this game.
+- The songs in the 1994-07 beta don't have the "PAL tempo" flags. (This causes a 2-4 byte difference, depending on padding.)
+- The 1994-07 beta has less DAC sounds, but all existing ones (but DAC 02) are identical to the final game.
+- 13 Opening Theme 1: There is an additional echo to the very last sound in the 1994-07 beta.

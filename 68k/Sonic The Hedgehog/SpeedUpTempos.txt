@@ -1,0 +1,12 @@
+Tempo Algorithm: (n-1) / n
+-> in n frames, the music processes n-1 ticks
+
+ID	Normal	Fast	Ratio
+01	03	07	1.28571	Green Hill
+02	06	72	1.18947	Labyrinth
+03	09	73	1.11522	Marble
+04	06	26	1.16842	Star Light
+05	03	15	1.42857	Spring Yard
+06	05	08	1.09375	Scrap Brain
+07	08	FF	1.13838	Invincibility
+08	05	05	1.0	1-up
