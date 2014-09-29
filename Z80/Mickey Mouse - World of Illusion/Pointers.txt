@@ -1,0 +1,57 @@
+JUE Final
+---------
+General Pointer List:	8000 (Z80 Bank Offset)
+Music Bank List:	08E1 (Z80 RAM) (00-01 for bank 0E8000..0F0000)
+Music Pointer List:	8392 (Z80 Bank Offset)
+SFX Pointer List:	0E00 (Z80 RAM)
+Mod. Pointer List:	800E (Z80 Bank Offset)
+PSG Pointer List:	814B (Z80 Bank Offset)
+DAC Bank List:		0DBE (Z80 RAM)
+DAC Voice Pointer List:	0E5000 / 0F8000
+Z80 Snd Driver Offset:	0F60E4
+Additional Z80 Data:	0F6EB4 (goes to Z80 RAM 0E00)
+Pan Animation List:	N/A (removed)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Beta
+----
+General Pointer List:	8000 (Z80 Bank Offset)
+Music Bank List:	0953 (Z80 RAM) (00-01 for bank 0E8000..0F0000)
+Music Pointer List:	82F2 (Z80 Bank Offset)
+SFX Pointer List:	1100 (Z80 RAM)
+Mod. Pointer List:	800E (Z80 Bank Offset)
+PSG Pointer List:	814B (Z80 Bank Offset)
+DAC Bank List:		N/A (fixed to bank 0F8000)
+DAC Voice Pointer List:	0F8000
+Z80 Snd Driver Offset:	0E20DC
+Additional Z80 Data:	0E3132 (goes to Z80 RAM 1100) 
+Pan Animation List:	02C6 (Z80 RAM)
+FM Drum Pointer List:	0A4A (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A56 (Z80 RAM)
+PSG Drum Pointer List:	0A30 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+The first 0394 bytes in each music bank (0E8000, 0F0000) match exactly.
+
+
+DAC List Format:
+The format is the same one as used in Mighty Morphin Power Rangers.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0DAE JUE / 1045 Beta)
+
+
+DAC Bank List Format:
+1 byte - bank value (00 or 03 for bank 0E0000 or 0F8000)
+1 byte - sound ID (in ROM bank)
+
+
+Notes:
+- The code that processes the drum track was removed in the final version of the sound driver.
+  In it is still present in the beta and loads FM/PSG drums. (But the drum track doesn't seem to be used by any of the songs.)
+- The 68k writes configuration data for a SMPS Z80 Type 1 to Z80 RAM 1C00 even though it's a Type 2 driver.
+  (The offset of the General Pointer List pointer is the same between Type 1 and 2 though: 1C02)
+- The coordination flags begin at D0 instead of E0.
+  The Dx flags are "set Volume" flags that use the flag ID as a parameter, similar to D8-DF in Sonic Triple Trouble.

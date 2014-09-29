@@ -29,7 +29,7 @@ World Championship Soccer (World Cup Soccer)	pre-SMPS 68k/PCM
 ----
 Arrow Flash					SMPS Z80/Type 1 FM
 Atomic Robo-Kid					pre-SMPS Z80/Type 2
-Castle of Illusion				SMPS Z80 FM
+Castle of Illusion				SMPS Z80/Type 1 FM (mod)
 Columns						SMPS Z80/Type 1 FM
 Cyberball					SMPS Z80 FM
 Dangerous Seed					SMPS Z80/Type 1 FM
@@ -108,7 +108,7 @@ Syd of Valis (Valis SD)				SMPS Z80
 Tecmo World Cup					SMPS Z80/Type 1 DAC
 Uzu Keobukseon					SMPS Z80
 Wani Wani World					SMPS Z80/Type 1 FM
-World of Illusion				SMPS Z80
+World of Illusion				SMPS Z80/Type 2 FM
 
 1993
 ----
@@ -177,6 +177,7 @@ Shadow Squadron (Stellar Assault)		[32x] SMPS 68k/mod
 Slam Dunk					SMPS Z80
 Surging Aura					SMPS Z80
 Tempo						[32x] SMPS Z80/Type 2 DAC (Tempo 32x mod)
+Top Shooter (Unl)				SMPS Z80 Type 1 FM [missing on GDRI]
 Zaxxon's Motherbase 2000 (Parasquad)		[32x] SMPS Z80/Type 2 FM (Dyna Brothers 2 descendant)
 
 1996
@@ -188,7 +189,6 @@ Virtua Fighter 2				SMPS Z80/Type 2 DAC
 
 ----
 Sega Game Toshokan				SMPS Z80/Type 1 FM [missing on GDRI]
-Top Shooter (Unl)				SMPS Z80 Type 1 FM [missing on GDRI]
 
 
 Compiled from http://gdri.smspower.org/wiki/index.php/Mega_Drive/Genesis_Sound_Engine_List

@@ -5,7 +5,7 @@ SFX Pointer List:	078B44
 Mod. Pointer List:	-- invalid, feature removed --
 PSG Pointer List:	0719A8
 Speed Shoes Tempo List:	071A94
-Z80 DAC Driver Offset:	072E7C (Kosinski? compressed)
+Z80 DAC Driver Offset:	072E7C (Kosinski compressed)
 DAC Pointer Table:	072F47 (Z80 Driver: 00D6)
 DAC Pitch Modifier:	071CC4 (DAC sound 83)
 SEGA sound:		079688
@@ -27,3 +27,6 @@ Data is DPCM compressed with the usual delta-array.
 Notes:
 - The PSG Volume Envelope control bytes are a bit different:
 	80 - hold envelope
+- The snare sound is from the Roland TR-626 and plays with 23784 Hz (or 16845 Hz with Generic SMPS 68k DAC driver).
+  The to get the original pitch, the sample must be played with 14420 Hz.
+- The bass drum plays with 7963 Hz. (7181 Hz with Gen. SMPS 68k)
