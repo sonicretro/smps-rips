@@ -1,16 +1,14 @@
-; --- Mickey Mouse - Castle of Illusion SMPS Driver Definition ---
-; modified SMPS Z80 Type 1
+; --- Fatal Labyrinth SMPS Driver Definition ---
+; SMPS Z80 Type 1
 
 [Settings]
-; Mickey Mouse - Castle of Illusion Default values:
-; 1C00 - 07 00 - ROM Bank (070000h)
+; Fatal Labyrinth Default values:
+; 1C00 - 01 80 - ROM Bank (018000h)
 ; 1C02 - 00 80 - Global Pointer List Offset (8000h)
 ; 1C04 - B4 00 - Timer A (63.11 Hz)
-; 1C06 - E6 - Timer B (128.05 Hz)
+; 1C06 - CB - Timer B (62.81 Hz)
 ; 1C07 - 80 - Timing Mode
 ; 1C08 - 00 00
-; 1C0A - 00 00 00
-; 1C00 - 07 80 - Instrument Library ROM Bank (078000h)
 
 ; forced Default Values for Timing
 ; default Mode (hex):
@@ -20,10 +18,10 @@
 ;	80 - update music when Timer A expires, update SFX when Timer B expires
 ;	FF - don't set a default
 DefTimingMode = 80
-LockTimingMode = True
+LockTimingMode = False
 ; Default values for the YM2612 Timers (can be dec or hex)
 DefTimerA = 0B4h
-DefTimerB = E6h
+DefTimerB = CBh
 
 [Main]
 ; Pointer Format
@@ -51,10 +49,9 @@ FMChnOrder = 12 0 1 4 5 6 2
 
 ; Tempo Mode
 ;	TIMEOUT - used by preSMPS, SMPS Z80 Type 1 and most SMPS 68k
-;	TOUT_REV - opposite of TIMEOUT (i.e. update only when counter expires)
 ;	OVERFLOW - used by SMPS Z80 Type 2 and some late SMPS 68k
 ;	OVERFLOW2 - used by Sonic 2
-TempoMode = Tout_Rev
+TempoMode = Timeout
 
 ; Order of the execution of PlaySoundID and DoTempo
 ;	DOTEMPO - DoTempo is executed first, PlaySoundID then. So when a new song gets started, one DoTempo is missed.
@@ -104,19 +101,17 @@ VolMode = Bit7
 ;	FMFreqs: DEF_68K, DEF_Z80
 ;	PSGFreqs: DEF_PRE (pre-SMPS), DEF_68K, DEF_Z80_T1, DEF_Z80_T2
 FMFreqs = Def_Z80
-PSGFreqs = {	356h 326h 2F9h 2CEh 2A5h 280h 25Ch 23Ah 21Ah 1FBh 1DFh 1C4h
-		1ABh 193h 17Dh 167h 153h 140h 12Eh 11Dh 10Dh 0FEh 0EFh 0E2h
-		0D6h 0C9h 0BEh 0B4h 0A9h 0A0h 097h 08Fh 087h 07Fh 078h 071h
-		06Bh 065h 05Fh 05Ah 055h 050h 04Bh 047h 043h 040h 03Ch 039h
-		036h 033h 030h 02Dh 02Bh 028h 026h 024h 022h 020h 01Fh 01Dh
-		01Bh 01Ah 018h 017h 016h 015h 013h 012h 011h 010h 00Eh 00Ch
-		00Ah 008h 006h 004h 002h 000h }
+PSGFreqs = Def_Z80_T1
 FM3Freqs = 000h 132h 18Eh 1E4h
 
 
 [EnvelopeCmds]
-; Actually the driver lacks support for any sort of envelope,
-; so I'll just keep the default SMPS Z80 definition.
+; Possible commands:
+;	RESET - reset the Envelope Index to 0
+;	HOLD - hold the envelope at the current level
+;	LOOP - loop back to the Envelope Index set by the following byte
+;	STOP - stop the envelope and note
+;	CHG_MULT - change the Envelope Multiplier (Modulation Envelope only)
 80 = Reset
 81 = Hold
 82 = Loop

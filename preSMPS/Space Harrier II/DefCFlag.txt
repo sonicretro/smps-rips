@@ -17,7 +17,7 @@ EA	PANAFMS 	PAFMS_FMS	02
 EB	PANAFMS 	PAFMS_AMS	02
 EC	IGNORE  	        	01	; enables FM 3 Special Mode
 ED	IGNORE  	        	01	; disables FM 3 Special Mode
-EE	HOLD    	        	02
+EE	HOLD    	HOLD_LOCK_NEXT	02
 EF	INSTRUMENT	INS_C_FM	02
 F0	VOLUME  	VOL_ABS 	02
 F1	VOLUME  	VOL_ABS 	02

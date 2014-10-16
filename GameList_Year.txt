@@ -1,10 +1,9 @@
 1988
 ----
 Altered Beast (Juuouki)				pre-SMPS Z80/Type 1
-Osomatsu-kun					pre-SMPS Z80/Type 2
+Osomatsu-kun					pre-SMPS Z80/Type 2 [sound RAM at 1D00]
 Space Harrier II				pre-SMPS Z80/Type 1 [sound RAM at 1800]
 Super Thunder Blade				pre-SMPS Z80/Type 1 (mod) [sound RAM at 1E00]
-Tetris						pre-SMPS Z80/Type 2
 
 1989
 ----
@@ -22,6 +21,7 @@ Super Daisenryaku				pre-SMPS 68k/PCM
 The Revenge of Shinobi (The Super Shinobi)	pre-SMPS/MNM 68k
 Super Hang-On					pre-SMPS Z80/Type 2
 Sword of Vermilion (Vermilion)			pre-SMPS 68k/PCM
+Tetris						pre-SMPS Z80/Type 2
 Tommy Lasorda Baseball (Super League)		pre-SMPS 68k/Type 1 (pre-SMPS Z80 port)
 World Championship Soccer (World Cup Soccer)	pre-SMPS 68k/PCM
 

@@ -10,16 +10,15 @@ E3	TRK_END 	TEND_MUTE	01
 E4	PAN_ANIM	        	06
 E5	DETUNE  	DET_HOLD	82	; Note: like HOLD+DETUNE on FM channels, eats 2 parameters on PSG channels
 E6	VOLUME  	VOL_CN_FM	02	; actually this also adds an additional Volume Base value (TrkRAM+19h)
-E7	HOLD    	        	01
+E7	HOLD    	HOLD_ON 	01
 E8	NOTE_STOP	NSTOP_MULT	02
 E9	SET_LFO 	LFO_NORMAL	03
 EA	TIMING  	TIME_SET_BE	03	; unlike other Z80 Type 1/FM, it's Timer A only (SFX speed is locked) and Big Endian
 EB	SND_CMD 	        	02
 EC	VOLUME  	VOL_CN_PSG	02
-ED	HOLD_LOCK	        	02
-EE	TEMPO   	TEMPO_ADD	02
-EF	INSTRUMENT	INS_C_FM	02	; TODO: change to INS_C_COI
-						; FM channels: acts as usual, PSG channels: sets special ADSR envelope parameters
+ED	HOLD    	HOLD_LOCK	02
+EE	TEMPO   	TEMPO_SET	02
+EF	INSTRUMENT	INS_C_COI	02	; FM channels: acts as usual, PSG channels: sets special ADSR envelope parameters
 F0	MOD_SETUP	        	05
 F1	VOLUME  	VOL_ABS_COI	02	; PSG channels: sets volume, FM channels: sets to (parameter/4 + Volume Base)
 F2	TRK_END 	TEND_STD	01

@@ -2,8 +2,8 @@ General Pointer List:	8000 (JU) (Z80 Bank Offset)
 Global Instrument Data:	078000 (JU)
 Music Pointer List:	808D (JU) (Z80 Bank Offset)
 SFX Pointer List:	0F00 (JU) (Z80 RAM)
-Mod. Pointer List:	-- invalid, feature removed -- (JU) (Z80 Bank Offset) (points to 800E)
-PSG Pointer List:	800E (JU) (Z80 Bank Offset)
+Mod. Pointer List:	-- invalid -- (JU) (Z80 Bank Offset) (points to 800E)
+PSG Pointer List:	800E (JU) (Z80 Bank Offset) (unused)
 Z80 Snd Driver Offset:	0784B0 (JU)
 Additional Z80 Data #1:	0793A0 (JU) (goes to Z80 RAM 0F00, SFX data)
 Additional Z80 Data #2:	079C20 (JU) (goes to Z80 RAM 1900, one of the songs)
@@ -18,7 +18,12 @@ Notes:
 - The developers went crazy and didn't just remove and change many parts in the sound driver,
   but they also replaced the PSG volume envelopes with an ADSR system that reads instrument data in the format
   that is used by FM instruments and uses lookup tables to convert them to values that fit with the ADSR system.
+- The ADSR system was ported from Master System SMPS.
 - The instrument libary (used by all songs) is stored in a separate bank.
 - The only difference between the J and U versions of song 0B is an additional Modulation command (F0) in the U version.
 - Song 14 uses data from song 07.
-- Song 10 uses data from song ??.
+- Song 10 uses data from song 01.
+- The Tempo algorithm is "count down, update when reaching zero", i.e. delay n-1 times, process once.
+  That's the opposite of the common "process n-1 frames, delay once".
+- The PSG volume envelope of the music tracks is also updated before processing SFX.
+- When the Note Stop counter expires, the PSG note is stopped immediately. (unlike Master System SMPS, where it activates the ADSR's Release Phase)
