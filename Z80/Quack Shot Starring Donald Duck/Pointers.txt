@@ -1,0 +1,34 @@
+General Pointer List:	8000 (JU) (Z80 Bank Offset)
+Global Instrument Data:	078000 (Rev 00) / 0138000 (Rev 01)
+Instrument Transpose:	0784B0 (Rev 00) / 01384B0 (Rev 01)
+Music Pointer List:	811B (JU) (Z80 Bank Offset)
+SFX Pointer List:	0DD0 (JU) (Z80 RAM)
+Mod. Pointer List:	8010 (JU) (Z80 Bank Offset) (unused)
+PSG Pointer List:	802D (JU) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0784E0 (Rev 00) / 1384E0 (Rev 01)
+Additional Z80 Data #1:	0792A6 (Rev 00) / 1392A6 (Rev 01) (goes to Z80 RAM 0DD0, SFX data)
+Additional Z80 Data #2:	07A0C4 (Rev 00) / 13A0CA (Rev 01) (goes to Z80 RAM 0F00, song 0C)
+Pan Animation List:	N/A (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM) (actually 1BFE, but nothing got moved)
+
+
+There is only 1 music bank: 070000
+
+
+Notes:
+- The SMPS configuration values are written to Z80 RAM 1BFE. (It begins at 1C00 in most SMPS drivers.)
+- The music data and sound driver is the same in both revisions.
+  There are differences in SFX data.
+- The sequence format is slightly different.
+  00-60 - Delay (usually 00-7F)
+  61 - Rest (usually 80)
+  62-CF - Note (usually 81-DF)
+  D0-FF - Coordination Flag
+- There is an additional table with fraction values for FM notes. (16 values per note)
+- Sound Test song list offset: 004C20 (Rev 00)
+- PlaySound routine: 07FED8 (Rev 00)
+  The Sound ID is read from EE52 (68k RAM) and copied to 1C0A (Z80 RAM).
+- Song 0C is stored in Z80 RAM. Since it used space that's usually taken by SFX data, it is loaded on request.
+- Z80 loader routines:
+	07FE00 - load Z80 driver + SFX data
+	07FED8 - load Z80 driver + Song 0C
