@@ -1,0 +1,23 @@
+*.bin binary
+*.mmd binary
+*.lst binary
+
+*.mmw binary
+*.ors binary
+*.ps4 binary
+*.rst binary
+*.s2b binary
+*.s3k binary
+*.skc binary
+*.sm2 binary
+*.smp binary
+*.smy binary
+*.smz binary
+*.sqs binary
+*.svr binary
+*.sze binary
+*.tra binary
+*.trs binary
+
+*.sfx binary
+*.sf3 binary

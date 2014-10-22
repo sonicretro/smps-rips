@@ -52,7 +52,7 @@ Strider (Strider Hiryuu)			SMPS 68k/Type 1a (mod, custom sequence format)
 Super Monaco GP					SMPS Z80/Type 1 FM (mod)
 Whip Rush					SMPS Z80 FM
 Wonder Boy III: Monster Lair			SMPS Z80 FM
-Zoom!						pre-SMPS Z80
+Zoom!						pre-SMPS Z80/Type 2
 
 1991
 ----
@@ -72,11 +72,11 @@ Gain Ground					SMPS Z80 FM
 Golden Axe II					SMPS 68k/Type 1b
 Jantei Monogatari				pre-SMPS 68k/FM
 Marvel Land (Talmit's Adventure)		SMPS Z80 FM
-Mercs (Senjou no Ookami II)			SMPS Z80 DAC
+Mercs (Senjou no Ookami II)			SMPS Z80/Type 1 early DAC
 Nikkan Sports Pro Yakyuu VAN			SMPS Z80 FM
 Ninja Burai Densetsu				SMPS 68k
 OutRun						SMPS Z80/Type 1 DAC
-QuackShot					SMPS Z80 FM
+QuackShot					SMPS Z80/Type 1 FM (mod)
 Rent-a-Hero					pre-SMPS 68k/PCM
 Saint Sword					SMPS Z80 FM
 Sangokushi Retsuden				SMPS Z80 FM
@@ -108,7 +108,7 @@ Syd of Valis (Valis SD)				SMPS Z80
 Tecmo World Cup					SMPS Z80/Type 1 DAC
 Uzu Keobukseon					SMPS Z80
 Wani Wani World					SMPS Z80/Type 1 FM
-World of Illusion				SMPS Z80/Type 2 FM
+World of Illusion				SMPS Z80/Type 2 FM (mod)
 
 1993
 ----

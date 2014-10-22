@@ -1,0 +1,30 @@
+General Pointer List:	8000 (W) (Z80 Bank Offset)
+Music Pointer List:	8256 (W) (Z80 Bank Offset)
+SFX Pointer List:	1000 (W) (Z80 RAM)
+Mod. Pointer List:	800E (W) (Z80 Bank Offset)
+PSG Pointer List:	8154 (W) (Z80 Bank Offset)
+DAC Drum Pointer List:	0F8000 (W)
+Z80 Snd Driver Offset:	0FB75A (W)
+Additional Z80 Data:	0FC6AA (W) (goes to Z80 RAM 1000)
+Pan Animation List:	N/A
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 0F0000
+
+
+DAC Table
+---------
+At Z80 Offset 8000h, there is a simple offset-list of some entries. Each offset is a 2-byte bank offset and points to an entry in the actual DAC Table.
+
+DAC List Format: (all little endian values)
+2 bytes - Start Offset (in Z80 Address Space)
+2 bytes - Data Length
+1 byte  - Pitch
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 09C3)
+
+
+Notes:
+-

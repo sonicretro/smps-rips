@@ -1,13 +1,16 @@
 General Pointer List:	N/A (everything is hardcoded into the driver)
-Music Bank List:	3A417C (W) (Z80 Driver: 117A)
-Music Pointer List:	3A419B (W) (Z80 Driver: 1199)
-SFX Pointer List:	3A41D9 (W) (Z80 Driver: 11D7) (points to bank 3A8000)
-Mod. Pointer List:	3A403F (W) (Z80 Driver: 103D)
-PSG Pointer List:	3A3F91 (W) (Z80 Driver: 0F8F)
-DAC Drum Pointer List:	3A42D0 (W) (Z80 Driver: 12CE)
-Z80 Snd Driver Offset:	3A3002 (W)
+Music Bank List:	117A (W) / 1177 (Beta 08-19) / 1178 (Beta 08-30, 09-xx) (Z80 RAM)
+Music Pointer List:	1199 (W) / 1185 (Beta 08-19) / 1186 (Beta 08-30) / 1197 (Beta 09-xx) (Z80 RAM)
+SFX Pointer List:	11D7 (W) / 11A1 (Beta 08-19) / 11A2 (Beta 08-30) / 11D5 (Beta 09-xx) (Z80 RAM)
+Mod. Pointer List:	103D (W) / 103A (Beta 08-19) / 103B (Beta 08-30, 09-xx, 09-20) (Z80 RAM)
+PSG Pointer List:	0F8F (W, all Betas) (Z80 RAM)
+DAC Drum Pointer List:	12CE (W) / 1294 (Beta 08-19) / 1295 (Beta 08-30) / 12CA (Beta 09-xx) (Z80 RAM)
+Z80 Snd Driver Offset:	3A3002 (W) / 0021FA (Beta 08-19, 08-30) / 00228E (Beta 09-13) / 0022F4 (Beta 09-20)
 Pan Animation List:	02EA (Z80 RAM)
 Sound RAM:		1C00 (Z80 RAM)
+
+SFX Pointers point to bank 3A8000 in the final and all 1996-09 betas.
+In the 1996-08 betas they point to bank 398000.
 
 
 DAC List Format: (all little endian values)
@@ -36,3 +39,25 @@ Notes:
 - All songs use one shared instrument library that's stored after the last song in each of the two banks.
   The instrument library matches in both banks.
   Songs 01-09/11-19 use the first instrument library (at E7E6), songs 0A-0C/1A-1C use the second one (at FD2B).
+
+Beta Notes:
+- The 1996-08-19 beta has only 3 songs. They all use a different instrumentation than the final version.
+- The sound driver + all of its data matches between the 1996-09-27 beta and the final.
+- The final sound driver is almost the same as the one used in beta 1996-08-19.
+  The only differences are:
+	- different bank switch code and pointers for SMPS data (envelopes, songs, ...)
+	- first Special SFX ID:
+		08-19	09-13	09-27, final
+		E7	E8	E9
+	- The last valid song ID in the DoSoundQueue routine is 8E for the 1996-08 betas and 9F in the 1996-09 betas and the final.
+- detailed history:
+  Beta 08-19 -> 08-30
+	PSG envelope 04 changed, songs added (same amount of song slots), DAC sounds changed
+  Beta 08-30 -> 09-13
+	sound data moved from 398000 to 3A8000, one SFX added, songs added (last song ID 8E->9F), DAC sounds changed [now final]
+	Note: Most of the songs are already finished in this beta and match the ones in the final completely.
+  Beta 09-13 -> 09-20
+	songs changed
+  Beta 09-20 -> 09-27/final
+	PSG envelopes 05 and 06 changed, one SFX added, SFX changed
+- Song 09 is the only song in the 08-30 beta that like in the final. (The tick timing was changed though.)
