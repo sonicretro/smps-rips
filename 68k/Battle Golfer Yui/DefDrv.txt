@@ -23,6 +23,9 @@ FMFreqs = Def_68k
 PSGFreqs = Def_68k
 FM3Freqs = 000h	; not used - the FM3 frequencies are loaded directly from the coordination flag
 
+FadeOutSteps = $28
+FadeOutDelay = 3
+
 [EnvelopeCmds]
 80 = RESET
 83 = HOLD

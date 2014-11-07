@@ -31,4 +31,19 @@ Notes:
 - Song 0C is stored in Z80 RAM. Since it used space that's usually taken by SFX data, it is loaded on request.
 - Z80 loader routines:
 	07FE00 - load Z80 driver + SFX data
-	07FED8 - load Z80 driver + Song 0C
+	07FE16 - load Z80 driver + Song 0C
+- The byte at FF19 (68k RAM) controls the screen mode.
+	00 - Fade out and go to 01
+	01 - Intro
+	02 - Map
+	03 - load a level
+	04 - restart a level
+	05 - during a level
+	06 - show SEGA screen and go to 00
+	07 - ??
+	08 - Pause Menu
+	09 - Ending
+	0A - Credits
+	0B - Menu
+	0C - Intro Screen
+  Note: The screen mode byte is not checked during cutscenes.

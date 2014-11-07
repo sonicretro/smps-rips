@@ -113,6 +113,10 @@ PSGFreqs = DEF_Z80_T1
 FM3Freqs = 000h 132h 18Eh 1E4h
 
 
+FadeOutSteps = 28h
+FadeOutDelay = 6
+
+
 [EnvelopeCmds]
 ; Possible commands:
 ;	RESET - reset the Envelope Index to 0

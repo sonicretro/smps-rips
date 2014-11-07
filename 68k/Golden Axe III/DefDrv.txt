@@ -23,6 +23,15 @@ FMFreqs = Def_68k
 PSGFreqs = Def_68k
 FM3Freqs = $000 $180 $1F4 $260
 
+; algorithm: FadeCnt += FadeSpeed [$30], execute on overflow
+; Only a few tracks are updated per execution. Every track is updated after 4 steps.
+; FM volume: ChnVol + FadeVol
+; PSG volume: ChnVol + FadeVol/8 + 2
+FadeOutSteps = $0C	; $30 / 4
+FadeOutDelay = $15	; $100 / $30 * 4
+FadeOutVolAddFM = 4
+FadeOutVolAddPSG = 1	; actually 0.5
+
 DrumChMode = GAxe3
 DACChns = 2
 DACVolDiv = 2

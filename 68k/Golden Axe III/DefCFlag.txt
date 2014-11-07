@@ -20,10 +20,10 @@ ED	DAC_GAXE3	GA3_2NOTE_OFF	01	; disable 2-note DAC mode
 EE	COND_JUMP	CJMP_EQ 	04	02	; conditional jump (jump if C00E == parameter)
 EF	INSTRUMENT	INS_N_FM	02
 F0	MOD_SETUP	        	05
-F1	IGNORE  	        	01	; SFX related
+F1	IGNORE  	        	01	; set Transpose value from SndRAM+032
 F2	TRK_END 	TEND_STD	01
 F3	PSG_NOISE	PNOIS_SET	02
-F4	IGNORE  	        	01	; SFX related
+F4	IGNORE  	        	01	; save Transpose value to SndRAM+032, then add a random value (F0, 01..0F)
 F5	INSTRUMENT	INS_N_PSG	02
 F6	GOTO    	        	03	01
 F7	LOOP    	        	05	03

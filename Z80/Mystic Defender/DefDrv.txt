@@ -116,6 +116,10 @@ PSGFreqs = {	35Dh 32Dh 2FFh 2D4h 2ABh 285h 261h 23Fh 21Eh 200h 1E3h 1C8h
 FM3Freqs = 000h 132h 18Eh 1E4h
 
 
+FadeOutSteps = 28h
+FadeOutDelay = 6
+
+
 [EnvelopeCmds]
 ; Possible commands:
 ;	RESET - reset the Envelope Index to 0

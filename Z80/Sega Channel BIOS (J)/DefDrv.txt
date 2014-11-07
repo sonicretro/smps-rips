@@ -104,6 +104,10 @@ PSGFreqs = Def_Z80_T1
 FM3Freqs = 000h 132h 18Ah 1E4h	; Flicky uses a slightly modified set of FM3 frequencies.
 
 
+FadeOutSteps = 28h
+FadeOutDelay = 6
+
+
 [EnvelopeCmds]
 ; Possible commands:
 ;	RESET - reset the Envelope Index to 0

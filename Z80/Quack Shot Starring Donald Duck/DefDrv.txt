@@ -106,6 +106,9 @@ PSGFreqs = Def_Z80_T1
 FM3Freqs = 000h 132h 18Eh 1E4h
 
 
+FadeOutSteps = 50h
+FadeOutDelay = 4
+
 NoteBase = 61	; 00-60 = Delay, 61 = Rest, 62-CF = Note
 
 

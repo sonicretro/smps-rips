@@ -23,6 +23,19 @@ FMFreqs = Def_68k
 PSGFreqs = Def_68k
 FM3Freqs = $000 $180 $1F4 $260
 
+FadeOutSteps = $18
+FadeOutDelay = $10
+FadeOutVolAddFM = 8
+FadeOutVolAddPSG = 1
+
+; Alternative #1: (FadeOutMusic_Kill)
+;FadeOutSteps = $40
+;FadeOutDelay = $10
+
+; Alternative #2: (FadeOutMusic_Quick)
+;FadeOutSteps = $0C
+;FadeOutDelay = 1
+
 DrumChMode = Normal
 DACChns = 2
 DACVolDiv = 2

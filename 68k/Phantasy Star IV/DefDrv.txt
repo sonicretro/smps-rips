@@ -22,6 +22,9 @@ FMFreqs = Def_68k
 PSGFreqs = Def_68k
 FM3Freqs = $000 $180 $1F4 $260
 
+FadeOutSteps = $0F
+FadeOutDelay = 1
+
 DrumChnMode = PS4
 
 [EnvelopeCmds]

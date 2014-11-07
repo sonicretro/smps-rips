@@ -99,8 +99,8 @@ In order to disable fading, patch the following bytes in the Z80 sound driver:
 	0770	AA -> 00	(disables command EE)
 	077C	A0 -> 00	(disables command EF)
 
-Fade command ED is used in songs 06, 08 and 0B to 12.
-EE and EF don't seem to be used anywhere.
+Fade command ED is used in songs 06, 08 and 0B to 12. The songs don't use EE and EF.
+Commands ED and EF are used in some SFX.
 
 
 SFX Header

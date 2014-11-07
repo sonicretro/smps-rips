@@ -1,0 +1,9 @@
+; --- SMPS DAC Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 01
+
+[Drums]
+;Note	Type    DrumID	Pitch
+81..DF	DAC	01

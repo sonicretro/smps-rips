@@ -1,0 +1,25 @@
+General Pointer List:	130000 (J)
+Music Pointer List:	1301EC (J)
+SFX Pointer List:	13A59E (J)
+Mod. Pointer List:	13002C (J)
+PSG Pointer List:	130144 (J)
+Z80 DAC Driver Offset:	131704 (J)
+DAC Pointer List:	13188C (J) (Z80 Driver: 0188)
+DAC Pitch Modifier:	1303D8 (J)
+DAC Voice Pointer List:	1F8000 (J)
+DAC Bank/Sound ID List:	02B0F6 (J) (1st byte: DAC bank ID from table below, 2nd byte: DAC sound command)
+DAC Bank List:		02B020 (J) (2-byte values, bank bits 23-8)
+Pan Animation List:	13072C (J)
+Sound RAM:		2200 (68k RAM)
+
+
+DAC Table
+---------
+The DAC table format is the same as Fatal Fury.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001E)
+
+
+Notes:
+-

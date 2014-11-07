@@ -30,6 +30,11 @@ PSGFreqs = {
 	$001 $000 $000 $000 $000 $000 }
 FM3Freqs = $000	; removed from the driver
 
+FadeOutSteps = $05
+FadeOutDelay = 1
+FadeOutVolAddFM = 4
+FadeOutVolAddPSG = 1
+
 DrumChMode = VRDlx	; nothing special, just enables Volume control
 
 [EnvelopeCmds]

@@ -114,6 +114,10 @@ PSGFreqs = {	356h 326h 2F9h 2CEh 2A5h 280h 25Ch 23Ah 21Ah 1FBh 1DFh 1C4h
 FM3Freqs = 000h 132h 18Eh 1E4h
 
 
+FadeOutSteps = 28h
+FadeOutDelay = 3
+
+
 [EnvelopeCmds]
 ; Actually the driver lacks support for any sort of envelope,
 ; so I'll just keep the default SMPS Z80 definition.

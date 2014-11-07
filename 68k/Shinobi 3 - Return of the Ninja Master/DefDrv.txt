@@ -22,6 +22,9 @@ FMFreqs = Def_68k
 PSGFreqs = Def_68k
 FM3Freqs = $000 $180 $1F4 $260
 
+FadeOutSteps = $28
+FadeOutDelay = 3
+
 [EnvelopeCmds]
 80 = RESET
 81 = HOLD

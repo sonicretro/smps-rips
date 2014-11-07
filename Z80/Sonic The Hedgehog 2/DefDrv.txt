@@ -24,5 +24,8 @@ FMFreqs = Def_68k	; actually the driver stores 96 separate frequency values, but
 PSGFreqs = Def_68k
 FM3Freqs = $000	; actually unused
 
+FadeOutSteps = 28h
+FadeOutDelay = 3
+
 [EnvelopeCmds]
 80 = Hold

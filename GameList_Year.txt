@@ -139,7 +139,7 @@ Art of Fighting (Ryuuko no Ken)			SMPS Z80
 ATP Tour Championship Tennis			SMPS Z80
 Bishoujo Senshi Sailor Moon			SMPS 68k/Type 2
 Cosmic Carnage (Cyber Brawl)			[32x] SMPS 68k/32x
-Crayon Shin-Chan				SMPS 68k
+Crayon Shin-Chan				SMPS 68k/Type 2
 Dynamite Headdy					SMPS/Treasure
 Fatal Fury 2 (Garou Densetsu 2)			SMPS 68k/Type 2 (same as Fatal Fury 1)
 Gouketsuji Ichizoku				SMPS Z80/mod
@@ -168,7 +168,7 @@ Chou Kyuukai Miracle Nine			SMPS Z80/Type 2 DAC (mod)
 Game no Kandzume Otokuyou			SMPS Z80/Type 2 FM (same as Zaxxon's Motherbase 2000)
 Knuckles' Chaotix				[32x] SMPS Z80/Type 2 DAC (mod)
 Light Crusader					SMPS/Treasure
-Metal Head					[32x] SMPS 68k
+Metal Head					[32x] SMPS 68k/mod
 Mighty Morphin' Power Rangers: The Movie	SMPS 68k
 Pro Striker Final Stage				SMPS Z80/Type 2 DAC (Tempo 32x mod)
 Puzzle & Action: Ichidant-R			SMPS Z80

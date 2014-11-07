@@ -24,6 +24,9 @@ FMFreqs = DEF_Z80
 PSGFreqs = DEF_Z80_T2
 FM3Freqs = 000h 132h 18Eh 1E4h 234h 27Eh 2C2h 2F0h
 
+FadeOutSteps = 28h
+FadeOutDelay = 6
+
 
 [EnvelopeCmds]
 ; Possible commands:

@@ -105,6 +105,10 @@ PSGFreqs = Def_Z80_T1
 FM3Freqs = 000h 132h 18Eh 1E4h
 
 
+FadeOutSteps = 28h	; The FadeOutMusic routine was removed from Z80 code.
+FadeOutDelay = 3	; The 68k writes these values to Z80 RAM. (see code at offset 076308)
+
+
 [EnvelopeCmds]
 ; Possible commands:
 ;	RESET - reset the Envelope Index to 0

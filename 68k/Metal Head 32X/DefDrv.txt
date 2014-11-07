@@ -1,5 +1,5 @@
-; --- SMPS 68k/32X Driver Definition ---
-; TODO: Verify
+; --- Metal Head 32X Driver Definition ---
+; modified SMPS 68k
 
 [Settings]
 DefTimingMode = 00
@@ -8,7 +8,11 @@ LockTimingMode = True
 [Main]
 PtrFmt = 68k
 InsMode = Default
-;FMChnOrder = 16 0 1 2 4 5 6
+FMChnOrder = 16 0 1 2 4 5 6
+PSGChnOrder = 80 A0 C0
+; Note: PWM channels are enabled with by setting a byte in RAM.
+;       But this is never done and none of the songs has the required header fields.
+;AddChnOrder = 18 1A 1C 1E	; The driver uses 10 12 14 16 internally.
 TempoMode = Overflow	; Verified
 Tempo1Tick = DoTempo
 FMBaseNote = B
@@ -24,8 +28,11 @@ PSGFreqs = Def_68k
 FM3Freqs = $000	; removed from the driver
 
 DrumChMode = VRDlx	; nothing special, just enables Volume control
-DACChns = 2
+DACChns = 2		; 1 for music, 1 for SFX
 DACVolDiv = 2
+
+FadeOutSteps = $28
+FadeOutDelay = 3
 
 [EnvelopeCmds]
 80 = RESET

@@ -89,6 +89,12 @@ PSGFreqs = DEF_Z80_T1	; actually not present in the driver, but it's based on SM
 FM3Freqs = 000h		; actually unused
 
 
+; The FadeOut routine was removed and the music is faded with commands present in the songs/SFX.
+; These are the values for the most commonly used command.
+FadeOutSteps = 20h
+FadeOutDelay = 3
+
+
 [EnvelopeCmds]
 ; Possible commands:
 ;	RESET - reset the Envelope Index to 0
