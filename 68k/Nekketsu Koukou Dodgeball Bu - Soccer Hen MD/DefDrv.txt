@@ -1,0 +1,32 @@
+; --- Golden Axe II Driver Definition ---
+; SMPS 68k Type 1
+
+[Settings]
+DefTimingMode = 00
+LockTimingMode = True
+
+[Main]
+PtrFmt = 68k
+InsMode = Default
+;FMChnOrder = 16 0 1 2 4 5 6
+TempoMode = Timeout
+Tempo1Tick = DoTempo
+FMBaseNote = B
+FMBaseOctave = 0
+DetuneOctWrap = False
+NoteOnPrevent = Rest
+DelayFreq = Reset
+ModAlgo = 68k
+EnvMult = 68k	; actually N/A
+VolMode = Algo
+FMFreqs = Def_68k
+PSGFreqs = Def_68k
+FM3Freqs = 000h	; not used - the FM3 frequencies are loaded directly from the coordination flag
+
+FadeOutSteps = $28
+FadeOutDelay = 3
+
+[EnvelopeCmds]
+80 = RESET
+83 = HOLD
+85 = LOOP

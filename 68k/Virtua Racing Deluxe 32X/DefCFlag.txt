@@ -33,19 +33,19 @@ FA	TICK_MULT	TMULT_CUR	02
 FB	TRANSPOSE	TRNSP_ADD	02
 FC	MOD_SET 	MODS_ON 	01
 FD	MOD_SET 	MODS_OFF	01
-FE	IGNORE  	        	01	; resets the current Sound Priority and that's is
+FE	IGNORE  	        	01	; resets the current Sound Priority and that's it
 FF	META_CF 	        	01
 
 [Meta]
 00	SSG_EG  	SEG_FULLATK	05
 01	MUS_PAUSE	MUSP_68K	02
 02	TICK_MULT	TMULT_ALL	02
-03	FADE_IN 	FDIN_START	03
-04	FADE_IN 	FDIN_CANCEL	01
-05	IGNORE  	        	02	; change Detune, dependend on global variables
+03	FADE_SPC	FDSPC_FMPSG	83
+04	FADE_SPC	FDSPC_STOP	01
+05	IGNORE  	        	02	; change Detune, dependent on global variables
 06	DETUNE  	        	03	; set 16-bit Detune (byte order is MSB, LSB)
 07	PLAY_DAC	        	02
-08	IGNORE  	        	02	; change Volume, dependend on global variables
+08	IGNORE  	        	02	; change Volume, dependent on global variables
 
 ; Flag FF 05:
 ;	Idx = Param1;

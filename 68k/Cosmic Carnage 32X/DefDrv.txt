@@ -1,5 +1,4 @@
-; --- Bishoujo Senshi Sailor Moon Driver Definition ---
-; SMPS 68k Type 2
+; --- SMPS 68k/32X Driver Definition ---
 
 [Settings]
 DefTimingMode = 00
@@ -9,7 +8,7 @@ LockTimingMode = True
 PtrFmt = 68k
 InsMode = Default
 ;FMChnOrder = 16 0 1 2 4 5 6
-TempoMode = Overflow	; actually Overflow with (Tempo & $7F)
+TempoMode = Overflow
 Tempo1Tick = DoTempo
 FMBaseNote = B
 FMBaseOctave = 0
@@ -21,17 +20,22 @@ EnvMult = 68k
 VolMode = Algo
 FMFreqs = Def_68k
 PSGFreqs = {
-	$3FF $3FF $3FF $3FF $3FF $3FF $3FF $3FF $3FF $3F7 $3BE $388
 	$356 $326 $2F9 $2CE $2A5 $280 $25C $23A $21A $1FB $1DF $1C4
 	$1AB $193 $17D $167 $153 $140 $12E $11D $10D $0FE $0EF $0E2
 	$0D6 $0C9 $0BE $0B4 $0A9 $0A0 $097 $08F $087 $07F $078 $071
 	$06B $065 $05F $05A $055 $050 $04B $047 $043 $040 $03C $039
 	$036 $033 $030 $02D $02B $028 $026 $024 $022 $020 $01F $01D
-	$01B $01A $018 $017 $016 $015 $013 $012 $011 $000 }
+	$01B $01A $018 $017 $016 $015 $013 $012 $011 $010 $00F $00E
+	$00D $00C $00B $00A $009 $008 $007 $006 $005 $004 $003 $002
+	$001 $000 $000 $000 $000 $000 }
 FM3Freqs = $000 $180 $1F4 $260
 
-FadeOutSteps = $28
-FadeOutDelay = 3
+FadeOutSteps = $05
+FadeOutDelay = 1
+FadeOutVolAddFM = 4
+FadeOutVolAddPSG = 1
+
+DrumChMode = VRDlx	; nothing special, just enables Volume control
 
 [EnvelopeCmds]
 80 = RESET

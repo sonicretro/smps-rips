@@ -1,15 +1,15 @@
-; --- Metal Head Command Definition ---
-; modified SMPS 68k
+; --- SMPS 68k/32X Command Definition ---
+; based on a disassembly of Virtua Racing Deluxe 32X
 
 ;Flag	Type    	SubType 	Len	JmpOfs
 [Main]
 E0	PANAFMS 	PAFMS_PAN	02
-E1	DETUNE  	        	02
+E1	DETUNE  	        	02	; set 8-bit Detune (sign-extended to 16-bit)
 E2	SET_COMM	        	02
 E3	TRK_END 	TEND_MUTE	01
-E4	PANAFMS 	PAFMS_PAN	02
+E4	PAN_ANIM	        	82
 E5	VOLUME  	VOL_NN_FMP	03
-E6	VOLUME  	VOL_NN_FM	02
+E6	VOLUME  	VOL_NN_FM	02	; can also update the DAC volume
 E7	HOLD    	        	01
 E8	NOTE_STOP	NSTOP_NORMAL	02
 E9	SET_LFO 	LFO_AMSEN	03
@@ -33,12 +33,16 @@ FA	TICK_MULT	TMULT_CUR	02
 FB	TRANSPOSE	TRNSP_ADD	02
 FC	MOD_SET 	MODS_ON 	01
 FD	MOD_SET 	MODS_OFF	01
-FE	META_CF 	        	01
+FE	SPC_FM3 	        	05
 FF	META_CF 	        	01
 
 [Meta]
 00	SSG_EG  	SEG_FULLATK	05
 01	MUS_PAUSE	MUSP_68K	02
 02	TICK_MULT	TMULT_ALL	02
-03	FADE_SPC	FDSPC_DFPPWM	85
+03	FADE_SPC	FDSPC_FMPSG	83
 04	FADE_SPC	FDSPC_STOP	01
+05	IGNORE  	        	02	; change Detune, dependent on global variables
+06	DETUNE  	        	03	; set 16-bit Detune (byte order is MSB, LSB)
+07	PLAY_DAC	        	02
+08	IGNORE  	        	02	; change Volume, dependent on global variables

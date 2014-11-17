@@ -5,7 +5,7 @@ PSG Pointer List:	0C21C2 (JUE)
 Mod. Pointer List:	0C20D2 (JUE)
 DAC Pointer Table:	0C17B9 (JUE) (Z80 Driver: 01E5)
 Z80 DAC Driver Offset:	0C15D4 (JUE)
-Pan Animation List:	08046C (JUE)
+Pan Animation List:	N/A
 Sound RAM:		F000 (68k RAM)
 
 

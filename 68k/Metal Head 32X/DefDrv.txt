@@ -8,7 +8,7 @@ LockTimingMode = True
 [Main]
 PtrFmt = 68k
 InsMode = Default
-FMChnOrder = 16 0 1 2 4 5 6
+FMChnOrder = 16 0 1 4 5 2 6
 PSGChnOrder = 80 A0 C0
 ; Note: PWM channels are enabled with by setting a byte in RAM.
 ;       But this is never done and none of the songs has the required header fields.

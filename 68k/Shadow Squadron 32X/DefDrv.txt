@@ -23,6 +23,9 @@ FMFreqs = Def_68k
 PSGFreqs = Def_68k
 FM3Freqs = $000	; removed from the driver
 
+FadeOutSteps = $18
+FadeOutDelay = 1
+
 DrumChMode = Normal
 DACChns = 2
 DACVolDiv = 2
