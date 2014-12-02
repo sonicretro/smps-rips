@@ -1,5 +1,5 @@
 ; --- Sonic 1 SMPS Command Definition ---
-; reduced SMPS 68k
+; modified SMPS 68k Type 1b
 
 ;Flag	Type    	SubType 	Len	JmpOfs
 [Main]

@@ -1,0 +1,14 @@
+; --- SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 01
+
+[Drums]
+;Note	Type	DrumID	Pitch
+; The code doesn't send any commands to the DAC driver,
+; but the pitch table is still present.
+;88	DAC	00	01
+;89	DAC	00	05
+;8A	DAC	00	0B
+;8B	DAC	00	00

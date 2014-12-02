@@ -1,5 +1,5 @@
 ; --- Sonic 1 SMPS Driver Definition ---
-; SMPS 68k (reduced version)
+; modified SMPS 68k Type 1b
 
 [Settings]
 DefTimingMode = 00
@@ -19,12 +19,17 @@ DelayFreq = RESET
 ModAlgo = 68k
 EnvMult = 68k	; actually unused
 VolMode = ALGO
-FMFreqs = DEF_68K	; actually the driver stores 96 separate frequency values, but the effect is the exactly same
-PSGFreqs = DEF_68K
+FMFreqs = Def_68k	; actually the driver stores 96 separate frequency values, but the effect is the exactly same
+PSGFreqs = Def_68k
 FM3Freqs = $000	; actually unused
+
+FadeMode = 68k
 
 FadeOutSteps = $28
 FadeOutDelay = 3
+
+FadeInSteps = $28
+FadeInDelay = 2
 
 [EnvelopeCmds]
 80 = HOLD

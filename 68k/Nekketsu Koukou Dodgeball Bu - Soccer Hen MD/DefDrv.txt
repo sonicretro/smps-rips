@@ -1,5 +1,5 @@
 ; --- Golden Axe II Driver Definition ---
-; SMPS 68k Type 1
+; SMPS 68k Type 1b
 
 [Settings]
 DefTimingMode = 00
@@ -22,6 +22,8 @@ VolMode = Algo
 FMFreqs = Def_68k
 PSGFreqs = Def_68k
 FM3Freqs = 000h	; not used - the FM3 frequencies are loaded directly from the coordination flag
+
+FadeMode = 68k
 
 FadeOutSteps = $28
 FadeOutDelay = 3

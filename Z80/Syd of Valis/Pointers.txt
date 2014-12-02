@@ -1,0 +1,19 @@
+General Pointer List:	AA00 (JU) (Z80 Bank Offset)
+Music Pointer List:	AC36 (JU) (Z80 Bank Offset)
+SFX Pointer List:	1000 (JU) (Z80 RAM)
+Mod. Pointer List:	AA0E (JU) (Z80 Bank Offset)
+PSG Pointer List:	AB54 (JU) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	07ED0D (JU)
+Additional Z80 Data:	07FCCA (JU) (goes to Z80 RAM 1000)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A4D (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A61 (Z80 RAM)
+PSG Drum Pointer List:	0A33 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+
+Notes:
+-

@@ -16,3 +16,7 @@ The DAC table format is the same as Fatal Fury.
 
 Data is DPCM compressed with the usual delta-array.
 00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001E)
+
+
+Notes:
+- Song 0C uses a Pan Animation effect that reads 5 data bytes from the code section.

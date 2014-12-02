@@ -1,5 +1,5 @@
 ; --- Michael Jackson's Moonwalker Command Definition ---
-; early SMPS 68k Type 1
+; SMPS 68k Type 1a
 
 ;Flag	Type    	SubType 	Len	JmpOfs
 [Main]

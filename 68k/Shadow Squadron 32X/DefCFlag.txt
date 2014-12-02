@@ -1,5 +1,5 @@
 ; --- Shadow Squadron Command Definition ---
-; modified SMPS 68k, based on Metal Head
+; modified SMPS 68k Type 2, based on Metal Head
 
 ;Flag	Type    	SubType 	Len	JmpOfs
 [Main]

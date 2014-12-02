@@ -23,6 +23,8 @@ FMFreqs = Def_68k
 PSGFreqs = Def_68k
 FM3Freqs = $000	; removed from the driver
 
+FadeMode = 68k
+
 FadeOutSteps = $18
 FadeOutDelay = 1
 

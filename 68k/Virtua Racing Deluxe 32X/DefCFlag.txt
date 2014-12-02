@@ -1,4 +1,4 @@
-; --- SMPS 68k/32X Command Definition ---
+; --- SMPS 68k Type 2/32X Command Definition ---
 ; based on a disassembly of Virtua Racing Deluxe 32X
 
 ;Flag	Type    	SubType 	Len	JmpOfs

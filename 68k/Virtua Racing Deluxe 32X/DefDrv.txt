@@ -30,6 +30,8 @@ PSGFreqs = {
 	$001 $000 $000 $000 $000 $000 }
 FM3Freqs = $000	; removed from the driver
 
+FadeMode = 68k
+
 FadeOutSteps = $05
 FadeOutDelay = 1
 FadeOutVolAddFM = 4

@@ -27,6 +27,8 @@ DrumChMode = Normal
 DACChns = 1	; actually 2, but that one is SFX-only and can not be accessed by SMPS commands
 DACVolDiv = 2
 
+FadeMode = Z80		; The fading routine was written from scratch and uses the "exeute every n-th frame" formula
+
 ; Note: RAM offset 1C06 counts how many channels were stopped. Fading ends after 9 stopped channels.
 ;       FM channels stop when passing volume 40h, PSG channels stop at 10h.
 FadeOutSteps = 40h	; approximation (see note above)

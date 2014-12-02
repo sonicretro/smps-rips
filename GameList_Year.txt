@@ -104,7 +104,7 @@ Magical Taruruuto-kun				SMPS 68k/Type 2
 Nekketsu Koukou Dodgeball Bu Soccer Hen MD	SMPS 68k/Type 1b
 Shura no Mon					SMPS Z80/Type 1 DAC
 Sonic the Hedgehog 2				SMPS Z80 (SMPS 68k/Sonic 1 port)
-Syd of Valis (Valis SD)				SMPS Z80
+Syd of Valis (Valis SD)				SMPS Z80/Type 1 FM
 Tecmo World Cup					SMPS Z80/Type 1 DAC
 Uzu Keobukseon					SMPS Z80
 Wani Wani World					SMPS Z80/Type 1 FM
@@ -140,7 +140,7 @@ ATP Tour Championship Tennis			SMPS Z80
 Bishoujo Senshi Sailor Moon			SMPS 68k/Type 2
 Cosmic Carnage (Cyber Brawl)			[32x] SMPS 68k/32x
 Crayon Shin-Chan				SMPS 68k/Type 2
-Dynamite Headdy					SMPS/Treasure
+Dynamite Headdy					SMPS 68k/Treasure
 Fatal Fury 2 (Garou Densetsu 2)			SMPS 68k/Type 2 (same as Fatal Fury 1)
 Gouketsuji Ichizoku				SMPS Z80/mod
 J.League Pro Striker 2				SMPS Z80
@@ -148,9 +148,9 @@ King of the Monsters 2				SMPS Z80/Type 1 DAC
 Megaman: The Wily Wars (Rockman Megaworld)	SMPS Z80/Type 2 FM
 Mighty Morphin' Power Rangers			SMPS Z80/Type 2 FM
 OutRunners					SMPS Z80 (SMPS 68k/Type 2 port, 'SMPS light' mod)
-Pulseman					SMPS 68k/mod
+Pulseman					SMPS 68k/Type 2
 Puzzle & Action: Tant-R				SMPS Z80
-Samurai Shodown (Samurai Spirits)		SMPS 68k
+Samurai Shodown (Samurai Spirits)		SMPS 68k/Type 2
 Sega Channel (JP)				SMPS Z80/Type 1 FM
 Sonic & Knuckles				SMPS Z80/Type 2 DAC (Sonic 3 mod)
 Sonic the Hedgehog 3				SMPS Z80/Type 2 DAC (Sonic 3 mod)
@@ -159,21 +159,21 @@ Viewpoint					SMPS Z80/Type 2 FM
 Virtua Racing					SMPS Z80/Type 1 DAC (mod)
 Virtua Racing Deluxe				[32x] SMPS 68k/32x [GDRI was wrong here]
 Yuu Yuu Hakusho Gaiden				SMPS Z80/Type 1 DAC
-Yuu Yuu Hakusho: Makyou Touitsusen		SMPS/Treasure
+Yuu Yuu Hakusho: Makyou Touitsusen		SMPS 68k/Treasure
 
 1995
 ----
-Alien Soldier					SMPS/Treasure
+Alien Soldier					SMPS 68k/Treasure
 Chou Kyuukai Miracle Nine			SMPS Z80/Type 2 DAC (mod)
 Game no Kandzume Otokuyou			SMPS Z80/Type 2 FM (same as Zaxxon's Motherbase 2000)
 Knuckles' Chaotix				[32x] SMPS Z80/Type 2 DAC (mod)
-Light Crusader					SMPS/Treasure
-Metal Head					[32x] SMPS 68k/mod
-Mighty Morphin' Power Rangers: The Movie	SMPS 68k
+Light Crusader					SMPS 68k/Treasure
+Metal Head					[32x] SMPS 68k/Type 2 (mod)
+Mighty Morphin' Power Rangers: The Movie	SMPS 68k/Type 2
 Pro Striker Final Stage				SMPS Z80/Type 2 DAC (Tempo 32x mod)
 Puzzle & Action: Ichidant-R			SMPS Z80
-Ristar						SMPS 68k/mod
-Shadow Squadron (Stellar Assault)		[32x] SMPS 68k/mod
+Ristar						SMPS 68k/Type 2 (mod)
+Shadow Squadron (Stellar Assault)		[32x] SMPS 68k/Type 2 (mod)
 Slam Dunk					SMPS Z80
 Surging Aura					SMPS Z80
 Tempo						[32x] SMPS Z80/Type 2 DAC (Tempo 32x mod)

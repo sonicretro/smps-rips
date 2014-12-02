@@ -7,6 +7,7 @@ PSG Pointer List:	1F1109 (JU) (Z80 Driver: 1109)
 DAC Bank List:		1F0E20 (JU) (Z80 Driver: 0E20) [Note: starts with entry for note 80]
 DAC Drum Pointer List:	1F0E3A (JU) (Z80 Driver: 0E3A) [Note: starts with entry for note 81]
 PWM Pointer List:	2C0000 (JU)
+SH-2 Slave Drv. Offset:	080000 (JU) (goes to SH-2 RAM 06000000, PWM driver starts at RAM 06000790)
 Z80 Snd Driver Offset:	1F0000 (JU)
 Sound RAM:		1C00 (Z80 RAM)
 

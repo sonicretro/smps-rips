@@ -5,6 +5,7 @@ Mod. Pointer List:	03002C (UE)
 PSG Pointer List:	030144 (UE)
 Z80 DAC Driver Offset:	031716 (UE)
 DAC Pointer List:	0318F0 (UE) (Z80 Driver: 01DA)
+DAC Pitch Modifier:	0303F0 (UE)
 Pan Animation List:	030744 (UE)
 
 There are additional DAC lists at the start of banks 040000, 048000, 050000 and 058000.

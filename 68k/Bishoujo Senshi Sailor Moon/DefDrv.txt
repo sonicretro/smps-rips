@@ -30,6 +30,8 @@ PSGFreqs = {
 	$01B $01A $018 $017 $016 $015 $013 $012 $011 $000 }
 FM3Freqs = $000 $180 $1F4 $260
 
+FadeMode = 68k
+
 FadeOutSteps = $28
 FadeOutDelay = 3
 

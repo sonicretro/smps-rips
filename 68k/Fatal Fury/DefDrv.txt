@@ -22,6 +22,8 @@ FMFreqs = Def_68k
 PSGFreqs = Def_68k
 FM3Freqs = $000 $180 $1F4 $260
 
+FadeMode = 68k
+
 FadeOutSteps = $28
 FadeOutDelay = 3
 

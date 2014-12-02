@@ -1,5 +1,5 @@
 ; --- Metal Head Command Definition ---
-; modified SMPS 68k
+; modified SMPS 68k Type 2
 
 ;Flag	Type    	SubType 	Len	JmpOfs
 [Main]

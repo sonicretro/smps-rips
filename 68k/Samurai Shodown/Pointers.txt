@@ -4,8 +4,10 @@ SFX Pointer List:	2FFC52 (JUE)
 Mod. Pointer List:	2F7568 (JUE)
 PSG Pointer List:	2F762C (JUE)
 Z80 DAC Driver Offset:	2F708E (JUE)
+DAC Pitch Modifier:	2F5C12 (JUE) (unused)
 DAC SFX Pointer List:	2F71D3 (JUE) (Z80 Driver: 0145)
 Pan Animation List:	2F5F64 (JUE)
+Sound RAM:		0000 (68k RAM)
 
 
 DAC List Format: (all Little Endian)

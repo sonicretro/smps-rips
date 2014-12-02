@@ -1,4 +1,4 @@
-; --- SMPS 68k Command Definition ---
+; --- SMPS 68k Type 2 Command Definition ---
 ; based on a disassembly of The Super Shinobi II
 
 ;Flag	Type    	SubType 	Len	JmpOfs

@@ -1,4 +1,5 @@
 ; --- Ristar SMPS Command Definition ---
+; modified SMPS 68k Type 2
 ; Thanks to Andlabs for the Ristar disassembly.
 
 ;Flag	Type    	SubType 	Len	JmpOfs

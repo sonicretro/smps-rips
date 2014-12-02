@@ -1,4 +1,4 @@
-; --- SMPS 68k Command Definition ---
+; --- SMPS 68k Type 1b Command Definition ---
 ; based on a disassembly of Golden Axe 2
 
 ;Flag	Type    	SubType 	Len	JmpOfs

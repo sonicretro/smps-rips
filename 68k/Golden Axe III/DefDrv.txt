@@ -1,5 +1,5 @@
 ; --- Golden Axe III Driver Definition ---
-; modified SMPS 68k
+; modified SMPS 68k Type 2
 
 [Settings]
 DefTimingMode = 00
@@ -23,6 +23,7 @@ FMFreqs = Def_68k
 PSGFreqs = Def_68k
 FM3Freqs = $000 $180 $1F4 $260
 
+FadeMode = Z80	; fits better than the 68k mode
 ; algorithm: FadeCnt += FadeSpeed [$30], execute on overflow
 ; Only a few tracks are updated per execution. Every track is updated after 4 steps.
 ; FM volume: ChnVol + FadeVol

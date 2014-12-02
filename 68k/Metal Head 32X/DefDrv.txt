@@ -1,5 +1,5 @@
 ; --- Metal Head 32X Driver Definition ---
-; modified SMPS 68k
+; modified SMPS 68k Type 2
 
 [Settings]
 DefTimingMode = 00
@@ -30,6 +30,8 @@ FM3Freqs = $000	; removed from the driver
 DrumChMode = VRDlx	; nothing special, just enables Volume control
 DACChns = 2		; 1 for music, 1 for SFX
 DACVolDiv = 2
+
+FadeMode = 68k
 
 FadeOutSteps = $28
 FadeOutDelay = 3
