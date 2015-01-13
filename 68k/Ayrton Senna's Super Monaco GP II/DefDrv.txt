@@ -1,0 +1,47 @@
+; --- Ayrton Senna's Super Monaco GP II Driver Definition ---
+; SMPS 68k Type 2
+
+[Settings]
+DefTimingMode = 00
+LockTimingMode = True
+
+[Main]
+PtrFmt = 68k
+InsMode = Default
+FMChnOrder = 16 17 0 1 2 4 5 6
+TempoMode = Tout+Oflw	; 00-7F - Timeout, 80-FF - Overflow
+Tempo1Tick = DoTempo
+FMBaseNote = B
+FMBaseOctave = 0
+DetuneOctWrap = False
+NoteOnPrevent = Rest
+DelayFreq = Keep
+ModAlgo = 68k
+EnvMult = 68k
+VolMode = Algo
+; different FMFreqs: $32E (usually $32D)
+FMFreqs = $25E $284 $2AB $2D3 $2FE $32E $35C $38F $3C5 $3FF $43C $47C
+; different PSGFreqs: $091 (usually $087)
+PSGFreqs = {	$356 $326 $2F9 $2CE $2A5 $280 $25C $23A $21A $1FB $1DF $1C4
+		$1AB $193 $17D $167 $153 $140 $12E $11D $10D $0FE $0EF $0E2
+		$0D6 $0C9 $0BE $0B4 $0A9 $0A0 $097 $08F $091 $07F $078 $071
+		$06B $065 $05F $05A $055 $050 $04B $047 $043 $040 $03C $039
+		$036 $033 $030 $02D $02B $028 $026 $024 $022 $020 $01F $01D
+		$01B $01A $018 $017 $016 $015 $013 $012 $011 $000 }
+FM3Freqs = $000 $180 $1F4 $260
+
+FadeMode = 68k
+
+FadeOutSteps = $28
+FadeOutDelay = 3
+
+DrumChMode = SMGP2
+DACChns = 2
+DACVolDiv = 2
+
+[EnvelopeCmds]
+80 = RESET
+81 = HOLD
+82 = LOOP
+83 = STOP
+84 = CHG_MULT

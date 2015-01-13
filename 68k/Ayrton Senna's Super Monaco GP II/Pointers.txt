@@ -1,0 +1,85 @@
+SMPS 68k Sound Driver (Menu Music/SFX)
+---------------------
+General Pointer List:	0E0000 (JUE)
+Sound Update Routine:	0E05B0 (JE) / 0E05BC (U)
+Music Pointer List:	0E0504 (JE) / 0E0510 (U)
+Spc. SFX Pointer List:	0E6ABE (JE) / 0E6ACA (U)
+SFX Pointer List:	0E69F2 (JE) / 0E69FE (U)
+Mod. Pointer List:	0E038A (JE) / 0E0396 (U)
+PSG Pointer List:	0E044E (JE) / 0E045A (U)
+Z80 Driver Ptr. List:	0DE000 (JUE)
+Z80 DAC Driver Offset:	0DE020 (JUE)
+Z80 SFX Driver Offset:	0DE1B4 (JUE)
+Z80 SFX Driver Data #1:	0DEFE5 (JUE) (goes to Z80 RAM 0F80)
+Z80 SFX Driver Data #2:	0DFBF1 (JUE) (goes to Z80 RAM 0F10)
+DAC Drum Pointer List:	0E8000 (JUE) (only 0Dh bytes per entry)
+Pan Animation List:	0E09CE (JE) / 0E09DA (U)
+Sound RAM:		0200 (68k RAM)
+
+
+SMPS Z80 Sound Driver (Race SFX)
+---------------------
+General Pointer List:	0E0044 (JUE) (Z80 Bank Offset)
+Music Pointer List:	--- invalid --- (JUE) (points to 8091)
+Spc. SFX Pointer List:	0F10 (JUE) (Z80 RAM)
+SFX Pointer List:	8091 (JUE) (Z80 Bank Offset)
+Mod. Pointer List:	--- invalid --- (JUE) (points to 8052)
+PSG Pointer List:	--- invalid --- (JUE) (points to 8052)
+DAC SFX Pointer List 1:	0F0000 (JUE)
+DAC SFX Pointer List 2:	0F8000 (JUE)
+
+Z80 ROM Bank: 0E0000
+
+
+DAC Sample Table
+-------------
+[1FBF] 00/2 bytes - Data Length (pre-loop)
+[1FC1] 02/2 bytes - Loop Randomization Base*
+[1FC3] 04/2 bytes - Data Length (loop)*
+[1FC5] 06/1 byte  - Playback Speed
+[1FC6] 07/1 byte  - Loop Randomization Step*
+[1FC7] 08/2 bytes - Start Offset (Z80 Bank Offset)
+[1FC9] 0A/1 byte  - Loop Counter* (00 - intro only, 01-7F - loop n times with randomized size, 80 - loop infinitely)
+[1FCA] 0B/1 byte  - Loop Randomization Counter Mask*
+[1FCB] 0C/1 byte  - [Z80 SFX Driver] unused
+                    [Z80 DAC Driver] Signal Offset (constant value added to all samples, always 00)
+       0D/3 byte  - unused/padding* [Note: omitted in DAC driver]
+-> 10 bytes [SFX] / 0D bytes [DAC]
+
+About Loop Randomization:
+Whenever a sample has to loop 1 to 127 times, the loop size is set to a random value.
+The formula is as follows:
+	[Loop Length] = [Loop Rand. Base] + [Loop Rand. Step] * random()
+
+In order to get the value for random(), a value is read from the Z80's Refresh Register 'R'.
+It is then ANDed with the [Loop Rand. Counter Mask] value.
+The result is the value for random().
+
+
+
+Z80 Driver Pointer List
+-----------------------
+4 bytes - Start Offset
+4 bytes - End Offset
+[repeat]
+
+
+
+Notes:
+- The game was optimized for PAL consoles. On NTSC consoles the sound driver does nothing every 6th frame.
+- The game has a custom DAC driver that does 2-channel mixing.
+- There is a special SMPS Z80 Type 1 SFX driver that is loaded during the actual race.
+  DAC sounds are supported, but judging by the FM channel order it is a modification of Type 1/FM.
+- Sound Test Lists:
+	B.G.M.	00C107 (6-bytes per entry, the first byte is the Song ID for the 68k SMPS driver, used as parameter for PutSoundInQueue)
+	S.E.	00C15C (list of 1-byte Sound IDs for Z80 SFX driver, go to Z80 RAM 1C0A)
+	VOICE	00C0DD (6-bytes per entry, the first byte is the DAC ID for the Z80 SFX driver, goes to Z80 RAM 1FFE/1FFF)
+  Option Screen Main Routine: 00BCAA
+  Option Screen Jump Routine: 00BCD8
+- Sound ID queue (68k RAM):
+	Queue Data:	FF7A-FF85
+	Head Index:	FF86/87
+	Tail Index:	FF88/89
+  PutSoundInQueue routine: 00C5BE
+- DAC SFX 82 (Z80 SFX driver) is loaded from Z80 RAM.
+  Its DAC table entry is located at 0F80.

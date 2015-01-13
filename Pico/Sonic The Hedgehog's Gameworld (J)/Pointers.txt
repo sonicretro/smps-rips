@@ -1,0 +1,29 @@
+General Pointer List:	06C024 (U) / 068024 (J)
+Sound Update Routine:	06C572 (U) / 06856E (J)
+Music Pointer List:	06C4AC (U) / 0684AC (J)
+Spc. SFX Pointer List:	-- invalid -- (points to 06D460 (U) / 069346 (J))
+SFX Pointer List:	06D340 (U) / 069262 (J)
+Mod. Pointer List:	06C054 (U) / 068054 (J)
+PSG Pointer List:	06C118 (U) / 068118 (J)
+PCM Pointer List:	06DE7A (U) / 069C1A (J)
+PSG Drum List:		06C498 (U) / 068498 (J)
+Sound RAM:		0000 (68k RAM)
+
+
+PCM Table / PSG Drum Table:
+see Mickey no Boku wa Meitantei
+
+
+Notes:
+- The sound driver differs a bit between the J and U versions.
+  The U version matches Mickey no Boku wa Meitantei.
+  The J version lacks some of the command flags.
+  The fade settings are different in both versions as well.
+- The music of the J version uses PCM drums. They were cut from the U version, probably due to space reasons.
+- In order to fix the different PSG frequency arrays, all notes in the U version are one octave higher.
+  The J version's frequency table beings with A3 instead of C4 though, so the notes in the U version still play 3 semitones higher.
+- The U version has an additional song.
+- The location names follow the US localization.
+  Hoops = some Basketball game
+  Concentration = Card Matching
+  Egg Switch = Shell Game

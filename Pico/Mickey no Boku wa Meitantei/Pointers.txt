@@ -1,0 +1,31 @@
+General Pointer List:	0B0024 (J)
+Sound Update Routine:	0B06E4 (J)
+Music Pointer List:	0B0588 (J)
+Spc. SFX Pointer List:	-- invalid -- (J) (points to 0B221A)
+SFX Pointer List:	0B1854 (J)
+Mod. Pointer List:	0B0054 (J)
+PSG Pointer List:	0B0118 (J)
+PCM Pointer List:	0B221A (J)
+PSG Drum List:		0B0570 (J)
+Sound RAM:		F000 (68k RAM)
+
+
+PCM Table
+---------
+1 byte  - unknown
+1 byte  - padding
+4 bytes - Start Offset
+4 bytes - Data Length
+6 bytes - padding
+
+
+PSG Drum Table
+--------------
+1 byte  - Track Volume
+1 byte  - Volume Envelope
+1 byte  - unused
+1 byte  - Noise Mode
+
+
+Notes:
+-

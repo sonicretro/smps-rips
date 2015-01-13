@@ -1,0 +1,13 @@
+SMPS Driver Type: SMPS 68k, Type 2
+General Pointer List: 060000
+        SndPriorities:  060232
+        SpcSFXPtrs:     076DFA
+        MusicPtrs:      0601A6 (index 81)
+        SFXPtrs:        076CBA
+        ModEnvPtrs:     06002C
+        VolEnvPtrs:     0600F0
+        Song Limit:         25
+        UpdateSound:    073BC8
+        Sound RAM:      FFF000
+        Pointer 09:     075070
+        Pointer 0A:     076CBA

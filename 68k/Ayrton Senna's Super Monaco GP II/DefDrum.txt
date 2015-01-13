@@ -1,0 +1,19 @@
+; --- SMPS DAC Drum Definition ---
+
+[Main]
+DrumMode = Dual
+; DAC Drum Mask
+Mask1 = 0F	; DAC 1 drums
+Mask2 = 70	; DAC 2 drums
+DrumIDBase = 81
+
+; The SMPS driver actually has the channels swapped.
+; But this way I can play the melodic DACs on channel 2.
+[Drums]
+;Note	Type	DrumID	Pitch	Chn
+81..8F	DAC	81		01
+90	DAC	81		02
+A0	DAC	82		02
+B0	DAC	83		02
+C0	DAC	84		02
+D0	DAC	85		02

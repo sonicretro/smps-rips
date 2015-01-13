@@ -1,0 +1,26 @@
+General Pointer List:	060000 (J)
+Sound Update Routine:	073BC8 (J)
+Music Pointer List:	0601A6 (J)
+Spc. SFX Pointer List:	076DFA (J)
+SFX Pointer List:	076CBA (J)
+Mod. Pointer List:	06002C (J)
+PSG Pointer List:	0600F0 (J)
+Z80 DAC Driver Offset:	075070 (J)
+DAC Drum Bank List:	07509B (J) (Z80 RAM: 002B)
+DAC Drum Pointer List:	0754B5 (J) (Z80 RAM: 0445)
+DAC Voice Pointer List:	8000 (J) (Z80 Bank Pointer, present in ROM Bank 160000..1F8000)
+Pan Animation List:	0740A6 (J)
+Sound RAM:		F000 (68k RAM)
+
+
+DAC Table
+---------
+The DAC table format is the same as Fatal Fury.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001B)
+
+
+Notes:
+- The PSG envelopes are the same ones that are also used in Sonic 1.
+- The DAC driver uses a custom banking system for drum sounds, similar to Magical Taruruuto-Kun.

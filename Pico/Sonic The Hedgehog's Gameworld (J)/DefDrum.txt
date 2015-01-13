@@ -1,0 +1,8 @@
+; --- SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 00
+
+[Drums]
+81..DF	NECPCM	00

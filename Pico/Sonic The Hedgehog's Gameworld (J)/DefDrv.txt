@@ -1,0 +1,45 @@
+; --- SMPS 68k/Pico Driver Definition ---
+; based on SMPS 68k/Type 2a
+
+[Settings]
+DefTimingMode = 00
+LockTimingMode = True
+
+[Main]
+PtrFmt = 68k
+InsMode = Default	; N/A
+FMChnOrder = 17 F0	; 1x NEC PCM + 1x PSG Drum (Noise [E0] + Drums [10])
+PSGChnOrder = 80 A0 C0 E0
+TempoMode = Overflow
+Tempo1Tick = PlayMusic
+FMBaseNote = B		; N/A
+FMBaseOctave = 0	; N/A
+DetuneOctWrap = False	; N/A
+NoteOnPrevent = Rest	; N/A
+DelayFreq = Reset
+ModAlgo = 68k
+EnvMult = 68k
+VolMode = Algo		; N/A
+FMFreqs = $000		; N/A
+PSGFreqs = {	$3F9 $3C0 $38A
+		$357 $327 $2FA $2CF $2A7 $281 $25D $23B $21B $1FC $1E0 $1C5
+		$1AC $194 $17C $168 $153 $140 $12E $11D $10D $0FE $0F0 $0E2
+		$0D6 $0CA $0BE $0B4 $0AA $0A0 $097 $08F $087 $07F $078 $071
+		$06B $065 $05F $05A $055 $050 $04C $047 $043 $040 $03C $039
+		$036 $033 $030 $02D $02B $028 $026 $024 $022 $020 $01F $01D
+		$01B $01A $018 $017 $016 $015 $013 $012 $011 $010 $00F $00E
+		$00D $00C $00B $00A $009 $008 $007 $006 $005 $004 $003 $002
+		$001 $000 }
+FM3Freqs = $000		; N/A
+
+FadeMode = 68k
+
+FadeOutSteps = $10
+FadeOutDelay = $10
+
+[EnvelopeCmds]
+80 = RESET
+81 = HOLD
+82 = LOOP
+83 = STOP
+84 = CHG_MULT
