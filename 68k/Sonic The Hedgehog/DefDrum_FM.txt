@@ -1,0 +1,16 @@
+; --- SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 81
+
+; Drum Definition
+[Drums]
+81	FM	86
+82	FM	81
+83	FM	84
+84	FM	80
+88	FM	82
+89	FM	83
+8A	FM	84
+8B	FM	85

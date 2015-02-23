@@ -1,0 +1,21 @@
+General Pointer List:	8000 (W) (Z80 Bank Offset)
+Music Pointer List:	816D (W) (Z80 Bank Offset)
+SFX Pointer List:	B6D6 (W) (Z80 Bank Offset)
+Mod. Pointer List:	800E (W) (Z80 Bank Offset)
+PSG Pointer List:	8082 (W) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	00BD6E (W)
+Pan Animation List:	02F1 (Z80 RAM)
+FM Drum Pointer List:	0A67 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A81 (Z80 RAM)
+PSG Drum Pointer List:	0A40 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 008000
+
+
+Notes:
+- Many instruments are cross-referenced between songs.
+  example: 06 Stage Clear references song 03 instrument 01, song 04 instrument 01 and song 05 instrument 00.
+- The Modulation Envelopes make use of the driver bug, that Modulation Envelope command 83 keeps the current frequency.
+  (Unlike Volume Envelopes, where it stops the note.)

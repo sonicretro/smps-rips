@@ -1,0 +1,28 @@
+General Pointer List:	070000 (JUE)
+Sound Update Routine:	070178 (JUE)
+Music Pointer List:	0700D6 (JUE)
+Spc. SFX Pointer List:	077CDE (JUE)
+SFX Pointer List:	077C36 (JUE)
+Mod. Pointer List:	-- invalid -- (JUE) (points to 070116)
+PSG Pointer List:	070020 (JUE)
+Z80 DAC Driver Offset:	0714E4 (JUE)
+DAC Pointer Table:	071647 (JUE) (Z80 Driver: 0163)
+DAC Pitch Modifier:	0698E8 (JUE)
+DAC Voice Pointer List:	07A000 (JUE)
+Pan Animation List:	07054A (JUE)
+Sound RAM:		D300 (68k RAM)
+
+
+All data between 03CFBE and 07FFFF matches exactly between all verions (J, UE) of the ROM. This includes the sound related part of the ROM (070000-07FFFF).
+
+
+DAC Table
+---------
+The DAC table format is the same as Fatal Fury.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001C)
+
+
+Notes:
+-

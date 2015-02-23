@@ -3,8 +3,8 @@
 
 [Settings]
 ; Syd of Valis Default values:
-; 1C00 - 07 80 - ROM Bank (040000h)
-; 1C02 - 00 AA - Global Pointer List Offset (8000h)
+; 1C00 - 07 80 - ROM Bank (078000h)
+; 1C02 - 00 AA - Global Pointer List Offset (AA00h)
 ; 1C04 - B4 00 - Timer A (63.11 Hz)
 ; 1C06 - E6 - Timer B (128.05 Hz)
 ; 1C07 - 80 - Timing Mode

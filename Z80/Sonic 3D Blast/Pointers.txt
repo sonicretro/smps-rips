@@ -1,14 +1,15 @@
-General Pointer List:	0D2ED7 (W) (Z80 Driver: 1300)
-Music Bank List:	0D287D (W) (Z80 Driver: 0B65)
-Music Pointer List:	0D3233 (W) (Z80 Driver: 165C)
-SFX Pointer List:	0D3297 (W) (Z80 Driver: 16C0) (points to bank 0F8000)
-Mod. Pointer List:	0D2EE5 (W) (Z80 Driver: 130E)
-PSG Pointer List:	0D2F5E (W) (Z80 Driver: 1387)
-DAC Bank List:		0D1DEE (W) (Z80 Driver: 00D6)
+General Pointer List:	1300 (W)
+Global Instrument Data:	181A (W, Apr/Sept Betas) / 17F2 (Beta 07-03) (Z80 RAM)
+Music Bank List:	0B65 (W)
+Music Pointer List:	165C (W, Apr/Sept Betas) / 1630 (Beta 07-03)
+SFX Pointer List:	16C0 (W, Apr/Sept Betas) / 1698 (Beta 07-03) (points to bank 0F8000)
+Mod. Pointer List:	130E (W)
+PSG Pointer List:	1387 (W)
+DAC Bank List:		00D6 (W)
 DAC Drum Pointer List:	0F0000 (W)
 SEGA sound:		0F8000 (W)
-Z80 Snd Driver Offset:	0D1D18 (W)
-Additional Z80 Data:	0D2ED7 (W) (goes to Z80 RAM 1300)
+Z80 Snd Driver Offset:	0D1D18 (W, Beta 09-04) / 0E6000 (Beta 07-03) / 0BE000 (Beta 08-14/19) / 0D2FEC (Beta 08-25/30/31)
+Additional Z80 Data:	0D2ED7 (W, Beta 09-04) / 0E716B (Beta 07-03) / 0BF16A (Beta 08-14/19) / 0D4156 (Beta 08-25/30/31) (goes to Z80 RAM 1300)
 Sound RAM:		1C00 (Z80 RAM)
 
 
@@ -20,3 +21,28 @@ The format is the same one as used in Sonic and Knuckles.
 
 Data is DPCM compressed with the usual delta-array.
 00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 1115)
+
+
+Notes:
+- The Global Instrument Table is present in all versions, but it is only used by songs in Beta 07-03.
+- The music matches exactly betwen Beta 08-14 and 08-19.
+- Between Beta 08-25 and 08-30, song 0E The Final Fight was changed and the Sonic 4 Boss was replaced with Boss Theme 2.
+- The music matches exactly betwen Beta 08-30 and 08-31.
+- Between Beta 08-31 and 09-04, the Ending song got added and the 3 unused songs 1D-1F were removed.
+  Due to the addition of author comments, all pointers were shifted. The other songs don't seem to have changed.
+- The music matches exactly betwen Beta 09-04 and the final version.
+- Beta 08-30 is the last version where the Intro song plays on the title screen.
+
+Sound Driver Changelog:
+- The driver of Beta 07-03 matches S&K final exactly, except for DAC/music bank lists and the 1-up song ID, which was changed from 2A to 07.
+  PSG envelope 04 was changed to fade a bit more.
+- The driver of Beta 08-14 changes the 1-up ID from 07 to 19 and removes the last value of the Music Bank, causing many offset differences.
+  An additional PSG envelope 28 was added.
+- Beta 08-14 and 08-19 match exactly.
+- In Beta 08-25 the SEGA sound gets changed from the S3K one to the one used in S3D final.
+  The length of the PCM sound is changed in the sound driver accordingly.
+- Beta 08-25 and 08-30 match exactly code-wise. There are a few differences in the data and pointer section.
+- Beta 08-30 and 08-31 match exactly.
+- Beta 08-31 and 09-04 match exactly, except for differences in the music bank table.
+  They also added the "Sound Driver for Sonic Series" comment in 09-04.
+- Beta 09-04 and the final sound driver match exactly.
