@@ -22,3 +22,5 @@ Notes:
 - You need to subtract 900000 from all pointers (including Z80 Bank Offset) to get the actual ROM offsets.
 - The PSG frequency table has a lot more entries at the end than in any other SMPS game.
 - The SMPS driver (both 68k and Z80 parts) seems to be identical to Virtua Racing Deluxe 32X.
+- The JU version has a buggy sound test. The music IDs are off by one, so the first song can't be played and the other IDs are shifted.
+  The bug got fixed in the E version.

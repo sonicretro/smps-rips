@@ -21,4 +21,7 @@ Data is DPCM compressed with the usual delta-array.
 
 
 Notes:
--
+- PlaySound routine (68k side): 019694
+- Sound ID Queue (68k RAM): 769C-76A3
+  Sound ID Queue - next slot ID: 76A4/A5
+- Routine to play MUSIC TEST ID: 004104

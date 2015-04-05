@@ -44,8 +44,7 @@ Bank Select code: (Bank ID / Code Offset - Bank Address)
 0/0134 - 06 8000
 
 DAC Sounds are DPCM compressed: (06D40D, Z80 Driver: 105B)
-00 01 02 04 08 10 20 40
-80 FF FE FC F8 F0 E0 C0
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0
 
 
 FM Drums
@@ -93,3 +92,10 @@ Code that selects between Music/Sound/Special Command:	0535
 Playing DAC sounds seem to work this way:
 - set DAC bank (00-07) using command ED
 - play DAC sound in bank using command EA
+
+
+Notes:
+- Sound Test Lists:
+	0AE06E	MUSIC TEST (FB 81 82 ..., skips empty song IDs)
+	0AE09E	 S.E. TEST
+  Entries have 2 bytes/1 word. The upper byte is ignored, the lower one is copied to sound queue at 68k RAM C200)

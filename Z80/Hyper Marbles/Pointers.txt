@@ -1,0 +1,37 @@
+General Pointer List:	1000 (Z80 RAM) (J)
+Music Pointer List:	10AA (Z80 RAM) (J)
+SFX Pointer List:	10B2 (Set 1) / 10AE (Set 2) (Z80 RAM) (J)
+Mod. Pointer List:	100E (Z80 RAM) (J)
+PSG Pointer List:	102E (Z80 RAM) (J)
+Z80 Snd Driver Offset:	00956E (SegaNet driver)
+Additional Z80 Data #1:	029DA6 (J) (goes to Z80 RAM 1000)
+Additional Z80 Data #2:	02A78E (J) (goes to Z80 RAM 1000)
+Z80 Data Structs:	029DA0 (Set 1, Game Mode 10/20) / 02A788 (Set 2, other Game Modes) (J)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A7A (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A8E (Z80 RAM)
+PSG Drum Pointer List:	0A60 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 008000
+
+
+Notes:
+- The sound driver load routine is located at 020180. (executed from 68k RAM, address FF0180)
+- For the SegaNet music and dumped driver, see the "Sega Game Toshokan" folder.
+- The drums use Modulation data from the SegaNet offset list.
+- The Modulation and PSG envelopes match excatly in both data sets.
+- Z80 Data Struct format:
+    2 bytes - Data Length - 1 (DBRA count)
+    2 bytes - Z80 RAM offset
+    2 bytes - ROM offset (lower word, high word is the same as the data struct offset)
+- Data Set 1 contains the music + SFX.
+  Data Set 2 contains music + SFX for title and credits screens.
+- Song 1_04 Round Clear makes use of a bug in related to custom modulation (uninitialized IY register).
+  The bug is present in all versions of SMPS Z80 Type 1 and was fixed in SMPS Z80 Type 2.
+- The SegaNet routine that copies Sound IDs to the Z80 driver is at 003622.
+  It waits for the value in FFA2 (68k RAM) to be 01+ and reads the Sound ID from 68k RAM at FF9A+(value-1).
+  The SegaNet PlaySound routine is at 00360E and is referenced by the jump table entry at FC68 (68k RAM).
+- The Game Mode is a 2-byte value stored at FFC0 (68k RAM). It must be a multiple of 4 and between 00 and 24.
+- The Title Screen Mode is a 2-byte value stored at BE20 (68k RAM). It must be a multiple of 4 and between 00 and 10.
