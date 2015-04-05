@@ -76,8 +76,8 @@ NoteOnPrevent = Hold
 DelayFreq = Reset
 
 ; Modulation Algorithm
-;	can be 68K or Z80
-ModAlgo = Z80
+;	can be 68K, Z80 or Z80_B
+ModAlgo = Z80_b
 
 ; Envelope Multiplier Mode
 ;	PRE - preSMPS 68k
@@ -127,8 +127,9 @@ FadeOutDelay = 6
 ;	LOOP - loop back to the Envelope Index set by the following byte
 ;	STOP - stop the envelope and note
 ;	CHG_MULT - change the Envelope Multiplier (Modulation Envelope only)
+;	VOLSTOP_MODHOLD - like STOP for volume envelopes and like HOLD for modulation envelopes
 80 = Reset
 81 = Hold
 82 = Loop
-83 = Stop
+83 = VolStop_ModHold
 84 = Chg_Mult

@@ -28,3 +28,4 @@ Notes:
   00 = 018000, FF = 020000
   The only song that has bank value FF is song 84 (F. O. B. (Boss)).
   The only songs that use DAC sounds are 83, 84 and 8A.
+- Viewpoint has the only know SMPS Z80 Type 2/FM driver that has the IY register bug in DoModulation fixed.
