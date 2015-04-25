@@ -1,6 +1,6 @@
 SMPS 68k
 --------
-A Ressha de Ikou MD				SMPS/MNM 68k
+A Ressha de Ikou MD				SMPS/Mucom 68k
 Aa Harimanada					SMPS 68k (banked)
 Alien Soldier					SMPS/Treasure
 Ayrton Senna's Super Monaco GP II		SMPS 68k
@@ -23,7 +23,6 @@ Mega Q: Party Quiz				SMPS 68k
 Michael Jackson's Moonwalker			SMPS 68k
 Mighty Morphin' Power Rangers: The Movie	SMPS 68k
 Nekketsu Koukou Dodgeball Bu Soccer Hen MD	SMPS 68k
-Ninja Burai Densetsu				SMPS 68k
 Phantasy Star: The End of the Millenium		SMPS 68k
 Pulseman					SMPS 68k/mod
 Ristar						SMPS 68k/mod
@@ -31,7 +30,7 @@ Samurai Shodown (Samurai Spirits)		SMPS 68k
 Shadow Dancer: The Secret of Shinobi		SMPS 68k
 Shinobi III (The Super Shinobi II)		SMPS 68k
 Sonic the Hedgehog				SMPS 68k
-Streets of Rage (Bare Knuckle)			SMPS/MNM 68k
+Streets of Rage (Bare Knuckle)			SMPS/Mucom 68k
 Strider (Strider Hiryuu)			SMPS 68k
 Toki: Going Ape Spit (JuJu Densetsu)		SMPS 68k
 Yuu Yuu Hakusho: Makyou Touitsusen		SMPS/Treasure
@@ -40,7 +39,7 @@ Metal Head					[32x] SMPS 68k
 Shadow Squadron (Stellar Assault)		[32x] SMPS 68k
 Virtua Racing Deluxe				[32x] SMPS 68k [GDRI was wrong here]
 ----------------
-39 games
+38 games
 
 
 SMPS Z80
@@ -139,7 +138,7 @@ Knuckles' Chaotix				[32x] SMPS Z80/mod
 Tempo						[32x] SMPS Z80/mod
 Zaxxon's Motherbase 2000 (Parasquad)		[32x] SMPS Z80
 ----------------
-92 games
+93 games
 
 
 pre-SMPS
@@ -153,6 +152,7 @@ Jantei Monogatari				pre-SMPS 68k/FM
 Last Battle (Hokuto no Ken)			pre-SMPS 68k/FM
 Mahjong Cop Ryuu				pre-SMPS 68k/FM
 Metal Fangs					pre-SMPS 68k/PCM [incorrectly detected as SMPS 68k]
+Ninja Burai Densetsu				pre-SMPS 68k/PCM [incorrectly detected as SMPS 68k]
 Osomatsu-kun					pre-SMPS Z80
 Phantasy Star II				pre-SMPS 68k/mod
 Rambo III					pre-SMPS Z80
@@ -164,13 +164,13 @@ Super Hang-On					pre-SMPS Z80
 Super Thunder Blade				pre-SMPS Z80/mod [sound RAM at 1E00]
 Sword of Vermilion (Vermilion)			pre-SMPS 68k/PCM
 Tetris						pre-SMPS Z80
-The Revenge of Shinobi (The Super Shinobi)	pre-SMPS/MNM 68k
+The Revenge of Shinobi (The Super Shinobi)	pre-SMPS/Mucom 68k
 Tommy Lasorda Baseball (Super League)		pre-SMPS 68k (PCM? there are no drums)
 World Championship Soccer (World Cup Soccer)	pre-SMPS 68k/PCM
 Wrestle War					pre-SMPS 68k/FM
 Zoom!						pre-SMPS Z80
 ----------------
-26 games
+27 games
 
 
 

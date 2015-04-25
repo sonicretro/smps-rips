@@ -1,0 +1,19 @@
+General Pointer List:	8000 (J) (Z80 Bank Offset)
+Music Pointer List:	8236 (J) (Z80 Bank Offset)
+SFX Pointer List:	1000 (J) (Z80 RAM)
+Mod. Pointer List:	800E (J) (Z80 Bank Offset)
+PSG Pointer List:	8154 (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	031DFC (J)
+Additional Z80 Data:	032DE4 (J) (goes to Z80 RAM 1000)
+Pan Animation List:	029C (Z80 RAM)
+FM Drum Pointer List:	0A70 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A84 (Z80 RAM)
+PSG Drum Pointer List:	0A56 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 030000
+
+
+Notes:
+-

@@ -3,7 +3,7 @@
 
 ;Flag	Type    	SubType 	Len	JmpOfs
 [Main]
-E0	PANAFMS 	PAFMS_PAN	02	; Note: also disables the Pan Animation effect
+E0	PANAFMS 	PAFMS_PAN_PAOFF	02	; Note: also disables the Pan Animation effect
 E1	DETUNE  	        	02
 E2	COND_JUMP	CJMP_Z  	05	01,03	; Jump if 1C17 is 00, jump to first address. Else jump to second one.
 E3	TRANSPOSE	TRNSP_GSET	01	; Special Transpose - sets transpose to value in 1C12

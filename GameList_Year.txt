@@ -18,7 +18,7 @@ Mystic Defender (Kujaku Ou II)			SMPS Z80/Type 1 FM (early)
 Phantasy Star II				pre-SMPS 68k/Type 1 (pre-SMPS Z80 port)
 Rambo III					pre-SMPS Z80/Type 2
 Super Daisenryaku				pre-SMPS 68k/PCM
-The Revenge of Shinobi (The Super Shinobi)	pre-SMPS/MNM 68k
+The Revenge of Shinobi (The Super Shinobi)	pre-SMPS/Mucom 68k
 Super Hang-On					pre-SMPS Z80/Type 2
 Sword of Vermilion (Vermilion)			pre-SMPS 68k/PCM
 Tetris						pre-SMPS Z80/Type 2
@@ -37,10 +37,10 @@ Darwin 4081					pre-SMPS Z80/Type 2 (banked)
 Dick Tracy					SMPS Z80 FM
 DJ Boy						SMPS Z80 FM
 Dynamite Duke					SMPS Z80 FM
-ESWAT Cyber Police				SMPS Z80 FM
+ESWAT Cyber Police				SMPS Z80/Type 1 FM
 Ghostbusters					SMPS Z80/Type 1 FM (early/mod)
 Magical Hat no Buttobi Turbo! Daibouken		SMPS Z80/Type 1 FM
-Mega Anser					SMPS Z80
+Mega Anser					SMPS Z80/Type 1 FM (early)
 Michael Jackson's Moonwalker			SMPS 68k/Type 1a
 Pat Riley Basketball (Super Real Basketball)	SMPS Z80 FM
 Phantasy Star III: Generations of Doom		SMPS Z80/Type 1 FM
@@ -63,7 +63,7 @@ Bahamut Senki					SMPS Z80 FM
 Battle Golfer Yui				SMPS 68k/Type 1a
 Bonanza Brothers				SMPS Z80/Type 1 FM
 Dahna: Megami Tanjou				SMPS Z80/Type 1 DAC
-Dragon's Eye Plus: Shanghai 3			SMPS 68k
+Dragon's Eye Plus: Shanghai 3			SMPS 68k/Type 1b
 F1 Circus MD					SMPS Z80 DAC
 Fatal Labyrinth					SMPS Z80 FM
 Fighting Masters				SMPS Z80/Type 1 FM
@@ -74,7 +74,7 @@ Jantei Monogatari				pre-SMPS 68k/FM
 Marvel Land (Talmit's Adventure)		SMPS Z80 FM
 Mercs (Senjou no Ookami II)			SMPS Z80/Type 1 early DAC
 Nikkan Sports Pro Yakyuu VAN			SMPS Z80 FM
-Ninja Burai Densetsu				SMPS 68k
+Ninja Burai Densetsu				pre-SMPS 68k/PCM
 OutRun						SMPS Z80/Type 1 DAC
 QuackShot					SMPS Z80/Type 1 FM (mod)
 Rent-a-Hero					pre-SMPS 68k/PCM
@@ -85,7 +85,7 @@ Sega Game Toshokan				SMPS Z80/Type 1 FM [missing on GDRI]
 Shogi no Hoshi					SMPS Z80 FM
 Sonic Eraser					SMPS Z80/Type 1 FM [missing on GDRI]
 Sonic the Hedgehog				SMPS 68k/Type 1b (mod)
-Streets of Rage (Bare Knuckle)			SMPS/MNM 68k
+Streets of Rage (Bare Knuckle)			SMPS/Mucom 68k
 Super League '91				SMPS Z80 DAC
 Taiga Drama Taiheiki				SMPS Z80 FM
 Toki: Going Ape Spit (JuJu Densetsu)		SMPS 68k/Type 1b
@@ -94,7 +94,7 @@ Wrestle War					pre-SMPS 68k/FM
 
 1992
 ----
-A Ressha de Ikou MD				SMPS/MNM 68k
+A Ressha de Ikou MD				SMPS/Mucom 68k
 Ayrton Senna's Super Monaco GP II		SMPS 68k/Type 2a (mod)
 Battletoads					SMPS Z80/Type 1 DAC
 Cadash						SMPS Z80

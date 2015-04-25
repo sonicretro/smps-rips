@@ -44,4 +44,4 @@ FF	META_CF 	        	01
 04	COPY_MEM	        	04
 05	TICK_MULT	TMULT_ALL	02
 06	SSG_EG  	SEG_NORMAL	05
-07	FM_VOLENV	        	03
+07	TRK_END 	TEND_STD	01	; sets 1C13 = 01, then stops the track

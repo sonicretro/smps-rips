@@ -1,0 +1,47 @@
+General Pointer List:	8000 (JU) (Z80 Bank Offset)
+Music Pointer List:	8326 (JU) (Z80 Bank Offset)
+SFX Pointer List:	1100 (JU) (Z80 RAM)
+Mod. Pointer List:	800E (JU) (Z80 Bank Offset)
+PSG Pointer List:	8154 (JU) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	01C120 (JU)
+Additional Z80 Data:	01D18E (JU) (goes to Z80 RAM 1100)
+Z80 DAC Driver Offset:	01716E (JU)
+DAC Voice List:		006BFC (J) / 006E34 (U) (4 entries) (goes to Z80 RAM 00C0)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A73 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A89 (Z80 RAM)
+PSG Drum Pointer List:	0A59 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 0180000
+
+
+DAC Voice List Format: (all Big Endian)
+4 bytes - ROM offset
+2 bytes - Data Size - 1 (DBRA count value, includes 2-byte alignment)
+
+Each DAC Voice begins with the following 3-byte header:
+2 bytes - Sound Size (Little Endian)
+1 byte  - Playback Speed
+
+Data is DPCM compressed with the delta-array:
+00 01 02 04 08 10 20 40 80 FF FD FC F8 F0 E0 C0 (Z80 DAC Driver offset 008E)
+
+
+Notes:
+- This is one of the few SMPS Z80 drivers that disable the Pan Animation effect when processing a normal E0 Pan command.
+- The routine that loads the Z80 DAC driver is located at 006B8A (J) / 006DC2 (U).
+- The SMPS Z80 driver features additional Sound Queue slots.
+  The following slots are processed in the listed order: 1C09, 1C08, 1C0D, 1C0E, 1C0F.
+- Sound Test ID list: 0336F0 (J) / 033B48 (U)
+  IDs 80-FF are for the SMPS Z80 driver, 00-7F are DAC Voice IDs.
+- Sound Test Song Names: 0333FA (J) / 03386A (U)
+    0Ch bytes per name, 1 byte per character, routine drawing routine is at 03384C (U)
+    Character set:
+	 00   - ' ' (space)
+	01-1A - 'A' - 'Z'
+	1B-24 - '1' - '9', '0'
+	 25   - '-' (minus)
+- Options Screen Handler: 033662 (U)
+  Sound Test Handler: 033ACE (U)

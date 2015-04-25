@@ -1,0 +1,22 @@
+General Pointer List:	8000 (W) (Z80 Bank Offset)
+Music Pointer List:	8236 (W) (Z80 Bank Offset)
+SFX Pointer List:	1200 (W) (Z80 RAM)
+Mod. Pointer List:	800E (W) (Z80 Bank Offset)
+PSG Pointer List:	8154 (W) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	00255E (W)
+Additional Z80 Data:	003603 (W) (goes to Z80 RAM 1200)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A69 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A87 (Z80 RAM)
+PSG Drum Pointer List:	0A4F (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+
+Notes:
+- Z80 Driver Loader routine: 00249C
+- The "Music Pause" coordination flag was modified to not restart previously stopped tracks.
+  (The code is similar to Castle of Illusion.)
+- The FM/PSG drums use a Tick Multiplier of 3.
