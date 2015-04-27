@@ -1,1 +1,19 @@
-see Sonic Eraser
+General Pointer List:	8000 (Z80 Bank Offset) (J)
+Music Pointer List:	822A (Z80 Bank Offset) (J)
+SFX Pointer List:	8232 (Z80 Bank Offset) (J)
+Mod. Pointer List:	800E (Z80 Bank Offset) (J)
+PSG Pointer List:	8154 (Z80 Bank Offset) (J)
+Z80 Snd Driver Offset:	00956E (J)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A7A (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A8E (Z80 RAM)
+PSG Drum Pointer List:	0A60 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 008000
+
+
+Notes:
+- The drums enforce the use of Modulation data from the SegaNet offset list.
+  They read them from the pointer specified by the list at 8000h in the ROM bank, which defaults to the SegaNet header.

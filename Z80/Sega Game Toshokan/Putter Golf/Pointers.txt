@@ -1,0 +1,38 @@
+General Pointer List:	1300 (Z80 RAM) (J)
+Music Pointer List:	136B (Z80 RAM) (J)
+SFX Pointer List:	1000 (Z80 RAM) (J)
+Mod. Pointer List:	130E (empty) (Z80 RAM) (J)
+PSG Pointer List:	1310 (Z80 RAM) (J)
+Z80 Snd Driver Offset:	00956E (SegaNet driver)
+Additional Z80 Data #1:	0222E6 (J) (goes to Z80 RAM 1000)
+Additional Z80 Data #2:	0224F2 (J) (goes to Z80 RAM 1300)
+Z80 Data Structs:	0222DA (J)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A7A (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A8E (Z80 RAM)
+PSG Drum Pointer List:	0A60 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Notes:
+- The sound driver load routine is located at 0219B8. (executed from 68k RAM, address FF19B8)
+- For the SegaNet music and dumped driver, see the "Sega Game Toshokan" folder.
+- Z80 Data Struct format:
+    2 bytes - Data Length - 1 (DBRA count)
+    2 bytes - Z80 RAM offset
+    2 bytes - ROM offset (lower word, high word is the same as the data struct offset)
+  Note: The data length seems incorrect. The length for Data #1 is off by one and the length for Data #2 is completely wrong.
+- The drums use Modulation data from the SegaNet offset list.
+- The SegaNet PlayMusic routine is at 0035E8 and is referenced by the jump table entry at FC62 (68k RAM).
+  It writes the parameter instantly to Z80 RAM 1C09 and clears 1C04-1C07 with value 00.
+- Various values (68k RAM):
+	FFC0/C1 - Game Mode (00-1C in steps of 04, set to 10 to end the round)
+	E4B8/B9 - current Round
+	E4C0/C1 - some other Mode (00-0A in steps of 02)
+	E4C4/C5 - "Par" value for current round
+	E4C6/C7 - number of passed turns
+	E4C8/C9 - shot difference (turns - par) during score tally
+	E4CA/CB - remaining balls (finish round 18 with 8+ balls for bonus round)
+	E4CC - direction of power bar
+	E4CD - current "Power" value
+	E4CE/CF - some other Mode (00-06 in steps of 01)

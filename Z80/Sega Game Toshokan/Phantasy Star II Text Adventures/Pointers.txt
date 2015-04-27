@@ -1,0 +1,105 @@
+General Pointer List:	1300 (Z80 RAM)
+Music Pointer List:	1355 (Anne, Rudger) / 1356 (Amia, Huey, Kinds, Nei, Shilka, Yushis) (Z80 RAM)
+SFX Pointer List:	1000 (Z80 RAM)
+Mod. Pointer List:	130E (Z80 RAM)
+PSG Pointer List:	1312 (Anne, Rudger) / 1313 (Amia, Huey, Kinds, Nei, Shilka, Yushis) (Z80 RAM)
+Z80 Snd Driver Offset:	00956E (SegaNet driver)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A7A (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A8E (Z80 RAM)
+PSG Drum Pointer List:	0A60 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Amia
+----
+Z80 Data Structs:	025EB2 (Data #1) / 025EB8 (Data #2)
+Additional Z80 Data #1:	025EBE (goes to Z80 RAM 1000)
+Additional Z80 Data #2:	0260C6 (goes to Z80 RAM 1300)
+Snd. Drv. Load Routine:	021916
+
+Anne
+----
+Z80 Data Structs:	025EC4 (Data #1) / 025ECA (Data #2)
+Additional Z80 Data #1:	025ED0 (goes to Z80 RAM 1000)
+Additional Z80 Data #2:	02612A (goes to Z80 RAM 1300)
+Snd. Drv. Load Routine:	021ADA
+
+Huey
+----
+Z80 Data Structs:	0263D4 (Data #1) / 0263DA (Data #2)
+Additional Z80 Data #1:	0263E0 (goes to Z80 RAM 1000)
+Additional Z80 Data #2:	02665E (goes to Z80 RAM 1300)
+Snd. Drv. Load Routine:	0219E6
+
+Kinds
+-----
+Z80 Data Structs:	025EA2 (Data #1) / 025EA8 (Data #2)
+Additional Z80 Data #1:	025EAE (goes to Z80 RAM 1000)
+Additional Z80 Data #2:	026188 (goes to Z80 RAM 1300)
+Snd. Drv. Load Routine:	021ABC
+
+Nei
+---
+Z80 Data Structs:	02E040 (Data #1) / 02E048 (Data #2) / 02C000 (Driver 2)
+Additional Z80 Data #1:	02E050 (goes to Z80 RAM 1000)
+Additional Z80 Data #2:	02E210 (goes to Z80 RAM 1300)
+Snd. Drv. Load Routine:	02E000
+
+Broken SndDrv. Load:	0219C6 (first instruction was replaced with a JMP to the actual routine)
+Unused Z80 Snd. Driver:	02C010
+General Pointer List:	N/A (everything is hardcoded into the driver)
+Music Pointer List:	09F7 (Z80 RAM)
+SFX Pointer List:	09FF (Z80 RAM)
+Mod. Pointer List:	07F8 (Z80 RAM)
+PSG Pointer List:	093E (Z80 RAM)
+Pan Animation List:	02A8 (Z80 RAM)
+FM Drum Pointer List:	0E65 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0DC3 (Z80 RAM)
+PSG Drum Pointer List:	N/A
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Rudger
+------
+Z80 Data Structs:	025164 (Data #1) / 02516A (Data #2)
+Additional Z80 Data #1:	025170 (goes to Z80 RAM 1000)
+Additional Z80 Data #2:	025392 (goes to Z80 RAM 1300)
+Snd. Drv. Load Routine:	021A72
+
+Shilka
+------
+Z80 Data Structs:	025452 (Data #1) / 025458 (Data #2)
+Additional Z80 Data #1:	02545E (goes to Z80 RAM 1000)
+Additional Z80 Data #2:	0256BA (goes to Z80 RAM 1300)
+Snd. Drv. Load Routine:	021A8E
+
+Yushis
+------
+Z80 Data Structs:	026100 (Data #1) / 026106 (Data #2)
+Additional Z80 Data #1:	02610C (goes to Z80 RAM 1000)
+Additional Z80 Data #2:	02633E (goes to Z80 RAM 1300)
+Snd. Drv. Load Routine:	021A68
+
+
+Notes:
+- The sound driver load routine is executed from 68k RAM in most cases.
+  If so, then 02xxxx refers to address xxxx in 68k RAM.
+- For the SegaNet music and dumped driver, see the "Sega Game Toshokan" folder.
+- Z80 Data Struct format (all but Nei's Adventure):
+    2 bytes - Data Length - 1 (DBRA count)
+    2 bytes - Z80 RAM offset
+    2 bytes - ROM offset (lower word, high word is the same as the data struct offset)
+  Nei's Adventure Z80 Data Struct format:
+    2 bytes - Data Length - 1 (DBRA count)
+    2 bytes - Z80 RAM offset
+    4 bytes - ROM offset (full address)
+  Note: The data length seems incorrect pretty often.
+        The length for Data #1 is usually off by one, like they didn't take the additional DBRA iteration into account.
+        The length for Data #2 is always way too high and copies lots of garbage data.
+- The drums use Modulation data from the SegaNet offset list.
+- The PSG envelopes match in all games. The Modulation Envelopes vary a lot.
+- Nei's Adventure has an additional sound driver.
+  It was size optimized and stripped from all PSG features, except for volume envelopes, which are used by the FM volume envlope feature.
+  It contains the songs "Main BGM" and "Combat" and some SFX.
+  If loaded manually, the first SFX crashes the driver already, because it requests an ID that references an SFX of the SegaNet ROM bank.

@@ -195,3 +195,21 @@ Mickey no Boku wa Meitantei			[Pico] SMPS 68k-Pico/Type 2b
 
 
 Compiled from http://gdri.smspower.org/wiki/index.php/Mega_Drive/Genesis_Sound_Engine_List
+
+
+Sega Game Toshokan games
+------------------------
+Hyper Marbles
+Phantasy Star II - Amia's Adventure
+Phantasy Star II - Anne's Adventure
+Phantasy Star II - Huey's Adventure
+Phantasy Star II - Kinds's Adventure
+Phantasy Star II - Nei's Adventure (has an additional unused sound driver)
+Phantasy Star II - Rudger's Adventure
+Phantasy Star II - Shilka's Adventure
+Phantasy Star II - Yushis's Adventure
+Putter Golf
+Pyramid Magic
+Pyramid Magic II
+Pyramid Magic III
+Sonic Eraser (comes with its own SegaNet sound driver)
