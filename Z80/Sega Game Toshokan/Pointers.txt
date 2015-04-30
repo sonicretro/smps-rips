@@ -14,6 +14,10 @@ Sound RAM:		1C00 (Z80 RAM)
 There is only 1 music bank: 008000
 
 
+All data between 007FFA and 01FFFF matches exactly in both, the Game Toshokan BIOS ROM and the SegaNet ROM header present in the dumped SegaNet games. (except for some garbage data at 00A580-00A5E5)
+This includes the sound related part of the ROM (008000-00A553).
+
+
 Notes:
 - The drums enforce the use of Modulation data from the SegaNet offset list.
   They read them from the pointer specified by the list at 8000h in the ROM bank, which defaults to the SegaNet header.

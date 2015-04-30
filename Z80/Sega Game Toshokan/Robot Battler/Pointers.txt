@@ -1,0 +1,26 @@
+General Pointer List:	1200 (Z80 RAM) (J)
+Music Pointer List:	125C (Z80 RAM) (J)
+SFX Pointer List:	1000 (Z80 RAM) (J)
+Mod. Pointer List:	120E (empty) (Z80 RAM) (J)
+PSG Pointer List:	1210 (Z80 RAM) (J)
+Z80 Snd Driver Offset:	00956E (SegaNet driver)
+Additional Z80 Data #1:	023176 (J) (goes to Z80 RAM 0A7A, FM drums)
+Additional Z80 Data #2:	02328C (J) (goes to Z80 RAM 1000, SFX data)
+Additional Z80 Data #3:	0233CA (J) (goes to Z80 RAM 1200, music set #1)
+Additional Z80 Data #4:	023DCA (J) (goes to Z80 RAM 1200, music set #2)
+Additional Z80 Data #5:	024270 (J) (goes to Z80 RAM 1200, music set #3)
+Z80 Data Structs:	023158 (J)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A7A (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A8E (Z80 RAM)
+PSG Drum Pointer List:	0A60 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Notes:
+- The sound driver load routine is located at 024B24. (executed from 68k RAM, address FF4B24)
+- For the SegaNet music and dumped driver, see the "Sega Game Toshokan" folder.
+- Z80 Data Struct format:
+    2 bytes - Data Length - 1 (DBRA count)
+    2 bytes - Z80 RAM offset
+    2 bytes - ROM offset (lower word, high word is the same as the data struct offset)

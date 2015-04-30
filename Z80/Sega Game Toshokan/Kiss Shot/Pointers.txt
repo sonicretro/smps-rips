@@ -1,0 +1,30 @@
+General Pointer List:	1300 (Z80 RAM) (J)
+Music Pointer List:	135B (Z80 RAM) (J)
+SFX Pointer List:	1000 (Z80 RAM) (J)
+Mod. Pointer List:	130E (empty) (Z80 RAM) (J)
+PSG Pointer List:	1310 (Z80 RAM) (J)
+Z80 Snd Driver Offset:	00956E (SegaNet driver)
+Additional Z80 Data #1:	0200FA (J) (goes to Z80 RAM 1000, SFX data)
+Additional Z80 Data #2:	0209AF (J) (goes to Z80 RAM 1200, music set #1)
+Additional Z80 Data #3:	0201F6 (J) (goes to Z80 RAM 1200, music set #2)
+Additional Z80 Data #4:	021249 (J) (goes to Z80 RAM 0AE4, FM drum 85 patch)
+Additional Z80 Data #5:	02126B (J) (goes to Z80 RAM 0B28, FM drum 88 patch)
+Z80 Data Structs:	0200DC (main data) / 0200EE (FM drums) (J)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A7A (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A8E (Z80 RAM)
+PSG Drum Pointer List:	0A60 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Notes:
+- The sound driver load routine is located at 0212B0. (executed from 68k RAM, address FF12B0)
+- For the SegaNet music and dumped driver, see the "Sega Game Toshokan" folder.
+- Z80 Data Struct format:
+    2 bytes - Data Length - 1 (DBRA count)
+    2 bytes - Z80 RAM offset
+    2 bytes - ROM offset (lower word, high word is the same as the data struct offset)
+- The drums use Modulation data from the SegaNet offset list.
+- The game patches the Z80 driver a bit.
+  It prevents StopDrumPSG from muting the FM6 track and makes ApplyFading process 7 FM tracks (drum + FM 1-6) instead of 6.
+  It also patches FM drum 85 (incl. FM drum instrument 01) and FM drum 88 (incl. FM drum instrument 03).
