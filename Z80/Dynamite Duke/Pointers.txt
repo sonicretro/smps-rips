@@ -1,0 +1,21 @@
+General Pointer List:	8000 (W) (Z80 Bank Offset)
+Music Pointer List:	8236 (W) (Z80 Bank Offset)
+SFX Pointer List:	1000 (W) (Z80 RAM)
+Mod. Pointer List:	800E (W) (Z80 Bank Offset)
+PSG Pointer List:	8154 (W) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	07A872 (W) (pointer is at 077FF8, length at 077FFC)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A60 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A74 (Z80 RAM)
+PSG Drum Pointer List:	0A46 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+All data between 00B756 and 07FFFF matches exactly between both verions (normal and [a1]) of the ROM. This includes the sound related part of the ROM (077FF8-07BD79).
+
+
+Notes:
+- Song 02 has an incomplete F6 GoTo command right at the beginning of channel FM4. The second byte of the destination pointer is overwritten by the first command of channel FM3.
+- All songs have track headers for 6 FM + 3 PSG tracks, even though none of the songs uses the PSG tracks.

@@ -1,0 +1,25 @@
+General Pointer List:	8000 (JUE) (Z80 Bank Offset)
+Music Pointer List:	8236 (J) / 8242 (UE) (Z80 Bank Offset)
+SFX Pointer List:	9827 (J) / AD07 (UE) (Z80 Bank Offset)
+Mod. Pointer List:	800E (JUE) (Z80 Bank Offset)
+PSG Pointer List:	8154 (J) / 8160 (UE) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0649D2 (J) / 06A63A (UE) / 06B06E (E)
+Additional Z80 Data:	0659B8 (J) (goes to Z80 RAM 1000)
+Pan Animation List:	02F1 (Z80 RAM)
+FM Drum Pointer List:	0A5A (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A6E (J) / 0A76 (UE) (Z80 RAM)
+PSG Drum Pointer List:	0A40 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+
+Notes:
+- The last two Modulation Envelopes differ between the J and the UE versions.
+- The UE version has some additional songs not present in the J version.
+  New songs are: 05, 06, 0A, 0B
+  The songs 05/06 in the J version were moved to ID 08/09.
+  The songs themselves were not changed.
+- The sound driver matches mostly between J and UE.
+  Due to additional FM drums in the UE version, some pointers are different and some data got shifted.

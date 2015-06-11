@@ -17,3 +17,4 @@ There is only 1 music bank: 0F8000
 Notes:
 - The boss theme modifies the driver update rate, but none of the other songs do.
   So the boss theme causes all other songs to play at a higher speed.
+- The sound driver originates from Wonder Boy III - Monster Lair.

@@ -1,0 +1,50 @@
+General Pointer List:	8000 (J) (Z80 Bank Offset)
+Music Pointer List:	8273 (J) (Z80 Bank Offset)
+SFX Pointer List:	1090 (J) (Z80 RAM)
+Mod. Pointer List:	8012 (J) (Z80 Bank Offset)
+PSG Pointer List:	8158 (J) (Z80 Bank Offset)
+DAC Drum Pointer List:	0621DB / 068FAD (J)
+DAC Voice Pointer List:	06558E / 06C6B9 (J)
+Uninter. DAC Ptr. List:	070000 / 078000 (J)
+Z80 Snd Driver Offset:	04EA9C (J)
+Additional Z80 Data:	04FAFA (J) (goes to Z80 RAM 1090)
+Pan Animation List:	0357
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC List Format:
+The format is the same one as used in Mazin Saga.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 006F)
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 103A)
+
+
+Notes:
+- The bankswitch code called in UpdateAll copies the value at 1C3F to 1C01. The 68k can then control the current Z80 bank (060000 / 068000) by writing 00 or 80 to 1C3F.
+- 68k PlaySong routine: 00128C
+  The routine gets a Song ID (00-13) passed in register D0.
+  The song ID is read from a table at 0012B6. The ROM Bank byte (Z80 RAM 1C3F) is set to 00 for song 00-0F and set to 80 for all others. (song 10-13 effectively)
+- 68k PlaySFX routine: 001268
+- 68k PlayDACSFX routine: 0012E4
+  The routine gets an SFX ID (00-19) passed in register D0.
+  The SFX ID is read from a table at 001324. The ROM Bank bytes (Z80 RAM 1BFC/FD) are set to 07 00 for SFX 00-0E and set to 07 80 for all others. (SFX 0F-19 effectively)
+  The DAC SFX Table Offset (Z80 RAM 1BFE/FF) is initialized with 00 80. (Z80 offset 8000)
+  SFX 00-14 are mapped to uninterruptable DAC SFX (Sound ID C9-D7 for bank 070000 and C9-CE for bank 078000).
+  SFX 15-19 are mapped to usual DAC SFX (Sound ID C0-C4)
+- 68k ProcessSoundQueue routine: 002A6E
+- Lots of "Crowd Noise" here. An almost all of the tracks used some shared data, stored at 067C93, 067CFD, 067D0C and 067D24.
+  There is another block of data at 067D33 that doesn't seem to be used anywhere.
+- PlaySound ID List:
+	00-7F - Stop All Sound
+	80-92 - Music
+	93-AF - SFX
+	B0-BF - Special SFX
+	C0-C5 - DAC Voices
+	C7-F8 - Special Commands
+	F9-FF - Stop All Sound
+  Special Commands:
+	C7 - Fade Out Music
+	C8 - Stop All Sound
+	C9-D8 - DAC Voice (uninterruptabe) 81-90
+- The separate and uninterruptabe DAC Voice routines are probably an attempt to make clear voices.

@@ -108,8 +108,15 @@ PSGFreqs = Def_Z80_T1
 FM3Freqs = 000h 132h 18Eh 1E4h
 
 
+; JP / US v1 / EU
 FadeOutSteps = 28h
 FadeOutDelay = 6
+; US v2:
+;FadeOutSteps = 18h
+;FadeOutDelay = 2
+; X'Eye:
+;FadeOutSteps = 28h
+;FadeOutDelay = 5
 
 
 [EnvelopeCmds]

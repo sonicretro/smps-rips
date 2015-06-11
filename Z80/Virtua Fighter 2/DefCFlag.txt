@@ -1,5 +1,5 @@
-; --- Sonic and Crackers Command Definition ---
-; SMPS Z80 Type 2
+; --- SMPS Z80 Type 2 Command Definition ---
+; based on a disassembly of Dyna Brothers 2
 
 ;Flag	Type    	SubType 	Len	JmpOfs
 [Main]

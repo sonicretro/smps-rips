@@ -1,9 +1,10 @@
-; --- Dangerous Seed SMPS Driver Definition ---
+; --- Phantasy Star II - Nei's Adventure [alt. driver] SMPS Driver Definition ---
 ; SMPS Z80 Type 1
 
 [Settings]
 ; All the drivers does is to set 1C04 = 01. All other values are left at 00.
-; Timer Value A can be changed, Timer B is locked to B4.
+; The value of Timer A can be changed, Timer B is locked to B4.
+; The timing mode is locked to "Music on A, SFX on B", too.
 
 ; forced Default Values for Timing
 ; default Mode (hex):
@@ -73,7 +74,7 @@ DelayFreq = Keep
 
 ; Modulation Algorithm
 ;	can be 68K, Z80 or Z80_B
-ModAlgo = Z80_b
+ModAlgo = Z80	; has the bug fixed
 
 ; Envelope Multiplier Mode
 ;	PRE - preSMPS 68k

@@ -1,0 +1,27 @@
+General Pointer List:	8000 (JU) (Z80 Bank Offset)
+Music Pointer List:	8228 (JU) (Z80 Bank Offset)
+SFX Pointer List:	A6C2 (JU) (Z80 Bank Offset)
+Mod. Pointer List:	800E (JU) (Z80 Bank Offset)
+PSG Pointer List:	8146 (JU) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	03B372 (JU)
+Pan Animation List:	02F1 (Z80 RAM)
+FM Drum Pointer List:	0A56 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A6C (Z80 RAM)
+PSG Drum Pointer List:	0A3C (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 038000
+
+
+The sound-related part of the ROM (038000-03DFFF) matches exactly between J and U versions of the ROM.
+The only exception is the byte at offset 0384D2, which is at offset 0022 in song 02.
+It's part of a command that sets values for YM Timer A and B, so the value of Timer A differs.
+This has no effect though, because music and SFX timing is done via Timer B only.
+
+
+Notes:
+- The unlicensed Arcade game "Top Shooter" (which runs on MegaDrive hardware) uses an exact copy of this sound driver.
+- Song 05 has data for an unused FM channel. There are track headers for 5 FM channels while the header count is set to 4.
+  The "extra channels" version sets the header count to 5 to enable the addition echo channel.
+- The way the sound driver is initialized from the 68k is very similar to Magical Hat no Buttobi Turbo! Daibouken.

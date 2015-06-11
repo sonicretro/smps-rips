@@ -14,3 +14,7 @@ Each one of the 2 music banks (0B0000 / 0B8000) contains redundant copies of som
 The first 016Fh bytes match exactly in each bank. (e.g. all data before the music pointers)
 
 There are 3 global instrument sets (9072 in bank 0B0000 and B36B and B4C9 in bank 0B8000) that are shared between all songs.
+
+
+Notes:
+- The sound driver originates from Whip Rush 2222 AD.

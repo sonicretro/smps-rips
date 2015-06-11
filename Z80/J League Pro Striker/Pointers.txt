@@ -1,0 +1,54 @@
+General Pointer List:	0E9911 (JE)
+Music Pointer List:	0E9B5F (JE)
+SFX Pointer List:	1100 (JE) (Z80 RAM)
+Mod. Pointer List:	0E991F (JE)
+PSG Pointer List:	0E9A5C (JE)
+DAC Drum Pointer List:	0E8000 (JE) (used by Sound Driver)
+DAC SFX Pointer Lists:	0535 (Z80 RAM) / 8000 (Z80 Bank Offset) (used by DAC Driver)
+DAC SFX Banks:		0B0000 / 0B8000 / 0C0000 / 0C8000 / 0D0000 / 0D8000 / 0E0000 / 0F0000 / 0F8000 (JE)
+Z80 Snd Driver Offset:	0EC370 (JE)
+Z80 DAC Driver Offsets:	0EAC86 (1) / 0DC80E (2) (JE)
+Additional Z80 Data:	0FCF82 (JE) (goes to Z80 RAM 1100)
+Pan Animation List:	---- (Z80 RAM)
+FM Drum Pointer List:	096D (Z80 RAM)
+FM Drum Ins. Ptr. List:	097F (Z80 RAM)
+PSG Drum Pointer List:	0953 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+The sound-related part of the ROM (0B0000-0FFFFF) matches exactly in Rev 03 and Perfect Edition.
+Rev 00 and Rev 03 have a few differences regarding the DAC driver.
+
+
+DAC List Format: (Z80 Sound Driver)
+The format is the same one as used in Mazin Saga.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0F48)
+
+
+DAC List Format: (Z80 DAC Drivers)
+2 bytes - Start Offset
+2 bytes - Data Length
+
+
+Notes:
+- 68k Routines:
+	Rev00	Rev03	Perfect
+	004A50	004AF0	004D1A	Z80 DAC Driver 1 Loader
+	004A7A	004B1A	004D44	Z80 DAC Driver 2 Loader
+	004AA4	004B44	004D6E	Z80 Sound Driver Loader
+	004CF8	004D98	004FC2	Play Sound [DAC driver version] (Z80 RAM 0012)
+- The driver is SMPS Z80 Type 2/FM, but has still the FM3 frequencies from Type 1 drivers.
+  It also is the only Type 2 driver that sets 1C00/01 to the current ROM bank. (The value is never read back though.)
+  Both facts hint that this is an early Type 2 driver.
+- Technically, the drivers uses the FM/PSG drum setup. But the FM drum tracks play DAC sounds (using coordination flag EA) instead of FM notes.
+- The code of the two DAC drivers matches exactly. The only difference between them is the DAC sound stored in Z80 RAM.
+- Sound-related changes between Rev 00 and Rev 03:
+  -> Rev 03 shortened the length of all DAC sounds by 1, because the DAC code keeps the sample that is read after the "length" counter reaches 0.
+  -> Rev 03 changes the DAC playback delay from 02 to 01, probably because it matches 8000 Hz more accurately.
+  -> DAC SFX 8A (third sound in bank 0C0000) was shortened by 4 bytes in Rev 03.
+- The region check routine (00031E in Rev 00) prevents the game from booting on US consoles. (JP/EU is allowed)
+  But unlike most other games, the game doesn't show an error message, but freezes with a black screen.
+  (It enters an endless loop within the region check routine.)
+  Only Perfect Edition shows an error message.

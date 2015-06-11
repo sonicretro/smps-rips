@@ -34,15 +34,15 @@ Columns						SMPS Z80/Type 1 FM
 Cyberball					SMPS Z80 FM
 Dangerous Seed					SMPS Z80/Type 1 FM
 Darwin 4081					pre-SMPS Z80/Type 2 (banked)
-Dick Tracy					SMPS Z80 FM
-DJ Boy						SMPS Z80 FM
-Dynamite Duke					SMPS Z80 FM
+Dick Tracy					SMPS Z80/Type 1 FM
+DJ Boy						SMPS Z80/Type 1 FM
+Dynamite Duke					SMPS Z80/Type 1 FM
 ESWAT Cyber Police				SMPS Z80/Type 1 FM
 Ghostbusters					SMPS Z80/Type 1 FM (early/mod)
 Magical Hat no Buttobi Turbo! Daibouken		SMPS Z80/Type 1 FM
 Mega Anser					SMPS Z80/Type 1 FM (early)
 Michael Jackson's Moonwalker			SMPS 68k/Type 1a
-Pat Riley Basketball (Super Real Basketball)	SMPS Z80 FM
+Pat Riley Basketball (Super Real Basketball)	SMPS Z80/Type 1 FM
 Phantasy Star III: Generations of Doom		SMPS Z80/Type 1 FM
 Rastan Saga II					SMPS Z80 FM
 Shadow Dancer: The Secret of Shinobi		SMPS 68k/Type 1a
@@ -50,7 +50,7 @@ Sorcerian					SMPS Z80/Type 1 FM (banked)
 Street Fighter II' Turbo (beta)			pre-SMPS 68k/PCM
 Strider (Strider Hiryuu)			SMPS 68k/Type 1a (mod, custom sequence format)
 Super Monaco GP					SMPS Z80/Type 1 FM (mod)
-Whip Rush					SMPS Z80 FM
+Whip Rush					SMPS Z80/Type 1 FM
 Wonder Boy III: Monster Lair			SMPS Z80/Type 1 FM
 Zoom!						pre-SMPS Z80/Type 2
 
@@ -64,8 +64,8 @@ Battle Golfer Yui				SMPS 68k/Type 1a
 Bonanza Brothers				SMPS Z80/Type 1 FM
 Dahna: Megami Tanjou				SMPS Z80/Type 1 DAC
 Dragon's Eye Plus: Shanghai 3			SMPS 68k/Type 1b
-F1 Circus MD					SMPS Z80 DAC
-Fatal Labyrinth					SMPS Z80 FM
+F1 Circus MD					SMPS Z80/Type 1 DAC
+Fatal Labyrinth					SMPS Z80/Type 1 FM
 Fighting Masters				SMPS Z80/Type 1 FM
 Flicky						SMPS Z80/Type 1 FM
 Gain Ground					SMPS Z80 FM
@@ -86,7 +86,7 @@ Shogi no Hoshi					SMPS Z80 FM
 Sonic Eraser					SMPS Z80/Type 1 FM [missing on GDRI]
 Sonic the Hedgehog				SMPS 68k/Type 1b (mod)
 Streets of Rage (Bare Knuckle)			SMPS/Mucom 68k
-Super League '91				SMPS Z80 DAC
+Super League '91				SMPS Z80/Type 1 DAC
 Taiga Drama Taiheiki				SMPS Z80 FM
 Toki: Going Ape Spit (JuJu Densetsu)		SMPS 68k/Type 1b
 Ultimate Qix (Volfied)				SMPS Z80 FM
@@ -97,17 +97,18 @@ Wrestle War					pre-SMPS 68k/FM
 A Ressha de Ikou MD				SMPS/Mucom 68k
 Ayrton Senna's Super Monaco GP II		SMPS 68k/Type 2a (mod)
 Battletoads					SMPS Z80/Type 1 DAC
-Cadash						SMPS Z80
+Cadash						SMPS Z80 FM
 Dyna Brothers					SMPS Z80/Type 1 DAC (banked)
 Go-Net						SMPS Z80/Type 1 DAC
-Honoo no Toukyuuji Dodge Danpei			SMPS Z80
+Honoo no Toukyuuji Dodge Danpei			SMPS Z80 FM
 Magical Taruruuto-kun				SMPS 68k/Type 2a
+Mega Games 1 menu				pre-SMPS 68k/PCM (uses World Championship Soccer sound driver/music) [missing on GDRI]
 Nekketsu Koukou Dodgeball Bu Soccer Hen MD	SMPS 68k/Type 1b
 Shura no Mon					SMPS Z80/Type 1 DAC
 Sonic the Hedgehog 2				SMPS Z80 (SMPS 68k/Sonic 1 port)
 Syd of Valis (Valis SD)				SMPS Z80/Type 1 FM
 Tecmo World Cup					SMPS Z80/Type 1 DAC
-Uzu Keobukseon					SMPS Z80
+Uzu Keobukseon					SMPS Z80 FM
 Wani Wani World					SMPS Z80/Type 1 FM
 World of Illusion				SMPS Z80/Type 2 FM (mod)
 
@@ -116,16 +117,16 @@ World of Illusion				SMPS Z80/Type 2 FM (mod)
 Aa Harimanada					SMPS 68k/Type 2b (banked with 2 separate sound drivers)
 Columns III					SMPS Z80/Type 2 FM
 Dyna Brothers 2					SMPS Z80/Type 2 FM (banked)
-Doraemon: Yume Dorobouto 7-nin no Gozansu	SMPS 68k
+Doraemon: Yume Dorobouto 7-nin no Gozansu	SMPS 68k/Type 2b
 Fatal Fury (Garou Densetsu)			SMPS 68k/Type 2b
 Golden Axe III					SMPS 68k/Type 2a (mod)
 Gunstar Heroes					SMPS 68k/Type 2b
-J.League Pro Striker/Perfect Edition		SMPS Z80
+J.League Pro Striker/Perfect Edition		SMPS Z80/Type 2 FM
 King of the Monsters				SMPS Z80/Type 1 DAC
 Mazin Saga (Mazin Wars)				SMPS Z80/Type 1 DAC
 McDonald's Treasure Land Adventure		SMPS 68k/Type 2b
 Mega Games 2/3 menu				SMPS 68k
-Mega Q: Party Quiz				SMPS 68k
+Mega Q: Party Quiz				SMPS 68k/Type 2b
 Metal Fangs					pre-SMPS 68k/PCM [incorrectly detected as SMPS 68k]
 OutRun 2019					SMPS Z80/Type 1 DAC
 Phantasy Star: The End of the Millenium		SMPS 68k/Type 2b (mod)
@@ -136,6 +137,7 @@ Wimbledon Championship Tennis			SMPS Z80
 
 1994
 ----
+6-Pak menu (Mega Games 6in1)			SMPS Z80/Type 1 FM (uses Columns sound driver/music) [missing on GDRI]
 Art of Fighting (Ryuuko no Ken)			SMPS Z80
 ATP Tour Championship Tennis			SMPS Z80
 Bishoujo Senshi Sailor Moon			SMPS 68k/Type 2b
@@ -144,7 +146,7 @@ Crayon Shin-Chan				SMPS 68k/Type 2a
 Dynamite Headdy					SMPS 68k/Type 2b (Treasure mod)
 Fatal Fury 2 (Garou Densetsu 2)			SMPS 68k/Type 2b (same as Fatal Fury 1)
 Gouketsuji Ichizoku				SMPS Z80/mod
-J.League Pro Striker 2				SMPS Z80
+J.League Pro Striker 2				SMPS Z80/Type 2 FM
 King of the Monsters 2				SMPS Z80/Type 1 DAC
 Mega Man: The Wily Wars (Rockman Megaworld)	SMPS Z80/Type 2 FM
 Mighty Morphin' Power Rangers			SMPS Z80/Type 2 FM
@@ -170,6 +172,7 @@ Chou Kyuukai Miracle Nine			SMPS Z80/Type 2 DAC (mod)
 Game no Kandzume Otokuyou			SMPS Z80/Type 2 FM (same as Zaxxon's Motherbase 2000)
 Knuckles' Chaotix				[32x] SMPS Z80/Type 2 DAC (mod)
 Light Crusader					SMPS 68k/Type 2b (Treasure mod)
+Mega Games 6 Vol 1/2/3 menu			SMPS Z80/Type 1 FM (uses Columns sound driver/music) [missing on GDRI]
 Metal Head					[32x] SMPS 68k/Type 2b (mod)
 Mighty Morphin' Power Rangers: The Movie	SMPS 68k/Type 2a
 Pro Striker Final Stage				SMPS Z80/Type 2 DAC (Tempo 32x mod)
@@ -179,14 +182,19 @@ Shadow Squadron (Stellar Assault)		[32x] SMPS 68k/Type 2a (mod)
 Slam Dunk					SMPS Z80
 Surging Aura					SMPS Z80
 Tempo						[32x] SMPS Z80/Type 2 DAC (Tempo 32x mod)
-Top Shooter (Unl)				SMPS Z80 Type 1 FM [missing on GDRI]
+Top Shooter (Unl)				SMPS Z80 Type 1 FM [missing on GDRI] (uses Whip Rush sound driver)
 Zaxxon's Motherbase 2000 (Parasquad)		[32x] SMPS Z80/Type 2 FM (Dyna Brothers 2 descendant)
 
 1996
 ----
+Classic Collection menu (Mega Games 4in1)	SMPS Z80/Type 1 FM (uses Columns sound driver/music) [missing on GDRI]
 Sonic 3D Blast (Sonic 3D Flickies' Island)	SMPS Z80/Type 2 DAC (Sonic 3 mod)
 Sonic The Hedgehog's Gameworld (U)		[Pico] SMPS 68k-Pico/Type 2b
 Virtua Fighter 2				SMPS Z80/Type 2 DAC
+
+1997
+----
+Mega Games 10 menu				SMPS Z80/Type 1 FM (uses Columns sound driver/music) [missing on GDRI]
 
 2000
 ----
@@ -199,7 +207,16 @@ Compiled from http://gdri.smspower.org/wiki/index.php/Mega_Drive/Genesis_Sound_E
 
 Sega Game Toshokan games
 ------------------------
+16t
+Aworg - Hero in the Sky
+Columns (has retail release)
+Flicky (has retail release)
 Hyper Marbles
+Ikazuse! Koi no Doki Doki Penguin Land MD
+Kiss Shot
+Medal City
+MegaMind
+Paddle Fighter
 Phantasy Star II - Amia's Adventure
 Phantasy Star II - Anne's Adventure
 Phantasy Star II - Huey's Adventure
@@ -212,4 +229,9 @@ Putter Golf
 Pyramid Magic
 Pyramid Magic II
 Pyramid Magic III
+Pyramid Magic Special
+Riddle Wired
+Robot Battler
+Shi no Meikyuu: Labyrinth of Death
 Sonic Eraser (comes with its own SegaNet sound driver)
+Teddy Boy Blues

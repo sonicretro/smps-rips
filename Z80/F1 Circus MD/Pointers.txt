@@ -1,0 +1,27 @@
+General Pointer List:	070000 / 078000 (W)
+Music Pointer List:	070273 / 0781DF (W)
+SFX Pointer List:	1000 (W) (Z80 RAM)
+Mod. Pointer List:	070012 / 078012 (W)
+PSG Pointer List:	070158 / 078154 (W)
+DAC Drum Pointer List:	074048 / 07C331 (W)
+DAC Voice Pointer List:	074CF9 / 07CFE2 (W)
+Z80 Snd Driver Offset:	02B9B4 (W)
+Additional Z80 Data:	02C8EC (W) (goes to Z80 RAM 1000)
+Pan Animation List:	036A
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC List Format:
+The format is the same one as used in Mazin Saga.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0087)
+
+
+Notes:
+- The driver does automatic bank switching while loading the song.
+  For songs 81-90 it switches to bank 070000. For songs 91-A0 it switches to bank 078000.
+- The modulation envelopes are different in both banks. The volume envelopes, DAC drums and DAC voices match.
+- Coordination Flag FF03 (Pause Music) has an additional check when resuming.
+  It checks the Track Pointer and resumes the track only if it is nonzero.
+- Song 05 had 6 FM tracks defined, but only 4 of them are loaded. The two unused tracks point to valid song data though.

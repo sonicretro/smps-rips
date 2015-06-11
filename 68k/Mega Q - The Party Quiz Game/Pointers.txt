@@ -1,0 +1,29 @@
+General Pointer List:	0F341E (J)
+Sound Update Routine:	0F02AE (J)
+Music Pointer List:	0F36EC (J)
+Spc. SFX Pointer List:	-- invalid -- (J) (points to 0F79F4)
+SFX Pointer List:	0F7934 (J)
+Mod. Pointer List:	0F343E (J)
+PSG Pointer List:	0F3578 (J)
+Z80 DAC Driver Offset:	0F1844 (J)
+DAC Pointer Table:	0F19AF (J) (Z80 Driver: 016B)
+DAC Pitch Modifier:	0F03F6 (J)
+DAC Voice Pointer List:	0F899C (J)
+Pan Animation List:	0F0748 (J)
+Sound RAM:		F000 (68k RAM)
+
+
+DAC Table
+---------
+The DAC table format is the same as Fatal Fury.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001E)
+
+
+Notes:
+- Sound Test ID lists:
+    List Offsets: 011B6C (4-byte offsets for Music, SFX, Voices)
+    Songs: 011B78
+    SFX: 011B96
+    Voices: 011BC0

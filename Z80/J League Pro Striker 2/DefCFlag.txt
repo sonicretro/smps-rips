@@ -1,0 +1,72 @@
+; --- Chou Yakyuu Miracle Nine SMPS Command Definition ---
+; modified SMPS Z80 Type 2
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PANAFMS 	PAFMS_PAN	02
+E1	DETUNE  	        	02
+E2	SET_COMM	        	02
+E3	TRK_END 	TEND_MUTE	01
+E4	PAN_ANIM	        	06
+E5	VOLUME  	VOL_CN_FMP	03
+E6	VOLUME  	VOL_CN_FM	02
+E7	HOLD    	        	01
+E8	NOTE_STOP	NSTOP_MULT	02
+E9	SET_LFO 	LFO_NORMAL	03
+EA	PLAY_DAC	        	02
+EB	LOOP_EXIT	        	04	02
+EC	VOLUME  	VOL_CC_PSG	02
+ED	FM_COMMAND	FMW_CHN 	03
+EE	FM_COMMAND	FMW_FM1 	03
+EF	INSTRUMENT	INS_C_FM	82
+F0	MOD_SETUP	        	05
+F1	MOD_ENV 	MENV_FMP	03
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SRES	02
+F4	MOD_ENV 	MENV_GEN	02
+F5	INSTRUMENT	INS_C_PSG	02
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	TICK_MULT	TMULT_CUR	02
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	PITCH_SLIDE	        	02
+FD	RAW_FREQ	        	02
+FE	SPC_FM3 	        	05
+FF	META_CF 	        	01
+
+[Meta]
+00	TEMPO   	TEMPO_SET	02
+01	SND_CMD 	        	02
+02	MUS_PAUSE	MUSP_Z80	02
+03	COPY_MEM	        	04
+04	TICK_MULT	TMULT_ALL	02
+05	SSG_EG  	SEG_NORMAL	05
+06	FM_VOLENV	        	03
+07	NOTE_STOP_REV	NSREV_CYMN	02	; set Reversed Note Stop effect
+08	PLAY_DAC	DACHN_1 	02	; Note: None of the special DAC commands seems to be used by music.
+09	PLAY_DAC	DACHN_2 	02	; (Songs use E6 to change the volume)
+0A	DAC_CYMN	CYMN_CHG_CH1	02
+0B	DAC_CYMN	CYMN_CHG_CH2	02
+0C	DAC_CYMN	CYMN_SET_CH1	02	; Note: volume 00h..0Fh (0Ch = normal)
+0D	DAC_CYMN	CYMN_SET_CH2	02
+
+; Volume Tables: (Mult 80h = 100%)
+; Ofs	Mult	db
+; 80	08	-24
+; 81	0A	-22
+; 82	0C	-20
+; 83	10	-18
+; 84	14	-16
+; 85	19	-14
+; 86	20	-12
+; 87	28	-10
+; 88	32	 -8
+; 80	40	 -6
+; 8A	50	 -4
+; 8B	65	 -2
+; 8C	80	  0
+; 8D	A0	 +2
+; 8E	CA	 +4
+; 8F	FF	 +6

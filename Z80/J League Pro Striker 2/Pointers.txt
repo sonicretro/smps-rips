@@ -1,0 +1,37 @@
+General Pointer List:	060000 (J)
+Music Pointer List:	06029F (J)
+SFX Pointer List:	1400 (Z80 RAM) (J)
+Mod. Pointer List:	06000E (J)
+PSG Pointer List:	06014B (J)
+DAC Drum Pointer List:	9000 (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	119000 (J)
+Additional Z80 Data:	118000 (J) (goes to Z80 RAM 1400)
+Pan Animation List:	039E (Z80 RAM)
+FM Drum Pointer List:	0B30 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0B4C (Z80 RAM)
+PSG Drum Pointer List:	0B16 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+In every Z80 Bank with DAC sounds (068000h to 100000h), there are two tables:
+
+At Z80 Offset 9000h (in every bank), there is a simple offset-list of 27h entries. Each offset is a 2-byte bank offset and points to an entry in the actual DAC Table.
+
+The DAC Table starts at 9054h and has this format:
+
+1 byte  - DAC sound played after end (00 - stop, 01-FF - continue with DAC sound xx)
+1 byte  - DAC sound bank
+2 bytes - sound data size
+2 bytes - sound data start offset (bank-offset)
+-> 6 bytes
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 13E1)
+
+
+Notes:
+- The volume tables are the same one as used in Chou Yakyuu Miracle Nine.
+- The coordination flag set is the same as Chou Yakyuu Miracle Nine. (with minor differences implementation-wise)
+- DAC sound 10 is present in every bank used by DAC sounds. The respective DAC Table entry also always points to the current bank for this sound.
