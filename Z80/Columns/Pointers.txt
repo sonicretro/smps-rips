@@ -21,3 +21,6 @@ The sound data matches in all game versions (Rev 00 and Rev 01).
 Notes:
 - The sound driver has many special coordination flags.
 - The sound driver skips the drum channel.
+- Setting Z80 RAM 1C18 to nonzero causes the driver to use alternative instruments for 03 Clotho.
+  I included a file which swaps the 2 instrument sets.
+- Setting Z80 RAM 1C08 to nonzero causes the driver to play alternative sections of the 3 BGM songs 03, 06, 07.

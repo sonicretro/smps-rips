@@ -1,4 +1,5 @@
 General Pointer List:	N/A (everything is hardcoded into the driver)
+Music Bank List:	006339 (Beta) (Z80 Driver: 114D)
 Music Pointer List:	00633F (Beta) (Z80 Driver: 1153) (points to bank 010000)
 SFX Pointer List:	00634B (Beta) (Z80 Driver: 115F) (points to bank 018000, see notes)
 Mod. Pointer List:	0061FC (Beta) (Z80 Driver: 1010)

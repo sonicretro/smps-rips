@@ -13,7 +13,7 @@ E6	VOLUME  	VOL_CN_FM	02
 E7	HOLD    	        	01
 E8	NOTE_STOP	NSTOP_MULT	02
 E9	SET_LFO 	LFO_NORMAL	03
-EA	PLAY_DAC	        	03	; takes Bank ID and DAC sound (TODO: verify)
+EA	PLAY_DAC	        	03	; takes Bank ID and DAC sound
 EB	LOOP_EXIT	        	04	02
 EC	VOLUME  	VOL_CC_PSG	02
 ED	FM_COMMAND	FMW_CHN 	03

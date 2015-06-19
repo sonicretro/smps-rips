@@ -1,0 +1,39 @@
+; --- MegaGames 3in1 Vol 2/3 Driver Definition ---
+; SMPS 68k Type 2
+
+[Settings]
+;DefTimingMode = 00
+; simulate 50 Hz + update only 5 out of 6 frames
+DefTimingMode = 40	; Timer B
+DefTimerB = B0h		; 41.61 Hz (not exactly 50 Hz * 5/6 = 41.667 Hz, but close)
+LockTimingMode = True
+
+[Main]
+PtrFmt = 68k
+InsMode = Default
+;FMChnOrder = 16 0 1 2 4 5 6
+TempoMode = Overflow
+Tempo1Tick = DoTempo
+FMBaseNote = B
+FMBaseOctave = 0
+DetuneOctWrap = False
+NoteOnPrevent = Rest
+DelayFreq = Reset
+ModAlgo = 68k
+EnvMult = 68k
+VolMode = Algo
+FMFreqs = Def_68k
+PSGFreqs = Def_68k
+FM3Freqs = $000 $180 $1F4 $260
+
+FadeMode = 68k
+
+FadeOutSteps = $28
+FadeOutDelay = 3
+
+[EnvelopeCmds]
+80 = RESET
+81 = HOLD
+82 = LOOP
+83 = STOP
+84 = CHG_MULT

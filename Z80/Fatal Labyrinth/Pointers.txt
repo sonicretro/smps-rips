@@ -1,0 +1,24 @@
+General Pointer List:	8000 (W) (Z80 Bank Offset)
+Music Pointer List:	8242 (W) (Z80 Bank Offset)
+SFX Pointer List:	1000 (W) (Z80 RAM)
+Mod. Pointer List:	800E (W) (Z80 Bank Offset)
+PSG Pointer List:	8160 (W) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0111B6 (W)
+Additional Z80 Data:	012192 (W) (goes to Z80 RAM 1000)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A5C (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A70 (Z80 RAM)
+PSG Drum Pointer List:	0A42 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 018000
+
+
+Notes:
+- The songs for Floor 10 and 30 contain conditional jumps for transitions into other songs.
+  The transitions are one-directional only and were probably intended for falling through traps.
+  Floor 30 -> Floor 10
+  Floor 10 -> Floor 20
+  Since that order doesn't really makes sense, that probably hints at a scrapped feature.
+

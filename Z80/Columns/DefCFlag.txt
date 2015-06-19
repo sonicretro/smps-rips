@@ -32,7 +32,7 @@ F9	RETURN  	        	01
 FA	IGNORE  	        	02	; set Volume to 1C13, negate volume if parameter != 0
 FB	TRANSPOSE	TRNSP_ADD	02
 FC	IGNORE  	        	03	; first parameter: see FA, second parameter: additional volume increment
-FD	COND_JUMP	CJMP_Z  	05	01,02	; set 1C17 = 1C08 and continue like E2
+FD	COND_JUMP	CJMP_Z  	05	01,03	; set 1C17 = 1C08 and continue like E2
 FE	INSTRUMENT	INS_C_FM	82
 FF	META_CF 	        	01
 

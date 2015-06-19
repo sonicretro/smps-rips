@@ -1,0 +1,38 @@
+General Pointer List:	0220C0 (Vol 2) / 1A20C0 (Vol 3)
+Sound Update Routine:	020008 (Vol 2) / 1A0008 (Vol 3)
+Music Pointer List:	02225A (Vol 2) / 1A225A (Vol 3)
+Spc. SFX Pointer List:	-- invalid -- (points to 022C84) (Vol 2) / (points to 1A2C84) (Vol 3)
+SFX Pointer List:	022C78 (Vol 2) / 1A2C78 (Vol 3)
+Mod. Pointer List:	0220E0 (Vol 2) / 1A20E0 (Vol 3)
+PSG Pointer List:	0221A4 (Vol 2) / 1A21A4 (Vol 3)
+Z80 DAC Driver Offset:	021572 (Vol 2) / 1A1572 (Vol 3)
+DAC Pointer Table:	021710 (Vol 2) / 1A1710 (Vol 3) (Z80 Driver: 019E)
+DAC Voice Pointer List:	023016 (Vol 2) / 1A3016 (Vol 3)
+Pan Animation List:	020470 (Vol 2) / 1A0470 (Vol 3)
+Sound RAM:		F000 (68k RAM)
+
+
+DAC Table
+---------
+The DAC table format is the same as Fatal Fury.
+
+There are two delta-array.
+pre-SMPS delta-array: (used for DAC sounds 82+)
+01 03 06 0C 18 28 50 90 FF FD FA F4 E8 D8 B0 70 (Z80 Driver offset 017E)
+
+usual SMPS delta-array: (used for DAC sounds 81)
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 018E)
+
+The delta-array for the current sound is copied to offset 001E when loading the sound.
+
+
+Notes:
+- The sound driver matches exactly for Vol 2 and Vol 3, except for absolute pointers, which are 02xxxx in Vol 2 and 1Axxxx in Vol 3.
+  There are also some minor fixes to the song and SFX in Vol 3.
+- Even though the game runs in PAL mode, the UpdateSound routine is only called 5 out of 6 frames. (see code at 001440 in Vol 2)
+  So the driver runs at an effective rate of 41.67 Hz.
+  Probably whoever ported the music took the NTSC tempo and ported it to PAL, so in order to get the original PAL speed, the sound driver is updated less often.
+- The only DAC SFX sound (ID 89) doesn't work properly, because the DAC driver uses the wrong delta-array. (preSMPS array is used, normal SMPS array should be used)
+- In Vol 2, the song uses invalid FM instruments about 2 minutes into the song. This got fixed in Vol 3.
+- The song playing in the menu is a port of "Game BGM 1" from World Championship Soccer/World Cup Italia '90.
+  The menu in MegaGames 3in1 Vol 1 played the original song using the preSMPS 68k sound driver from the included World Cup Italia '90.

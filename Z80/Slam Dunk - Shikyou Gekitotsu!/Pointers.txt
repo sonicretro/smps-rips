@@ -1,0 +1,28 @@
+General Pointer List:	N/A (everything is hardcoded into the driver)
+Music Bank List:	108D (J) (Z80 RAM)
+Music Pointer List:	10A9 (J) (Z80 RAM)
+SFX Pointer List:	10E1 (J) (Z80 RAM) (points to bank 128000)
+Mod. Pointer List:	0F50 (J) (Z80 RAM)
+PSG Pointer List:	0E8C (J) (Z80 RAM)
+DAC Drum Pointer List:	119A (J) (Z80 RAM)
+Z80 Snd Driver Offset:	024996 (J)
+Pan Animation List:	---- (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+The format is the same one as used in Sonic and Crackers.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0E7C)
+
+
+Notes:
+- The driver writes these bank values during the init-phase:
+  1C04 = 24h (Music Bank, 120000h)
+  1C05 = 26h (DAC Bank, 130000h)
+  SFX use hardcoded bank switch blocks.
+- The sound driver is very similar to Sonic and Crackers.
+- Songs 13, 16-1A share the instrument bank with other songs.
+  13-14, 16-10, 17-11, 18-0F, 19-0E, 1A-0D

@@ -14,7 +14,7 @@ Ghouls 'n Ghosts (Dai Makaimura)		pre-SMPS Z80/Type 2
 Golden Axe					early SMPS Z80
 Last Battle (Hokuto no Ken)			pre-SMPS 68k/FM
 Mahjong Cop Ryuu				pre-SMPS 68k/FM
-Mystic Defender (Kujaku Ou II)			SMPS Z80/Type 1 FM (early)
+Mystic Defender (Kujaku Ou II)			SMPS Z80/Type 1 FM (early/mod)
 Phantasy Star II				pre-SMPS 68k/Type 1 (pre-SMPS Z80 port)
 Rambo III					pre-SMPS Z80/Type 2
 Super Daisenryaku				pre-SMPS 68k/PCM
@@ -30,11 +30,11 @@ World Championship Soccer (World Cup Soccer)	pre-SMPS 68k/PCM
 Arrow Flash					SMPS Z80/Type 1 FM
 Atomic Robo-Kid					pre-SMPS Z80/Type 2
 Castle of Illusion				SMPS Z80/Type 1 FM (mod)
-Columns						SMPS Z80/Type 1 FM
+Columns						SMPS Z80/Type 1 FM (mod)
 Cyberball					SMPS Z80 FM
 Dangerous Seed					SMPS Z80/Type 1 FM
 Darwin 4081					pre-SMPS Z80/Type 2 (banked)
-Dick Tracy					SMPS Z80/Type 1 FM
+Dick Tracy					SMPS Z80/Type 1 FM (mod)
 DJ Boy						SMPS Z80/Type 1 FM
 Dynamite Duke					SMPS Z80/Type 1 FM
 ESWAT Cyber Police				SMPS Z80/Type 1 FM
@@ -65,7 +65,7 @@ Bonanza Brothers				SMPS Z80/Type 1 FM
 Dahna: Megami Tanjou				SMPS Z80/Type 1 DAC
 Dragon's Eye Plus: Shanghai 3			SMPS 68k/Type 1b
 F1 Circus MD					SMPS Z80/Type 1 DAC
-Fatal Labyrinth					SMPS Z80/Type 1 FM
+Fatal Labyrinth					SMPS Z80/Type 1 FM (mod)
 Fighting Masters				SMPS Z80/Type 1 FM
 Flicky						SMPS Z80/Type 1 FM
 Gain Ground					SMPS Z80 FM
@@ -125,7 +125,7 @@ J.League Pro Striker/Perfect Edition		SMPS Z80/Type 2 FM
 King of the Monsters				SMPS Z80/Type 1 DAC
 Mazin Saga (Mazin Wars)				SMPS Z80/Type 1 DAC
 McDonald's Treasure Land Adventure		SMPS 68k/Type 2b
-Mega Games 2/3 menu				SMPS 68k
+Mega Games 2/3 menu				SMPS 68k/Type 2b
 Mega Q: Party Quiz				SMPS 68k/Type 2b
 Metal Fangs					pre-SMPS 68k/PCM [incorrectly detected as SMPS 68k]
 OutRun 2019					SMPS Z80/Type 1 DAC
@@ -146,13 +146,13 @@ Crayon Shin-Chan				SMPS 68k/Type 2a
 Dynamite Headdy					SMPS 68k/Type 2b (Treasure mod)
 Fatal Fury 2 (Garou Densetsu 2)			SMPS 68k/Type 2b (same as Fatal Fury 1)
 Gouketsuji Ichizoku				SMPS Z80/mod
-J.League Pro Striker 2				SMPS Z80/Type 2 FM
+J.League Pro Striker 2				SMPS Z80/Type 2 FM (mod)
 King of the Monsters 2				SMPS Z80/Type 1 DAC
 Mega Man: The Wily Wars (Rockman Megaworld)	SMPS Z80/Type 2 FM
 Mighty Morphin' Power Rangers			SMPS Z80/Type 2 FM
 OutRunners					SMPS Z80 (SMPS 68k/Type 1b port, 'SMPS light' mod)
 Pulseman					SMPS 68k/Type 2a
-Puzzle & Action: Tant-R				SMPS Z80
+Puzzle & Action: Tant-R				SMPS Z80/Type 2 FM (Dyna Brothers 2 descendant)
 Samurai Shodown (Samurai Spirits)		SMPS 68k/Type 2b
 Sega Channel (JP)				SMPS Z80/Type 1 FM
 Sonic & Knuckles				SMPS Z80/Type 2 DAC (Sonic 3 mod)
@@ -168,7 +168,7 @@ Yuu Yuu Hakusho: Makyou Touitsusen		SMPS 68k/Type 2b (Treasure mod)
 1995
 ----
 Alien Soldier					SMPS 68k/Type 2b (Treasure mod)
-Chou Kyuukai Miracle Nine			SMPS Z80/Type 2 DAC (mod)
+Chou Kyuukai Miracle Nine			SMPS Z80/Type 2 DAC (mod, similar to Pro Striker 2)
 Game no Kandzume Otokuyou			SMPS Z80/Type 2 FM (same as Zaxxon's Motherbase 2000)
 Knuckles' Chaotix				[32x] SMPS Z80/Type 2 DAC (mod)
 Light Crusader					SMPS 68k/Type 2b (Treasure mod)
@@ -176,11 +176,11 @@ Mega Games 6 Vol 1/2/3 menu			SMPS Z80/Type 1 FM (uses Columns sound driver/musi
 Metal Head					[32x] SMPS 68k/Type 2b (mod)
 Mighty Morphin' Power Rangers: The Movie	SMPS 68k/Type 2a
 Pro Striker Final Stage				SMPS Z80/Type 2 DAC (Tempo 32x mod)
-Puzzle & Action: Ichidant-R			SMPS Z80
+Puzzle & Action: Ichidant-R			SMPS Z80/Type 2 FM (same as Puzzle & Action: Tant-R)
 Ristar						SMPS 68k/Type 2b (mod)
 Shadow Squadron (Stellar Assault)		[32x] SMPS 68k/Type 2a (mod)
-Slam Dunk					SMPS Z80
-Surging Aura					SMPS Z80
+Slam Dunk					SMPS Z80/Type 2 DAC
+Surging Aura					SMPS Z80/Type 2 FM
 Tempo						[32x] SMPS Z80/Type 2 DAC (Tempo 32x mod)
 Top Shooter (Unl)				SMPS Z80 Type 1 FM [missing on GDRI] (uses Whip Rush sound driver)
 Zaxxon's Motherbase 2000 (Parasquad)		[32x] SMPS Z80/Type 2 FM (Dyna Brothers 2 descendant)

@@ -1,0 +1,39 @@
+General Pointer List:	1A0000 (J)
+Music Pointer List:	1A012B (J)
+SFX Pointer List:	1000 (J) (Z80 RAM)
+Mod. Pointer List:	1A000E (J)
+PSG Pointer List:	1A00B6 (J)
+DAC Voice Pointer List:	1A8000 / 1B0000 / ... / 1F8000 (J)
+Z80 Snd Driver Offset:	03615C (J)
+Additional Z80 Data #1:	037156 (J) (goes to Z80 RAM 1000)
+Pan Animation List:	0359 (Z80 RAM)
+FM Drum Pointer List:	0A1E (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A2E (Z80 RAM)
+PSG Drum Pointer List:	-- invalid -- (Z80 RAM) (points to 0A1E)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+The format is the same one as used in Mighty Morphin Power Rangers.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0FEA)
+
+
+Notes:
+- Song -> Bank/Sound ID list: 038142 (music) / 0381C2 (SFX)
+  Format:
+    1 byte - Mode (00 - not banked, 01 - set music bank, 10 - set DAC bank)
+    1 byte - Sound ID
+    1 byte - Bank MSB
+    1 byte - Bank LSB
+- The PlaySound API is called via "TRAP #1". Parameters are passed via D0.
+  Sound API Routine List: 038048
+  The contents of D0 are:
+	high word: internal Song/SFX ID
+	low word: API Call (00 - Stop All Sound, 01 - Play Music, 02 - Stop Music, 03 - Play SFX)
+  The internal IDs are converted to sound driver values using the table listed above by the routine at 03800C.
+  The results are written to 68k RAM 9720-24 and transferred during VInt.
+- The game plays (sound driver) Sound ID 81 to stop the music. That song also has the instruments for the FM drums.
+- All songs define a header for 6 FM and 3 PSG tracks, even though none uses all of them. (Only 1 song uses PSG tracks at all.)

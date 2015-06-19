@@ -46,4 +46,4 @@ FF	META_CF 	        	01
 06	SSG_EG  	SEG_NORMAL	05
 07	IGNORE  	        	02
 
-; Note: Some of the were dummied out and only contain a "ret" instruction. This also means that they each 1 parameter byte each.
+; Note: Some of the commands were dummied out and only contain a "ret" instruction. This also means that they eat 1 parameter byte each.

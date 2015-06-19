@@ -1,0 +1,37 @@
+General Pointer List:	1A00D6 (J)
+Music Pointer List:	1A014D (J)
+SFX Pointer List:	1100 (J) (Z80 RAM)
+Mod. Pointer List:	1A000E (J)
+PSG Pointer List:	1A00C7 (J)
+DAC Voice Pointer List:	1A8000 / 1B0000 / ... / 1F8000 (J)
+Z80 Snd Driver Offset:	01B2A6 (J)
+Additional Z80 Data #1:	01C2F0 (J) (goes to Z80 RAM 1100)
+Pan Animation List:	0359 (Z80 RAM)
+FM Drum Pointer List:	0A38 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A4C (Z80 RAM)
+PSG Drum Pointer List:	0A1E (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+The format is the same one as used in Mighty Morphin Power Rangers.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 1039)
+
+
+Notes:
+- Song/SFX -> Bank/Sound ID list: 05D386 (music) / 05D426 (SFX)
+  Format:
+    1 byte - Mode (00 - not banked, 01 - set music bank, 10 - set DAC bank)
+    1 byte - Sound ID
+    1 byte - Bank MSB
+    1 byte - Bank LSB
+- The sound engine is a descendant of Dyna Brothers 2.
+  The sound system in general matches Puzzle & Action: Tanto-R.
+  Sound API Routine List: 05D366
+  Bank/Sound ID memory: FADA-FADE (68k RAM)
+  Sound ID Queue: FAE4-FB23 (68k RAM, 4 bytes per entry)
+  Sound Queue Read/Write Offset: FB24 (68k RAM)
+- Two songs (26 and 27) use cross-referenced instruments. I included modified versions of those songs that resolve all those references. (except for the drums)
