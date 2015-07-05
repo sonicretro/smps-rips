@@ -1,0 +1,31 @@
+General Pointer List:	058000 (JUE)
+Music Pointer List:	058257 (JUE)
+SFX Pointer List:	1080 (JUE) (Z80 RAM)
+Mod. Pointer List:	05800E (JUE)
+PSG Pointer List:	05814B (JUE)
+DAC SFX Bank List:	00F8 (JUE) (Z80 RAM) (for Sound ID 97-DF, 00 = 068000, 01 = 070000, 02 = 078000)
+DAC Pointer List:	068000 / 070000 / 078000 (JUE)
+Z80 Snd Driver Offset:	060000 (JUE)
+Additional Z80 Data:	061004 (JUE) (goes to Z80 RAM 1080)
+Pan Animation List:	038B (Z80 RAM)
+FM Drum Pointer List:	0AAE (Z80 RAM)
+FM Drum Ins. Ptr. List:	0ABC (Z80 RAM)
+PSG Drum Pointer List:	0A94 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+The format is the same one as used in Mighty Morphin Power Rangers.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0FF4)
+
+
+Notes:
+- The sound driver sets the DAC bank to 0-2 when processing the sound queue (1C0A-1C0C) and finding a sound ID between B4 and DF.
+  All 3 DAC banks contain the DAC drums, only the SFX are different.
+- The songs make use of FM Volume Envelopes (coord. flag FF 06)
+- 03 Lee's Stage uses an invalid Pan Animation byte.
+- All songs from 07 on (but 0C, 12) use cross-referenced FM instruments.
+- The DAC loop is the same one as used in Sonic 3 & Knuckles. (taking 4 cycles more than most other SMPS Z80 games)

@@ -1,0 +1,33 @@
+General Pointer List:	1200 (J) (Z80 RAM)
+Music Bank List:	151E (J) (Z80 RAM) [Note: starts with entry for ID 00, not 01]
+Music Pointer List:	8000 (J) (Z80 Bank Offset)
+SFX Pointer List:	0A8000 (J)
+Mod. Pointer List:	1210 (J) (Z80 RAM)
+PSG Pointer List:	134D (J) (Z80 RAM)
+DAC Voice Pointer List:	068000 / 070000 / ... / 0A0000 / 0B0000 / 0B8000 (J)
+Z80 Snd Driver Offset:	0A9F26 (J)
+Additional Z80 Data:	0A9BEA (J) (goes to Z80 RAM 1200)
+Pan Animation List:	031E (Z80 RAM)
+FM Drum Pointer List:	0AA3 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0ABD (Z80 RAM)
+PSG Drum Pointer List:	0A89 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+The format is the same one as used in Mighty Morphin Power Rangers.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 11D5)
+
+
+Notes:
+- The driver has a few additional coordination flags that allow switching DAC banks, playing DAC sounds in "uninterruptable" mode and switching between DPCM and PCM mode.
+  Although a few songs make use of the "set DPCM mode" flag, the PCM mode is never used, because none of the DAC sounds are uncompressed.
+- This is the only SMPS Z80 Type 2 driver known to use the YM Timer for timing.
+- Sound Test List: 0593CA
+- Two songs use FM instrument commands with invalid values.
+  04 Connected Here (Map Screen): instrument 74h (followed by a command that sets instrument 00h, so it's redundant)
+  14 Gouketsuji March (Staff Roll): instrument 73h (right at the end)
+  I included fixed versions of those songs. For song 04 I made it skip the redundant command, for song 14 I made it use instrument 00h.

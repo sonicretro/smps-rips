@@ -1,0 +1,36 @@
+General Pointer List:	0F0000 (UE)
+Music Pointer List:	0F01C1 (UE)
+SFX Pointer List:	1200 (UE) (Z80 RAM)
+Mod. Pointer List:	0F001A (UE)
+PSG Pointer List:	0F00D4 (UE)
+DAC Pointer List:	0F000E (UE)
+DAC Voice Pointer List:	06000E / 06800E / ... / 0E800E (UE)
+Z80 Snd Driver Offset:	0F62D0 (JUE)
+Additional Z80 Data:	0F7456 (JUE) (goes to Z80 RAM 1200)
+Pan Animation List:	048F (Z80 RAM)
+FM Drum Pointer List:	0BEC (Z80 RAM)
+FM Drum Ins. Ptr. List:	0C02 (Z80 RAM)
+PSG Drum Pointer List:	0BD2 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC Table
+---------
+The format is the same one as used in Mighty Morphin Power Rangers.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 01DE)
+
+
+Notes:
+- Like Gouketsuji Ichizoku, this SMPS Z80 Type 2 driver uses the YM Timer for timing.
+- Coord. Flag EA copied the Music ROM Bank from 1C00/01 to 172C/2D.
+  When a DAC SFX is played, the DAC SFX ROM Bank is copied from 1C06/07 to 172C/2D.
+- The driver tries to make up for the slowness because of YM Timer checks and decreases the sample wait time.
+  It subtracts 4 for the value of the first loop and 4+1 for the second loop.
+- Sound Test List: 011F46
+    2-byte entries:
+	1 byte - Bank ID (ABh -> ROM Bank 0AB000)
+	1 byte - Sound Driver ID
+- 68k PlaySound routine: 001680
+  68k StopSound routine: 0015FC

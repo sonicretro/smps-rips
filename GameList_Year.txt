@@ -131,21 +131,21 @@ Metal Fangs					pre-SMPS 68k/PCM [incorrectly detected as SMPS 68k]
 OutRun 2019					SMPS Z80/Type 1 DAC
 Phantasy Star: The End of the Millenium		SMPS 68k/Type 2b (mod)
 Shinobi III (The Super Shinobi II)		SMPS 68k/Type 2b
-Sonic CD					SMPS Z80/Type 1 (mod)
+Sonic CD					SMPS Z80/Type 1 FM (mod)
 Tecmo Cup (Captain Tsubasa) (beta)		SMPS Z80
 Wimbledon Championship Tennis			SMPS Z80
 
 1994
 ----
 6-Pak menu (Mega Games 6in1)			SMPS Z80/Type 1 FM (uses Columns sound driver/music) [missing on GDRI]
-Art of Fighting (Ryuuko no Ken)			SMPS Z80
-ATP Tour Championship Tennis			SMPS Z80
+Art of Fighting (Ryuuko no Ken)			SMPS Z80/Type 2 FM
+ATP Tour Championship Tennis			SMPS Z80/Type 2 FM (mod)
 Bishoujo Senshi Sailor Moon			SMPS 68k/Type 2b
 Cosmic Carnage (Cyber Brawl)			[32x] SMPS 68k/32x
 Crayon Shin-Chan				SMPS 68k/Type 2a
 Dynamite Headdy					SMPS 68k/Type 2b (Treasure mod)
 Fatal Fury 2 (Garou Densetsu 2)			SMPS 68k/Type 2b (same as Fatal Fury 1)
-Gouketsuji Ichizoku				SMPS Z80/mod
+Gouketsuji Ichizoku				SMPS Z80/Type 2 FM (mod)
 J.League Pro Striker 2				SMPS Z80/Type 2 FM (mod)
 King of the Monsters 2				SMPS Z80/Type 1 DAC
 Mega Man: The Wily Wars (Rockman Megaworld)	SMPS Z80/Type 2 FM

@@ -1,6 +1,16 @@
+.gitattributes text
+.gitignore text
+# I use git-cache-meta.sh in MSYS to create that file, so it will always be created with LF.
+.git_cache_meta text eol=lf
+
+*.txt text
+*.ini text
+
 *.bin binary
 *.mmd binary
 *.lst binary
+
+*.org binary
 
 *.mmw binary
 *.ors binary
@@ -9,7 +19,15 @@
 *.s2b binary
 *.s3k binary
 *.skc binary
+*.sm1 binary
 *.sm2 binary
+*.sm3 binary
+*.sm4 binary
+*.sm5 binary
+*.sm6 binary
+*.sm7 binary
+*.sm8 binary
+*.sm9 binary
 *.smp binary
 *.smy binary
 *.smz binary

@@ -7,6 +7,9 @@ Z80 Snd Driver Offset:	0001DA (JUE, 720 Beta) / 000B10 (510 Beta)
 Additional Z80 Data #1:	0015F8 (510 Beta only) (goes to Z80 RAM 0B00)
 Additional Z80 Data #2:	001D90 (510 Beta only) (goes to Z80 RAM 1900)
 Pan Animation List:	N/A (JUE, 720 Beta) / 0272 (510 Beta) (Z80 RAM)
+FM Drum Pointer List:	N/A (JUE, 720 Beta) / 0766 (510 Beta) (Z80 RAM)
+FM Drum Ins. Ptr. List:	N/A (JUE, 720 Beta) / 0772 (510 Beta) (Z80 RAM)
+PSG Drum Pointer List:	N/A
 Sound RAM:		1C00 (Z80 RAM)
 
 
