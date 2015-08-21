@@ -4,9 +4,9 @@ SFX Pointer List:	039150 (U) / 03914C (E) / 0393BE (J)
 Mod. Pointer List:	032936 (UE) / 032948 (J)
 PSG Pointer List:	0329FA (UE) / 032A0C (J)
 DAC Pointer Table:	03178D (UE) / 03179F (J) (Z80 Driver: 0105)
-PWM Sound Pointer:	021A24 (U) / 021A74 (E) [offset: 260000, size: 00DB90 stereo samples]
-PWM Sound Pointer #1:	021A14 (J) [offset: 260000, size: 016855 mono samples]
-PWM Sound Pointer #2:	021A38 (J) [offset: 080000, size: 014F20 mono samples]
+PWM Sound Pointer:	021A24 (U) / 021A74 (E) [offset: 260000, size: 00DB90, stereo samples]
+PWM Sound Pointer #1:	021A14 (J) [offset: 260000, size: 016855, mono samples]
+PWM Sound Pointer #2:	021A38 (J) [offset: 080000, size: 014F20, mono samples]
 Z80 DAC Driver Offset:	031688 (UE) / 03169A (J)
 Z80 Add. Data Offset:	031915 (UE) / 031927 (J) (DAC volume tables, gets copied to Z80 RAM: 1000)
 SH-2 Slave Drv. Offset:	020000 (JUE) (goes to SH-2 RAM 06000000, PWM driver starts at RAM ??000???)
@@ -41,3 +41,5 @@ Notes:
 - The EU version uses the US tracks, adjusted for PAL mode.
 - The PWM sounds seem to be sort of hardcoded into the SH-2 code and play with ~22 KHz.
   It should be noted that the J ROM has two Mono sounds and the UE ROMs one Stereo sound.
+- The DAC sounds are mostly the same between versions. Except for DAC A4, which is the title
+  screen voice, all differences between the J and UE versions are inaudible.

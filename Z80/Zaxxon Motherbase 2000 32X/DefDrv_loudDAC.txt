@@ -1,0 +1,45 @@
+; --- SMPS Driver Definition ---
+; SMPS Z80 Type 2
+
+[Settings]
+DefTimingMode = 00
+LockTimingMode = True
+
+[Main]
+PtrFmt = Z80
+InsMode = DEFAULT
+;FMChnOrder = 16 0 1 2 4 5 6
+TempoMode = OVERFLOW
+Tempo1Tick = DOTEMPO
+FMBaseNote = C
+FMBaseOctave = 0
+DetuneOctWrap = True
+NoteOnPrevent = HOLD
+DelayFreq = KEEP
+ModAlgo = Z80_B
+EnvMult = Z80
+VolMode = BIT7
+
+FMFreqs = DEF_Z80
+PSGFreqs = DEF_Z80_T2
+FM3Freqs = 000h 132h 18Eh 1E4h 234h 27Eh 2C2h 2F0h
+
+FadeOutSteps = 28h
+FadeOutDelay = 2
+
+DACVolDiv = -2
+
+
+[EnvelopeCmds]
+; Possible commands:
+;	RESET - reset the Envelope Index to 0
+;	HOLD - hold the envelope at the current level
+;	LOOP - loop back to the Envelope Index set by the following byte
+;	STOP - stop the envelope and note
+;	CHG_MULT - change the Envelope Multiplier (Modulation Envelope only)
+;	VOLSTOP_MODHOLD - like STOP for volume envelopes and like HOLD for modulation envelopes
+80 = RESET
+81 = HOLD
+82 = LOOP
+83 = VOLSTOP_MODHOLD
+84 = CHG_MULT

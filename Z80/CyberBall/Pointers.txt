@@ -1,0 +1,54 @@
+General Pointer List:	8000 (W) (Z80 Bank Offset)
+Music Pointer List:	8228 (W) (Z80 Bank Offset)
+SFX Pointer List:	1200 (W) (Z80 Bank Offset)
+Mod. Pointer List:	800E (W) (Z80 Bank Offset)
+PSG Pointer List:	8154 (W) (Z80 Bank Offset)
+DAC Voice Pointer List:	048000 (W) (DAC Sounds 81-86)
+DAC Sound 87 Data:	042D7F (W)
+Z80 Snd Driver Offset:	045240 (W)
+Additional Z80 Data:	04643E (W) (goes to Z80 RAM 1200)
+Pan Animation List:	02F9 (Z80 RAM)
+FM Drum Pointer List:	0B35 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0B49 (Z80 RAM)
+PSG Drum Pointer List:	0B1B (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 040000
+
+
+DAC List Format: (all little endian values)
+2 bytes - Start Offset (Z80 Bank Offset)
+2 bytes - Data Length
+1 byte  - Pitch
+1 byte  - Loop Mode (00-7F - no loop, 80-FF - loop)
+
+This format is very similar to the one used by Mazin Saga and most other SMPS Z80 Type 1.
+
+Data is DPCM compressed with the pre-SMPS delta-array.
+01 03 06 0C 18 28 50 90 FF FD FA F4 E8 D8 B0 70 (Z80 Driver offset 11DA)
+
+
+Notes:
+- Sound IDs:
+	00-7F	Stop All Sound
+	81-9F	Music (81-95 are valid)
+	A0-B9	SFX
+	BA-C7	Special SFX (first index is C0, but all are invalid anyway)
+	C8-D0	Special Commands
+		C8 - Fade Out Music
+		C9 - Stop All Sound
+		CA - Play DAC 81
+		CB - Play DAC 82
+		CC - Play DAC 83
+		CD - Play DAC 83, then 84
+		CE - Play DAC 83, then 85
+		CF - Play DAC 86 (loops)
+		D0 - Play DAC 87
+	D1-FF	Stop All Sound
+- DAC Sound 87 is hardcoded into the driver. (see routine at 1114)
+	Loader Code:	1130
+	Start offset:	ADA0 (Z80 ROM Bank, points to 042DA0 in ROM, should be AD7F)
+	Data Length:	24BF
+	Playback Rate:	  0C
+	Loop Mode:	  00
