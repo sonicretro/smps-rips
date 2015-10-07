@@ -89,13 +89,26 @@ Misc. Stuff
 Sound Trigger:	1C0A
 Code that selects between Music/Sound/Special Command:	0535
 
-Playing DAC sounds seem to work this way:
+Playing DAC sounds works this way:
 - set DAC bank (00-07) using command ED
 - play DAC sound in bank using command EA
 
 
 Notes:
 - Sound Test Lists:
-	0AE06E	MUSIC TEST (FB 81 82 ..., skips empty song IDs)
-	0AE09E	 S.E. TEST
+	0AE06E (U) / 0AE004 (E)	MUSIC TEST (FB 81 82 ..., skips empty song IDs)
+	0AE09E (U) / 0AE034 (E)	 S.E. TEST
   Entries have 2 bytes/1 word. The upper byte is ignored, the lower one is copied to sound queue at 68k RAM C200)
+- 68k routines and RAM offsets:
+    PlaySound routine: 008A4E (U)
+    ProcessSoundQueue routine: 008B0A (U)
+    Sound Queue Buffer: C200-C2FF
+    Sound Queue Write Pointer: C1FE/FF
+    Sound Queue Read Pointer: C1FC/FD
+- Main Loop:
+    The game's main loop is done via some sort of callback system.
+    The main routine reads the address stored at RAM A038-3B first and reads a 2-byte word from the location it points to.
+    This is used as an offset into a jump table that beings at 0017D6 (U) / 001804 (E).
+    The called subroutines then write another address to RAM A038-3B.
+- The songs/sfx from the U and E version are the same, but the E version got adjusted for PAL speed.
+  All other sound-related data matches exactly.

@@ -1,0 +1,29 @@
+General Pointer List:	8000 (Unl) (Z80 Bank Offset)
+Music Pointer List:	816D (Unl) (Z80 Bank Offset)
+SFX Pointer List:	B6D6 (Unl) (Z80 Bank Offset)
+Mod. Pointer List:	800E (Unl) (Z80 Bank Offset)
+PSG Pointer List:	8082 (Unl) (Z80 Bank Offset)
+Global Instrument Lib.:	A893 (Unl) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0D0A54 (Unl)
+Pan Animation List:	02F1 (Z80 RAM)
+FM Drum Pointer List:	0A67 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A81 (Z80 RAM)
+PSG Drum Pointer List:	0A40 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 0F8000
+
+
+Notes:
+- The sound driver originates from Wonder Boy III - Monster Lair.
+- There is an unreferenced FM instrument at A893, because all songs have the instrument pointer set to A8AC.
+- World BGM Song List: 0008FA (2 bytes per value)
+- various RAM offsets:
+    Stage ID: 007C/7D (1-5 for World 1, 6-10 for World 2, etc.)
+    World ID: 007E/7F (1-10)
+    Continues: 008A/8B
+  Note: World ID is recalculated using Stage ID when going to the next stage.
+        But World ID is used to load the art and stages. (and (Stage ID % 5) is used for the layout)
+- BGM 1 plays in world 1 and 6, BGM 2 in world 2 and 7, etc.
+  The alternate version of BGM 1 is unused.

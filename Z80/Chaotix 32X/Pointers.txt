@@ -27,3 +27,9 @@ Notes:
         LeftVol = HIGH_NIBBLE(Volume) + 1
         RightVol = LOW_NIBBLE(Volume) + 1
 - PWM Driver Loader offset: 077A84 (SH-2 offset: 06000284)
+- The Z80 driver can be sped up and slowed down by writing a certain value to Z80 RAM offset 003F.
+  Number of updates per frame = (value at 003F) / 80h
+  
+  The NTSC versions of Chaotix write 80h (speed 1.0) and B0h (speed 1.375) there.
+  The PAL version of Chaotix writes 9Ah (speed 1.2) and D4h (speed 1.66) there.
+  This results in the same speed as the NTSC values, because PAL frames are longer. (1.2 = 1.0 / (50/60))

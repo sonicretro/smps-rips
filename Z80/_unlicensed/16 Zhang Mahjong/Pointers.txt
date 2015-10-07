@@ -1,0 +1,38 @@
+General Pointer List:	8000 (Unl) (Z80 Bank Offset)
+Music Pointer List:	816D (Unl) (Z80 Bank Offset)
+SFX Pointer List:	B6D6 (Unl) (Z80 Bank Offset)
+Mod. Pointer List:	800E (Unl) (Z80 Bank Offset)
+PSG Pointer List:	8082 (Unl) (Z80 Bank Offset)
+Global Instrument Lib.:	94B7 (Unl) (Z80 Bank Offset)
+DAC Voice Pointer List:	058000 (Unl)
+Z80 Snd Driver Offset:	03689C (Unl)
+Pan Animation List:	02F1 (Z80 RAM)
+FM Drum Pointer List:	0A67 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A81 (Z80 RAM)
+PSG Drum Pointer List:	0A40 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+
+DAC List Format: (all big endian values!)
+2 bytes - Data Length
+2 bytes - Padding bytes? (ignored)
+2 bytes - Start Offset (Z80 Bank Offset)
+
+The DAC data is raw uncompressed 8-bit data.
+
+
+
+Notes:
+- The sound driver originates from Wonder Boy III - Monster Lair.
+- The jump command in song 84's drum channel jumps to the wrong drum track.
+  04o (original) is how it sounds in the game. 04f (fixed) is how it is supposed to sound.
+- The sound driver is able to play DAC Voices via commands E4-EE.
+  Their speed is fixed to a pitch value of 32h (value is at 10A1).
+  Most other Gamtec games could play DAC Voices as well, but don't use that feature.
+  They all probably just re-use this game's sound driver.
+- There is an unreferenced DAC sound at 05A1F9.
+  It sounds like it's part of the DAC sound that follows it. Both sounds are separated by a 00 byte though,
+  so dividing both DAC sounds seems intentional.

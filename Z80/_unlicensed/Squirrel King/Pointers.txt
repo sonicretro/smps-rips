@@ -1,0 +1,29 @@
+General Pointer List:	8000 (Unl) (Z80 Bank Offset)
+Music Pointer List:	816D (Unl) (Z80 Bank Offset)
+SFX Pointer List:	E6D6 (Unl) (Z80 Bank Offset)
+Mod. Pointer List:	800E (Unl) (Z80 Bank Offset)
+PSG Pointer List:	8082 (Unl) (Z80 Bank Offset)
+Global Instrument Lib.:	BC94 (Unl) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0E4C1E (Unl)
+Pan Animation List:	02F1 (Z80 RAM)
+FM Drum Pointer List:	0A67 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A81 (Z80 RAM)
+PSG Drum Pointer List:	0A40 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 0F8000
+
+
+Notes:
+- The sound driver originates from Wonder Boy III - Monster Lair.
+- There is an unreferenced FM instrument at BC94, because all songs have the instrument pointer set to BCAD.
+- Level Song List:
+    Act 1: Street Cruise - 05 Street Cruise 
+    Act 2: Pay a Visit to Grotto - 04 Grotto Visit
+    Act 3: Traverse Red Ravine - 05 Street Cruise
+    Act 4: Forest Adventure - 03 Forest Adventure
+    Act 5: Secret Nucleon-Dump - 04 Grotto Visit
+    Act 6: Graveyard Encounter - 06 Graveyard Encounter
+    Act 7: Battle Decisive in Factory - 03 Forest Adventure (part 1) / 04 Grotto Visit (part 2) / 05 Street Cruise (part 3)
+- The last instrument in the library is broken and seems to be a part of a SMPS song header.

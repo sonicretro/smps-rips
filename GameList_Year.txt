@@ -20,7 +20,7 @@ Rambo III					pre-SMPS Z80/Type 2
 Super Daisenryaku				pre-SMPS 68k/PCM
 The Revenge of Shinobi (The Super Shinobi)	pre-SMPS/Mucom 68k
 Super Hang-On					pre-SMPS Z80/Type 2
-Sword of Vermilion (Vermilion)			pre-SMPS 68k/PCM
+Sword of Vermilion (Vermilion)			pre-SMPS 68k/Type 2
 Tetris						pre-SMPS Z80/Type 2
 Tommy Lasorda Baseball (Super League)		pre-SMPS 68k/Type 1 (pre-SMPS Z80 port)
 World Championship Soccer (World Cup Soccer)	pre-SMPS 68k/PCM
@@ -47,7 +47,7 @@ Phantasy Star III: Generations of Doom		SMPS Z80/Type 1 FM
 Rastan Saga II					SMPS Z80 FM
 Shadow Dancer: The Secret of Shinobi		SMPS 68k/Type 1a
 Sorcerian					SMPS Z80/Type 1 FM (banked)
-Street Fighter II' Turbo (beta)			pre-SMPS 68k/PCM
+Street Fighter II' Turbo (beta)			pre-SMPS 68k/Type 2
 Strider (Strider Hiryuu)			SMPS 68k/Type 1a (mod, custom sequence format)
 Super Monaco GP					SMPS Z80/Type 1 FM (mod)
 Whip Rush					SMPS Z80/Type 1 FM
@@ -77,7 +77,7 @@ Nikkan Sports Pro Yakyuu VAN			SMPS Z80 FM
 Ninja Burai Densetsu				pre-SMPS 68k/PCM
 OutRun						SMPS Z80/Type 1 DAC
 QuackShot					SMPS Z80/Type 1 FM (mod)
-Rent-a-Hero					pre-SMPS 68k/PCM
+Rent-a-Hero					pre-SMPS 68k/Type 2
 Saint Sword					SMPS Z80 FM
 Sangokushi Retsuden				SMPS Z80 FM
 Sega CD BIOS					SMPS Z80/Type 1 FM [missing on GDRI]
@@ -94,6 +94,7 @@ Wrestle War					pre-SMPS 68k/FM
 
 1992
 ----
+16 Zhang Mahjong (Unl)				SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
 A Ressha de Ikou MD				SMPS/Mucom 68k
 Ayrton Senna's Super Monaco GP II		SMPS 68k/Type 2a (mod)
 Battletoads					SMPS Z80/Type 1 DAC
@@ -127,13 +128,13 @@ Mazin Saga (Mazin Wars)				SMPS Z80/Type 1 DAC
 McDonald's Treasure Land Adventure		SMPS 68k/Type 2b
 Mega Games 2/3 menu				SMPS 68k/Type 2b
 Mega Q: Party Quiz				SMPS 68k/Type 2b
-Metal Fangs					pre-SMPS 68k/PCM [incorrectly detected as SMPS 68k]
+Metal Fangs					pre-SMPS 68k/Type 2 (with fixes) [incorrectly detected as SMPS 68k]
 OutRun 2019					SMPS Z80/Type 1 DAC
 Phantasy Star: The End of the Millenium		SMPS 68k/Type 2b (mod)
 Shinobi III (The Super Shinobi II)		SMPS 68k/Type 2b
 Sonic CD					SMPS Z80/Type 1 FM (mod)
-Tecmo Cup (Captain Tsubasa) (beta)		SMPS Z80
-Wimbledon Championship Tennis			SMPS Z80
+Tecmo Cup (Captain Tsubasa) (beta)		SMPS Z80/Type 1 DAC
+Wimbledon Championship Tennis			SMPS Z80/Type 1 DAC
 
 1994
 ----
@@ -188,6 +189,7 @@ Zaxxon's Motherbase 2000 (Parasquad)		[32x] SMPS Z80/Type 2 FM (Dyna Brothers 2 
 
 1996
 ----
+777 Casino (Unl)				SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
 Classic Collection menu (Mega Games 4in1)	SMPS Z80/Type 1 FM (uses Columns sound driver/music) [missing on GDRI]
 Sonic 3D Blast (Sonic 3D Flickies' Island)	SMPS Z80/Type 2 DAC (Sonic 3 mod)
 Sonic The Hedgehog's Gameworld (U)		[Pico] SMPS 68k-Pico/Type 2b
@@ -197,6 +199,12 @@ Wu Kong Wai Zhuan (Unl) (Legend of Wukong)	SMPS Z80 Type 1 FM (uses Wonder Boy I
 1997
 ----
 Mega Games 10 menu				SMPS Z80/Type 1 FM (uses Columns sound driver/music) [missing on GDRI]
+
+199x
+----
+Lion King II (Unl)				SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
+Super Bubble Bobble MD (Unl)			SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
+Super Mario World (Unl)				SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
 
 2000
 ----

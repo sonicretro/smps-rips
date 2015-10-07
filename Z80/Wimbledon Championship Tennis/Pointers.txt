@@ -1,0 +1,40 @@
+General Pointer List:	8000 (UE, Beta) (Z80 Bank Offset)
+Music Pointer List:	8235 (UE, Beta) (Z80 Bank Offset)
+SFX Pointer List:	1000 (UE, Beta) (Z80 RAM)
+DAC SFX Bank List:	01DF (UE, Beta) (Z80 RAM) (DAC SFX IDs 9C-B9)
+Mod. Pointer List:	8012 (UE, Beta) (Z80 Bank Offset)
+PSG Pointer List:	8158 (UE, Beta) (Z80 Bank Offset)
+DAC Drum Pointer List:	ADEF (UE, Beta) (Z80 Bank Offset)
+DAC Voice Pointer List:	8001 (UE, Beta) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0FD858 (UE, Beta)
+Additional Z80 Data:	0FE806 (UE, Beta) (goes to Z80 RAM 1000)
+Pan Animation List:	043D
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 0C0000
+
+
+DAC List Format:
+The format is the same one as used in Mazin Saga.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 00AB)
+
+
+Notes:
+- DAC SFX Bank List Format:
+	1 byte - Bank ID (checked against the value at 8000 of the respective Z80 ROM Bank, fail results in freeze)
+	2 bytes - ROM Bank (gets copied to 1C06/07)
+  All DAC ROM Banks contain entries for 20h sounds. (except for bank 0F8000, which has 21h entries)
+  Entries for sounds stored in another bank point to a dummy sound of 1 byte length.
+- Sound IDs:
+	00-7F	Stop All Sound
+	81-8E	Music
+	8F-9B	SFX
+	9C-B9	DAC SFX (9F-B3 stop all sound before playing)
+	BA-BC	Special Commands
+		BA - Fade Out Music
+		BB - Stop All Sound
+		BC - Silence PSG
+	BD-FF	Stop All Sound

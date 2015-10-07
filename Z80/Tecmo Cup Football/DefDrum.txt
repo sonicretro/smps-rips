@@ -1,0 +1,10 @@
+; --- Tecmo Cup Football SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 01
+
+[Drums]
+;Note	Type    DrumID	Pitch
+81..DF	DAC	01
+F0..F1	DAC	70

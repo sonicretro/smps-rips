@@ -1,0 +1,31 @@
+General Pointer List:	FF00 (Unl) (Z80 Bank Offset)
+Music Pointer List:	816D (Unl) (Z80 Bank Offset)
+SFX Pointer List:	B6D6 (Unl) (Z80 Bank Offset)
+Mod. Pointer List:	800E (Unl) (Z80 Bank Offset)
+PSG Pointer List:	8082 (Unl) (Z80 Bank Offset)
+Global Instrument Lib.:	9A99 (Unl) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	014FAE (Unl)
+Pan Animation List:	02F1 (Z80 RAM)
+FM Drum Pointer List:	0A67 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A81 (Z80 RAM)
+PSG Drum Pointer List:	0A40 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 0F8000
+
+
+Notes:
+- The sound driver originates from Wonder Boy III - Monster Lair.
+- The sound driver was patched to execute additional code when starting song 81 and 83.
+  This code does some things related to copy-protection.
+  
+  1. Song 83 (Intro Song) switches temporarily to bank 400000, then adds the values at 8000/2/4/6 to the values at
+  Z80 RAM 1151/2/3/4 and writes the result to 1BF9/A/B/C.
+  Finally, 1BF8 is initialized with 20h.
+  
+  2. Song 81 (Town Theme) checks 1BF8. If the value is 00, the copy-protection code is skipped.
+  Else the value at 1BF8 is incremented by 1. If it still is smaller than 23h, the copy-protection code is also skipped.
+  After the 3rd time, the copy-protection code runs and checks 1BF9. A value of 65h or 73h is valid.
+  In all other cases, the Z80 driver switches to bank FF0000 and writes FF to E000-E1FE.
+  This overwrites 68k RAM at 6000-61FE and makes the player unable to move.
