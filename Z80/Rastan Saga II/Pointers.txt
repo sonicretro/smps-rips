@@ -1,0 +1,22 @@
+General Pointer List:	8000 (JU) (Z80 Bank Offset)
+Music Pointer List:	8236 (JU) (Z80 Bank Offset)
+SFX Pointer List:	1000 (JU) (RAM)
+Mod. Pointer List:	800E (JU) (Z80 Bank Offset)
+PSG Pointer List:	8154 (JU) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	05976E (J) / 0598AA (U)
+Additional Z80 Data:	05A73E (J) / 05A87A (U) (goes to Z80 RAM 1000)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A60 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A74 (Z80 RAM)
+PSG Drum Pointer List:	0A46 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 070000
+
+
+The sound-related part of the ROM (070000-0723CD) matches exactly between J and U versions of the ROM.
+
+
+Notes:
+-

@@ -1,0 +1,18 @@
+General Pointer List:	0D9024 (J)
+Sound Update Routine:	0D952C (J)
+Music Pointer List:	0D9486 (J)
+Spc. SFX Pointer List:	-- invalid -- (J) (points to 0DA680)
+SFX Pointer List:	0DA5B0 (J)
+Mod. Pointer List:	0D9054 (J)
+PSG Pointer List:	0D9118 (J)
+PCM Pointer List:	0DAEB0 (J)
+PSG Drum List:		0D9118 (J)
+Sound RAM:		F000 (68k RAM)
+
+
+PCM Table / PSG Drum Table:
+see Mickey no Boku wa Meitantei
+
+
+Notes:
+-

@@ -44,7 +44,7 @@ Mega Anser					SMPS Z80/Type 1 FM (early)
 Michael Jackson's Moonwalker			SMPS 68k/Type 1a
 Pat Riley Basketball (Super Real Basketball)	SMPS Z80/Type 1 FM
 Phantasy Star III: Generations of Doom		SMPS Z80/Type 1 FM
-Rastan Saga II					SMPS Z80 FM
+Rastan Saga II					SMPS Z80/Type 1 FM
 Shadow Dancer: The Secret of Shinobi		SMPS 68k/Type 1a
 Sorcerian					SMPS Z80/Type 1 FM (banked)
 Street Fighter II' Turbo (beta)			pre-SMPS 68k/Type 2
@@ -56,10 +56,10 @@ Zoom!						pre-SMPS Z80/Type 2
 
 1991
 ----
-Advanced Daisenryaku				SMPS Z80 FM
-Air Buster (Aero Blasters)			SMPS Z80 FM
+Advanced Daisenryaku				SMPS Z80/Type 1 FM
+Air Buster (Aero Blasters)			SMPS Z80/Type 1 FM
 Alien Storm					SMPS Z80/Type 1 DAC
-Bahamut Senki					SMPS Z80 FM
+Bahamut Senki					SMPS Z80/Type 1 FM
 Battle Golfer Yui				SMPS 68k/Type 1a
 Bonanza Brothers				SMPS Z80/Type 1 FM
 Dahna: Megami Tanjou				SMPS Z80/Type 1 DAC
@@ -70,8 +70,9 @@ Fighting Masters				SMPS Z80/Type 1 FM
 Flicky						SMPS Z80/Type 1 FM
 Gain Ground					SMPS Z80 FM
 Golden Axe II					SMPS 68k/Type 1b
+Growl (Runark)					SMPS Z80/Type 1 FM (Bonanza Brothers descendant)
 Jantei Monogatari				pre-SMPS 68k/FM
-Marvel Land (Talmit's Adventure)		SMPS Z80 FM
+Marvel Land (Talmit's Adventure)		SMPS Z80/Type 1 FM
 Mercs (Senjou no Ookami II)			SMPS Z80/Type 1 early DAC
 Nikkan Sports Pro Yakyuu VAN			SMPS Z80 FM
 Ninja Burai Densetsu				pre-SMPS 68k/PCM
@@ -142,7 +143,7 @@ Wimbledon Championship Tennis			SMPS Z80/Type 1 DAC
 Art of Fighting (Ryuuko no Ken)			SMPS Z80/Type 2 FM
 ATP Tour Championship Tennis			SMPS Z80/Type 2 FM (mod)
 Bishoujo Senshi Sailor Moon			SMPS 68k/Type 2b
-Cosmic Carnage (Cyber Brawl)			[32x] SMPS 68k/32x
+Cosmic Carnage (Cyber Brawl)			[32x] SMPS 68k/Type 2b (32x mod)
 Crayon Shin-Chan				SMPS 68k/Type 2a
 Dynamite Headdy					SMPS 68k/Type 2b (Treasure mod)
 Fatal Fury 2 (Garou Densetsu 2)			SMPS 68k/Type 2b (same as Fatal Fury 1)
@@ -158,11 +159,10 @@ Samurai Shodown (Samurai Spirits)		SMPS 68k/Type 2b
 Sega Channel (JP)				SMPS Z80/Type 1 FM
 Sonic & Knuckles				SMPS Z80/Type 2 DAC (Sonic 3 mod)
 Sonic the Hedgehog 3				SMPS Z80/Type 2 DAC (Sonic 3 mod)
-Sonic The Hedgehog's Gameworld (J)		[Pico] SMPS 68k-Pico/Type 2a
 The Hybrid Front				SMPS Z80/Type 2 DAC
 Viewpoint					SMPS Z80/Type 2 FM
 Virtua Racing					SMPS Z80/Type 1 DAC (mod)
-Virtua Racing Deluxe				[32x] SMPS 68k/32x [GDRI was wrong here]
+Virtua Racing Deluxe				[32x] SMPS 68k/Type 2b (32x mod) [GDRI was wrong here]
 Yuu Yuu Hakusho Gaiden				SMPS Z80/Type 1 DAC
 Yuu Yuu Hakusho: Makyou Touitsusen		SMPS 68k/Type 2b (Treasure mod)
 
@@ -192,7 +192,6 @@ Zaxxon's Motherbase 2000 (Parasquad)		[32x] SMPS Z80/Type 2 FM (Dyna Brothers 2 
 777 Casino (Unl)				SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
 Classic Collection menu (Mega Games 4in1)	SMPS Z80/Type 1 FM (uses Columns sound driver/music) [missing on GDRI]
 Sonic 3D Blast (Sonic 3D Flickies' Island)	SMPS Z80/Type 2 DAC (Sonic 3 mod)
-Sonic The Hedgehog's Gameworld (U)		[Pico] SMPS 68k-Pico/Type 2b
 Virtua Fighter 2				SMPS Z80/Type 2 DAC
 Wu Kong Wai Zhuan (Unl) (Legend of Wukong)	SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
 
@@ -206,9 +205,29 @@ Lion King II (Unl)				SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
 Super Bubble Bobble MD (Unl)			SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
 Super Mario World (Unl)				SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
 
+
+
+Sega Pico Games
+===============
+1993
+----
+
+1994
+----
+Doraemon - Nobita to Maigo no Kyouryuu		SMPS 68k-Pico/Type 2a
+Sonic The Hedgehog's Gameworld (J)		SMPS 68k-Pico/Type 2a
+
+1996
+----
+Sonic The Hedgehog's Gameworld (U)		SMPS 68k-Pico/Type 2b
+
 2000
 ----
-Mickey no Boku wa Meitantei			[Pico] SMPS 68k-Pico/Type 2b
+Mickey no Boku wa Meitantei			SMPS 68k-Pico/Type 2b
+
+2002
+----
+Pocket Monsters Suuji o Tsukamaeyou!		SMPS 68k-Pico/Type 2b
 
 
 

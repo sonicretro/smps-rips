@@ -29,3 +29,12 @@ Notes:
   After the 3rd time, the copy-protection code runs and checks 1BF9. A value of 65h or 73h is valid.
   In all other cases, the Z80 driver switches to bank FF0000 and writes FF to E000-E1FE.
   This overwrites 68k RAM at 6000-61FE and makes the player unable to move.
+- The sound driver is able to play DAC Voices via commands E4 and E5.
+  Unlike the other Gametec games though, there are 2 DAC Voice routines that play data.
+  Both use try to play data from the sound driver's ROM bank, but work slightly differently.
+  The game use neither of those routines though and they point to invalid data.
+  
+  Command E4 (everything hardcoded, see Z80 RAM 1019):
+	Offset C000h, length 2000h, speed 0Ch
+  Command E5 (mostly the same as 16 Zhang Mahjong, see Z80 RAM 104E):
+	Offset C002h, length (reads Big Endian word from C000h/01h), speed 32h

@@ -1,0 +1,34 @@
+General Pointer List:	8000 (w) (Z80 Bank Offset)
+Music Pointer List:	8278 (W) (Z80 Bank Offset)
+SFX Pointer List:	1200 (W) (RAM)
+Mod. Pointer List:	800E (W) (Z80 Bank Offset)
+PSG Pointer List:	8154 (W) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	016000 (W)
+Additional Z80 Data:	01716C (W) (goes to Z80 RAM 1200)
+Pan Animation List:	03C7 (Z80 RAM)
+FM Drum Pointer List:	0B8F (Z80 RAM)
+FM Drum Ins. Ptr. List:	0BA9 (Z80 RAM)
+PSG Drum Pointer List:	0B3F (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 018000
+
+
+All song and envelope data of the ROM (018000-01B7A2) matches exactly between both versions of the ROM.
+The Z80 sound driver matches, too.
+There are some differences in SFX though.
+
+
+Notes:
+- The sound driver is a slightly modified version of the one used in Bonanza Bros.
+- The SMPS driver has a modified PSG frequency table.
+- The driver has the DoModulation bug fixed.
+- Sound Test ID List: 002426
+  Note: The Sound Test ID uses BCD encoding and due to that every 10 sound IDs are followed by a gap of 6 dummy values.
+  The Sound Test IDs map to E1, 81..8F, 98..A2, A4..A6, A9
+  The current Sound Test ID is stored at C024/25 (68k RAM)
+- PlaySound routine: 001150
+- Like Bonanza Bros., the sound driver is able to play DAC Voices using Sound IDs E4 and E5.
+  The Sound IDs just play garbage though due to it being a leftover.
+  The sound offsets are slightly different from Bonanza Bros., the other settings are identical.

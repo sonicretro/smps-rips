@@ -1,0 +1,19 @@
+General Pointer List:	017CC4 (J)
+Sound Update Routine:	0180F4 (J)
+Music Pointer List:	018020 (J)
+Spc. SFX Pointer List:	-- invalid -- (J) (points to 018EB6)
+SFX Pointer List:	018D96 (J)
+Mod. Pointer List:	017CF4 (J)
+PSG Pointer List:	017CFA (J)
+PCM Pointer List:	019C7E (J)
+PSG Drum List:		01800C (J)
+Sound RAM:		F400 (68k RAM)
+
+
+PCM Table / PSG Drum Table:
+see Mickey no Boku wa Meitantei
+
+
+Notes:
+- The PSG drums match with Sonic The Hedgehog's Gameworld (J).
+  cfF3_PSGNoise works like in later games. (silences PSG 3 when switching to PSG3-freq. mode)

@@ -18,7 +18,7 @@ There is only 1 music bank: 078000
 
 DAC List Format: (all big endian values!)
 2 bytes - Data Length
-2 bytes - Padding bytes? (ignored)
+2 bytes - ignored (Data Length + this value seems to result in the full size of the data in ROM)
 2 bytes - Start Offset (Z80 Bank Offset)
 
 The DAC data is raw uncompressed 8-bit data.

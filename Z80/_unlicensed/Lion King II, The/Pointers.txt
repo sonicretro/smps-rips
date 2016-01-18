@@ -17,3 +17,4 @@ There is only 1 music bank: 0F8000
 
 Notes:
 - The sound driver originates from Wonder Boy III - Monster Lair.
+  It is the exactly same version used by other Gamtec games like 16 Zhang Mahjong.

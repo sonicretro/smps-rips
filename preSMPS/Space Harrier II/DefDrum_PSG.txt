@@ -1,13 +1,42 @@
+; Format:
+;   Note, Noise Mode, Volume Envelope, Noise Volume,
+;   [PSG 3 Volume, PSG 3 Frequency, [PSG3 Freq. Slide Speed]]
+
+; General notes about Space Harrier 2:
+; When loading the drum data, it sends Noise Mode and PSG 3 Volume to the PSG chip.
+; At each tick, the PSG envelope is processed.
+; After processing the envelope, the volume is sent to the PSG Noise channel.
+; And unless the drum note has bit 3 set (88-8F, 98-9F, ...), it also sends (volume + 2) to the PSG 3 channel.
+; The frequency slide is only processed when the frequency slide mode is enabled with a separate sequence command.
+
 ;Note	NMode	Env	Vol	Ch3Vol	Ch3Freq	Slide
-88	E7	02	0	F	030	02
-89	E7	02	0	F	030	02
-8D	E7	02	0	F	030	02
-9D	E7	02	0	F	030	02
+; Drum 1 - Bit 3 nonzero (88-8F, 98-9F, ...)
+88	E7	02	0	 F	030	02
+89	E7	02	0	 F	030	02
+8A	E7	02	0	 F	030	02
+8B	E7	02	0	 F	030	02
+8D	E7	02	0	 F	030	02
+8E	E7	02	0	 F	030	02
+99	E7	02	0	 F	030	02
+9D	E7	02	0	 F	030	02
 
-82	E7	01	0	F	030	02
-81	E7	01	4	6	010	02
-85	E7	01	4	6	010	02
-84	E7	01	4	6	010	02
+; Drum 2 - Bit 1 nonzero (82-83, 86-87, 92-93, ...)
+82	E7	01	0	2 F	030	02
+83	E7	01	0	2 F	030	02
+86	E7	01	0	2 F	030	02
+87	E7	01	0	2 F	030	02
 
-;91?	E7	04	3	6	010	02
-;90?	E7	03	3	6	010	02
+; Drum 3 - unused
+;x1	E7	04	3	2 6	010	02
+;x0	E7	03	3	2 6	010	02
+
+; Drum 4 - Bit 0 or 2 nonzero (81, 84, 85, 91, ...)
+; The checks for both bits jump to the same code.
+81	E7	01	4	2 6	010	02
+; There is really a separate branch in the code that decides between 81 and 84/85,
+; but it loads the exactly same values both times.
+84	E7	01	4	2 6	010	02
+85	E7	01	4	2 6	010	02
+
+; dummy setting (none of the cases above)
+80	00	00	F	 F	000	00

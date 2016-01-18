@@ -1,0 +1,24 @@
+General Pointer List:	8000 (J) (Z80 Bank Offset)
+Music Pointer List:	82B1 (J) (Z80 Bank Offset)
+SFX Pointer List:	1200 (J) (RAM)
+Mod. Pointer List:	800E (J) (Z80 Bank Offset)
+PSG Pointer List:	8154 (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0C3E78 (J)
+Additional Z80 Data:	0C4F8C (J) (goes to Z80 RAM 1200)
+Z80 DAC Driver Offset:	0C57A4 (J)
+DAC Voice Pointer List:	0C8000 / 0D0000 (J)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A4F (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A6D (Z80 RAM)
+PSG Drum Pointer List:	0A35 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 0C0000
+
+
+Notes:
+- The sound driver has an additional PSG frequency 0, like SMPS 68k.
+- The game plays DAC voice samples by temporarily loading the generic SMPS 68k DAC driver into Z80 RAM.
+- This is one of the very few games that make use of the DAC loop feature of the SMPS 68k DAC driver.
+  (DAC sound 82 in bank 0C8000)

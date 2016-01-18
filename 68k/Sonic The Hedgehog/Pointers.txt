@@ -18,7 +18,12 @@ It also matches with the Sonic 2 Nick Arcade Beta.
 
 DAC Table
 ---------
-The DAC table format is the same as ??.
+DAC List Format: (all Little Endian)
+2 bytes - Start Offset (Z80 RAM)
+2 bytes - Data Length
+1 byte  - pitch
+3 bytes - unused
+-> 8 bytes
 
 Data is DPCM compressed with the usual delta-array.
 00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0022)
@@ -29,4 +34,5 @@ Notes:
 	80 - hold envelope
 - The snare sound is from the Roland TR-626 and plays with 23784 Hz (or 16845 Hz with Generic SMPS 68k DAC driver).
   The to get the original pitch, the sample must be played with 14420 Hz.
-- The bass drum plays with 7963 Hz. (7181 Hz with Gen. SMPS 68k)
+- The bass drum plays with 8201 Hz. (7181 Hz with Gen. SMPS 68k)
+- The SEGA sound is stored as raw PCM and its offset and length are hardcoded into the DAC driver.

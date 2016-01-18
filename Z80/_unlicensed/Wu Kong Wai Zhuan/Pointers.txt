@@ -3,6 +3,7 @@ Music Pointer List:	816D (Unl) (Z80 Bank Offset)
 SFX Pointer List:	B6D6 (Unl) (Z80 Bank Offset)
 Mod. Pointer List:	800E (Unl) (Z80 Bank Offset)
 PSG Pointer List:	8082 (Unl) (Z80 Bank Offset)
+DAC Voice Pointer List:	C000 (Unl) (Z80 Bank Offset) (invalid)
 Z80 Snd Driver Offset:	0FE1D0 (Unl)
 Pan Animation List:	02F1 (Z80 RAM)
 FM Drum Pointer List:	0A67 (Z80 RAM)
@@ -14,7 +15,21 @@ Sound RAM:		1C00 (Z80 RAM)
 There is only 1 music bank: 0F8000
 
 
+DAC List Format: (all big endian values!)
+2 bytes - Data Length
+1 byte  - ignored
+1 byte  - Pitch (copied to 1BFE)
+2 bytes - ignored
+2 bytes - Start Offset (Z80 Bank Offset)
+
+Data is DPCM compressed with the pre-SMPS delta-array.
+01 03 06 0C 18 28 50 90 FF FD FA F4 E8 D8 B0 70 (Z80 Driver offset 1101)
+
+
+
 Notes:
 - The boss theme modifies the driver update rate, but none of the other songs do.
   So the boss theme causes all other songs to play at a higher speed.
 - The sound driver originates from Wonder Boy III - Monster Lair.
+- Like many other Gamtec games, the sound driver is able to play DAC sounds and the game doesn't use them.
+  Unlike those games though, the data is DPCM compressed and the DAC table format is different.

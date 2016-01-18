@@ -36,3 +36,4 @@ Notes:
 	Data Length:	0D40
 	Playback Rate:	  1C
 	DPCM Table:	01A6 (00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0)
+- The driver has the DoModulation bug fixed.

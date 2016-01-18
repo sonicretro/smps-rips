@@ -5,8 +5,8 @@
 ; Hyper Marbles Default values:
 ; 1C00 - 00 80 - ROM Bank (008000h)
 ; 1C02 - 00 10 - Global Pointer List Offset (1000h)
-; 1C04 - B4 00 - Timer A
-; 1C06 - E6 - Timer B
+; 1C04 - B4 00 - Timer A (63.11 Hz)
+; 1C06 - E6 - Timer B (128.05 Hz)
 ; 1C07 - 80 - Timing Mode
 ; 1C08 - 0A
 

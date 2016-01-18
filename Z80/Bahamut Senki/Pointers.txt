@@ -1,0 +1,38 @@
+General Pointer List:	8000 (J) (Z80 Bank Offset)
+Music Pointer List:	8236 (J) (Z80 Bank Offset)
+SFX Pointer List:	1000 (J) (RAM)
+Mod. Pointer List:	800E (J) (Z80 Bank Offset)
+PSG Pointer List:	8154 (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0761E6 (J)
+Additional Z80 Data:	0C4F8C (J) (goes to Z80 RAM 1000)
+Z80 Drv. Copy Structs:	006810 (J) (3 entries)
+Pan Animation List:	02DA (Z80 RAM)
+FM Drum Pointer List:	0A45 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A5D (Z80 RAM)
+PSG Drum Pointer List:	0A2B (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+
+The sound-related part of the ROM (078000-07FFFF) matches exactly between both (normal and [a1]) versions of the ROM.
+
+
+Format for the Z80 Driver Copy Structures:
+4 bytes - 68k destination address
+2 bytes - DBRA count = (number of bytes - 1)
+
+
+Notes:
+- Options Menu - current Music/Sound: F23C/3D (68k RAM)
+- PlayMusic routine: 0067D4
+- Music Title Pointer List: 00B364 (2-byte pointers)
+  Each pointer is relative to its own offset.
+  The actual text is stored as a series of 1-byte Tile IDs.
+  00 = [end]
+  01 = 0, ..., 0A = 9
+  0B = A, 0C = B, ..., 24 = Z
+  25 = !, 26 = '
+  2D = (, 2E = )
+  FF = [space]

@@ -17,6 +17,7 @@ There is only 1 music bank: 0F8000
 
 Notes:
 - The sound driver originates from Wonder Boy III - Monster Lair.
+  It is the exactly same version used by other Gamtec games like 16 Zhang Mahjong.
 - There is an unreferenced FM instrument at BC94, because all songs have the instrument pointer set to BCAD.
 - Level Song List:
     Act 1: Street Cruise - 05 Street Cruise 

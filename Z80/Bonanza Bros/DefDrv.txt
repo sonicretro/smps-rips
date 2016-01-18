@@ -80,7 +80,7 @@ DelayFreq = Keep
 
 ; Modulation Algorithm
 ;	can be 68K, Z80 or Z80_B
-ModAlgo = Z80_b
+ModAlgo = Z80	; DoModulation bug fixed!
 
 ; Envelope Multiplier Mode
 ;	PRE - preSMPS 68k

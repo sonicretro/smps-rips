@@ -1,0 +1,11 @@
+; --- Mickey no Boku wa Meitantei SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 00
+
+[Drums]
+;Note	Type	DrumID	Pitch
+81..86	NECPCM	00
+87..8C	NECPCM	00
+8D..8F	NECPCM	00

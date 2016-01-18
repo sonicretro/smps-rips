@@ -1,16 +1,17 @@
 Sound Check Code:	0C46FC (U beta)
 Driver Base Address:	0C1360 (U beta)
 Tempo List:		0C5036 (U beta)
-Music Pointer List:	0C5282 (U beta)
-SFX Pointer List:	0C52DE (U beta)
+Music Pointer List:	0C5282 (U beta) (2-byte pointers)
+SFX Pointer List:	0C52DE (U beta) (2-byte pointers)
 Instr. Register List:	0C4AA2 (U beta)
-Instr. Pointer List:	0CE15A (U beta)
-Mod. Pointer List:	0C5066 (U beta)
-PSG Pointer List:	0CE9B8 (U beta)
-Z80 Snd Driver Offset:	0006DE (U beta)
+Instr. Pointer List:	0CE15A (U beta) (2-byte pointers)
+Mod. Pointer List:	0C5066 (U beta) (4-byte pointers)
+PSG Pointer List:	0CE9B8 (U beta) (2-byte pointers) [Note: Starts with a pointer for PSG envelope 00 which has to be skipped.]
+Z80 DAC Driver Offset:	0006DE (U beta)
 Z80 Add. Data Pointers:	0CEB10 (U beta)
-DAC Pointer Table:	--see pointer at 0210-- (Z80 RAM) (U, beta)
-DAC Pitch Ptr. Table:	0212 (Z80 RAM) (U, beta)
+DAC Pointer Table:	--see pointer at 0210-- (Z80 RAM) (U beta)
+DAC Pitch Ptr. Table:	0212 (Z80 RAM) (U beta)
+Sound RAM:		F400 (68k RAM)
 
 
 DAC Tables
@@ -31,4 +32,14 @@ Data is DPCM compressed with the delta-array:
 
 
 
-Rent A Hero uses the same version (or at least a very similar one), so see there for more information.
+Notes:
+- Rent A Hero uses the same version of pre-SMPS 68k (or at least a very similar one), so see there for more information.
+- The DAC driver limits the DAC speed using YM Timer A. (In case of DPCM sounds, the routine is slower than the timer setting though.)
+  It also adds an additional sample between every DPCM sample, calculated using linear interpolation.
+- There is a leftover routine at 00CD6 that loads a Z80 sound driver.
+  It loads 0FBE bytes to Z80 RAM offset 0000 (sound code) and 023C bytes to Z80 RAM offset 1000 (additional data).
+  The referenced data is invalid though.
+- Sound Test offsets:
+		SndID List	current song/SFX
+	MUSIC	0037C2		FB88/B9
+	EFFECT	0038AC		FB8C/8D

@@ -29,8 +29,8 @@ InsRegs = 30 38 34 3C 40 48 44 4C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8
 ;	Examples:
 ;		16 0 1 2 4 5 6 (default)
 ;		12 0 1 4 5 6 2 (commonly used from pre-SMPS Z80 to SMPS Z80 Type 1 with FM/PSG drums)
-;FMChnOrder = 12 0 1 4 5 6 2 F0
-FMChnOrder = 12 F0 0 1 4 5 6 2
+FMChnOrder = 12 0 1 4 5 6 2
+PSGChnOrder = 80 A0 F0	; 3 PSG channels (last one is Noise [E0] + Drums [10])
 
 ; Tempo Mode
 ;	TIMEOUT - used by preSMPS, SMPS Z80 Type 1 and most SMPS 68k
@@ -115,3 +115,40 @@ FM3Freqs = 000h	; actually unused
 83 = VolStop_ModHold
 84 = Chg_Mult
 85 = Loop
+
+
+[preSMPSTrkHdr]
+; TrkHdrSize must be set first, then all offsets (hex) in the
+; range of 00 to (TrkHdrSize-1) are usable.
+; Possible values are:
+; PBFLAGS, CHNBITS, TICKMULT, PTRLSB, PTRMSB, TRANSP, MODENV, VOLENV, VOLUME, PANAFMS
+TrkHdrSize = 09
+00 = PbFlags
+01 = ChnBits
+02 = TickMult
+03 = PtrLSB
+04 = PtrMSB
+05 = Transp
+06 = ModEnv
+07 = VolEnv
+08 = Volume
+
+; For the Playback Flags bitfield, the meaning of each bit can be defined.
+; Format: PbBit_# = value (where # is a number from 0 to 7)
+; Possible values:
+; SPECIALMODE, HOLD, OVERRIDDEN, RAWFREQ, ATREST, PITCHSLIDE,
+; LOCKFREQ, ACTIVE, PAUSED, HOLDLOCK, PANANI, [nothing]
+PbBit_0 = SpecialMode
+PbBit_1 = HoldLock
+PbBit_2 = Overridden
+PbBit_3 = RawFreq
+PbBit_4 = ; unused
+PbBit_5 = PitchSlide
+PbBit_6 = PanAni	; equals SMPS Pan Animation Type 01
+PbBit_7 = Active
+
+; This is used to remap channel IDs from the values in the preSMPS files
+; to their standardized meaning used by SMPSPlay.
+; The channel ID on the right side must be defined by FMChnOrder/PSGChnOrder.
+ChnMap_02 = 12	; FM drum channel
+ChnMap_C0 = F0	; PSG drum channel

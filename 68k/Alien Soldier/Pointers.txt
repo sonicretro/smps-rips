@@ -43,3 +43,5 @@ Notes:
 	  21   ->   28
 	22..31 -> 2A..33
 	32..37 -> 35..3A
+- Song 0C uses a Pan Animation effect that reads 2 data bytes from the code section.
+- Song 11 uses a Pan Animation effect that reads 1 data byte beyond the Pan table (unlike song 0C, it only reads the padding byte 00).

@@ -15,7 +15,7 @@
 ;	40 - update all when YM2612 Timer B expires (Note: often used with Timer B = CBh)
 ;	80 - update music when Timer A expires, update SFX when Timer B expires
 ;	FF - don't set a default
-DefTimingMode = 00
+DefTimingMode = 80	; the first song played ("Filthy") sets this
 LockTimingMode = False
 ; Default values for the YM2612 Timers (can be dec or hex)
 DefTimerA = 000h

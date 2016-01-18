@@ -1,0 +1,21 @@
+General Pointer List:	8000 (W, U) (Z80 Bank Offset)
+Music Pointer List:	880E (w, U) (Z80 Bank Offset)
+SFX Pointer List:	DD53 (W, U) (Z80 Bank Offset)
+Mod. Pointer List:	800E (W, U) (Z80 Bank Offset)
+PSG Pointer List:	840C (W, U) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	007D36 (W) / 007D52 (U)
+Pan Animation List:	02AC (Z80 RAM)
+FM Drum Pointer List:	0A4D (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A63 (Z80 RAM)
+PSG Drum Pointer List:	0A33 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+
+The sound-related part of the ROM (078000-07EAFF) matches exactly between W and U versions of the ROM.
+
+
+Notes:
+- There is a PSG envelope with a length of 137h (!) bytes, even though the sound driver can play only the first 100h bytes.

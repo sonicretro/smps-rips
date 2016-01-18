@@ -31,3 +31,20 @@ Notes:
 	06 - Modulation Envelope
 	07 - FM/PSG instrument
 	08 - Volume
+- This is the first MegaDrive game released.
+  The preSMPS driver is also at a very early state and does some interesting things because of that. Examples:
+  - It write to the PSG though the 68k-memory window of the Z80.
+  - It initializes the YM2612 as it would be two YM2203 chips.
+  It is also the only Z80-based pre-SMPS driver to support PSG channels at all. (The "no envelope" PSG instrument seems to be broken though.)
+  The PSG drum channel uses PSG 3 and 4 at the same time to create unique sounds.
+- The driver supports lots of complicated things.
+  For one, it has 2x 2op FM drums.
+  Each of the two drum channels has separate memory to store a note timeout, the frequency for each of the 2 operators and a (broken) frequency modifier that is added to the frequency every frame.
+  
+  The second one is the PSG drum channel. Similar to Master System SMPS, it loads varying settings for volume, envelope and noise mode depending on certain bits of the drum note.
+  Unlike that though, it also loads a PSG 3 frequency, a frequency slide speed and a PSG 3 volume setting.
+  The PSG 3 volume is further altered when updating the drum's envelope, UNLESS the ID of the current drum note has bit 3 set. (drum notes 88-8F, 98-9F)
+- The DAC driver plays raw 8-bit PCM data from offset 0120 (Z80 RAM). The size of the data to be played is stored at 011E/1F.
+  For some reason the size is 8 bytes smaller than the length of the actual DAC data.
+  The playback speed of the DAC samples is hardcoded into the DAC driver and stored at 000C.
+  After resetting the PSG chip via the 68k memory window, the DAC driver switches back to bank 038000 for whatever reason.

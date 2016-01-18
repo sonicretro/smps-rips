@@ -17,4 +17,4 @@ There are 3 global instrument sets (9072 in bank 0B0000 and B36B and B4C9 in ban
 
 
 Notes:
-- The sound driver originates from Whip Rush 2222 AD.
+- The sound driver is the exactly same version as used by Whip Rush 2222 AD, where it originates from.
