@@ -55,3 +55,4 @@ Notes:
 		E0 - fade music
 		E1 - stop all sound
 		E2 - invalid (jumps to PlaySFX code and crashes the game)
+- Song 0B (Turbo OutRun - Rush a Difficulty) doesn't set up the DAC bank and may end up playing invalid DAC sounds.

@@ -1,0 +1,73 @@
+; --- preSMPS 68k/Type 1 Driver Definition ---
+
+[Settings]
+DefTimingMode = 00
+LockTimingMode = True
+
+[Main]
+PtrFmt = Z80Rel
+InsMode = Interleaved
+InsRegs = B0 B4 30 38 34 3C 40 48 44 4C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C
+;FMChnOrder = 16 0 1 2 4 5 6
+TempoMode = Timeout
+Tempo1Tick = PlayMusic
+FMBaseNote = C
+FMBaseOctave = 0
+DetuneOctWrap = False
+NoteOnPrevent = Hold
+DelayFreq = Reset
+ModAlgo = 68k
+EnvMult = Pre
+VolMode = Algo
+FMFreqs = {	$0A69 $0A8D $0AB4 $0ADD $0B09 $0B37 $0B68 $0B9C $0BD3 $0C0D $0C4B $0C8C
+		$1269 $128D $12B4 $12DD $1309 $1337 $1368 $139C $13D3 $140D $144B $148C
+		$1A69 $1A8D $1AB4 $1ADD $1B09 $1B37 $1B68 $1B9C $1BD3 $1C0D $1C4B $1C8C
+		$2269 $228D $22B4 $22DD $2309 $2337 $2368 $239C $23D3 $240D $244B $248C
+		$2A69 $2A8D $2AB4 $2ADD $2B09 $2B37 $2B68 $2B9C $2BD3 $2C0D $2C4B $2C8C
+		$3269 $328D $32B4 $32DD $3309 $3337 $3368 $339C $33D3 $340D $344B $348C
+		$3A69 $3A8D $3AB4 $3ADD $3B09 $3B37 $3B68 $3B9C $3BD3 $3C0D $3C4B $3C8C }
+PSGFreqs = Def_Pre	; actually not present in the driver
+FM3Freqs = $000 $132 $18E $1E4
+
+FadeMode = 68k
+
+FadeOutSteps = $28
+FadeOutDelay = 4
+
+NoteStopMode = RemTicks	; Trk->NStopRevMode = 0x11
+NoteStopTimeout = 3
+
+Tick16Bits = True	; note ticks are stored as 16 bit value (required by song 0F)
+
+[EnvelopeCmds]
+80 = Reset
+81 = Hold
+83 = Stop
+84 = Chg_Mult
+85 = Loop
+
+[preSMPSTrkHdr]
+TrkHdrSize = 09
+00 = PbFlags
+01 = ChnBits
+02 = TickMult
+03 = PtrLSB
+04 = PtrMSB
+05 = Transp
+06 = ModEnv
+07 = VolEnv
+08 = Volume
+
+PbBit_0 = SpecialMode	; for Special FM3 mode
+PbBit_1 = Hold
+PbBit_2 = Overridden
+PbBit_3 = RawFreq
+PbBit_4 = ; unused
+PbBit_5 = PitchSlide
+PbBit_6 = ; unused
+PbBit_7 = Active
+
+; This is used to remap channel IDs from the values in the preSMPS files
+; to their standardized meaning used by SMPSPlay.
+; The channel ID on the right side must be defined by FMChnOrder/PSGChnOrder.
+ChnMap_80 = 16	; DAC drum channel

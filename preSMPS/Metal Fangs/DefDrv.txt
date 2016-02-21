@@ -1,0 +1,80 @@
+; --- preSMPS 68k/Type 2 Driver Definition ---
+
+[Settings]
+DefTimingMode = 00
+LockTimingMode = True
+
+[Main]
+PtrFmt = Pre68k
+InsMode = Custom
+InsRegs = B0 40 48 44 4C 30 38 34 3C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C 
+;FMChnOrder = 16 0 1 2 4 5 6
+TempoMode = Timeout
+Tempo1Tick = PlayMusic
+FMBaseNote = B
+FMBaseOctave = 0
+DetuneOctWrap = False
+NoteOnPrevent = Hold
+DelayFreq = Reset
+ModAlgo = 68k
+EnvMult = Pre
+VolMode = Algo
+; Note: Frequency 0A5F is actually not present in the driver (and FMBaseNote should be C),
+;       but it is required for SMPSPlay's current Pitch Slide algorithm.
+FMFreqs = {	$0A5F $0A83 $0AAA $0AD3 $0AFF $0B2D $0B5E $0B92 $0BC9 $0C03 $0C41 $0C82
+		$125F $1285 $12AA $12D3 $12FF $132D $135C $138F $13C7 $13FD $143B $147C
+		$1A60 $1A84 $1AAB $1AD2 $1AFF $1B2C $1B5C $1B8F $1BC6 $1BFF $1C3C $1C7D
+		$2261 $2285 $22AB $22D2 $22FF $232C $235C $238F $23C6 $23FF $243C $247C
+		$2A61 $2A83 $2AA9 $2AD5 $2AFD $2B2A $2B5C $2B90 $2BC6 $2BFB $2C3C $2C7B
+		$3261 $3283 $32A9 $32D4 $32FC $332A $335C $3390 $33C9 $3403 $3433 $347B
+		$3A5D $3A83 $3AAA $3AD3 $3AFD $3B2A $3B5C $3B8E $3BC5 $3C01 $3C3B $3C7C }
+; Note: The PSGFreqs are different from other preSMPS 68k/Type 2 drivers.
+PSGFreqs = {	$000 $000 $000 $000 $000 $000 $000 $000 $000 $3F9 $3C0 $38A
+		$357 $327 $2FA $2CF $2A7 $281 $25D $23B $21B $1FC $1E0 $1C5
+		$1AC $194 $17D $168 $153 $140 $12E $11D $10D $0FE $0F0 $0E2
+		$0D6 $0CA $0BE $0B4 $0AA $0A0 $097 $08F $087 $07F $078 $071
+		$06B $065 $05F $05A $055 $050 $04C $047 $043 $040 $03C $039
+		$036 $033 $030 $02D $02B $028 $025 $023 $021 $01F $01E $01B
+		$01A $019 $017 $016 $015 $014 $013 $012 $011 $010 $00F $00E
+		$00D $00C $00B $00A $009 $008 $007 $006 $005 $004 $003 $002 }
+FM3Freqs = $000	; actually unused
+
+FadeMode = 68k
+
+FadeOutSteps = $2C
+FadeOutDelay = 1
+
+[EnvelopeCmds]
+80 = Reset
+81 = Hold
+83 = Stop
+84 = Chg_Mult
+85 = Loop
+
+[preSMPSTrkHdr]
+TrkHdrSize = 09
+00 = PbFlags
+01 = ChnBits
+02 = TickMult
+03 = PtrMSB
+04 = PtrLSB
+05 = Transp
+06 = ModEnv
+07 = VolEnv
+08 = Volume
+
+PbBit_0 = ; unused
+PbBit_1 = AtRest
+PbBit_2 = Overridden
+PbBit_3 = ; unused
+PbBit_4 = ; unused
+PbBit_5 = PitchSlide
+;PbBit_6 = LockFreq	; locks PSG frequency / enables a special DAC mode
+PbBit_6 = SpecialMode	; locks PSG frequency / enables a special DAC mode
+PbBit_7 = Active
+
+; This is used to remap channel IDs from the values in the preSMPS files
+; to their standardized meaning used by SMPSPlay.
+; The channel ID on the right side must be defined by FMChnOrder/PSGChnOrder.
+; The drum channel doesn't need to be remapped. (Its ID is already 16.)
+ChnMap_E0 = C0	; PSG noise channel (used by SFX)

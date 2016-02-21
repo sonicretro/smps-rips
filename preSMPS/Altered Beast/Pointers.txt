@@ -1,21 +1,24 @@
-Music Pointer List:	010035 (REV 00/01/02)
-SFX Pointer List:	01A66D (Z80 Driver: 14CF) (REV 00/01/02)
-PSG Pointer List:	010008 (REV 00/01/02)
-Instrument List:	010051 (REV 00/01/02)
-Z80 Snd Driver Offset:	01919E (REV 00/01/02)
-DAC driver list:	004A3C (REV 00) / 004A50 (REV 01/02)
-DAC Driver Offsets:	01376C (1), 0153AC (3), 017234 (4), 01AE54 (1), 01CDD6 (1), 01ED58 (1) (REV 00/01/02)
+Driver Bank:		010000 (JU)
+General Pointer List:	8000 (JU) (Z80 Bank Offset)
+Tempo List:		14C0 (JU) (Z80 RAM)
+Music Pointer List:	8035 (JU) (Z80 Bank Offset)
+SFX Pointer List:	14D7 (JU) (Z80 RAM)
+Spc. SFX Pointer List:	14CF (JU) (Z80 RAM)
+Instr. Pointer List:	010051 (JU)
+Mod. Pointer List:	8008 (JU) (Z80 Bank Offset)
+PSG Pointer List:	802E (JU) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	01919E (JU)
+DAC Driver list:	004A3C (Rev 00) / 004A50 (Rev 01/02) (JU)
+DAC Driver Offsets:	01376C (1), 0153AC (3), 017234 (4), 01CDD6 (1), 01ED58 (1), 01AE54 (1) (JU)
 Sound RAM:		1D00 (Z80 RAM)
 
 
+The sound-related data (010000-023FFF) matches exactly in all revisions.
+
+
 DAC driver list format:
-2 bytes - DAC driver size (in 10h byte units)
+2 bytes - DAC driver size (Rev 00: in bytes, Rev 01/02: in 10h byte units)
 4 bytes - DAC driver ROM offset
-
-
-Code to copy pre-SMPS Z80 driver: 00492E
-Code to copy (generic) DAC driver: 004A1C
-Play DAC sound code: 0049F2
 
 
 DAC drivers:
@@ -31,4 +34,23 @@ The SMPS driver can play a DAC sound, too. The routine is at 11B4.
 Note:
 - When playing a larger sound, the current SMPS driver is unloaded and a DAC driver is loaded instead.
   Also the SMPS driver it reloaded everytime a new song is played.
-- In Rev 00, the length value of the first DAC driver is invalid. (is 1C40 instead of 01C4)
+- In Rev 01/02 they optimized the routine that copies bytes to the Z80 by unrolling the loop to copy 10h bytes per iteration.
+- 68k routine offsets (for Rev 00):
+    Copy pre-SMPS Z80 driver: 00494E (Rev 01: 00492E)
+    Copy (generic) DAC driver: 004A24 (Rev 01: 004A1C)
+    Play DAC sound: 0049F4 (Rev 01: 0049EC)
+    Stop All Sounds: 0048F0
+    Play Sound: 004AB2
+    DAC Sound Handler: 0049A2
+- BGM Resume Playlist: 0049E4
+- The DAC Sound Handler plays the DAC voices and restores the BGM after they finish.
+  Working variables (68k RAM):
+    FE1A/1B - DAC Driver State
+              0000 = not loaded (returns instantly)
+              8xxx = request DAC sound playback 
+                     -> copies driver from DAC driver list to Z80 RAM (first driver has ID 01)
+                     -> copies requested DAC sound ID from FE1D (68k RAM) to 017F (Z80 RAM)
+              0xxx = DAC sound playing
+                     -> changes ID in FE1E according to BGM Resume Playlist
+                     -> restores music driver when DAC sound finishes
+    FE1C/1D - DAC sound ID to play (for loaded DAC driver)

@@ -8,6 +8,7 @@ DAC Pointer Table:	0824A2 (JE)
 DAC Voice Pointer List:	082DEC (JE)
 Z80 DAC Driver Offset:	083E70 (JE)
 Pan Animation List:	082884 (JE)
+Sound RAM:		F800 (68k RAM)
 
 
 DAC Table

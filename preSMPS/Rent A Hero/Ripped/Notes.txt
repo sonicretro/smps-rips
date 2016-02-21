@@ -1,3 +1,0 @@
-05	turns DAC on and off
-0C	Tempo Change
-19/1A	only 1 track used (channel 05), crashes

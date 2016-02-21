@@ -1,0 +1,52 @@
+Sound Check Code:	0BADC6 (J) / 0BA3CC (UE)
+Driver Base Address:	0B8000 (JUE)
+Tempo List:		0B8066 (JUE)
+Music Pointer List:	0B8100 (J) / 0B8140 (UE) (2-byte LE pointers to music headers)
+SFX Pointer List:	0B813E (J) / 0B817E (UE)
+Instr. Register List:	0BA818 (UE only)
+Instr Pointer List:	0B8528 (J) / 0B8568 (UE)
+Mod. Pointer List:	0B8086 (JUE)
+Z80 Snd Driver Offset:	0BE552 (J) / 0BDC2A (UE)
+Coord. Flag Handler:	0BA8D8 (J) / 0B9EDE (UE)
+Sound RAM:		D000 (68k RAM)
+
+
+Music Header:
+1 byte - Number of Tracks tc
+9*tc bytes - Track Header (get copied to RAM)
+
+Track Header:
+00	Playback Bits
+01	Channel Bits	(80 = DAC, 00-06 = FM)
+02	Tick Multiplier
+03-04	Data Pointer	(i.e. where the track starts)
+05	Tranpose
+06	Modulation Envelope
+07	Instrument
+08	Volume
+
+
+Check for Coordination Flags (FM):	0BA422
+Coordination Flags Jump Table:		0BA8E2
+
+FM Instrument Pointers:			0B8528
+Instrument Format:
+1 byte - Register ID
+1 byte - Data
+ repeat until you find Register 83, that's the terminator
+
+B0 B4 30 38 34 3C 40 48 44 4C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C 83
+
+There's additional code executed for Registers 83, B0, 40, 48, 44 and 4C. (see 0BB1B8)
+
+
+Notes:
+- Based on how it looks, I'd say this preSMPS driver is a Z80->68k port.
+  The code looks terribly confusing at some places, all pointers are Little Endian and the base address matches with the beginning of a Z80 bank.
+- The instrument format differs between the J and the UE version.
+  The J version uses the format above, the UE version stores the registers in a separate array.
+  B0 B4 40 48 44 4C 30 38 34 3C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C
+- All PSG-related features were stripped from the driver.
+- The data for all songs is completely identical, except for a single command in song 02 and track pointers.
+- In-sequence pointers (used by commands F6, F7 and F8) are relative like SMPS 68k but unlike preSMPS 68k Type 2.
+- DAC panning is hardcoded into the SMPS sound driver. Since the DefDrum.txt lack support for something like this, I enforce proper panning via DAC.ini.

@@ -10,6 +10,7 @@ DAC Voice Pointer List:	05C736 (J) / 05C0C0 (UE) / 078A3E (Beta, Magical Taruruu
 Pan Animation List:	05C492 (J) / 05BAB4 (UE) / 05C422 (Beta)
 Sound RAM:		F800 (68k RAM)
 
+
 DAC List Format:
 2 bytes - Bank Offset (Big Endian, ROM Offset = Bank Ofs * 100h)
 2 bytes - Z80 Sound Info Offset (Little Endian Bank Pointer)
@@ -21,3 +22,21 @@ DAC List Format:
 Z80 Sound Info: (all little endian values)
 2 bytes - Start Offset (in Z80 Memory)
 2 bytes - Data Length
+
+
+Notes:
+- Sound IDs:
+	00	Stop All Sound
+	01-0F	Special Commands
+	05-0F	dummy
+	10-3F	DAC SFX
+	28-3F	dummy
+	40-6E	SFX (table entry is ID - 40h into SFX 1 Pointer List, i.e. 52..80 into SFX list)
+	6F-80	dummy
+	81-AA	Music
+	AB-FA	SFX (table entry is ID - ABh into SFX 1 Pointer List, i.e. 00..4F into SFX list)
+	FB-FC	Special SFX (table entry is ID - FBh into Spc. SFX Pointer List, i.e. 50..51 into SFX list)
+	FD-FF	dummy
+- Pointer Lists:
+    SOUND CHECK	013B9E (J) / 013D9C (UE) / --- (Beta)
+- The sound data from the prototype from 1994-06-14 matches the J version.

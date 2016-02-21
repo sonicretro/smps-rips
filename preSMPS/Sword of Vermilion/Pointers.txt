@@ -1,0 +1,38 @@
+Sound Check Code:	092FE4 (JU)
+Driver Base Address:	093C00 (JU)
+Tempo List:		0938EE (JU)
+Music Pointer List:	093B36 (JU) (2-byte pointers)
+SFX Pointer List:	093B6E (JU) (2-byte pointers)
+Instr. Register List:	093358 (JU)
+Instr. Pointer List:	0992BC (JU) (2-byte pointers)
+Mod. Pointer List:	09390E (JU) (4-byte pointers)
+PSG Pointer List:	099BBA (JU) (2-byte pointers) [Note: Starts with a dummy pointer for PSG envelope 00.]
+Z80 Snd Driver Offset:	00045A (J) / 00041C (U)
+Z80 Add. Data Pointers:	099C9C (JU)
+DAC Pointer Table:	--see pointer at 0200-- (Z80 RAM) (JU)
+DAC Pitch Ptr. Table:	0202 (Z80 RAM) (JU)
+Coord. Flag Handler:	092C8E (JU)
+Sound RAM:		F400 (68k RAM)
+
+
+DAC Tables
+----------
+The DAC table format is the same as Rent A Hero.
+
+Data is DPCM compressed with the delta-array:
+01 03 06 0C 18 28 50 90 FF FD FA F4 E8 D8 B0 70 (Z80 Driver offset 0130)
+
+
+Notes:
+- The SMPS sound driver is the same as Rent A Hero.
+- Sound codes:
+	00-7F/9D-9F/C2-DE/E3-FF - stop all sound
+	80 - don't do anything
+	81-9C - play music
+	A0-C1 - play sound effect
+	DF-E2 - control command
+		DF - invalid (jumps into WriteFM code, but returns properly)
+		E0 - fade music
+		E1 - stop all sound
+		E2 - invalid (jumps to PlaySFX code and crashes the game)
+- Songs 02 and 19 use the Melodic DAC mode.

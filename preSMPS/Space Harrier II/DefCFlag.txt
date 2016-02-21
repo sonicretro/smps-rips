@@ -15,8 +15,8 @@ E8	MUS_PAUSE	MUSP_68K	02	; actually just sets/resets the "pause driver" byte
 E9	SET_COMM	        	02
 EA	PANAFMS 	PAFMS_FMS	02
 EB	PANAFMS 	PAFMS_AMS	02
-EC	IGNORE  	        	01	; enables FM 3 Special Mode
-ED	IGNORE  	        	01	; disables FM 3 Special Mode
+EC	SPC_FM3 	SFM3_ON 	01	; enables FM 3 Special Mode
+ED	SPC_FM3 	SFM3_OFF	01	; disables FM 3 Special Mode
 EE	HOLD    	HOLD_LOCK_NEXT	02
 EF	INSTRUMENT	INS_C_FM	02
 F0	VOLUME  	VOL_ABS 	02

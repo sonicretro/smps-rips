@@ -1,0 +1,38 @@
+; --- pre-SMPS 68k/Type 1 Command Definition ---
+; based on a disassembly of Phantasy Star 2
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	SND_CMD 	        	02	; 00 - stop music, 01 - play music ID stored in RAM value D000
+E1	TRK_END 	TEND_STD	01
+E2	SND_CMD 	        	02
+E3	IGNORE  	        	03	; 2-byte Pan Animation
+E4	TEMPO   	TEMPO_SET	02
+E5	CHORD_MODE	CHRD_ENABLE	02	; parameter = number of notes in the chord, 00 = disable
+E6	CHORD_MODE	CHRD_HOLD	01	; looks ahead next byte: 00-7F - hold chord, 80-FF - do nothing
+E7	CHORD_MODE	CHRD_STOP	01	; looks ahead next byte: 00-7F - stop chord, 80-FF - do nothing
+E8	MUS_PAUSE	MUSP_Z80	02
+E9	SET_COMM	        	02
+EA	PANAFMS 	PAFMS_FMS	02	; actually broken (see flag F3)
+EB	PANAFMS 	PAFMS_AMS	02	; actually broken (see flag F3)
+EC	VOLUME  	VOL_CN_FM	02	; actually VOL_NN_FM - the driver lacks PSG support
+ED	IGNORE  	        	01	; set D01A = 0 (seems unused)
+;EE	HOLD    	HOLD_ONOFF	02	; 00 - clear HOLD flag, 01-FF - set it
+EE	HOLD    	HOLD_LOCK	02	; that should be what was intended
+EF	INSTRUMENT	INS_N_FM	02
+F0	VOLUME  	VOL_ABS 	02
+F1	IGNORE  	        	01
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SET2	02	; actually broken (tries to add the PSG Noise bits using AND instead of OR)
+F4	MOD_ENV 	MENV_GEN	02
+F5	INSTRUMENT	INS_N_PSG	02
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	TICK_MULT	TMULT_CUR	02
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	PITCH_SLIDE	        	02
+FD	RAW_FREQ	        	02
+FE	SPC_FM3 	        	05
+FF	PANAFMS 	PAFMS_PAN	02

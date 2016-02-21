@@ -1,0 +1,33 @@
+; --- SMPS 2-op FM Drum Definition ---
+
+[Main]
+DrumMode = Dual
+; 2-operator FM Drum Mask
+Mask1 = 29	; bits 0, 3, 5
+Mask2 = 14	; bits 2, 4
+DrumIDBase = 00
+
+; Note: "Chn" is a bitmask, so 01 = channel 1, 02 = channel 2, 03 = channel 1+2
+;       If the value is 00 or omitted, channel 1 is used.
+;       The Chn value is only used by DAC drums.
+[Drums]
+;Note	Type	DrumID	Pitch	Chn
+; Note & 08 [BIT 3] - Operator 1/2, primary drum set
+88	2opFM	02		00	; Drum3_Op12
+89	2opFM	02		00	; Drum3_Op12
+A8	2opFM	03		00	; Drum4_Op12
+A9	2opFM	03		00	; Drum4_Op12
+; Note & 01 [BIT 0] - Operator 1/2, secondary drum set
+81	2opFM	04		00	; Drum5_Op12
+A1	2opFM	05		00	; Drum6_Op12
+; Note & 04 [BIT 2] - Operator 3/4
+84	2opFM	00		01	; Drum1_Op34
+94	2opFM	01		01	; Drum2_Op34
+
+; Drum Order:
+; 00	Drum1_Op34
+; 01	Drum2_Op34
+; 02	Drum3_Op12
+; 03	Drum4_Op12
+; 04	Drum5_Op12
+; 05	Drum6_Op12
