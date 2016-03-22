@@ -3,7 +3,7 @@
 Altered Beast (Juuouki)				pre-SMPS Z80/Type 1
 Osomatsu-kun					pre-SMPS Z80/Type 2 [sound RAM at 1D00]
 Space Harrier II				pre-SMPS Z80/Type 1 [sound RAM at 1800]
-Super Thunder Blade				pre-SMPS Z80/Type 1 (mod) [sound RAM at 1E00]
+Super Thunder Blade				pre-SMPS Z80/Type 1 [sound RAM at 1E00]
 
 1989
 ----
@@ -12,18 +12,18 @@ Arnold Palmer Tournament Golf (Super Masters)	early SMPS Z80
 Forgotten Worlds				pre-SMPS Z80/Type 2
 Ghouls 'n Ghosts (Dai Makaimura)		pre-SMPS Z80/Type 2
 Golden Axe					early SMPS Z80
-Last Battle (Hokuto no Ken)			pre-SMPS 68k/FM
-Mahjong Cop Ryuu				pre-SMPS 68k/FM
+Last Battle (Hokuto no Ken)			pre-SMPS 68k/Type 1b
+Mahjong Cop Ryuu				pre-SMPS 68k/Type 1b
 Mystic Defender (Kujaku Ou II)			SMPS Z80/Type 1 FM (early/mod)
-Phantasy Star II				pre-SMPS 68k/Type 1 (pre-SMPS Z80 port)
+Phantasy Star II				pre-SMPS 68k/Type 1a
 Rambo III					pre-SMPS Z80/Type 2
-Super Daisenryaku				pre-SMPS 68k/PCM
+Super Daisenryaku				pre-SMPS 68k/Type 1a
 The Revenge of Shinobi (The Super Shinobi)	pre-SMPS/Mucom 68k
 Super Hang-On					pre-SMPS Z80/Type 2
 Sword of Vermilion (Vermilion)			pre-SMPS 68k/Type 2
 Tetris						pre-SMPS Z80/Type 2
-Tommy Lasorda Baseball (Super League)		pre-SMPS 68k/Type 1 (pre-SMPS Z80 port)
-World Championship Soccer (World Cup Soccer)	pre-SMPS 68k/PCM
+Tommy Lasorda Baseball (Super League)		pre-SMPS 68k/Type 1a
+World Championship Soccer (World Cup Soccer)	pre-SMPS 68k/Type 1a
 
 1990
 ----
@@ -71,11 +71,11 @@ Flicky						SMPS Z80/Type 1 FM
 Gain Ground					SMPS Z80 FM
 Golden Axe II					SMPS 68k/Type 1b
 Growl (Runark)					SMPS Z80/Type 1 FM (Bonanza Brothers descendant)
-Jantei Monogatari				pre-SMPS 68k/FM
+Jantei Monogatari				pre-SMPS 68k/Type 2
 Marvel Land (Talmit's Adventure)		SMPS Z80/Type 1 FM
 Mercs (Senjou no Ookami II)			SMPS Z80/Type 1 early DAC
 Nikkan Sports Pro Yakyuu VAN			SMPS Z80 FM
-Ninja Burai Densetsu				pre-SMPS 68k/PCM
+Ninja Burai Densetsu				pre-SMPS 68k/Type 2
 OutRun						SMPS Z80/Type 1 DAC
 QuackShot					SMPS Z80/Type 1 FM (mod)
 Rent-a-Hero					pre-SMPS 68k/Type 2
@@ -91,7 +91,7 @@ Super League '91				SMPS Z80/Type 1 DAC
 Taiga Drama Taiheiki				SMPS Z80 FM
 Toki: Going Ape Spit (JuJu Densetsu)		SMPS 68k/Type 1b
 Ultimate Qix (Volfied)				SMPS Z80 FM
-Wrestle War					pre-SMPS 68k/FM
+Wrestle War					pre-SMPS 68k/Type 2
 
 1992
 ----
@@ -104,7 +104,7 @@ Dyna Brothers					SMPS Z80/Type 1 DAC (banked)
 Go-Net						SMPS Z80/Type 1 DAC
 Honoo no Toukyuuji Dodge Danpei			SMPS Z80 FM
 Magical Taruruuto-kun				SMPS 68k/Type 2a
-Mega Games 1 menu				pre-SMPS 68k/PCM (uses World Championship Soccer sound driver/music) [missing on GDRI]
+Mega Games 1 menu				pre-SMPS 68k/Type 1a (uses World Championship Soccer sound driver/music) [missing on GDRI]
 Nekketsu Koukou Dodgeball Bu Soccer Hen MD	SMPS 68k/Type 1b
 Shura no Mon					SMPS Z80/Type 1 DAC
 Sonic the Hedgehog 2				SMPS Z80 (SMPS 68k/Sonic 1 port)

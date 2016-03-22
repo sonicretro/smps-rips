@@ -1,0 +1,16 @@
+; --- Super Daisenryaku SMPS DAC Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 81
+
+[Drums]
+;Note	Type    DrumID	Pitch
+88	DAC	81
+84	DAC	82
+80	DAC	83
+81	DAC	84
+82	DAC	85
+A0	DAC	86
+C0	DAC	87
+90	DAC	88

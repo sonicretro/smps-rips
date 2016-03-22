@@ -103,6 +103,10 @@ PSGFreqs = {	3F8h 3BFh 389h
 FM3Freqs = 000h 132h 18Eh 1E4h
 
 
+FadeOutSteps = 60h
+FadeOutDelay = 2
+
+
 [EnvelopeCmds]
 ; Possible commands:
 ;	RESET - reset the Envelope Index to 0
@@ -113,9 +117,9 @@ FM3Freqs = 000h 132h 18Eh 1E4h
 ;	VOLSTOP_MODHOLD - like STOP for volume envelopes and like HOLD for modulation envelopes
 80 = Reset
 81 = Hold
+82 = Loop
 83 = VolStop_ModHold
 84 = Chg_Mult
-85 = Loop
 
 
 [preSMPSTrkHdr]

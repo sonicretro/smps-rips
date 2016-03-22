@@ -1,5 +1,5 @@
 ; --- Space Harrier II SMPS Command Definition ---
-; pre-SMPS Z80
+; pre-SMPS Z80/Type 1
 
 ;Flag	Type    	SubType 	Len	JmpOfs
 [Main]
@@ -24,7 +24,7 @@ F1	VOLUME  	VOL_ABS 	02
 F2	TRK_END 	TEND_STD	01
 F3	PSG_NOISE	PNOIS_SET2	02	; Note: songs use 00-07 and expect the driver to add the E0h bits
 F4	MOD_ENV 	MENV_GEN	02
-F5	INSTRUMENT	INS_C_PSG	02
+F5	INSTRUMENT	INS_C_PSG	03	; 2nd parameter is ignored
 F6	GOTO    	        	03	01
 F7	LOOP    	        	05	03
 F8	GOSUB   	        	03	01

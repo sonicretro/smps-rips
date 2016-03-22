@@ -1,4 +1,4 @@
-; --- Ristar SMPS DAC Drum Definition ---
+; --- Phantasy Star II SMPS DAC Drum Definition ---
 
 [Main]
 DrumMode = Normal

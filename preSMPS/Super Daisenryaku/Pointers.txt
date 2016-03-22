@@ -1,0 +1,25 @@
+Sound Check Code:	079FC0 (J Rev 00) / 07A014 (J Rev 02)
+Driver Base Address:	078000 (J)
+Tempo List:		07804E (J)
+Music Pointer List:	0780F6 (J) (2-byte LE pointers to music headers)
+SFX Pointer List:	078134 (J)
+Instr. Pointer List:	07830C (J)
+Mod. Pointer List:	07806E (J)
+PSG Pointer List:	-- invalid -- (J) (points to 0780F6)
+Z80 Snd Driver Offset:	07D3A2 (J Rev 00) / 07D3F6 (J Rev 02)
+Coord. Flag Handler:	079C44 (J Rev 00) / 079C4C (J Rev 02)
+Sound RAM:		6000 (68k RAM)
+
+
+Notes:
+- Rev 02 is sometimes also called "Rev A".
+- This is a Z80->68k port, similar to Phantasy Star II, and still has Little Endian pointers everywhere.
+- FM instruments are stored in an interleaved format. The order is: register, data, register, data, ...
+  Register byte 83h terminates the instrument.
+- The DAC driver is very similar to Phantasy Star II. The drums are also the same.
+- DAC panning is hardcoded into the SMPS sound driver. Since the DefDrum.txt lack support for something like this, I enforce proper panning via DAC.ini.
+- The song data matches exactly in both revisions. (with the exception of a few pointers in the track headers)
+- Like Phantasy Star II, the songs make heavy use of the sound driver's Chord Mode.
+- Rev 02 reduces the song volume to 1/4 by modifying a few instruments (volume / 16) and the "track volume" byte (volume * 4).
+  The DAC driver also has two additional "SRA A" instructions to reduce the DAC volume to 1/4.
+  The actual sequence data is the same in Rev 00 and Rev 02.

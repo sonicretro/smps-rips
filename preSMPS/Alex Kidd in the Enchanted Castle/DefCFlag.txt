@@ -10,7 +10,7 @@ E3	PSG_NOISE	PNOIS_SET2	02
 E4	PSG_NOISE	PNOIS_SET2	02
 E5	PSG_NOISE	PNOIS_SET2	02
 E6	PSG_NOISE	PNOIS_SET2	02
-E7	VOLUME  	VOL_ABS 	04	; set Drum Volume [1, 2, 3]
+E7	VOLUME  	VOL_ABS_2OPDRM	04	; set Drum Volume [1, 2, 3]
 E8	DRUM_MODE	DM_OFF_FM3ONN	05	; FM3 Melody Mode + reads FM 3 notes
 E9	SET_LFO_SPD	        	02
 EA	PANAFMS 	PAFMS_FMS	02
@@ -19,12 +19,12 @@ EC	SPC_FM3 	SFM3_ON 	01	; enables FM 3 Special Mode
 ED	SPC_FM3 	SFM3_OFF	01	; disables FM 3 Special Mode
 EE	HOLD    	HOLD_LOCK	02
 EF	INSTRUMENT	INS_C_FM	02
-F0	VOLUME  	VOL_ABS 	02	; not 100% correct, because the code always adds the volume to the cached TL levels
-F1	DRUM_MODE	DM_ON   	01	; FM3 Drum Mode
+F0	VOLUME  	VOL_ACC 	02	; broken VOL_ABS, the code adds the volume to the cached TL levels
+F1	DRUM_MODE	DM_ON_LATE	01	; FM3 Drum Mode
 F2	TRK_END 	TEND_STD	01
 F3	PSG_NOISE	PNOIS_SET2	02
 F4	VOLUME  	VOL_NN_FM	02
-F5	INSTRUMENT	INS_C_PSG	02
+F5	INSTRUMENT	INS_C_PSG	03	; 2nd parameter is ignored
 F6	GOTO    	        	03	01
 F7	LOOP    	        	05	03
 F8	GOSUB   	        	03	01

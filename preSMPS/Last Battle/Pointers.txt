@@ -1,0 +1,27 @@
+Sound Check Code:	01208E (J) / 0120C0 (U)
+Driver Base Address:	010000 (JU)
+Tempo List:		01006E (JU)
+Music Pointer List:	010114 (JU) (2-byte LE pointers to music headers)
+SFX Pointer List:	01013E (JU)
+Instr. Register List:	012498 (J) / 0124D0 (U)
+Instr Pointer List:	010B2E (J) / 010B44 (U)
+Mod. Pointer List:	010084 (JU)
+PSG Pointer List:	0100FE (JU)
+Z80 DAC Driver Offset:	013BD6 (J) / 013B9E (U)
+Coord. Flag Handler:	011CEA (J) / 011D1C (U)
+Sound RAM:		F300 (68k RAM)
+
+
+Notes:
+- This is a Z80->68k port, similar to Phantasy Star II, and still has Little Endian pointers everywhere.
+- Instrument registers in a separate array.
+  B0 B4 30 38 34 3C 40 48 44 4C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C
+- There seems to be an unreferenced PSG envelope at 010103.
+- Unlike Phantasy Star II, this driver supports PSG channels.
+  The DAC was reduced to a single function that plays a voice sample though.
+- Parts of the chord mode (that was supported in Phantasy Star II) were stripped. There are leftovers of it at a few places though.
+- The U version has an additional FM instrument added to the end of the table. The other instruments are identical.
+- The SFX with ID A5 has an invalid pointer.
+- Stage Music List: 002C60 (J) / 002C90 (U)
+- The current stage ID is stored at F0B2/B3 (68k RAM).
+- Song 0E/10 seems to be unused. I couldn't find any reference to it in the ROM at least.

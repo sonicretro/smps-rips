@@ -1,0 +1,35 @@
+Sound Check Code:	03B7B0 (JUE)
+Driver Base Address:	03A000 (JUE)
+Tempo List:		03A052 (JUE)
+Music Pointer List:	03A0DC (JUE) (2-byte LE pointers to music headers)
+SFX Pointer List:	03A0FA (JUE)
+Instr. Register List:	03BA64 (JUE)
+Instr. Pointer List:	03A29A (JUE)
+Mod. Pointer List:	03A062 (JUE)
+PSG Pointer List:	-- invalid -- (JUE) (points to 03A0DC)
+Z80 Snd Driver Offset:	037CBE (JU Championship) / 0379A4 (JU Cup Soccer) / 0376C0 (E Cup Italia)
+Coord. Flag Handler:	03B408 (JUE)
+Sound RAM:		D000 (68k RAM)
+
+
+018E00 to 03FFFF matches in Rev 02 and Rev 03 of World Championship Soccer.
+03A000 to 03FFFF matches in all revisions.
+019000 to 03FFFF in World Cup Italia 90 is 0D9000 to 0FFFFF in MegaGames 3in1 Vol 1. The data matches
+except for a few absolute pointers, which have 03xxxx replaced with 0Fxxxx.
+
+
+Notes:
+- This is a Z80->68k port, similar to Phantasy Star II, and still has Little Endian pointers everywhere.
+- Instrument registers in a separate array.
+  B0 B4 30 38 34 3C 40 48 44 4C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C
+- The DAC driver of World Cup Italia 90 is a bit different than the one in the other versions.
+  The DAC driver in WCI has 3 additional instructions to set 1FFD and 1FFA (Z80 RAM) to 0.
+- DAC panning is hardcoded into the SMPS sound driver. Since the DefDrum.txt lack support for something like this, I enforce proper panning via DAC.ini.
+- There is unreferenced instrument data at 03A50A-03AD83 that uses the interleaved register-data format.
+- The DAC driver has a partial implementation of an "uninterruptable" flag using byte 1FFA.
+  Since the Z80 code is unfinished (the only thing that works is resetting the flag), DAC commands are
+  filtered out on the 68k side.
+- There is unused an unused segment in song 04. (03C02B-03C042)
+- 07 Game BGM 1 is the song played on the menu of MegaGames 3in1 Vol 1.
+- The Pan Animation code is different from other preSMPS 68k Type 1 drivers and supports only a single type of animation.
+- The Modulation Envelope code was fixed to do a proper sign-extention.

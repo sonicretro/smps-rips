@@ -1,4 +1,4 @@
-; --- preSMPS 68k/Type 1 Driver Definition ---
+; --- preSMPS 68k/Type 1a Driver Definition ---
 
 [Settings]
 DefTimingMode = 00
@@ -33,6 +33,8 @@ FadeMode = 68k
 
 FadeOutSteps = $28
 FadeOutDelay = 4
+
+DACVolDiv = 2
 
 NoteStopMode = RemTicks	; Trk->NStopRevMode = 0x11
 NoteStopTimeout = 3

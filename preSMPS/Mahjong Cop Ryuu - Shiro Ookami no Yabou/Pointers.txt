@@ -1,0 +1,44 @@
+Sound Check Code:	039618 (J)
+Driver Base Address:	038000 (J)
+Tempo List:		038046 (J)
+Music Pointer List:	03806C (J) (2-byte LE pointers to music headers)
+SFX Pointer List:	0380AA (J)
+Instr. Register List:	039A28 (J)
+Instr Pointer List:	038944 (J)
+Mod. Pointer List:	038066 (J) (empty)
+PSG Pointer List:	038068 (J)
+Z80 DAC Driver Offset:	0366AE (J)
+DAC Sound List:		002B1A (J)
+Coord. Flag Handler:	03937E (J)
+Sound RAM:		D000 (68k RAM)
+
+
+DAC sound list format:
+2 bytes - DAC data size (DBRA iterations, so it's [byte size - 1])
+4 bytes - DAC data ROM offset
+
+The 68k copies the data to Z80 RAM, offset 0300.
+The first 2 bytes copied (offset 0300/0301) are the DAC's size (for the Z80 driver).
+The third byte (offset 0302) is the playback speed.
+
+Data is DPCM compressed with the usual preSMPS 68k delta-array:
+01 03 06 0C 18 28 50 90 FF FD FA F4 E8 D8 B0 70 (Z80 Driver offset 00CD)
+
+
+Notes:
+- This is a Z80->68k port, similar to Phantasy Star II and Last Battle, and still has Little Endian pointers everywhere.
+- Instrument registers in a separate array.
+  B0 B4 30 38 34 3C 40 48 44 4C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C
+- This seems to be a preSMPS 68k Type 1b driver, similar to Last Battle.
+  But even though the sound driver allocates PSG channels, the UpdatePSGTrack function was removed.
+  So this results in a sound driver that can do only FM.
+- The sound driver was stripped from lots of stuff. 20 of the 32 coordination flags are dummied out.
+- LoadDACSound routine: 002AB8 (register D0 contains the DAC sound ID to load)
+- Half of the DAC sound sizes for the Z80 driver are a bit off.
+  The ripped DACs contain the full data specified by the DAC Sound List.
+- There is unused an unused segment in song 01. (039E88-039E91)
+- Stage BGM Music List: 0047F0
+- The game uses an insane nesting level for SMPS GoSub commands.
+  The title song already uses 4 nested GoSubs + loops.
+- The TrackRAM size was increased from 30h to 40h bytes. (probably to lessen the risk of GoSub/Loop commands breaking each other)
+  Since loop memory starts at TrackRAM offset 22h, this makes 1Eh bytes of loop memory.

@@ -1,4 +1,4 @@
-; --- preSMPS 68k/Type 1 Driver Definition ---
+; --- preSMPS 68k/Type 1a Driver Definition ---
 
 [Settings]
 DefTimingMode = 00

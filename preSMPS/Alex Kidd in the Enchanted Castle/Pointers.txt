@@ -22,3 +22,5 @@ The sound-related data (010000-01521F) matches exactly in the U and K versions. 
 Notes:
 - Sound Test Song List: 0063C0
 - The file names include sound test titles in [square brackets].
+- The Title Screen song gets a few additional kicks if command F1 is changed to change to drum mode instantly (DM_ON) instead of the next note (DM_ON_LATE).
+  This breaks a few other songs though.

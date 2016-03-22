@@ -1,5 +1,5 @@
-; --- pre-SMPS 68k/Type 1 Command Definition ---
-; based on a disassembly of Phantasy Star 2
+; --- Phantasy Star II SMPS Command Definition ---
+; pre-SMPS 68k/Type 1a
 
 ;Flag	Type    	SubType 	Len	JmpOfs
 [Main]

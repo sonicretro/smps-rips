@@ -1,0 +1,31 @@
+; --- SMPS 2-op FM Drum Definition ---
+
+[Main]
+DrumMode = Dual
+; 2-operator FM Drum Mask
+Mask1 = 29	; bits 0, 3, 5
+Mask2 = 14	; bits 2, 4
+DrumIDBase = 00
+
+; All of the drums are actually 4op drums.
+[Drums]
+;Note	Type	DrumID	VolOps	Chn
+; Note & 08 [BIT 3] - Operator 1/2, primary drum set
+88	2opFM	00		00	; Drum1_Op12
+89	2opFM	00		00	; Drum1_Op12
+A8	2opFM	02		00	; Drum2_Op12
+A9	2opFM	02		00	; Drum2_Op12
+; Note & 01 [BIT 0] - Operator 1/2, secondary drum set
+81	2opFM	0504		02	; Drum3_Op12 on Chn 00, Drum3_Op34 on Chn 01
+A1	2opFM	0504		02	; Drum3_Op12 on Chn 00, Drum3_Op34 on Chn 01
+; Note & 04 [BIT 2] - Operator 3/4
+84	2opFM	01		01	; Drum1_Op34
+94	2opFM	03		01	; Drum2_Op34
+
+; Drum Order:
+; 00	Drum1_Op12
+; 01	Drum1_Op34
+; 02	Drum2_Op12
+; 03	Drum2_Op34
+; 04	Drum3_Op12
+; 05	Drum3_Op34

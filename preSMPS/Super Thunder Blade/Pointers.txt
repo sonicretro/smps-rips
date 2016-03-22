@@ -1,0 +1,35 @@
+Driver Bank:		078000 (JU)
+General Pointer List:	N/A (everything is hardcoded into the driver)
+Tempo List:		1235 (JU) (Z80 RAM)
+Music Pointer List:	1244 (JU) (Z80 RAM)
+SFX Pointer List:	1262 (JU) (Z80 RAM)
+Instr. Pointer List:	12D1 (JU) (Z80 RAM)
+Mod. Pointer List:	1298 (JU) (Z80 RAM)
+PSG Pointer List:	12AC (JU) (Z80 RAM)
+Z80 Snd Driver Offset:	07DCB8 (JU)
+Sound Check Code:	1088 (Z80 RAM)
+Coord. Flag Handler:	0939 (Z80 RAM)
+Sound RAM:		1E00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+All sound-related data (07C000-07FFFF) matches exactly in the all versions.
+
+
+Notes:
+- This is one of the few preSMPS drivers that have PSG support.
+  It is also the only known preSMPS driver to use only 20h bytes per track. All others have 30h-byte tracks.
+- Sound Test Song List: 000C22
+- All songs have headers for PSG tracks, even though none of the songs uses them.
+- There is an unreferenced and empty song at 07C32E.
+- The "Special FM 3 Mode" works differently to other SMPS drivers.
+  If it is enabled, the notes have the following format:
+    Special FM3 normal mode: n1 n2 dd
+	n1 and n2 are converted to an FM frequency using the usual FM frequency LUT.
+	The frequency of n1 is sent to register AD/A9 and AE/AA, the one of n2 is sent to AC/A8 and A6/A2.
+	dd is the delay length.
+    Special FM3 raw frequency mode: AD A9 AA AE A8 AC A2 A6 dd
+        Ax are the raw frequency bytes sent to register Ax
+        dd is the delay/length.
+        It should be noted that the order of the first two bytes is reversed, compared to the rest.

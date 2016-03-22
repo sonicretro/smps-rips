@@ -1,0 +1,50 @@
+Sound Check Code:	06DEAE (J) / 06CEAE (WU)
+Driver Base Address:	06C000 (J) / 06B000 (WU)
+Tempo List:		06C038 (J) / 06B038 (WU)
+Music Pointer List:	06C0C8 (J) / 06B0C8 (WU) (2-byte LE pointers to music headers)
+SFX Pointer List:	06C0F2 (J) / 06B0F2 (WU)
+Instr. Pointer List:	06C72A (J) / 06B72A (WU)
+Mod. Pointer List:	06C04E (J) / 06B04E (WU)
+PSG Pointer List:	-- invalid -- (JWU) (points to 06C0C8 J / 06B0C8 WU)
+Z80 Snd Driver Offset:	0702CE (J) / 06F2CE (WU)
+DAC Sound Length List:	0081AC (J) / 007818 (W) / 007570 (U) (2-byte values)
+DAC Sound Offset List:	0081D0 (J) / 00783C (W) / 007594 (U) (4-byte pointers)
+DAC Crowd Noise #1:	07C674 (J) / 07CA48 (WU) (size: 1383)
+DAC Crowd Noise #2:	07D9F8 (J) / 07DDCC (WU) (size: 1003)
+Coord. Flag Handler:	06DB26 (J) / 06CB26 (WU)
+Sound RAM:		DD00 (68k RAM)
+
+
+06C000 to 06C7B1 of the J version matches 06B000 to 06B7B1 of the W/U version. (envelope data, sequence headers)
+06D4EA to 0703AB of the J version matches 06E4EA to 06F3AB of the W/U version, except for pointers. (sound driver code, sequence data)
+06B000 to 07FFFF matches in the W and U versions.
+
+
+DAC List Format:
+Unlike Mahjong Cop Ryuu, the DAC list is not interleaved.
+Instead, there are 2 separate lists, one containing all length values and another one containing all offsets.
+
+The 68k copies the data to Z80 RAM, offset 0300.
+The first 2 bytes copied (offset 0300/0301) are the DAC's size (for the Z80 driver).
+The third byte (offset 0302) is the playback speed.
+
+Data is DPCM compressed with the usual preSMPS 68k delta-array:
+01 03 06 0C 18 28 50 90 FF FD FA F4 E8 D8 B0 70 (Z80 Driver offset 00CD)
+
+
+Notes:
+- This is a Z80->68k port, similar to Phantasy Star II, and still has Little Endian pointers everywhere.
+- FM instruments are stored in an interleaved format. The order is: register, data, register, data, ...
+  Register byte 83h terminates the instrument.
+- The drum channel was dummied out by inserting an RTS instruction at the beginning, but else it's fully intact.
+- Some instruments differ between the J and W/U release.
+- The following songs share some data: 04/0D, 05/0E, 06/0F, 07/10
+  also: 12/13/14/15 (empty songs)
+- LoadDACSound routine: 008164 (J) / 0077D0 (W) / 007528 (U) (register D0 contains the DAC sound ID to load)
+  For the W/U release, all of these voices were replaced.
+- There are 2 additional LoadDAC routines with hardcoded offsets that load/play crowd noise.
+	Sound	J	W	U
+	Noise1	0080A0	00770C	007464
+	Noise2	00811E	00778A	0074E2
+- The DAC driver matches the one used in Last Battle/Hokuto no Ken and Mahjong Cop Ryuu, except for a few
+  differences during initialization.
