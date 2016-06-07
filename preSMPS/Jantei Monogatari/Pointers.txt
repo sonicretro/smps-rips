@@ -1,0 +1,38 @@
+Sound Check Code:	0F68E2 (J)
+Driver Base Address:	0F7500 (J)
+Tempo List:		0F71F8 (J)
+Music Pointer List:	0F7490 (J) (2-byte pointers)
+SFX Pointer List:	0F74AC (J) (2-byte pointers)
+Instr. Register List:	0F6C62 (J)
+Instr. Pointer List:	0FA33A (J) (2-byte pointers)
+Mod. Pointer List:	0F7208 (J) (4-byte pointers)
+PSG Pointer List:	0FA92E (J) (2-byte pointers, empty)
+Z80 Snd Driver Offset:	008654 (J)
+Z80 Add. Data Pointers:	0FA92E (J)
+DAC Pointer Table:	--see pointer at 0200-- (Z80 RAM) (J)
+DAC Pitch Ptr. Table:	0202 (Z80 RAM) (J)
+Sound RAM:		F400 (68k RAM)
+
+
+Notes:
+- Rent A Hero uses a slightly later version of preSMPS 68k/Type 2, so see there for more information.
+- PlaySound routine: 00B622
+- Adventure Song List: 001CA0 ($5A IDs, accessed by code at 001BC4)
+- Song 08 is unused and there is no call that plays it.
+  It's used in the original PC Engine version though.
+- Differences to Rent A Hero sound driver:
+    - cfE8_MelDACMode:
+	JM: after the BSET, there is a BRA to an RTS
+	RAH: there is an RTS instead of the BRA
+    - cfFD_SetPanC/cfFE_SetPanR/cfFF_SetPanL:
+	JM: no shared code (common instructions are duplicated)
+	RAH: has BRA instructions (jump ito cfFF) for shared code, additional check for PSG channels
+    - FadeOutMusic:
+	JM: sets the fading values and disables DAC/FM6 channel
+	RAH: sets the fading values and disables DAC channel, keeps FM6 enabled
+    - DoFading:
+	JM: fades all 9 channels
+	RAH: fades only active channels
+    - SetMaxRelRate:
+	JM: present
+	RAH: missing

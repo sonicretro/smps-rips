@@ -1,0 +1,53 @@
+General Pointer List:	8000 (J) (Z80 Bank Offset)
+Music Pointer List:	8259 (J) (Z80 Bank Offset)
+SFX Pointer List:	1200 (J) (RAM)
+Mod. Pointer List:	800E (J) (Z80 Bank Offset)
+PSG Pointer List:	8154 (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	01B6F8 (J)
+Additional Z80 Data:	01C872 (J) (goes to Z80 RAM 1200)
+DAC Voice Pointer List:	060000 / 068000 (J)
+Pan Animation List:	02F5 (Z80 RAM)
+FM Drum Pointer List:	0ADE (Z80 RAM)
+FM Drum Ins. Ptr. List:	0AF2 (Z80 RAM)
+PSG Drum Pointer List:	0AC0 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 018000
+
+
+DAC List Format: (all little endian values)
+2 bytes - Start Offset (Z80 Bank Offset)
+2 bytes - Data Length
+1 byte  - Pitch
+1 byte  - Loop Mode (00-7F - no loop, 80-FF - loop)
+
+This format is also used by CyberBall.
+
+Data is DPCM compressed with one of these two delta-arrays:
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 1138, usual SMPS delta-array)
+01 03 06 0C 18 28 50 90 FF FD FA F4 E8 D8 B0 70 (Z80 Driver offset 1148, pre-SMPS delta-array)
+
+All sounds but the hardcoded DAC sound 91 use the usual SMPS delta-array.
+
+
+Notes:
+- Sound IDs:
+	00-7F	Stop All Sound
+	81-8F	Music (81-8D are valid)
+	90-9E	SFX
+	9F-DF	Special SFX (first index is D0, but all are invalid anyway)
+	E0-F8	Special Commands
+		E0 - Fade Out Music
+		E1 - Stop All Sound
+		E2-EA - Play DAC 81-89 (DAC Bank 1)
+		EB-F1 - Play DAC 81-87 (DAC Bank 2)
+		F2 - Play DAC 91 (hardcoded, loops)
+	F9-FF	Stop All Sound
+- DAC Sound 91 is hardcoded into the driver. (see routine at 1066)
+	Loader Code:	1082
+	Start offset:	A375 (Z80 ROM Bank, points to 01A375 in ROM)
+	Data Length:	1383
+	Playback Rate:	  0C
+	Loop Mode:	  80
+	DPCM Table:	1148 (pre-SMPS delta-array)

@@ -1,0 +1,22 @@
+General Pointer List:	8000 (J) (Z80 Bank Offset)
+Music Pointer List:	823F (J) (Z80 Bank Offset)
+SFX Pointer List:	1000 (J) (Z80 RAM)
+Mod. Pointer List:	800E (J) (Z80 Bank Offset)
+PSG Pointer List:	815D (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	06739E (J)
+Additional Z80 Data:	068368 (J) (goes to Z80 RAM 1000)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A60 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A74 (Z80 RAM)
+PSG Drum Pointer List:	0A46 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 0F8000
+
+
+Notes:
+- The SMPS driver almost matches Dangerous Seed.
+- 68k PlaySound routine: 0688F0
+- Town Jingle List: 0DB876
+- Song 06 uses invalid FM instruments (11h and 13h)

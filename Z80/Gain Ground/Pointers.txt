@@ -1,0 +1,22 @@
+General Pointer List:	8000 (W) (Z80 Bank Offset)
+Music Pointer List:	8236 (W) (Z80 Bank Offset)
+SFX Pointer List:	1100 (W) (Z80 RAM)
+Mod. Pointer List:	800E (W) (Z80 Bank Offset)
+PSG Pointer List:	8154 (W) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	01F524 (W)
+Additional Z80 Data:	0205D6 (W) (goes to Z80 RAM 1100)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A52 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A70 (Z80 RAM)
+PSG Drum Pointer List:	0A38 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 018000
+
+
+The sound-related part of the ROM (018000-020C0B) matches exactly between both (normal and [a1]) versions of the ROM.
+
+
+Notes:
+- In SMPSPlay, the detune of channel FM 4 in song 01 is off for some reason.

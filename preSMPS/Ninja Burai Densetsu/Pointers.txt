@@ -1,0 +1,38 @@
+Sound Check Code:	0D20EC (J final) / 0CE6DC (Beta 91-05-28)
+Driver Base Address:	0D2D80 (J final) / 0CF800 (Beta 91-05-28)
+Tempo List:		0D2A06 (J final) / 0CEFF6 (Beta 91-05-28)
+Music Pointer List:	0D2CA2 (J final) / 0CF292 (Beta 91-05-28) (2-byte pointers)
+SFX Pointer List:	0D2CD8 (J final) / 0CF2C8 (Beta 91-05-28) (2-byte pointers)
+Instr. Register List:	0D2470 (J final) / 0CEA60 (Beta 91-05-28)
+Instr. Pointer List:	0D7E1C (J final) / 0D40AA (Beta 91-05-28) (2-byte pointers)
+Mod. Pointer List:	0D2A26 (J final) / 0CF016 (Beta 91-05-28) (4-byte pointers)
+PSG Pointer List:	0D9A1C (J final) / 0D5CAA (Beta 91-05-28) (2-byte pointers)
+Z80 Snd Driver Offset:	0003E2 (J final) / 000422 (Beta 91-05-28)
+Z80 Add. Data Pointers:	0D9AFE (J final) / 0D5D8C (Beta 91-05-28)
+DAC Pointer Table:	--see pointer at 0200-- (Z80 RAM) (J)
+DAC Pitch Ptr. Table:	0202 (Z80 RAM) (J)
+Sound RAM:		F400 (68k RAM)
+
+
+Notes:
+- Rent A Hero uses a similar version of preSMPS 68k/Type 2, so see there for more information.
+- There is an unreferenced song at 0D3002. It's located between song 01 and 03.
+  The music pointer list has song 02 point to song 0D instead. The game itself never plays it though.
+  The song can be restored by writing value 0282 to offset 0D2CA4.
+  The number of channels is incorrectly set to 9 while there are headers for only 6 tracks.
+  In order to fix that, you need to change byte 0D3002 from 09 to 06.
+- PlaySound routine: 0060A0
+  This routine puts the sound ID stored in register D0 into the Sound Queue.
+  The Sound Queue is an 8-byte buffer stored at C322-C329 (68k RAM). The number of used slots is stored at C320/21.
+- Sound Test - current sound ID: C342/43 (68k RAM)
+  Sound Test - song title pointers: 014BD8 (points to 2-byte Tile IDs, terminated with value FFFF)
+  There seems to be an unused song title at 01513A.
+- Title Screen - button C counter: C340/41 (68k RAM)
+  Title Screen - Sound Test Check: 007FE2
+- Game/Screen Mode: C400/01 (68k RAM)
+- The 1991-05-28 prototype has only 17h songs, but song 02 is intact.
+  Compared to the final version, there are minor differences in song 02 and 0E. Other songs are identical. (aside from moved pointers)
+- FM instruments and envelopes (Modulation/PSG) match in the prototype and the final version.
+  The prototype has DAC bank 03 and 25, which are missing in the final.
+  The DAC table of DAC bank 24 (proto) is broken, but the DAC sound is identical to the final version.
+  The DAC sound can be played at two speed values: 1E and 24 (final), 1E and 26 (proto).

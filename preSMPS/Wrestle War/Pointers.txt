@@ -1,0 +1,33 @@
+Sound Check Code:	076B24 (JE)
+Driver Base Address:	077790 (JE)
+Tempo List:		0774D4 (JE)
+Music Pointer List:	07771C (JE) (2-byte pointers)
+SFX Pointer List:	077760 (JE) (2-byte pointers)
+Instr. Register List:	076F3E (JE)
+Instr. Pointer List:	07A178 (JE) (2-byte pointers)
+Mod. Pointer List:	0774F4 (JE) (4-byte pointers)
+PSG Pointer List:	07AB92 (JE) (2-byte pointers) [Note: Starts with a dummy pointer for PSG envelope 00.]
+Z80 Snd Driver Offset:	0003FE (JE)
+Z80 Add. Data Pointers:	07AC74 (JE)
+DAC Pointer Table:	--see pointer at 0200-- (Z80 RAM) (JE)
+DAC Pitch Ptr. Table:	0202 (Z80 RAM) (JE)
+Sound RAM:		F400 (68k RAM)
+
+
+Notes:
+- Rent A Hero uses a similar version of preSMPS 68k/Type 2, so see there for more information.
+- There is a high amount of unused data - every song has PSG data that is dummied out by disabling the track.
+  Even with all PSG tracks enabled, there is still unused data in song 02 at 078090-0780CC.
+- A sound is played by writing ($8000 | ID) to C410/11. (68k RAM).
+  During VInt, routine 000B78 will be move it to an internal sound queue (C322-C329) first (subroutine 000BA0)
+  and later to the sound driver's "Sound ID" slot (F404).
+  
+  Sometimes the game also just calls the EnqueueSoundID routine at 008A2E directly.
+- Sound Test ID list: 002988 (Note: ID 87 is missing)
+- Sound Test Handler: 0028A0
+- Song 07 seems unused. (There is no instruction MOVE.W #$8087, $C410.w.)
+  It is also missing from the Sound Test ID list, so the only way to listen to it is hacking.
+- There are 2 special coord. flags: E0 (drum mode enable) and E1 (drum mode disable)
+  When a channel is in "drum mode" (Playback Bit 4 set), the sound driver loads a sequence for each note played.
+  The note value is used as the sound ID to load.
+  This is used to play drums (Sound ID 89-A2) on channel FM 5/FM 6.

@@ -22,4 +22,4 @@ Data is DPCM compressed with the usual delta-array.
 
 
 Notes:
--
+- PlaySound routine: 00842C

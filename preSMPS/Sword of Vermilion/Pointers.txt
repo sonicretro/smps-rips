@@ -24,7 +24,7 @@ Data is DPCM compressed with the delta-array:
 
 
 Notes:
-- The SMPS sound driver is the same as Rent A Hero.
+- The SMPS sound driver is almost identical to Jantei Monogatari and similar to Rent A Hero.
 - Sound codes:
 	00-7F/9D-9F/C2-DE/E3-FF - stop all sound
 	80 - don't do anything
@@ -36,3 +36,5 @@ Notes:
 		E1 - stop all sound
 		E2 - invalid (jumps to PlaySFX code and crashes the game)
 - Songs 02 and 19 use the Melodic DAC mode.
+- Differences between Sword of Vermilion and Jantei Monogatari:
+	RestoreTrack: minor differences, SoW lacks the DAC channel check

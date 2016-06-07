@@ -1,0 +1,46 @@
+; --- Sonic CD SMPS Command Definition ---
+; modified SMPS Z80 Type 1/FM
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PANAFMS 	PAFMS_PAN	02
+E1	DETUNE  	        	02
+E2	SET_COMM	        	02	; Comminucation Byte is located at 1C16
+E3	TRK_END 	TEND_MUTE	01
+E4	TRK_END 	TEND_STD	01
+E5	LOOP_EXIT	        	04	02
+E6	VOLUME  	VOL_CN_FM	02
+E7	HOLD    	        	01
+E8	NOTE_STOP	NSTOP_MULT	02
+E9	SET_LFO 	LFO_NORMAL	03
+EA	TRK_END 	TEND_STD	01
+EB	COND_JUMP	CJMP_Z  	03	01	; jump if 1C3E == 0
+EC	IGNORE  	        	02	; set 1C3D = 80h (parameter is ignored)
+ED	FM_COMMAND	FMW_CHN 	03
+EE	FM_COMMAND	FMW_FM1 	03
+EF	INSTRUMENT	INS_C_FM	82
+F0	MOD_SETUP	        	05
+F1	MOD_SET 	MODS_OFF	01
+F2	TRK_END 	TEND_STD	01
+F3	IGNORE  	        	01	; toggles 1C3D (Ring Speaker) between 00h and 80h, enqueues Sound ID A8 if 1C3D was 80h
+F4	TRK_END 	TEND_STD	01
+F5	TRK_END 	TEND_STD	01
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	TICK_MULT	TMULT_CUR	02
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	PITCH_SLIDE	        	02
+FD	RAW_FREQ	        	02
+FE	SPC_FM3 	        	05
+FF	META_CF 	        	01
+
+[Meta]
+00	TRK_END 	TEND_STD	01
+01	TEMPO   	TEMPO_SET	02
+02	SND_CMD 	        	02
+03	TRK_END 	TEND_STD	01
+04	COPY_MEM	        	04
+05	TRK_END 	TEND_STD	01
+06	SSG_EG  	SEG_NORMAL	05

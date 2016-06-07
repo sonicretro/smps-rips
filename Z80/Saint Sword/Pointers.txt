@@ -1,0 +1,20 @@
+General Pointer List:	8000 (J)
+Music Pointer List:	81A7 (J)
+SFX Pointer List:	AAA7 (J)
+Mod. Pointer List:	800E (J)
+PSG Pointer List:	80B0 (J)
+Z80 Snd Driver Offset:	000B1C (J)
+Pan Animation List:	02F1 (J) (Z80 RAM)
+FM Drum Pointer List:	0A5A (J) (Z80 RAM)
+PSG Drum Pointer List:	0A40 (J) (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 038000
+
+
+The sound-related part of the ROM and everything after it (038000-07FFFF) matches exactly between the J and U versions of the ROM.
+
+
+Notes:
+- The sound driver matches the one of Magical Hat no Buttobi Turbo! Daibouken, except for 2 bytes that are related to the sound IDs.

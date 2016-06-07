@@ -1,0 +1,25 @@
+General Pointer List:	8000 (W) (Z80 Bank Offset)
+Music Pointer List:	822E (W) (Z80 Bank Offset)
+SFX Pointer List:	1100 (W) (Z80 RAM)
+Mod. Pointer List:	800E (W) (Z80 Bank Offset)
+PSG Pointer List:	8154 (W) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	016000 (W)
+Additional Z80 Data:	01700E (W) (goes to Z80 RAM 1100)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A60 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A76 (Z80 RAM)
+PSG Drum Pointer List:	0A46 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 018000
+
+
+The complete sound-related part of the ROM (016000-017881 and 018000-019671) matches exactly between both versions of the ROM.
+
+
+Notes:
+- Two of the PSG frequencies are broken. (value F81Dh and 1C8h)
+- Unused space is filled with garbage/leftover data. In the "Volfied" ROM there is leftover SMPS data at 019672-019FFF.
+  Leftover songs start at 019739, 0197EC, 01997C, 0199C8, 019B50 and 019D15. The last one is incomplete.
+- The Z80 driver has the code for custom modulation removed.

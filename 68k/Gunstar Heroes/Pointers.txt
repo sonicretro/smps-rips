@@ -8,6 +8,7 @@ DAC Pointer Table:	06681F (JUE) / 067417 (Sample J) (Z80 Driver: 016B, both)
 DAC Pitch Modifier:	06575A (JUE) / 06635A (Sample J)
 DAC Voice Pointer List:	078914 (JUE) / 0781D4 (Sample J)
 Pan Animation List:	065AB4 (JUE) / 0666B4 (Sample J)
+Sound RAM:		F800 (68k RAM)
 
 
 DAC Table

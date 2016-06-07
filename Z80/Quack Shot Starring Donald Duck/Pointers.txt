@@ -12,7 +12,7 @@ Pan Animation List:	N/A (Z80 RAM)
 Sound RAM:		1C00 (Z80 RAM) (actually 1BFE, but nothing got moved)
 
 
-There is only 1 music bank: 070000
+There is only 1 music bank: 070000 (Rev 00) / 130000 (Rev 01)
 
 
 Notes:

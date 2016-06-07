@@ -1,0 +1,37 @@
+; --- pre-SMPS 68k/Type 2 Command Definition ---
+; based on a disassembly of Rent A Hero
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	DRUM_MODE	DM_ON   	01	; enable FM Drum mode (loads drums on separate tracks)
+E1	DRUM_MODE	DM_OFF  	01	; disable FM Drum mode (loads drums on separate tracks)
+E2	IGNORE  	        	01
+E3	IGNORE  	        	01
+E4	TEMPO   	TEMPO_ADD	02
+E5	DRUM_MODE	DM_ON   	01	; enable DAC Drum mode
+E6	DRUM_MODE	DM_OFF  	01	; disable DAC Drum mode
+E7	IGNORE  	        	01
+E8	DAC_MEL_MODE	        	02	; enable/disable melodic DAC mode
+E9	DAC_BANK	        	02	; copy DAC Bank to Z80
+EA	HOLD    	        	01
+EB	HOLD    	        	01
+EC	VOLUME  	VOL_CN_FM	02
+ED	HOLD    	        	01
+EE	IGNORE  	        	01
+EF	INSTRUMENT	INS_C_FMP	02
+F0	VOLUME  	VOL_ABS 	02
+F1	IGNORE  	        	01
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SET2	02	; actually broken (tries to add the PSG Noise bits using AND instead of OR)
+F4	MOD_ENV 	MENV_GEN	02
+F5	IGNORE  	        	01
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	TICK_MULT	TMULT_CUR	02
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	PITCH_SLIDE	        	02
+FD	PANAFMS 	PAFMS_PAN_C	01
+FE	PANAFMS 	PAFMS_PAN_R	01
+FF	PANAFMS 	PAFMS_PAN_L	01

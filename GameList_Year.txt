@@ -10,7 +10,7 @@ Super Thunder Blade				pre-SMPS Z80/Type 1 [sound RAM at 1E00]
 Alex Kidd in the Enchanted Castle		pre-SMPS Z80/Type 1 [sound RAM at 1D00]
 Arnold Palmer Tournament Golf (Super Masters)	early SMPS Z80
 Forgotten Worlds				pre-SMPS Z80/Type 2
-Ghouls 'n Ghosts (Dai Makaimura)		pre-SMPS Z80/Type 2
+Ghouls 'n Ghosts (Dai Makaimura)		pre-SMPS Z80/Type 2 (mod, custom song format, SFX are preSMPS)
 Golden Axe					early SMPS Z80
 Last Battle (Hokuto no Ken)			pre-SMPS 68k/Type 1b
 Mahjong Cop Ryuu				pre-SMPS 68k/Type 1b
@@ -68,18 +68,18 @@ F1 Circus MD					SMPS Z80/Type 1 DAC
 Fatal Labyrinth					SMPS Z80/Type 1 FM (mod)
 Fighting Masters				SMPS Z80/Type 1 FM
 Flicky						SMPS Z80/Type 1 FM
-Gain Ground					SMPS Z80 FM
+Gain Ground					SMPS Z80/Type 1 FM
 Golden Axe II					SMPS 68k/Type 1b
 Growl (Runark)					SMPS Z80/Type 1 FM (Bonanza Brothers descendant)
 Jantei Monogatari				pre-SMPS 68k/Type 2
 Marvel Land (Talmit's Adventure)		SMPS Z80/Type 1 FM
 Mercs (Senjou no Ookami II)			SMPS Z80/Type 1 early DAC
-Nikkan Sports Pro Yakyuu VAN			SMPS Z80 FM
+Nikkan Sports Pro Yakyuu VAN			SMPS Z80/Type 1 FM
 Ninja Burai Densetsu				pre-SMPS 68k/Type 2
 OutRun						SMPS Z80/Type 1 DAC
 QuackShot					SMPS Z80/Type 1 FM (mod)
 Rent-a-Hero					pre-SMPS 68k/Type 2
-Saint Sword					SMPS Z80 FM
+Saint Sword					SMPS Z80/Type 1 FM (same as Magical Hat no Buttobi Turbo! Daibouken)
 Sangokushi Retsuden				SMPS Z80 FM
 Sega CD BIOS					SMPS Z80/Type 1 FM [missing on GDRI]
 Sega Game Toshokan				SMPS Z80/Type 1 FM [missing on GDRI]
@@ -88,9 +88,9 @@ Sonic Eraser					SMPS Z80/Type 1 FM
 Sonic the Hedgehog				SMPS 68k/Type 1b (mod)
 Streets of Rage (Bare Knuckle)			SMPS/Mucom 68k
 Super League '91				SMPS Z80/Type 1 DAC
-Taiga Drama Taiheiki				SMPS Z80 FM
+Taiga Drama Taiheiki				SMPS Z80/Type 1 FM
 Toki: Going Ape Spit (JuJu Densetsu)		SMPS 68k/Type 1b
-Ultimate Qix (Volfied)				SMPS Z80 FM
+Ultimate Qix (Volfied)				SMPS Z80/Type 1 FM
 Wrestle War					pre-SMPS 68k/Type 2
 
 1992
