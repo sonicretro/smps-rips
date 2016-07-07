@@ -1,0 +1,22 @@
+General Pointer List:	8000 (J) (Z80 Bank Offset)
+Music Pointer List:	823F (J) (Z80 Bank Offset)
+SFX Pointer List:	1000 (J) (Z80 RAM)
+Mod. Pointer List:	800E (J) (Z80 Bank Offset)
+PSG Pointer List:	815D (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0069A4 (J) / 0069D2 (Ch)
+Additional Z80 Data:	00796E (J) / 00799C (Ch) (goes to Z80 RAM 1000)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A60 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A74 (Z80 RAM)
+PSG Drum Pointer List:	0A46 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 0F8000
+
+
+The sound-related part of the ROM (0F8000-0FFFFF) matches exactly between the J and Ch versions of the ROM.
+
+
+Notes:
+- The sound driver it the same as used in Dangerous Seed, except for different FM drums.

@@ -1,0 +1,20 @@
+General Pointer List:	8000 (K) (Z80 Bank Offset)
+Music Pointer List:	824B (K) (Z80 Bank Offset)
+SFX Pointer List:	1100 (K) (Z80 RAM)
+Mod. Pointer List:	800E (K) (Z80 Bank Offset)
+PSG Pointer List:	8154 (K) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	07AAC2 (K)
+Additional Z80 Data:	07BA80 (K) (goes to Z80 RAM 1100)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A4D (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A61 (Z80 RAM)
+PSG Drum Pointer List:	0A33 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+
+Notes:
+- Stage Playlist: 0029CC
+- The Stage Clear song is never heard ingame, because it is only played for a few frames because the next stage is started.

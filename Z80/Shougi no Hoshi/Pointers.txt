@@ -1,0 +1,20 @@
+General Pointer List:	D8A0 (J) (Z80 Bank Offset)
+Music Pointer List:	DAD6 (J) (Z80 Bank Offset)
+SFX Pointer List:	1000 (J) (Z80 RAM)
+Mod. Pointer List:	D8AE (J) (Z80 Bank Offset)
+PSG Pointer List:	D9F4 (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	03BF9C (J)
+Additional Z80 Data:	03CF5A (J) (goes to Z80 RAM 1000)
+Pan Animation List:	02F6 (J) (Z80 RAM)
+FM Drum Pointer List:	0A4D (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A61 (Z80 RAM)
+PSG Drum Pointer List:	0A33 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 038000
+
+
+Notes:
+- Although the sound driver has timing set to VInt (mode 00), all non-empty songs but 02, 04, 05, 06 use the EA-command to adjust the Timer A frequency.
+  Most of them set them to a frequency close to 60 Hz. Only the Opening Theme (song 03) sets it to 72 Hz.

@@ -1,0 +1,32 @@
+General Pointer List:	8000 (J) (Z80 Bank Offset)
+Music Pointer List:	823E (J) (Z80 Bank Offset)
+SFX Pointer List:	1100 (J) (Z80 RAM)
+Mod. Pointer List:	8010 (J) (Z80 Bank Offset)
+PSG Pointer List:	8156 (J) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	07DE0C (J)
+Additional Z80 Data:	07EE68 (J) (goes to Z80 RAM 1100)
+DAC Voice Pointer List:	C34D (J) (Z80 Bank Offset)
+Pan Animation List:	02FD (Z80 RAM)
+FM Drum Pointer List:	0A56 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A6A (Z80 RAM)
+PSG Drum Pointer List:	0A3C (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+
+DAC List Format:
+The format is the same one as used in Mercs.
+
+Data is DPCM compressed with the usual delta-array.
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 104C)
+
+
+Notes:
+- DAC sounds are triggered by writing the DAC Sound ID to Z80 RAM offset 1BFF. (68k routine at 00288C)
+- There is a routine at 001692 that allows the 68k to change the sound driver's tempo settings.
+  (It writes to Z80 RAM 1C04-07 and 1C09.)
+- There are 68k routines to enable fading (006494) and set the fade speed (002A60) without relying on sound commands.
+- 68k PlaySound routine: 0016B6
+- Battle BGM Playlist: 0050F2

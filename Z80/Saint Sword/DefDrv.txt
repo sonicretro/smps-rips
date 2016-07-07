@@ -6,7 +6,7 @@
 ; 1C00 - 03 80 - ROM Bank (038000h)
 ; 1C02 - 00 80 - Global Pointer List Offset (8000h)
 ; 1C07 - 80 - Timing Mode
-; Everything else is set to 00 by the routine that clears the Z80 memory at init.
+; Everything else is set to 00 by the Z80 init program.
 
 ; forced Default Values for Timing
 ; default Mode (hex):

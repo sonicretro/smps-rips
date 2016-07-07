@@ -80,10 +80,10 @@ OutRun						SMPS Z80/Type 1 DAC
 QuackShot					SMPS Z80/Type 1 FM (mod)
 Rent-a-Hero					pre-SMPS 68k/Type 2
 Saint Sword					SMPS Z80/Type 1 FM (same as Magical Hat no Buttobi Turbo! Daibouken)
-Sangokushi Retsuden				SMPS Z80 FM
+Sangokushi Retsuden				SMPS Z80/Type 1 FM
 Sega CD BIOS					SMPS Z80/Type 1 FM [missing on GDRI]
 Sega Game Toshokan				SMPS Z80/Type 1 FM [missing on GDRI]
-Shogi no Hoshi					SMPS Z80 FM
+Shogi no Hoshi					SMPS Z80/Type 1 FM
 Sonic Eraser					SMPS Z80/Type 1 FM
 Sonic the Hedgehog				SMPS 68k/Type 1b (mod)
 Streets of Rage (Bare Knuckle)			SMPS/Mucom 68k
@@ -95,14 +95,14 @@ Wrestle War					pre-SMPS 68k/Type 2
 
 1992
 ----
-16 Zhang Mahjong (Unl)				SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
+16 Zhang Mahjong (Unl)				SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 A Ressha de Ikou MD				SMPS/Mucom 68k
 Ayrton Senna's Super Monaco GP II		SMPS 68k/Type 2a (mod)
 Battletoads					SMPS Z80/Type 1 DAC
-Cadash						SMPS Z80 FM
+Cadash						SMPS Z80/Type 1 FM (similar to Magical Hat no Buttobi Turbo! Daibouken)
 Dyna Brothers					SMPS Z80/Type 1 DAC (banked)
 Go-Net						SMPS Z80/Type 1 DAC
-Honoo no Toukyuuji Dodge Danpei			SMPS Z80 FM
+Honoo no Toukyuuji Dodge Danpei			SMPS Z80/Type 1 FM
 Magical Taruruuto-kun				SMPS 68k/Type 2a
 Mega Games 1 menu				pre-SMPS 68k/Type 1a (uses World Championship Soccer sound driver/music) [missing on GDRI]
 Nekketsu Koukou Dodgeball Bu Soccer Hen MD	SMPS 68k/Type 1b
@@ -110,7 +110,7 @@ Shura no Mon					SMPS Z80/Type 1 DAC
 Sonic the Hedgehog 2				SMPS Z80 (SMPS 68k/Sonic 1 port)
 Syd of Valis (Valis SD)				SMPS Z80/Type 1 FM
 Tecmo World Cup					SMPS Z80/Type 1 DAC
-Uzu Keobukseon					SMPS Z80 FM
+Uzu Keobukseon					SMPS Z80/Type 1 FM
 Wani Wani World					SMPS Z80/Type 1 FM
 World of Illusion				SMPS Z80/Type 2 FM (mod)
 
@@ -181,19 +181,19 @@ Puzzle & Action: Ichidant-R			SMPS Z80/Type 2 FM (same as Puzzle & Action: Tant-
 Ristar						SMPS 68k/Type 2b (mod)
 Shadow Squadron (Stellar Assault)		[32x] SMPS 68k/Type 2a (mod)
 Slam Dunk					SMPS Z80/Type 2 DAC
-Squirrel King (Unl)				SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
+Squirrel King (Unl)				SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 Surging Aura					SMPS Z80/Type 2 FM
 Tempo						[32x] SMPS Z80/Type 2 DAC (Tempo 32x mod)
-Top Shooter (Unl)				SMPS Z80 Type 1 FM (uses Whip Rush sound driver)
+Top Shooter (Unl)				SMPS Z80/Type 1 FM (uses Whip Rush sound driver)
 Zaxxon's Motherbase 2000 (Parasquad)		[32x] SMPS Z80/Type 2 FM (Dyna Brothers 2 descendant)
 
 1996
 ----
-777 Casino (Unl)				SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
+777 Casino (Unl)				SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 Classic Collection menu (Mega Games 4in1)	SMPS Z80/Type 1 FM (uses Columns sound driver/music) [missing on GDRI]
 Sonic 3D Blast (Sonic 3D Flickies' Island)	SMPS Z80/Type 2 DAC (Sonic 3 mod)
 Virtua Fighter 2				SMPS Z80/Type 2 DAC
-Wu Kong Wai Zhuan (Unl) (Legend of Wukong)	SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
+Wu Kong Wai Zhuan (Unl) (Legend of Wukong)	SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 
 1997
 ----
@@ -201,9 +201,9 @@ Mega Games 10 menu				SMPS Z80/Type 1 FM (uses Columns sound driver/music) [miss
 
 199x
 ----
-Lion King II (Unl)				SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
-Super Bubble Bobble MD (Unl)			SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
-Super Mario World (Unl)				SMPS Z80 Type 1 FM (uses Wonder Boy III sound driver)
+Lion King II (Unl)				SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
+Super Bubble Bobble MD (Unl)			SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
+Super Mario World (Unl)				SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 
 
 

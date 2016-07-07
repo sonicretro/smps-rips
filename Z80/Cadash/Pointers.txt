@@ -1,0 +1,18 @@
+General Pointer List:	8000 (U)
+Music Pointer List:	809E (U)
+SFX Pointer List:	B333 (U)
+Mod. Pointer List:	800E (U)
+PSG Pointer List:	805B (U)
+Z80 Snd Driver Offset:	000C82 (U)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A52 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A74 (Z80 RAM)
+PSG Drum Pointer List:	0A38 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 038000
+
+
+Notes:
+- The sound driver is similar to Magical Hat no Buttobi Turbo! Daibouken, but there seem to be some minor modifications.
