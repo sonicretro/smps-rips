@@ -24,3 +24,10 @@ Data is DPCM compressed with the usual delta-array.
 Notes:
 - The PSG envelopes are the same ones that are also used in Sonic 1.
 - The DAC driver uses a custom banking system for drum sounds, similar to Magical Taruruuto-Kun.
+- The game writes requested sound IDs into an internal buffer at F700-F704 (PlaySound routine 001D64)
+  and then copies up to 1 ID per frame into the SMPS sound queue. (routine 001DB0)
+- Sound Test ID list: 0080F0
+	BGM	0080EE
+	SE	008134
+	VOICE	0081D6
+  Format: 2 bytes entry count, followed of a list of Sound IDs (2 bytes per ID)

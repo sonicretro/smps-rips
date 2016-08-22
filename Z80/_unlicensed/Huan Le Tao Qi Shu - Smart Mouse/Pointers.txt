@@ -1,0 +1,26 @@
+General Pointer List:	8000 (Unl) (Z80 Bank Offset)
+Music Pointer List:	816D (Unl) (Z80 Bank Offset)
+SFX Pointer List:	B6D6 (Unl) (Z80 Bank Offset)
+Mod. Pointer List:	800E (Unl) (Z80 Bank Offset)
+PSG Pointer List:	8082 (Unl) (Z80 Bank Offset)
+Global Instrument Lib.:	ACF1 (Unl) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	07BB10 (Unl)
+Pan Animation List:	02F1 (Z80 RAM)
+FM Drum Pointer List:	0A67 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A81 (Z80 RAM)
+PSG Drum Pointer List:	0A40 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+
+Notes:
+- The sound driver originates from Wonder Boy III - Monster Lair.
+- PlaySound routine: 009C5A (reads sound ID from 68k RAM 10DA)
+- Stage BGM Sound ID List: 000996 (2 bytes per entry)
+- current Stage ID: 1040 (68k RAM)
+- Next Level routine: 000A80
+- All of the songs have track headers for 6xDrum/FM (no PSG headers), but except for Stage Intro/Clear, all songs have the Drum/FM count set to 4.
+  Some of the songs have the remaining tracks just point to a "Track End" command, others make use of those additional tracks. The full versions of the latter ones are included as files that begin with an "a".
+  The additional tracks often are broken though and go out-of-sync with the rest of the song.

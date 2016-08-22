@@ -143,6 +143,7 @@ Wimbledon Championship Tennis			SMPS Z80/Type 1 DAC
 Art of Fighting (Ryuuko no Ken)			SMPS Z80/Type 2 FM
 ATP Tour Championship Tennis			SMPS Z80/Type 2 FM (mod)
 Bishoujo Senshi Sailor Moon			SMPS 68k/Type 2b
+Chao Ji Da Fu Weng (Unl)			SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 Cosmic Carnage (Cyber Brawl)			[32x] SMPS 68k/Type 2b (32x mod)
 Crayon Shin-Chan				SMPS 68k/Type 2a
 Dynamite Headdy					SMPS 68k/Type 2b (Treasure mod)
@@ -176,6 +177,7 @@ Light Crusader					SMPS 68k/Type 2b (Treasure mod)
 Mega Games 6 Vol 1/2/3 menu			SMPS Z80/Type 1 FM (uses Columns sound driver/music) [missing on GDRI]
 Metal Head					[32x] SMPS 68k/Type 2b (mod)
 Mighty Morphin' Power Rangers: The Movie	SMPS 68k/Type 2a
+Pretty Girl Mahjongg (Jiu Ji Ma Jiang II) (Unl)	SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 Pro Striker Final Stage				SMPS Z80/Type 2 DAC (Tempo 32x mod)
 Puzzle & Action: Ichidant-R			SMPS Z80/Type 2 FM (same as Puzzle & Action: Tant-R)
 Ristar						SMPS 68k/Type 2b (mod)
@@ -184,6 +186,7 @@ Slam Dunk					SMPS Z80/Type 2 DAC
 Squirrel King (Unl)				SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 Surging Aura					SMPS Z80/Type 2 FM
 Tempo						[32x] SMPS Z80/Type 2 DAC (Tempo 32x mod)
+Thunderbolt II (Unl)				SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 Top Shooter (Unl)				SMPS Z80/Type 1 FM (uses Whip Rush sound driver)
 Zaxxon's Motherbase 2000 (Parasquad)		[32x] SMPS Z80/Type 2 FM (Dyna Brothers 2 descendant)
 
@@ -191,19 +194,26 @@ Zaxxon's Motherbase 2000 (Parasquad)		[32x] SMPS Z80/Type 2 FM (Dyna Brothers 2 
 ----
 777 Casino (Unl)				SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 Classic Collection menu (Mega Games 4in1)	SMPS Z80/Type 1 FM (uses Columns sound driver/music) [missing on GDRI]
+Hei Tao 2: Super Big 2 (Unl)			SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 Sonic 3D Blast (Sonic 3D Flickies' Island)	SMPS Z80/Type 2 DAC (Sonic 3 mod)
 Virtua Fighter 2				SMPS Z80/Type 2 DAC
-Wu Kong Wai Zhuan (Unl) (Legend of Wukong)	SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
+Wu Kong Wai Zhuan (Legend of Wukong) (Unl)	SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 
 1997
 ----
 Mega Games 10 menu				SMPS Z80/Type 1 FM (uses Columns sound driver/music) [missing on GDRI]
 
+1998
+----
+Rockman X3 (Unl)				SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
+
 199x
 ----
+Huan Le Tao Qi Shu: Smart Mouse (Unl)		SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 Lion King II (Unl)				SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 Super Bubble Bobble MD (Unl)			SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
 Super Mario World (Unl)				SMPS Z80/Type 1 FM (uses Wonder Boy III sound driver)
+Yang Warrior Family (Unl)			SMPS Z80/Type 1 FM (uses Whip Rush sound driver)
 
 
 

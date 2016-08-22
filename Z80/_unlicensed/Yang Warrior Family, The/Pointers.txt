@@ -1,0 +1,29 @@
+General Pointer List:	8000 (Unl) (Z80 Bank Offset)
+Music Pointer List:	816D (Unl) (Z80 Bank Offset)
+SFX Pointer List:	B6D6 (Unl) (Z80 Bank Offset)
+Mod. Pointer List:	800E (Unl) (Z80 Bank Offset)
+PSG Pointer List:	8082 (Unl) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	01210A (Unl)
+Pan Animation List:	02F1 (Z80 RAM)
+FM Drum Pointer List:	0A56 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A6C (Z80 RAM)
+PSG Drum Pointer List:	0A3C (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 0F8000
+
+
+Notes:
+- The sound driver is the exactly same version as used by Whip Rush 2222 AD, where it originates from.
+  The same sound driver is also used in Top Shooter.
+- PlaySound routine: 012094 (reads sound ID from 68k RAM 0076)
+- Stage BGM List: 010F9A
+- current stage: 0802 (68k RAM, values are 01-0E)
+- Songs 09-0E use the song data of 01-05/08, but have a faster tempo, lower pitch and a slightly different volume.
+- Player 1 RAM: 71C0-FF (layout also applies to enemies)
+    - position X: +00/01
+    - position Y: +02/03
+    - health: +0C (values are 00-18)
+    - character ID: +13 (IDs are 01-04)
+    - strength of current attack: +26

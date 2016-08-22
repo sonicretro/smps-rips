@@ -1,0 +1,25 @@
+General Pointer List:	8000 (Unl) (Z80 Bank Offset)
+Music Pointer List:	816D (Unl) (Z80 Bank Offset)
+SFX Pointer List:	B6D6 (Unl) (Z80 Bank Offset)
+Mod. Pointer List:	800E (Unl) (Z80 Bank Offset)
+PSG Pointer List:	8082 (Unl) (Z80 Bank Offset)
+Global Instrument Lib.:	A8D3 (Unl) (Z80 Bank Offset)
+DAC Voice Pointer List:	C000 (Unl) (Z80 Bank Offset) (invalid)
+Z80 Snd Driver Offset:	00F034 (Unl)
+Pan Animation List:	02F1 (Z80 RAM)
+FM Drum Pointer List:	0A67 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A81 (Z80 RAM)
+PSG Drum Pointer List:	0A40 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 0F8000
+
+
+Notes:
+- The sound driver originates from Wonder Boy III - Monster Lair.
+- Like many other Gamtec games, the sound driver is able to play DAC sounds and the game doesn't use them.
+  Unlike those games though, the data is DPCM compressed and the DAC table format is different.
+  The driver is reused in Thunderbolt II and there it actually uses DAC sounds.
+- PlaySound routine: 00EFC0 (reads sound ID from 68k RAM 0018)
+- current round BGM: 0396 (68k RAM)

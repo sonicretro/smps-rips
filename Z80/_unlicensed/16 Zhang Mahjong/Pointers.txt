@@ -16,6 +16,10 @@ Sound RAM:		1C00 (Z80 RAM)
 There is only 1 music bank: 078000
 
 
+Both games, 16 Zhang Mahjong and Pretty Girl Mahjongg, use the exactly same sound data.
+The only differences in the DAC and sound banks are due garbage that fills unused bytes.
+
+
 DAC List Format: (all big endian values!)
 2 bytes - Data Length
 2 bytes - ignored (Data Length + this value seems to result in the full size of the data in ROM)
@@ -36,3 +40,17 @@ Notes:
 - There is an unreferenced DAC sound at 05A1F9.
   It sounds like it's part of the DAC sound that follows it. Both sounds are separated by a 00 byte though,
   so dividing both DAC sounds seems intentional.
+- [16 Tiles] PlaySound routine: 036828 (reads sound ID from 68k RAM 0546)
+- [Pretty Girl] PlaySound routine: 03B3EA (reads sound ID from 68k RAM 0586)
+- The songs are used at different places in both games, but the 3 unused songs are not referenced by either game.
+  Looking at the code, these songs are used at the same spot:
+	16T	PG
+	06	02	Main BGM
+	01	01
+	09	04
+	02	04
+	04	06
+	06	09	Title Screen
+	02	02
+	06	06
+	07	07	Game Over

@@ -1,0 +1,39 @@
+General Pointer List:	8000 (Unl) (Z80 Bank Offset)
+Music Pointer List:	816D (Unl) (Z80 Bank Offset)
+SFX Pointer List:	B6D6 (Unl) (Z80 Bank Offset)
+Mod. Pointer List:	800E (Unl) (Z80 Bank Offset)
+PSG Pointer List:	8082 (Unl) (Z80 Bank Offset)
+Global Instrument Lib.:	997F (Unl) (Z80 Bank Offset)
+DAC Voice Pointer List:	C000 (Unl) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	0576D4 (Unl)
+Pan Animation List:	02F1 (Z80 RAM)
+FM Drum Pointer List:	0A67 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A81 (Z80 RAM)
+PSG Drum Pointer List:	0A40 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 078000
+
+
+DAC List Format: (all big endian values!)
+2 bytes - Data Length
+2 bytes - Pitch (high byte ignored, low byte copied to 1BFE)
+2 bytes - ROM Start Offset (high 2 bytes ignored, low 2 bytes treated as Z80 Bank Offset)
+
+Data is DPCM compressed with the pre-SMPS delta-array.
+01 03 06 0C 18 28 50 90 FF FD FA F4 E8 D8 B0 70 (Z80 Driver offset 1101)
+
+
+Notes:
+- The sound driver originates from Wonder Boy III - Monster Lair.
+  It is the exactly same version as used by Chao Ji Da Fu Weng and thus supports DPCM compressed DAC samples.
+  This is one of the few Taiwanese SMPS-based games to actually make use of DAC samples!
+- The copy protection reads words from offset 400000/400006 and copies them to 68k RAM 0082/007E. The values are later checked by reading the RAM copies.
+- PlaySound routine: 057660 (reads sound ID from 68k RAM 0018)
+- Stage BGM List: 001CEE
+- current stage: 0026 (68k RAM)
+- next stage routine: 006ABC
+- Ending routine: 0054D2
+- Like Huan Le Tao Qi Shu: Smart Mouse, all of the songs have track headers for 6xDrum/FM, but the Stage songs have the track count set to 4.
+  The full versions of these songs are included as files that begin with an "a".
