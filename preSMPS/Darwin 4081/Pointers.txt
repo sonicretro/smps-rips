@@ -1,0 +1,41 @@
+Driver Bank:		N/A (everything is stored in Z80 RAM)
+General Pointer List:	N/A (everything is hardcoded)
+Tempo List:		0F30 (J) (Z80 RAM)
+Music Pointer/Len List:	009500 (J) (data goes to Z80 RAM 1600)
+Music Pointer List:	0F5D (J) (Z80 RAM)
+SFX Pointer List:	0BD0 (J) (Z80 RAM)
+Spc. SFX Pointer List:	---- (J) (Z80 RAM)
+Instr. Pointer List:	0F6B (J) (Z80 RAM)
+Mod. Pointer List:	0F37 (J) (Z80 RAM)
+PSG Pointer List:	N/A (PSG support removed)
+Z80 Snd Driver Offset:	009580 (J)
+Additional Z80 Data:	00B85A (J)
+FM Drum Pointer List:	0975 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0989 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Music Pointer/Len List Format:
+4 bytes - ROM offset
+4 bytes - Data Length - 1 (DBRA counter)
+
+
+Note:
+- The Z80 driver is the last entry in the Music Pointer/Len List. (entry 0Fh, ROM offset 009578)
+- In order to play a song, the 68k copies some data from ROM into Z80 RAM, beginning with offset 1600. (routine at 008B6A)
+  It writes song ID 81 to 68k RAM offset 1003, which is then copied to Z80 RAM offset 1C03. (routine at 0013F4)
+  This makes the SMPS driver play the song.
+- PlaySoundID: 008B42 (plays ID stored at 68k RAM offset 1003)
+- PlayStageBGM: 001378 (takes stage ID, stored at 68k RAM offset 043E/3F)
+- PlayBGMMain: 00138A (used by functions at 0013D0, 0013D6, ..., 0013EE)
+- Stage BGM list: 0013B0 (value 00 is the first song)
+  02 03 07 06 04 05 07 03 04 02 08 09 08 0A 09 0A 08 09 0A 08
+- The frequency table is pretty special. Not only were the first two values were replaced with 00A5h and 0040h, but all other values are slightly different in every octave.
+- The sound driver was stripped of PSG support and many other features like fading and half of all sequence commands.
+- The SMPS volume command (F0) is even more buggy than in other versions.
+  Fixing it (VOL_NN_FM in DefCFlag.txt) makes additional instruments appear in 01 Title Theme and 04 Gashalulu.
+- EE Hold Lock and FC Pitch Slide require the parameter to be "-1" for enabling. All other preSMPS driver use "+1".
+- Sound Test music play code: 000CAC
+- The instrument format is a mess. The instruments set via sequence command EF are 19h bytes long and use the following operator array:
+  B0 40 48 44 4C 30 38 34 3C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C (Z80 Driver offset 076D)
+  The FM drums on the other side, use the interleaved format commonly found in preSMPS drivers.

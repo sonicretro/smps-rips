@@ -1,0 +1,41 @@
+Driver Bank:		038000 (JU)
+General Pointer List:	8000 (JU) (Z80 Bank Offset)
+Tempo List:		803A (JU) (Z80 Bank Offset)
+Music Pointer List:	8082 (JU) (Z80 Bank Offset)
+SFX Pointer List:	1682 (JU) (Z80 RAM)
+Spc. SFX Pointer List:	16A2 (JU) (Z80 RAM)
+Instr. Pointer List:	80A2 (JU) (Z80 Bank Offset)
+Mod. Pointer List:	8049 (JU) (Z80 Bank Offset)
+PSG Pointer List:	806F (JU) (Z80 Bank Offset)
+DAC Voice Pointer List:	A341 (JU) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	036000 (JU)
+FM Drum Pointer List:	104B (Z80 RAM)
+FM Drum Ins. Ptr. List:	106B (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+DAC List Format: (all little endian values)
+2 bytes - Start Offset (Z80 Bank Offset)
+2 bytes - Data Length
+
+Data is DPCM compressed with the pre-SMPS delta-array.
+01 03 06 0C 18 28 50 90 FF FD FA F4 E8 D8 B0 70 (Z80 Driver offset 165A)
+
+
+Note:
+- Unlike most preSMPS drivers, the Z80 ROM bank is not hardcoded. The Z80 driver reads it from RAM offset 1FFE/1FFF.
+  The DAC ROM bank is stored at 1FFC/1FFD, but the values aren't used by the driver. (The DAC sounds are in the data bank.)
+- The FM drums exactly match Tetris.
+- All SMPS song headers (but song 0F) contain headers for 9 tracks. The unused PSG tracks 1-3 have their pointers set to values used by FM 1/2/4.
+- There is an unused section for an echo track (of FM 1) in song 08. (ROM offset 039A59, file offset 01ED)
+- The SMPS driver keeps disabling and reenabling the YM2612 timer. Because of that, the tempo is wrong (too slow) in older emulators.
+  The tempo is right when the "Zoom" track is in sync with the stage intro animation.
+- This preSMPS driver has a PCM sound playback routine. It plays DPCM sounds for sound commands AA-AD. Only AA and AB are valid though.
+  The playback speed is controlled by the byte at 1FF7. (If the value is 00, speed is set to 01.)
+  The 68k initializes the byte with 01.
+- The way timing works in this driver is a bit special: The driver uses YM2612 Timer B set to 81 Hz, but it resets the timer's internal state *after* doing sound updates. This causes additional delays that slow the music down.
+  Due to that, the stage intro animation, which was probably supposed to sync up with track 03 Zoom, finishes earlier than the track and cuts it short.
+  In order to fix that and make the music play as intended, edit the Z80 driver at offset 00A0 (ROM offset0360A0) and change 60 to 6A.
+- The preSMPS driver is mostly the same as the one used by Tetris.
+- This is the first preSMPS driver that doesn't switch to Z80 bank C00000 before writing to the PSG chip.
+- The DAC playback routine was reused in Bonanza Bros.

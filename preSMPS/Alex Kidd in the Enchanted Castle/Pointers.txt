@@ -1,14 +1,14 @@
-Driver Bank:		010000 (U/K)
-General Pointer List:	8000 (U/K) (Z80 Bank Offset)
-Tempo List:		11C7 (U/K) (Z80 RAM)
-Music Pointer List:	805B (U/K) (Z80 Bank Offset)
-SFX Pointer List:	11EA (U/K) (Z80 RAM)
-Spc. SFX Pointer List:	11E6 (U/K) (Z80 RAM)
-Instr. Pointer List:	8081 (U/K) (Z80 Bank Offset)
-Mod. Pointer List:	8008 (U/K) (Z80 Bank Offset)
-PSG Pointer List:	8054 (U/K) (Z80 Bank Offset)
-Z80 Snd Driver Offset:	013CFA (U/K)
-DAC Driver Offsets:	015220 (U) (plays 1959 bytes from offset 0180 on)
+Driver Bank:		010000 (J/UE/K)
+General Pointer List:	8000 (J/UE/K) (Z80 Bank Offset)
+Tempo List:		11C7 (J/UE/K) (Z80 RAM)
+Music Pointer List:	805B (J/UE/K) (Z80 Bank Offset)
+SFX Pointer List:	11EA (J/UE/K) (Z80 RAM)
+Spc. SFX Pointer List:	11E6 (J/UE/K) (Z80 RAM)
+Instr. Pointer List:	8081 (J/UE/K) (Z80 Bank Offset)
+Mod. Pointer List:	8008 (J/UE/K) (Z80 Bank Offset)
+PSG Pointer List:	8054 (J/UE/K) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	013C5C (J) / 013CFA (UE/K)
+DAC Driver Offsets:	015146 (J) / 015220 (UE) (plays 1959 bytes from offset 0180 on)
 Sound Check Code:	1028 (Z80 RAM)
 Coord. Flag Handler:	0867 (Z80 RAM)
 Sound RAM:		1D00 (Z80 RAM)
@@ -16,11 +16,17 @@ Sound RAM:		1D00 (Z80 RAM)
 
 There is only 1 music bank: 010000
 
-The sound-related data (010000-01521F) matches exactly in the U and K versions. The "Jenken" DAC voice got removed in the K version.
+There are 4 versions of the ROM. Rev 00/J, Rev 01/U, Rev 02/E and Rev 02/K.
+Rev 01/U and Rev 02/E match exactly from 00D8BA-03FFFF, except for a 1-byte difference at 03A51F.
+In Rev 02/K the "Jenken" DAC voice got removed, but the sound-related data (010000-01521F) matches exactly with the UE versions.
+Rev 01 and later have 3 instruments and 3 SFX more than Rev 00. Otherwise everything is identical, aside from different pointers due to moved data.
 
 
 Notes:
-- Sound Test Song List: 0063C0
+- Sound Test Song List: 006232 (J) / 0063C0 (UE/K)
 - The file names include sound test titles in [square brackets].
-- The Title Screen song gets a few additional kicks if command F1 is changed to change to drum mode instantly (DM_ON) instead of the next note (DM_ON_LATE).
+- The Title Screen song gets a few additional kicks if command F1 is changed so that the drum mode activates instantly (DM_ON) instead of waiting for the next note (DM_ON_LATE).
   This breaks a few other songs though.
+- Song 09 Castle has data for a drum channel (013C6B-013CA4 in UE/K), but it isn't used, because the track is disabled.
+  "09 Castle [with drums]" has the track enabled. It sounds bad though, so it's understandable they disabled it.
+- Interesting fact: The Korean Rev 02 version uses the game titles from Rev 01 instead of Rev 02, including the typo in the English name that was fixed in the Western Rev 02.

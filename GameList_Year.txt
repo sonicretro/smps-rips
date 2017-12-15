@@ -9,8 +9,8 @@ Super Thunder Blade				pre-SMPS Z80/Type 1 [sound RAM at 1E00]
 ----
 Alex Kidd in the Enchanted Castle		pre-SMPS Z80/Type 1 [sound RAM at 1D00]
 Arnold Palmer Tournament Golf (Super Masters)	early SMPS Z80
-Forgotten Worlds				pre-SMPS Z80/Type 2
-Ghouls 'n Ghosts (Dai Makaimura)		pre-SMPS Z80/Type 2 (mod, custom song format, SFX are preSMPS)
+Forgotten Worlds				pre-SMPS Z80/Type 2 (mod, uses Capcom sequence format, Ghouls 'n Ghosts descendant)
+Ghouls 'n Ghosts (Dai Makaimura)		pre-SMPS Z80/Type 2 (mod, uses Capcom sequence format for music and some SFX, SFX are preSMPS)
 Golden Axe					early SMPS Z80
 Last Battle (Hokuto no Ken)			pre-SMPS 68k/Type 1b
 Mahjong Cop Ryuu				pre-SMPS 68k/Type 1b
@@ -33,7 +33,7 @@ Castle of Illusion				SMPS Z80/Type 1 FM (mod)
 Columns						SMPS Z80/Type 1 FM (mod)
 Cyberball					SMPS Z80/Type 1 FM (mod)
 Dangerous Seed					SMPS Z80/Type 1 FM
-Darwin 4081					pre-SMPS Z80/Type 2 (banked)
+Darwin 4081					pre-SMPS Z80/Type 2
 Dick Tracy					SMPS Z80/Type 1 FM (mod)
 DJ Boy						SMPS Z80/Type 1 FM
 Dynamite Duke					SMPS Z80/Type 1 FM
@@ -48,7 +48,7 @@ Rastan Saga II					SMPS Z80/Type 1 FM
 Shadow Dancer: The Secret of Shinobi		SMPS 68k/Type 1a
 Sorcerian					SMPS Z80/Type 1 FM (banked)
 Street Fighter II' Turbo (beta)			pre-SMPS 68k/Type 2
-Strider (Strider Hiryuu)			SMPS 68k/Type 1a (mod, custom sequence format)
+Strider (Strider Hiryuu)			SMPS 68k/Type 1a (mod, uses Capcom sequence format)
 Super Monaco GP					SMPS Z80/Type 1 FM (mod)
 Whip Rush					SMPS Z80/Type 1 FM
 Wonder Boy III: Monster Lair			SMPS Z80/Type 1 FM

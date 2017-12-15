@@ -1,0 +1,45 @@
+Driver Bank:		N/A (everything is stored in Z80 RAM)
+General Pointer List:	N/A (everything is hardcoded)
+Tempo List:		0C11 (U) (Z80 RAM)
+Music Pointer/Len List:	0197D2 (U) (data goes to Z80 RAM 1600)
+Music Pointer List:	---- (song offset is hardcoded to 1600)
+SFX Pointer List:	11CB (U) (Z80 RAM)
+Spc. SFX Pointer List:	---- (U) (Z80 RAM)
+Instr. Pointer List:	0C19 (U) (Z80 RAM)
+Mod. Pointer List:	---- (envelope support removed)
+PSG Pointer List:	N/A (PSG support removed)
+Z80 Snd Driver Offset:	019852 (U)
+FM Drum Pointer List:	09B6 (Z80 RAM)
+FM Drum Ins. Ptr. List:	09CA (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Music Pointer/Len List Format:
+4 bytes - ROM offset
+4 bytes - Data Length - 1 (DBRA counter)
+
+
+Note:
+- This game is closely related to Darwin 4081. Everything sound-related is very similar - both on the Z80 and 68k side.
+- The Z80 driver is the last entry in the Music Pointer/Len List. (entry 0Fh, ROM offset 01984A)
+  The game copies 40h bytes more to the Z80 RAM when loading the driver than the table indicates.
+- In order to play a song, the 68k copies some data from ROM into Z80 RAM, beginning with offset 1600. (routine at 0197A6)
+  It writes song ID 81 to 68k RAM offset A22A, which is then copied to Z80 RAM offset 1C03. (routine at 0021C6)
+  This makes the SMPS driver play the song.
+- PlaySoundID: 01975A (plays ID stored at 68k RAM offset A22A)
+- PlayStageBGM: 002192 (takes stage ID, stored at 68k RAM offset 802C/2D)
+- Stage BGM list: 002246 (contains 3Ch values with 2 bytes each, value 00 is the first song)
+- SFX list: 0051DA
+- PlaySFX: 00522E (takes sound effect ID in register D0)
+- The frequency table features slightly different values for the notes in each octave. Except for the first two values it's identical to Darwin 4081.
+- The sound driver was stripped of PSG support and many other features like fading and half of all sequence commands.
+  Unlike Darwin 4081, support for modulation envelopes was also removed.
+- The SMPS volume command (F0) acts as a temporary volume change. Multiple F0 commands cause the volume to be changed by amount X in a consistent behaviour. (They sort of fixed it!)
+  This makes it different from most other preSMPS Z80 drivers.
+- Like Darwin 4081, commands EE Hold Lock and FC Pitch Slide require the parameter to be "-1" for enabling. All other preSMPS driver use "+1".
+- As in Darwin 4081, the instrument format is a mess. The instruments set via sequence command EF are 19h bytes long and use the following operator array:
+  B0 40 48 44 4C 30 38 34 3C 50 58 54 5C 60 68 64 6C 70 78 74 7C 80 88 84 8C (Z80 Driver offset 07AE)
+  The FM drums on the other side, use the interleaved format commonly found in preSMPS drivers.
+- The FM drums largely match Darwin 4081. Just pointers and the channel volume are diferent.
+- Level BGMs are played using SMPS ID 81 (see code at 0021B0..0021D1), resulting in a song speed of FFh.
+  The Game Over tune (song 02) is played using SMPS ID 88 (see code at 0027B6..0027CB), resulting in a song speed of 03h.

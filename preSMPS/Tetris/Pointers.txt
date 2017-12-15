@@ -1,0 +1,19 @@
+Driver Bank:		038000 (JU)
+General Pointer List:	C000 (JU) (Z80 Bank Offset)
+Tempo List:		C035 (JU) (Z80 Bank Offset)
+Music Pointer List:	C07D (JU) (Z80 Bank Offset)
+SFX Pointer List:	15D5 (JU) (Z80 RAM)
+Spc. SFX Pointer List:	1615 (JU) (Z80 RAM)
+Instr. Pointer List:	C09D (JU) (Z80 Bank Offset)
+Mod. Pointer List:	C044 (JU) (Z80 Bank Offset)
+PSG Pointer List:	C06A (JU) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	03D258 (JU)
+FM Drum Pointer List:	103F (Z80 RAM)
+FM Drum Ins. Ptr. List:	105F (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Note:
+- All SMPS song headers contain headers for 9 tracks. The unused PSG tracks 1-3 have their pointers set to values used by FM 1/2/4.
+- Song 02 has an invalid track pointer.
+- Songs 0A-10 are empty and track headers point to invalid locations.

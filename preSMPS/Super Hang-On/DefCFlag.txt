@@ -1,0 +1,37 @@
+; --- Super Hang-On SMPS Command Definition ---
+; pre-SMPS Z80/Type 2
+
+;Flag	Type    	SubType 	Len	JmpOfs
+[Main]
+E0	PSG_NOISE	PNOIS_SET2	02
+E1	PSG_NOISE	PNOIS_SET2	02
+E2	PSG_NOISE	PNOIS_SET2	02
+E3	PSG_NOISE	PNOIS_SET2	02
+E4	TRK_END 	TEND_STD	01	; FM3 Track End
+E5	IGNORE  	        	01	; SFX related: use a LUT to set volume + play note using ([byte 1C38] / 10)
+E6	VOLUME  	VOL_NN_FM	02
+E7	HOLD    	        	01
+E8	DRUM_MODE	DM_OFF_FM3ONN	05	; FM3 Melody Mode + reads FM 3 notes
+E9	IGNORE  	        	01	; silence PSG 2 and 3
+EA	IGNORE  	        	01	; silence PSG 2 and/or 3 (based on enabled SFX tracks), set 1C39 = 0
+EB	IGNORE  	        	01	; skip next 2 bytes if 1C39 == 0
+EC	IGNORE  	        	01	; go back to 4th byte before command OR execute byte at TrkRAM+20h
+ED	IGNORE  	        	01	; if 1C37 == 81 -> Play SFX AA, if 1C37 == 82 -> Play SFX AB, else do nothing
+EE	HOLD    	HOLD_LOCK	02
+EF	INSTRUMENT	INS_C_FM	02
+F0	VOLUME  	VOL_ACC 	02	; broken VOL_ABS, the code adds the volume to the cached TL levels
+F1	DRUM_MODE	DM_ON   	01	; FM3 Drum Mode
+F2	TRK_END 	TEND_STD	01
+F3	PSG_NOISE	PNOIS_SET2	02
+F4	MOD_ENV 	MENV_GEN	02
+F5	INSTRUMENT	INS_C_PSG	03	; 2nd parameter is ignored
+F6	GOTO    	        	03	01
+F7	LOOP    	        	05	03
+F8	GOSUB   	        	03	01
+F9	RETURN  	        	01
+FA	TICK_MULT	TMULT_CUR	02
+FB	TRANSPOSE	TRNSP_ADD	02
+FC	PITCH_SLIDE	        	02
+FD	RAW_FREQ	        	02
+FE	SPC_FM3 	SFM3_ON_NOTES	05
+FF	PANAFMS 	PAFMS_PAN	02

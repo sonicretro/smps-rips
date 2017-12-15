@@ -1,0 +1,9 @@
+; --- preSMPS FM Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 00
+
+[Drums]
+;Note	Type	DrumID	Pitch
+81..DF	PRE-FM	00

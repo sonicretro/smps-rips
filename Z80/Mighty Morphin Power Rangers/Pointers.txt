@@ -112,3 +112,24 @@ Notes:
     The called subroutines then write another address to RAM A038-3B.
 - The songs/sfx from the U and E version are the same, but the E version got adjusted for PAL speed.
   All other sound-related data matches exactly.
+- Stage BGM List: 00830E (U)
+  Current Stage: A00C (68k RAM)
+- Script Command Table: 0017D6 (U)
+  There are 4Eh script commands (IDs 0000-0134), all command IDs are multiples of 4.
+	Cmd ID + Params		Ofs U	Description
+	0000			0020C6	[end] terminate script
+	0004 aaaa		00190E	do stuff based on aa (can be 00/04/08/0C)
+	0008			001972	wait for next frame
+	0018			0019A2	something VDP (writes VDP reg 81)
+	001C			0019AE	something VDP (writes VDP reg 81)
+	0020 aaaa aaaa		0019BA	[jp] Jump to aa
+	0028 aaaa bbbb bbbb	0019C2	[jp nz] Jump Nonzero (if (aaaa) != 0 then jump to bb, else continue)
+	002C aaaa bbbb bbbb	0019DC	[jp z] Jump Zero (if (aaaa) == 0 then jump to bb, else continue)
+	0034 aaaa		001E10	[ret] write aaaa to RAM A100 and jump to offset at RAM A042
+	0048 aabb cccc cccc	001A98	[call] write aa to RAM A103, bb to RAM A1BD, save offset at RAM A042, jump to
+	004C aabb		001AB2	write aa to RAM A103, bb to RAM A1BD
+	006C aaaa		001CD0	Do Countdown (writes aaaa to RAM A100 or decrements it)
+	007C			001A02	save address (saved to RAM A034)
+	0080			001A0E	jump to saved address (saved at RAM A034)
+	00AC aaaa 		001E1E	Play Song aaaa
+	00B0 aaaa 		001E1E	Play Sound Effect aaaa

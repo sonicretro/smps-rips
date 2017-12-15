@@ -1,0 +1,22 @@
+Driver Bank:		078000 (W)
+General Pointer List:	8000 (W) (Z80 Bank Offset)
+Tempo List:		8041 (W) (Z80 Bank Offset)
+Music Pointer List:	8083 (W) (Z80 Bank Offset)
+SFX Pointer List:	16D9 (W) (Z80 RAM)
+Spc. SFX Pointer List:	1709 (W) (Z80 RAM)
+Instr. Pointer List:	8099 (W) (Z80 Bank Offset)
+Mod. Pointer List:	8050 (W) (Z80 Bank Offset)
+PSG Pointer List:	8070 (W) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	07D7F4 (W)
+FM Drum Pointer List:	12C1 (Z80 RAM)
+FM Drum Ins. Ptr. List:	12D7 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+The areas 0161E6-022463 and 02AAD3-07FFFF (includes sound bank/driver) matche exactly in all revisions.
+
+
+Note:
+- The SMPS driver can update either at VInt (1C39 == 0) or using Timer B (1C39 > 0, the value at 1C39 is then used as Timer B value).
+- All SMPS song headers contain headers for 9 tracks. The unused PSG tracks 1-3 have their pointers set to values used by FM 1/2/4.
+- Song 0B has valid track headers, but all the pointers point to invalid locations.

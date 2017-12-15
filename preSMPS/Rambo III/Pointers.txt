@@ -1,0 +1,29 @@
+Driver Bank:		038000 (W)
+General Pointer List:	BC00 (W) (Z80 Bank Offset)
+Tempo List:		BC60 (W) (Z80 Bank Offset)
+Music Pointer List:	BCBC (W) (Z80 Bank Offset)
+SFX Pointer List:	1784 (W) (Z80 RAM)
+Spc. SFX Pointer List:	17C4 (W) (Z80 RAM)
+Instr. Pointer List:	BCD4 (W) (Z80 Bank Offset)
+Mod. Pointer List:	BC7F (W) (Z80 Bank Offset)
+PSG Pointer List:	BC8E (W) (Z80 Bank Offset)
+Z80 Snd Driver Offset:	03E3CA (W)
+FM Drum Pointer List:	0F93 (Z80 RAM)
+FM Drum Ins. Ptr. List:	0FAF (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+Data is DPCM compressed with the pre-SMPS delta-array.
+01 03 06 0C 18 28 50 90 FF FD FA F4 E8 D8 B0 70 (Z80 Driver offset 14FB)
+
+
+Note:
+- Unlike most preSMPS drivers (but like Zoom!), the Z80 ROM bank is not hardcoded. The Z80 driver reads it from RAM offset 1FFE/1FFF.
+- In song 02 there are 0x13 unused bytes at ROM offset 03D140 (file offset 0x0205).
+- In song 03 there are 0x13 unused bytes at ROM offset 03D3B2 (file offset 0x3B44).
+- In song 08 there are 0x14 unused bytes at ROM offset 03DF64 (file offset 0x01DC), 0x13 unused bytes at ROM offset 03DF7A (file offset 0x01F2), 0x09 unused bytes at ROM offset 03DF8F (file offset 0x207).
+- Song 0C uses most of the data of song 05.
+- Sound ID D2 causes the sound driver to play a short PCM sample.
+  The offsets are hardcoded into the Z80 driver (code offset 1488).
+  Data Start: 150B
+  Data Length: 0278
