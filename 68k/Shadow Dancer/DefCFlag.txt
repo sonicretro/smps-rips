@@ -14,7 +14,7 @@ E7	HOLD    	        	01
 E8	NOTE_STOP	NSTOP_NORMAL	02
 E9	SET_LFO 	LFO_AMSEN	03
 EA	DETUNE  	        	02
-EB	SND_CMD 	        	02
+EB	SND_CMD 	        	02	; semi-broken - adds parameter to Sound Queue slot 0 (which happens to be 0 most of the time)
 EC	VOLUME  	VOL_NN_PSG	02
 ED	DETUNE  	        	02
 EE	DETUNE  	        	02

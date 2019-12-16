@@ -1,26 +1,28 @@
 General Pointer List:	N/A (everything is hardcoded into the driver)
-Music Bank List:	11F5 (W) / 1169 (Wai Beta) / 1207 (Beta 4) / 11E9 (Beta 5) / 11ED (Beta 6) / 11 F2 (Beta 8) (Z80 RAM)
-Music Pointer List:	0F0000 / 0F8000 (W, Wai Beta, Beta 4-8)
-SFX Pointer List:	0FEE91 (W, Beta 4-8) / 0FF000 (Wai Beta)
+Music Bank List:	11F5 (final) / 1169 (Simon Wai) / 11E7 (08-21) / 11FC (09-14) / 1207 (Beta 4) / 11E9 (Beta 5) / 11ED (Beta 6, 7) / 11F2 (Beta 8) (Z80 RAM)
+Music Pointer List:	0F0000 / 0F8000 (all versions)
+SFX Pointer List:	0FEE91 (final, CENSOR, Beta 4-8) / 0FF000 (Simon Wai) / 0FEE00 (08-21) / 0FEF91 (19-14)
 Mod. Pointer List:	N/A
-PSG Pointer List:	1029 (W) / 0FA9 (Wai Beta) / 103B (Beta 4) / 101D (Beta 5) / 1021 (Beta 6) / 1026 (Beta 8) (Z80 RAM)
-Speed Shoes Tempo List:	1214 (W) / 1188 (Wai Beta) / 1226 (Beta 4) / 1208 (Beta 5) / 120C (Beta 6) / 1211 (Beta 8) (Z80 RAM)
-DAC Drum Playlist:	124F (W) / 0F8D (Wai Beta) / 1261 (Beta 4) / 1243 (Beta 5) / 1247 (Beta 6) / 124C (Beta 8) (Z80 RAM)
-DAC Drum Pointer List:	1233 (W) / 0F75 (Wai Beta) / 1245 (Beta 4) / 1227 (Beta 5) / 122B (Beta 6) / 1230 (Beta 8) (Z80 RAM) (points to bank 0E8000)
-DAC Sound Data:		0ED100 (W, Beta 4-8) / 0ED000 (Wai Beta)
-SEGA sound:		0F1E8C (W, Wai Beta, Beta 4-8)
-Z80 Snd Driver Offset:	0EC0E8 (W, Beta 4-8) / 0EC0DC (Simon Wai Beta) (Saxman compressed)
+PSG Pointer List:	1029 (final) / 0FA9 (Simon Wai) / 101B (08-21) / 1030 (09-14) / 103B (CENSOR, Beta 4) / 101D (Beta 5) / 1021 (Beta 6, 7) / 1026 (Beta 8) (Z80 RAM)
+Speed Shoes Tempo List:	1214 (final) / 1188 (Simon Wai) / 1205 (08-21) / 121B (09-14) / 1226 (CENSOR, Beta 4) / 1208 (Beta 5) / 120C (Beta 6, 7) / 1211 (Beta 8) (Z80 RAM)
+DAC Drum Playlist:	124F (final) / 0F8D (Simon Wai) / 0FAF (08-21) / 0FC2 (09-14) / 1261 (CENSOR, Beta 4) / 1243 (Beta 5) / 1247 (Beta 6, 7) / 124C (Beta 8) (Z80 RAM)
+DAC Drum Pointer List:	1233 (final) / 0F75 (Simon Wai) / 0F93 (08-21) / 0FA6 (09-14) / 1245 (CENSOR, Beta 4) / 1227 (Beta 5) / 122B (Beta 6, 7) / 1230 (Beta 8) (Z80 RAM) (points to bank 0E8000)
+DAC Sound Data:		0ED100 (final, CENSOR, Beta 4-8) / 0ED000 (Simon Wai, 08-21, 09-14)
+SEGA sound:		0F1E8C (all versions)
+Z80 Snd Driver Offset:	0EC0E8 (final, CENSOR, Beta 4-8) / 0EC0DC (Simon Wai, 08-21, 09-14) (Saxman compressed)
 Sound RAM:		1B80 (Z80 RAM)
 
 
-The Simon Wai Beta is barely comparable with the later Betas.
+The Simon Wai prototype is barely comparable with the later prototypes.
 
+0ED000-0EFFFF matches between 08-21 and 09-14 prototypes. (DAC sound data, most other sound data differs)
+0EB3F0-0FFFFF matches between CENSOR prototype and Beta 4. (complete sound related data)
 0ED100-0FEEA0 matches between Beta 4 and Beta 5. (sound driver and SFX differences)
 0ED100-0F015F and 0F1E8C-0FEEA2 matches between Beta 5 and Beta 6. (sound driver and SFX differences, missing art)
-0EBCF0-0FFFFF matches between Beta 6 and 7.
+0EBCF0-0FFFFF matches between Beta 6 and 7. (complete sound related data)
 0ED100-0F015F and 0F1E8C-0FFFFF matches between Beta 7 and Beta 8. (sound driver and art differences)
 0ED100-0FFFFF matches between Beta 8 and Final. (sound driver differences)
-The complete sound-related part (0EC000-0FFFFF) matches in Rev 00, 01 and 02.
+All sound-related data (0EC000-0FFFFF) matches in Rev 00, 01 and 02.
 042A9A-0FFFFF match byte-by-byte between Rev 01 and 02.
 
 
@@ -33,7 +35,7 @@ DAC Pointer Format:
 2 bytes - Data Length
 
 Data is DPCM compressed with the usual delta-array.
-00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 01B3 W, 0179 Wai Beta, 01B3 Beta 4/8, 01B5 Beta 5/6)
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 01B3 [final], 0179 [Simon Wai], 0197 [proto 08-21, 09-14], 01B3 [CENSOR, Beta 4 and 8], 01B5 [Beta 5-7])
 
 
 Notes:
@@ -42,21 +44,38 @@ Notes:
 	Bits  5  (20): Compression (00 - Saxman compressed, 20 - uncompressed)
 	Bits  6  (40): disable PAL music speedup (for Drowning jingle)
 	Bits  7  (80): ROM Bank (00 - 0F0000, 80 - 0F8000)
-- Sonic 2 Final and Beta 4-8 use a different Tempo algorithm than the Simon Wai Beta.
-  Sonic 2 Final: Tempo Counter += Tempo Increment, delay unless the addition overflows
-  Sonic 2 Wai Beta: Tempo Counter -= 1, delay and reset when reaching 0 (same as Sonic 1)
-- The GoodGen (W) version is Rev 01.
-- Sound Driver versions:
-	Simon Wai Beta (size: 0DF3 compr, 11AD uncomp)
-	Beta 4 (size: 0F6B compr, 131A uncomp)
-	Beta 5 (size: 0F5D compr, 12FB uncomp)
-	Beta 6/7 (size: 0F61 compr, 12FF uncomp)
-	Beta 8 (size: 0F61 compr, 1305 uncomp)
-	Final (size: 0F64 compr, 1308 uncomp)
-- The Nick Arcade Beta uses an unmodified Sonic 1 sound driver.
-- PSG Envelope 0D differs between the Wai Beta and Beta 4-8/Final.
-- All DAC sounds but 81, 82 and 85 were changed between the Wai Beta and Beta 4-8/Final.
-- The Speed Shoe Tempos differ between Beta 4/5 and Beta 6-8/Final. The Tempos in the Wai Beta are the same ones as used in Sonic 1.
-- Most work on the sound driver was done between the Simon Wai Beta and Beta 4, including the code that handles all the special SFX and the PAL speed fix.
+- All builds from proto 08-21 until the final Sonic 2 build use a different Tempo algorithm than the Simon Wai prototype.
+  Sonic 2 final: Tempo Counter += Tempo Increment, delay unless the addition overflows
+  Sonic 2 Simon Wai: Tempo Counter -= 1, delay and reset when reaching 0 (same as Sonic 1)
+- Simon Wai, proto 08-21 and 09-14 don't support compressed songs or let you disable the PAL music speed fix per-song.
+  For those, bits 5 and 6 are part of the song pointer ID.
+  The extra features were added with CENSOR/Beta 4.
+- The GoodGen (W) version of Sonic 2 is Rev 01.
+- sound driver versions:
+			size	size
+	ROM Date	compr	uncompr	notes
+	1992-?? 	--	--	"Nick Arcade" prototype, uses SMPS 68k (Sonic 1 mod)
+	1992-07?	0DF3	11AD	"Simon Wai" prototype
+	1992-08-21	0E7E	122B	
+	1992-09-14	0E98	1243	
+	1992-09-1?	0F6B	131A	"CENSOR" prototype, same sound driver as Beta 4
+	1992-09-18	0F6B	131A	"Beta 4"
+	1992-09-21	0F5D	12FB	"Beta 5"
+	1992-09-22	0F61	12FF	"Beta 6"
+	1992-09-22	0F61	12FF	"Beta 6-B", same sound driver as Beta 6
+	1992-09-24	0F61	12FF	"Beta 7", same sound driver as Beta 6
+	1992-09-24	0F61	1305	"Beta 8"
+	1992-09-25	0F64	1308	final build
+- The Nick Arcade prototype uses an unmodified Sonic 1 sound driver.
+- PSG Envelope 0D differs between Simon Wai and prototype 08-21/.../final.
+- All DAC sounds but 81, 82 and 85 were changed between Simon Wai and prototype 08-21/.../final.
+- DAC sound 86 was shortened by 100h bytes between prototype 09-14 and CENSOR.
+- The Speed Shoe tempo values differ between prototype 08-21/09-14/CENSOR/Beta 4/5 and Beta 6-8/final.
+  The values in the Simon Wai proto are the same ones as used in Sonic 1.
+- Most work on the sound driver was done between the Simon Wai proto and proto 08-21, including the Spindash SFX code and misc fixes/improvements.
+- between proto 08-21 and 09-14, special handling for the "Gloop" sound effect (sound ID DA) was added
+- between proto 09-14 and CENSOR/Beta 4, the following features were added:
+  - the PAL speed fix for music (including the option to disable it per-song)
+  - support for Saxman compressed music
 - The code for handling the Push SFX from S1 was removed between Beta 4 and 5.
-- The way of handling Game Pause was modified between Beta 7 and 8. All other modifications between Beta 5 and Final were minor.
+- The way of handling Game Pause was modified between Beta 7 and 8. All other modifications between Beta 5 and the final build were minor.

@@ -1,0 +1,23 @@
+General Pointer List:	8000 (Z80 Bank Offset)
+Music Pointer List:	8236 (Z80 Bank Offset)
+SFX Pointer List:	1000 (Z80 Bank Offset)
+Mod. Pointer List:	800E (Z80 Bank Offset)
+PSG Pointer List:	8154 (Z80 Bank Offset)
+Z80 Snd Driver Offset:	019894
+Additional Z80 Data:	01A852 (goes to Z80 RAM 1000)
+Pan Animation List:	02F6 (Z80 RAM)
+FM Drum Pointer List:	0A4D (Z80 RAM)
+FM Drum Ins. Ptr. List:	0A61 (Z80 RAM)
+PSG Drum Pointer List:	0A33 (Z80 RAM)
+Sound RAM:		1C00 (Z80 RAM)
+
+
+There is only 1 music bank: 018000
+
+
+Notes:
+- Song 02 has a broken nested loop (two nested loops using the same index) that breaks SMPSPlay's preparser.
+  I included a fixed version of that.
+- Song 02 is the only real song. 01 and 03 to 0F all contain the same drum loop.
+- The Z80 sound driver exactly matches the one from Shougi no Hoshi and Syd of Valis,
+  except for one sound ID in the PlaySoundID routine and different FM drums.

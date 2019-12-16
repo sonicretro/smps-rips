@@ -8,7 +8,7 @@ Instr. Pointer List:	010051 (JU)
 Mod. Pointer List:	8008 (JU) (Z80 Bank Offset)
 PSG Pointer List:	802E (JU) (Z80 Bank Offset)
 Z80 Snd Driver Offset:	01919E (JU)
-DAC Driver list:	004A3C (Rev 00) / 004A50 (Rev 01/02) (JU)
+DAC Driver List:	004A3C (Rev 00) / 004A50 (Rev 01/02) (JU)
 DAC Driver Offsets:	01376C (1), 0153AC (3), 017234 (4), 01CDD6 (1), 01ED58 (1), 01AE54 (1) (JU)
 Sound RAM:		1D00 (Z80 RAM)
 

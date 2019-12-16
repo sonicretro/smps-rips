@@ -1,6 +1,6 @@
 General Pointer List:	0E7300 (JUE) (Z80 Driver: 1300)
 Global Instrument Data:	0E77D8 (JUE) (Z80 Driver: 17D8)
-Music Bank List:	0E6B48 (JUE) (Z80 Driver: 0B48) (bank value is ORed with 10h, so everything is 080000+)
+Music Bank List:	0E6B48 (JUE) (Z80 Driver: 0B48) (low 4 bits only, resulting ROM bank is 080000..0FFFFF)
 Music Pointer List:	0E761A (JUE) (Z80 Driver: 161A)
 SFX Pointer List:	0E767E (JUE) (Z80 Driver: 167E) (points to bank 0F8000)
 Mod. Pointer List:	0E730E (JUE) (Z80 Driver: 130E)
@@ -14,6 +14,19 @@ Sound RAM:		1C00 (Z80 RAM)
 All 3 versions of the Sonic 3 ROM (J, U, E) match byte-by-byte, except for the country code byte at 0001F0.
 
 
+Sonic 3 Prototype 1993-11-03:
+General Pointer List:	0E1200 (Z80 Driver: 1200)
+Music Bank List:	0E08DD (Z80 Driver: 08DD) (low 4 bits only, resulting ROM bank is 080000..0FFFFF)
+Music Pointer List:	0E16A0 (Z80 Driver: 16A0)
+SFX Pointer List:	0E1702 (Z80 Driver: 1702) (points to bank 0E8000)
+Mod. Pointer List:	0E120E (Z80 Driver: 120E)
+PSG Pointer List:	0E134B (Z80 Driver: 134B)
+DAC Drum Pointer List:	0F0000 [Note: There is only 1 bank of DAC sounds and thus no DAC Bank List.]
+SEGA sound:		0F8000
+Z80 Snd Driver Offset:	0E0000
+Sound RAM:		1C00 (Z80 RAM)
+
+
 DAC List Format:
 The format is the same one as used in Mighty Morphin Power Rangers.
 
@@ -24,3 +37,25 @@ Data is DPCM compressed with the usual delta-array.
 Notes:
 - A few songs use a global instrument table, but not all of them.
 - There is data for an unused and unreferenced DAC sound at 0F1584. This is between DAC sound AF/B0 and B1.
+
+
+Prototype 1993-11-03 notes:
+- It uses the tracks that would later be used in Sonic & Knuckles PC Collection.
+- The sound driver lacks all of the Sonic-specific hacks and features. (fade in, music save states for 1up, music speed up, SFX patches, ...)
+  However, they already started removing features from the stock SMPS Z80 Type 2 driver.
+  Somehow it's very broken and PSG SFX sometimes gets stuck.
+- Some coordination flags are different from the final version:
+  E9 - apparently intended to be "Modulation Enable", but it's completely broken
+  F1/F4 - sets the Modulation Envelope type (just like in every other SMPS driver) - but this version adds 1 to the index (not even S3 final does this)
+          The only song that uses these commands is 27 Game Over. It uses command F4 with value FF in order to disable modulation.
+  FC - dummied out (they removed pitch slide support already)
+  FE - enable Special FM3 mode, this is not yet broken
+- DAC sounds 81..9A are the same as in S3 final, but most of them aren't trimmed and have lots of 00 bytes in the beginning
+  DAC sound 9B is a completely different snare drum
+  The prototype has only 1 DAC bank.
+- The SEGA chant sample is very muffled despite playing at a slightly higher sample rate than in the final.
+- SFX are buggy due to a bank-switch bug in command F2 (stop track):
+  In order to restore the music instrument, it switches to the music bank.
+  But it never switches back to the SFX bank, so the next SFX track that is processed reads invalid data.
+- PSG envelopes are the same in prototype and S3 final, except that S3 final has an additional one at the end.
+  The modulation envelopes, which are sometimes used by PSG channels, are completely different.

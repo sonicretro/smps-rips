@@ -1,0 +1,46 @@
+; --- Sonic 3 (1993-11-03 Prototype) SMPS Driver Definition ---
+; modified SMPS Z80 Type 2
+
+[Settings]
+DefTimingMode = 00
+LockTimingMode = True
+
+[Main]
+PtrFmt = Z80
+InsMode = DEFAULT
+;FMChnOrder = 16 0 1 2 4 5 6
+TempoMode = OVERFLOW
+Tempo1Tick = DOTEMPO
+FMBaseNote = C
+FMBaseOctave = 0
+DetuneOctWrap = False
+NoteOnPrevent = HOLD
+DelayFreq = KEEP
+ModAlgo = Z80
+EnvMult = Z80
+VolMode = BIT7
+
+FMFreqs = DEF_Z80
+PSGFreqs = DEF_Z80_T2
+FM3Freqs = 000h 132h 18Eh 1E4h 234h 27Eh 2C2h 2F0h
+
+FadeMode = Z80
+
+FadeOutSteps = 28h
+FadeOutDelay = 6
+
+; no Fade In implemented yet
+
+[EnvelopeCmds]
+; Possible commands:
+;	RESET - reset the Envelope Index to 0
+;	HOLD - hold the envelope at the current level
+;	LOOP - loop back to the Envelope Index set by the following byte
+;	STOP - stop the envelope and note
+;	CHG_MULT - change the Envelope Multiplier (Modulation Envelope only)
+;	VOLSTOP_MODHOLD - like STOP for volume envelopes and like HOLD for modulation envelopes
+80 = RESET
+81 = HOLD
+82 = LOOP
+83 = VOLSTOP_MODHOLD
+84 = CHG_MULT

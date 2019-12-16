@@ -45,7 +45,7 @@ FF	META_CF 	        	01
 05	SSG_EG  	SEG_NORMAL	05
 06	FM_VOLENV	        	03
 07	NOTE_STOP_REV	NSREV_CYMN	02	; set Reversed Note Stop effect
-08	PLAY_DAC	DACHN_1 	02	; Note: None is the special DAC commands seems to be used by music.
+08	PLAY_DAC	DACHN_1 	02	; Note: None of the special DAC commands seems to be used by music.
 09	PLAY_DAC	DACHN_2 	02	; (Songs use E6 to change the volume)
 0A	DAC_CYMN	CYMN_CHG_CH1	02
 0B	DAC_CYMN	CYMN_CHG_CH2	02
