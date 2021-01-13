@@ -18,7 +18,7 @@ Data is DPCM compressed with the usual delta-array.
 
 
 Notes:
-- Pan Animation data??
+- The Pan Animation effect was removed.
 - You need to subtract 900000 from all pointers (including Z80 Bank Offset) to get the actual ROM offsets.
 - The DAC driver seems to be the same as used in Metal Head 32X, but without Volume Control.
 - All sound data (from 0C0000 on) matches exactly in the UE and J versions.

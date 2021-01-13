@@ -14,8 +14,8 @@ Pan Animation List:	N/A (removed)
 Sound RAM:		1C00 (Z80 RAM)
 
 
-Beta
-----
+Prototype
+---------
 General Pointer List:	8000 (Z80 Bank Offset)
 Music Bank List:	0953 (Z80 RAM) (00-01 for bank 0E8000..0F0000)
 Music Pointer List:	82F2 (Z80 Bank Offset)
@@ -40,7 +40,7 @@ DAC List Format:
 The format is the same one as used in Mighty Morphin Power Rangers.
 
 Data is DPCM compressed with the usual delta-array.
-00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0DAE JUE / 1045 Beta)
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0DAE JUE / 1045 Proto)
 
 
 DAC Bank List Format:
@@ -50,7 +50,7 @@ DAC Bank List Format:
 
 Notes:
 - The code that processes the drum track was removed in the final version of the sound driver.
-  In it is still present in the beta and loads FM/PSG drums. (But the drum track doesn't seem to be used by any of the songs.)
+  In it is still present in the prototype and loads FM/PSG drums. (But the drum track doesn't seem to be used by any of the songs.)
 - The 68k writes configuration data for a SMPS Z80 Type 1 to Z80 RAM 1C00 even though it's a Type 2 driver.
   (The offset of the General Pointer List pointer is the same between Type 1 and 2 though: 1C02)
 - The coordination flags begin at D0 instead of E0.

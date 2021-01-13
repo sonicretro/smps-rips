@@ -1,13 +1,13 @@
-General Pointer List:	06CC28 (JUE) / 06BA4A (late Beta) / 0634E4 (early Beta)
-Music Pointer List:	06CE3C (JUE) / 06BC5E (late Beta) / 0636F8 (early Beta)
-SFX Pointer List:	06CF2C (JUE) / 06BD4E (late Beta) / 0637D8 (early Beta)
-Mod. Pointer List:	06CC48 (JUE) / 06BA6A (late Beta) / 063504 (early Beta)
-PSG Pointer List:	06CD0C (JUE) / 06BB2E (late Beta) / 0635C8 (early Beta)
-Z80 DAC Driver Offset:	06AD3E (JUE) / 069B60 (late Beta) / 061596 (early Beta)
-DAC Pointer Table:	06AEA9 (JUE) / 069CCB (late Beta) / 061701 (early Beta) (Z80 Driver: 016B)
-DAC Pitch Modifier:	0698E8 (JUE) / 068712 (late Beta) / 060150 (early Beta)
-DAC Voice Pointer List:	078D86 (JUE) / 078028 (late Beta) / 070378 (early Beta)
-Pan Animation List:	069C3A (JUE) / 068A64 (late Beta) / 0604A2 (early Beta)
+General Pointer List:	06CC28 (JUE) / 06BA4A (late proto) / 0634E4 (early proto)
+Music Pointer List:	06CE3C (JUE) / 06BC5E (late proto) / 0636F8 (early proto)
+SFX Pointer List:	06CF2C (JUE) / 06BD4E (late proto) / 0637D8 (early proto)
+Mod. Pointer List:	06CC48 (JUE) / 06BA6A (late proto) / 063504 (early proto)
+PSG Pointer List:	06CD0C (JUE) / 06BB2E (late proto) / 0635C8 (early proto)
+Z80 DAC Driver Offset:	06AD3E (JUE) / 069B60 (late proto) / 061596 (early proto)
+DAC Pointer Table:	06AEA9 (JUE) / 069CCB (late proto) / 061701 (early proto) (Z80 Driver: 016B)
+DAC Pitch Modifier:	0698E8 (JUE) / 068712 (late proto) / 060150 (early proto)
+DAC Voice Pointer List:	078D86 (JUE) / 078028 (late proto) / 070378 (early proto)
+Pan Animation List:	069C3A (JUE) / 068A64 (late proto) / 0604A2 (early proto)
 Sound RAM:		F800 (68k RAM)
 
 
@@ -23,27 +23,27 @@ Notes:
 - DAC sounds 81-86 are drums and are read from Z80 RAM 016B.
 - DAC sounds 87+ are sound effects with internal ID (SoundID - 88), so sound 87 is invalid.
   The address of the table is read from Z80 RAM 1FF8/1FF9, the bank is stored in 1FFA/1FFB.
-  The 68k writes these 4 values during the init phase, before the Z80 gets startet. The code that writes them is at 06A3A2 (JUE) / 0691C4 (Beta).
-- The coordination flag handler is at 06A7A8 (JUE) / 0695CA (late Beta) / 061000 (early Beta).
-- The early Beta Sound Test list has the format:
+  The 68k writes these 4 values during the init phase, before the Z80 gets startet. The code that writes them is at 06A3A2 (JUE) / 0691C4 (late proto) / 060C02 (early proto).
+- The coordination flag handler is at 06A7A8 (JUE) / 0695CA (late proto) / 061000 (early proto).
+- The early prototype Sound Test list has the format:
     01 byte  - Sound ID
     0F bytes - Name
-  The late beta/final Sound Test list has the format:
+  The late prototype/final Sound Test list has the format:
     01 byte  - Sound ID
     01 byte  - if nonzero, the entry is skipped
     0E bytes - Name
   List locations:
-    MUSIC list: 00467C (early Beta) / 005576 (late Beta) / 005830 (final)
-    S.E. list:  00477C (early Beta) / 005746 (late Beta) / 005A00 (final)
-    Voice list: 004A4C (early Beta) / 005B66 (late Beta) / 005E20 (final)
+    MUSIC list: 00467C (early proto) / 005576 (late proto) / 005830 (final)
+    S.E. list:  00477C (early proto) / 005746 (late proto) / 005A00 (final)
+    Voice list: 004A4C (early proto) / 005B66 (late proto) / 005E20 (final)
 - Options Screen - cursor offsets (68k RAM):
-    0136-013D - early beta
-    00D4-00DB - late beta
+    0136-013D - early prototype
+    00D4-00DB - late prototype
     00F6-00F6 - final
   Value order:
-    00/01 - Menu Entry (multiplied with 4 in late beta/final)
+    00/01 - Menu Entry (multiplied with 4 in late proto/final)
     02/03 - Music ID
     04/05 - S.E. ID
     06/07 - Voice ID
-- The early beta has 2 songs not present in the late beta or final version of the game.
+- The early prototype has 2 songs not present in the late prototype or final version of the game.
   Songs that got renamed have their final title denoted in square brackets.

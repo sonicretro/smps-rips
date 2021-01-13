@@ -1,16 +1,16 @@
-General Pointer List:	060000 (Rev 00/01 / Beta 1990-04-20)
-Sound Update Routine:	060166 (Rev 00/01) / 060164 (Beta 1990-04-20)
-Music Pointer List:	0600A4 (Rev 00/01 / Beta 1990-04-20)
-SFX Pointer List:	067CC2 (Rev 00) / 067BC4 (Rev 01) / 0675FA (Beta 1990-04-20)
-Mod. Pointer List:	-- invalid, feature removed -- (Rev 00/01 / Beta 1990-04-20) (points to 060100)
-PSG Pointer List:	060020 (Rev 00/01 / Beta 1990-04-20)
-Z80 DAC Driver Offset:	06166A (Rev 00/01) / 06144A (Beta 1990-04-20)
+General Pointer List:	060000 (Rev 00/01 / proto 1990-04-20)
+Sound Update Routine:	060166 (Rev 00/01) / 060164 (proto 1990-04-20)
+Music Pointer List:	0600A4 (Rev 00/01 / proto 1990-04-20)
+SFX Pointer List:	067CC2 (Rev 00) / 067BC4 (Rev 01) / 0675FA (proto 1990-04-20)
+Mod. Pointer List:	-- invalid, feature removed -- (Rev 00/01 / proto 1990-04-20) (points to 060100)
+PSG Pointer List:	060020 (Rev 00/01 / proto 1990-04-20)
+Z80 DAC Driver Offset:	06166A (Rev 00/01) / 06144A (proto 1990-04-20)
 Z80 Add. Data Offset:	061876 (Rev 00/01) (gets copied to Z80 RAM: 0210)
-Z80 Add. Data Offset:	0615A9 (Beta 1990-04-20) (gets copied to Z80 RAM: 0160)
-DAC Pointer List:	061876 (Rev 00/01) (Z80 RAM: 0210) / 061876 (Beta 1990-04-20) (Z80 RAM: 0160)
-DAC Voice Pointer List:	068800 (Rev 00/01) / 068000 (Beta 1990-04-20)
-DAC Pitch Modifier:	0602FA (Rev 00/01) / 0602E2 (Beta 1990-04-20)
-Pan Animation List:	0605D0 (Rev 00/01) / 060598 (Beta 1990-04-20)
+Z80 Add. Data Offset:	0615A9 (proto 1990-04-20) (gets copied to Z80 RAM: 0160)
+DAC Pointer List:	061876 (Rev 00/01) (Z80 RAM: 0210) / 061876 (proto 1990-04-20) (Z80 RAM: 0160)
+DAC Voice Pointer List:	068800 (Rev 00/01) / 068000 (proto 1990-04-20)
+DAC Pitch Modifier:	0602FA (Rev 00/01) / 0602E2 (proto 1990-04-20)
+Pan Animation List:	0605D0 (Rev 00/01) / 060598 (proto 1990-04-20)
 Sound RAM:		D300 (68k RAM)
 
 
@@ -22,8 +22,8 @@ Data is DPCM compressed.
 Rev 00/01 drums use the usual delta-array:
 00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 001A)
 
-Rev 00/01 voices and all sounds in Beta 1990-04-20 use a slightly modified array:
-00 01 02 04 08 10 20 40 80 FF FD FC F8 F0 E0 C0 (Z80 Driver offset 002A Rev 00/01, offset 0019 Beta 1990-04-20)
+Rev 00/01 voices and all sounds in prototype 1990-04-20 use a slightly modified array:
+00 01 02 04 08 10 20 40 80 FF FD FC F8 F0 E0 C0 (Z80 Driver offset 002A Rev 00/01, offset 0019 proto 1990-04-20)
 
 
 Notes:
@@ -43,7 +43,7 @@ Notes:
 	80 - reset envelope
 	83 - hold envelope
 	85 xx - jump to envelope index xx
-- The Dance Attack song list is at 00F420 (Rev 00) / 00F5E4 (Rev 01) / 00AE40 (Beta 1990-04-20). The list is:
+- The Dance Attack song list is at 00F420 (Rev 00) / 00F5E4 (Rev 01) / 00AE40 (proto 1990-04-20). The list is:
 	8C 8D 8E - Round 1
 	8F 90 91 - Round 2
 	95 96 97 - Round 3
@@ -54,12 +54,16 @@ Notes:
 - for Round A-B, the modifiers at are DE40 (A) and DE5A (B) (both 2-byte words in 68k RAM)
 - The RefreshFMVolume routine ignores the TL levels of the Output Operators completely. (i.e. the instrument's TL isn't added to the track volume)
   This behaviour is in Battle Golfer Yui, too.
-- The sound driver of the 1990-04-20 beta seems to be a mostly unmodified SMPS 68k/Type 1a. It mostly matches the one from Battle Golfer Yui.
-- The DAC drums of the 1990-04-20 beta exactly match Battle Golfer Yui.
+- The sound driver of the 1990-04-20 prototype seems to be a mostly unmodified SMPS 68k/Type 1a. It mostly matches the one from Battle Golfer Yui.
+- The DAC drums of the 1990-04-20 proto exactly match Battle Golfer Yui.
 - b03 Thriller is a small bonus. Cris asked me to fix the drums of the song from the prototype so that it sounds okay in the final version.
   I went ahead and investigated how the drums were changed in other songs.
   Based on that I patched the song in a way similar to the original developers, so this version should be very close to what you would've heard, if the song made it into the final game.
   
-  On the way I made a few interesting discoveries: [TODO rework]
-  The first discovery was, that the Dance Attack versions of Thriller matched between proto and final - except for the drum track, which is patched in a quite interesting way that involves changing the track's tick multiplier to 1. (The song header has it set to 2.)
-  Then I searched for the byte sequence that is Thriller's main drum loop. And as it turns out, it is also present in the song "Beat It", so I used that part of the final version of "Beat It".
+  On the way I made a few interesting discoveries:
+  - The Dance Attack version of the Thriller song that were present in Rev 00 were exactly as they were in the prototype - except for the drum track being different.
+  - The drum track was patched in a quite interesting way:
+    They put a "FA 01" command at the beginning that changes the track's tick multiplier to 1. (The song header has it set to 2.)
+    They then rewrote the drum track from scratch.
+  - In an attempt to make a faithful "final" version of the Thriller song, I searched for the byte sequence that is Thriller's main drum loop in all prototype songs. And as it turns out, this drum loop is also present in the song "Beat It".
+    Thus I could just use the drum loop of the final version of "Beat It" in order to make a version of "Thriller" as if the song wasn't replaced.

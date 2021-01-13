@@ -1,9 +1,14 @@
 ; --- SMPS 68k/32X Driver Definition ---
-; TODO: Verify
 
 [Settings]
-DefTimingMode = 00
+; The sound driver is updated during VInt.
+; It always runs with 50 Hz. In NTSC regions, sound processing is skipped every 6th frame.
+;DefTimingMode = 00
 LockTimingMode = True
+
+; approximate 50 Hz timing
+DefTimingMode = 40
+DefTimerB = BDh
 
 [Main]
 PtrFmt = 68k

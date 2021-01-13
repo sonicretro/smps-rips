@@ -16,9 +16,9 @@ see Chaotix (final)
 
 
 Notes:
-- The last 2 PWM sounds a tiny bit longer than in the final.
+- The last 2 PWM sounds are a tiny bit longer than in the final.
 - The intro of "Oriental Legend" is a lot longer than in the final.
-- "Decision" is split into 2 parts in the final. In this beta it just loops once and finishes then.
+- "Decision" is split into 2 parts in the final. In this prototype it just loops once and finishes then.
 - In the final, "This Horizon" has an additional intro that is missing here.
 - All other songs either match exactly or have a slightly higher PSG 3 volume.
 - PWM Driver Loader offset: 0782A0

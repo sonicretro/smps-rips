@@ -1,14 +1,14 @@
 General Pointer List:	N/A (everything is hardcoded into the driver)
-Music Pointer List:	0956 (J, final/beta) (Z80 RAM)
-Music Bank List:	0A25 (J, final/beta) (Z80 RAM) [00 - bank 60000, 01 - bank 68000]
-SFX Pointer List:	0986 (J, final/beta) (Z80 RAM) [bank 68000]
-Mod. Pointer List:	1026 (J, final) / 0FD3 (J, beta) (Z80 RAM)
-PSG Pointer List:	1163 (J, final) / 1110 (J, beta) (Z80 RAM)
-DAC Drum Pointer List:	0A53 (J, final) / 0A4D (J, beta) (Z80 RAM)
-DAC Bank List:		0A3D (J, final/beta) (Z80 RAM) [00 - bank 70000, 01 - bank 78000]
-Z80 Snd Driver Offset:	0631A4 (J, final) / 063154 (J, beta)
-Pan Animation List:	0360 (J, final/beta) (Z80 RAM)
-DAC Mini-Track List:	0B25 (J, final) / 0B01 (J, beta) (Z80 RAM)
+Music Pointer List:	0956 (J, final/proto) (Z80 RAM)
+Music Bank List:	0A25 (J, final/proto) (Z80 RAM) [00 - bank 60000, 01 - bank 68000]
+SFX Pointer List:	0986 (J, final/proto) (Z80 RAM) [bank 68000]
+Mod. Pointer List:	1026 (J, final) / 0FD3 (J, proto) (Z80 RAM)
+PSG Pointer List:	1163 (J, final) / 1110 (J, proto) (Z80 RAM)
+DAC Drum Pointer List:	0A53 (J, final) / 0A4D (J, proto) (Z80 RAM)
+DAC Bank List:		0A3D (J, final/proto) (Z80 RAM) [00 - bank 70000, 01 - bank 78000]
+Z80 Snd Driver Offset:	0631A4 (J, final) / 063154 (J, proto)
+Pan Animation List:	0360 (J, final/proto) (Z80 RAM)
+DAC Mini-Track List:	0B25 (J, final) / 0B01 (J, proto) (Z80 RAM)
 Sound RAM:		1C00 (Z80 RAM)
 
 
@@ -17,13 +17,13 @@ The format is the same one as used in Sonic and Knuckles.
 It is similar to the format used in Mighty Morphin Power Rangers, but lacks a pointer list for list entries.
 
 Data is DPCM compressed with the usual delta-array.
-00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 12B1 (final) / 125E (beta))
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 12B1 (final) / 125E (proto))
 
 
 Notes:
-- When a sound is played on the DAC track, a mini SMPS track is loaded into the DAC SFX track. (routine is at 0AF4 (final) / 0AD0 (beta))
+- When a sound is played on the DAC track, a mini SMPS track is loaded into the DAC SFX track. (routine is at 0AF4 (final) / 0AD0 (proto))
   This one uses coord. flag EA xx to load a DAC sound (01-7F) to 1C3C.
   Another routines checks 1C3C, then it sets bit 7 (making 81-FF) and
   sets 1C3D to the DAC sound bank. (see DAC Bank List, code is at 0053)
 - Coord. flag FF 07 vv sets the track volume to ([value at 1C06] + vv). (00 - max, 7F - min)
-- GoodGen lists the beta as Hybrid Front, The (J) [!] and the final as Hybrid Front, The (J) [a1].
+- GoodGen lists the prototype as Hybrid Front, The (J) [!] and the final version as Hybrid Front, The (J) [a1].

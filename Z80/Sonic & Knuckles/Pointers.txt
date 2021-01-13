@@ -1,19 +1,19 @@
 General Pointer List:	1300 (W, 3C) (Z80 RAM)
 Global Instrument Data:	17D8 (W, 3C) (Z80 RAM)
 Music Bank List:	0B65 (W) / 0B48 (Sonic 3C, Sonic 3 style)  (Z80 RAM)
-Music Pointer List:	1618 (W, June Betas) / 161A (May 25 Beta, Sonic 3C) (Z80 RAM)
-SFX Pointer List:	167E (W, June Betas, Sonic 3C) / 1680 (May 25 Beta) (Z80 RAM) (points to bank 0F8000)
+Music Pointer List:	1618 (W, 1994-06 protos) / 161A (1994-05-25 proto, Sonic 3C protos) (Z80 RAM)
+SFX Pointer List:	167E (W, 1994-06 protos, Sonic 3C protos) / 1680 (1994-05-25 proto) (Z80 RAM) (points to bank 0F8000)
 Mod. Pointer List:	130E (W, 3C) (Z80 RAM)
 PSG Pointer List:	1387 (W, 3C) (Z80 RAM)
 DAC Bank List:		00D6 (W) / 00DC (Sonic 3C) (Z80 RAM) [Note: starts with entry for note 80]
 DAC Drum Pointer List:	8000 (W, 3C) (Z80 Bank Offset) [Note: starts with entry for note 81]
 SEGA sound:		0F8000 (W, 3C)
-Z80 Snd Driver Offset:	0F6960 (W, June Betas) (Kosinski-compressed)
-Additional Z80 Data:	0F7760 (W, June Betas) (Kosinski-compressed) (goes to Z80 RAM 1300)
-Z80 Snd Driver Offset:	0E610D (May 25 Beta) / 0E6000 (Sonic 3C Apr/May) (uncomrpessed, all data in one block)
+Z80 Snd Driver Offset:	0F6960 (W, 1994-06 protos) (Kosinski-compressed)
+Additional Z80 Data:	0F7760 (W, 1994-06 protos) (Kosinski-compressed) (goes to Z80 RAM 1300)
+Z80 Snd Driver Offset:	0E610D (1994-05-25 proto) / 0E6000 (1994-04/05 Sonic 3C protos) (uncomrpessed, all data in one block)
 Sound RAM:		1C00 (Z80 RAM)
 
-0E40B4-15C2DF matches byte-by-byte between all June betas and the final.
+0E40B4-15C2DF matches byte-by-byte between all 1994-06-xx prototypes and the final.
 
 
 DAC List Format:
@@ -28,14 +28,14 @@ Notes:
 - Only the DAC sounds 81-9B and B2/B3 are present in vanilla S&K. All others point to the locked-on Sonic 3.
 - The sample data of DAC sound B2/B3 is different from Sonic 3, even though length and sample rate are the same.
 - A few songs use a global instrument table, but not all of them.
-- The sound driver of all June betas matches the final one.
-  The few differences in the May 25 driver are:
+- The sound driver of all protos from 1994-06 matches the final one.
+  The few differences in the 1994-05-25 proto driver are:
 	- PAL Update Counter 1C04 is reset to 6 [offset 0051]
 	- S&K-specific Music and DAC bank values are different due to the sound data being stored at different offsets.
 	- The DAC bank for sounds B2/B3 point to the S3-part of the ROM. All other DAC sounds are the same.
-	- After the SEGA sound is finished, the beta makes an additional call to zFillSoundQueue. [offset 1167]
+	- After the SEGA sound is finished, the proto makes an additional call to zFillSoundQueue. [offset 1167]
 	- PSG envelope 26h is 2 frames longer (like S3).
-- The following songs differ between the May 25 beta and the final:
+- The following songs differ between the 1994-05-25 proto and the final:
 	09 Flying Battery 1 (same as Sonic 3, lacks S&K bugfix)
 	1F Knuckles' Theme (same as Sonic 3)
 	25 Title Screen
@@ -43,16 +43,16 @@ Notes:
 	2F Level Select Screen (same as Sonic 3, lacks S&K bugfix)
 	32 All Clear
 	33 Staff Roll
-- The sound drivers "Sonic 3C Beta 0408" and "Sonic 3C Beta 0517" match the one of vanilla Sonic 3 exactly. (except for 2 non-code bytes)
-- The "S&K Beta 0525" sound driver is the same as final S&K, except for different bank values and an additional instruction in the Beta 0525.
+- The sound drivers "Sonic 3C Prototype 0408" and "Sonic 3C Prototype 0517" match the one of vanilla Sonic 3 exactly. (except for 2 non-code bytes)
+- The "S&K Prototype 0525" sound driver is the same as final S&K, except for different bank values and an additional instruction in proto 0525.
 
 Notes about Sonic 3C:
-- The DAC sounds are exactly the same as in Sonic 3 in both Betas.
-- The songs in S3C (April) are exactly the same as in Sonic 3 Final.
-- Between the April and the May beta, these songs were changed:
+- The DAC sounds are exactly the same as in Sonic 3 in both prototypes.
+- The songs in S3C 1994-04-08 are exactly the same as in Sonic 3 Final.
+- Between the protos 1994-04-08 and 1994-05-17, these songs were modified:
 	15 Sky Sanctuary (bugfix?)
 	26 Staff Roll
-- Between offset 265AA6 and 27FFFF, the S3C ROM from May 17 contains leftover data from the Sonic 2 ROM. (0E5AA6 .. 0FFFFF)
+- Between offset 265AA6 and 27FFFF, the S3C ROM from 1994-05-17 contains leftover data from the Sonic 2 ROM. (0E5AA6 .. 0FFFFF)
 
 
 How the Speed Shoes work:

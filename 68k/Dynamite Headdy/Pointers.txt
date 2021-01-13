@@ -1,13 +1,13 @@
-General Pointer List:	05E09A (JUE) / 05F54A (Beta)
-Music Pointer List:	05E536 (JUE) / 05F9B8 (Beta)
-SFX Pointer List:	05DE92 (JUE) / 05FAB2 (Beta)
-Mod. Pointer List:	05E0BE (JUE) / 05F56A (Beta)
-PSG Pointer List:	05E184 (JUE) / 05F62E (Beta)
-Z80 DAC Driver Offset:	05D892 (JUE) / 05D55A (Beta)
-DAC Pitch Modifier:	05C0D0 (Beta)
-DAC Drum Pointer List:	05BF08 (J) / 05B542 (UE) / 05D6C5 (Beta, Magical Taruruuto-Kun format, Z80 Driver: 016B)
-DAC Voice Pointer List:	05C736 (J) / 05C0C0 (UE) / 078A3E (Beta, Magical Taruruuto-Kun format)
-Pan Animation List:	05C492 (J) / 05BAB4 (UE) / 05C422 (Beta)
+General Pointer List:	05E09A (JUE) / 05F54A (1994-04 proto)
+Music Pointer List:	05E536 (JUE) / 05F9B8 (1994-04 proto)
+SFX Pointer List:	05DE92 (JUE) / 05FAB2 (1994-04 proto)
+Mod. Pointer List:	05E0BE (JUE) / 05F56A (1994-04 proto)
+PSG Pointer List:	05E184 (JUE) / 05F62E (1994-04 proto)
+Z80 DAC Driver Offset:	05D892 (JUE) / 05D55A (1994-04 proto)
+DAC Pitch Modifier:	05C0D0 (1994-04 proto)
+DAC Drum Pointer List:	05BF08 (J) / 05B542 (UE) / 05D6C5 (1994-04 proto, Magical Taruruuto-Kun format, Z80 Driver: 016B)
+DAC Voice Pointer List:	05C736 (J) / 05C0C0 (UE) / 078A3E (1994-04 proto, Magical Taruruuto-Kun format)
+Pan Animation List:	05C492 (J) / 05BAB4 (UE) / 05C422 (1994-04 proto)
 Sound RAM:		F800 (68k RAM)
 
 
@@ -38,5 +38,5 @@ Notes:
 	FB-FC	Special SFX (table entry is ID - FBh into Spc. SFX Pointer List, i.e. 50..51 into SFX list)
 	FD-FF	dummy
 - Pointer Lists:
-    SOUND CHECK	013B9E (J) / 013D9C (UE) / --- (Beta)
-- The sound data from the prototype from 1994-06-14 matches the J version.
+    SOUND CHECK	013B9E (J) / 013D9C (UE) / --- (1994-04 proto)
+- The sound data from the 1994-06-14 prototype matches the J version.
