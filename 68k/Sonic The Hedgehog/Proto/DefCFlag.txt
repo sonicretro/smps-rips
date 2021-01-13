@@ -1,13 +1,13 @@
-; --- SMPS 68k Type 1b Command Definition ---
-; based on a disassembly of Golden Axe 2
+; --- Sonic the Hedgehog (Prototype) Command Definition ---
+; SMPS 68k Type 1b
 
 ;Flag	Type    	SubType 	Len	JmpOfs
 [Main]
 E0	PANAFMS 	PAFMS_PAN	02
 E1	DETUNE  	        	02
 E2	SET_COMM	        	02
-E3	TRK_END 	TEND_MUTE	01
-E4	PAN_ANIM	        	82
+E3	MOD_PRESET	        	02	; loads Custom Modulation data from global array
+E4	FADE_IN_SONG	        	01
 E5	VOLUME  	VOL_NN_FMP	03
 E6	VOLUME  	VOL_NN_FM	02
 E7	HOLD    	        	01
@@ -16,7 +16,7 @@ E9	SET_LFO 	LFO_AMSEN	03
 EA	TEMPO   	TEMPO_SET	02
 EB	SND_CMD 	        	02
 EC	VOLUME  	VOL_NN_PSG	02
-ED	FM_COMMAND	FMW_CHN 	03
+ED	IGNORE  	        	01	; Clear Pushing Flag
 EE	FM_COMMAND	FMW_FM1 	03
 EF	INSTRUMENT	INS_N_FM	02
 F0	MOD_SETUP	        	05
@@ -32,10 +32,10 @@ F9	RETURN  	        	01
 FA	TICK_MULT	TMULT_CUR	02
 FB	TRANSPOSE	TRNSP_ADD	02
 FC	TICK_MULT	TMULT_ALL	02
-FD	MOD_PRESET	        	02
+FD	TRK_END 	TEND_STD	01	; Stop Special SFX FM4 track
 FE	SPC_FM3 	        	09
 FF	META_CF 	        	01
 
 [Meta]
-00	MUS_PAUSE	MUSP_68K	02
+00	SSG_EG  	SEG_FULLATK	05	; usually MUS_PAUSE, probably just dummied out
 01	SSG_EG  	SEG_FULLATK	05

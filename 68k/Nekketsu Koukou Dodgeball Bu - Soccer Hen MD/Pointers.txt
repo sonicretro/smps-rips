@@ -1,7 +1,7 @@
 General Pointer List:	02D000 (J)
 Music Pointer List:	02D0D6 (J)
 SFX Pointer List:	03720A (J)
-Mod. Pointer List:	-- invalid, feature removed -- (J) (points to 02D152)
+Mod. Data List:		-- empty -- (J) (points to 02D152)
 PSG Pointer List:	02D020 (J)
 Z80 DAC Driver Offset:	02E510 (J)
 DAC Pointer Table:	02E673 (J) (Z80 Driver: 0163)

@@ -1,15 +1,16 @@
-General Pointer List:	071990
-Music Pointer List:	071A9C
-Special SFX Ptr. List:	078C04
-SFX Pointer List:	078B44
-Mod. Pointer List:	-- invalid, feature removed --
-PSG Pointer List:	0719A8
-Speed Shoes Tempo List:	071A94
-Z80 DAC Driver Offset:	072E7C (Kosinski compressed)
-DAC Pointer Table:	072F47 (Z80 Driver: 00D6)
-DAC Pitch Modifier:	071CC4 (DAC sound 83)
-SEGA sound:		079688
-Pan Animation List:	N/A
+General Pointer List:	071990 (Rev 00/01) / 074000 (proto)
+Music Pointer List:	071A9C (Rev 00/01) / 074128 (proto)
+Special SFX Ptr. List:	078C04 (Rev 00/01) / 07D012 (proto)
+SFX Pointer List:	078B44 (Rev 00/01) / 07CF52 (proto)
+Mod. Data List:		-- feature removed -- (Rev 00/01) / 074110 (proto)
+PSG Pointer List:	0719A8 (Rev 00/01) / 074024 (proto)
+Speed Shoes Tempo List:	071A94 (Rev 00/01) / 074120 (proto)
+Z80 DAC Driver Offset:	072E7C (Rev 00/01) (Kosinski compressed)
+Z80 DAC Driver Offset:	0756D0 (proto) (uncompressed)
+DAC Pointer Table:	072F47 (Rev 00/01) (Z80 Driver: 00D6) / 075830 (proto) (Z80 Driver: 0160)
+DAC Pitch Modifier:	071CC4 (Rev 00/01) / 074348 (proto) (DAC sound 83)
+SEGA sound:		079688 (Rev 00/01)
+Pan Animation List:	N/A (Rev 00/01) / 0745B0 (proto)
 Sound RAM:		F000 (68k RAM)
 
 The complete sound related part of the ROM (071990-07FFFF) matches byte-by-byte in all 3 known revisions: Rev 00 (W), 01 (W), MegaPlay
@@ -26,7 +27,7 @@ DAC List Format: (all Little Endian)
 -> 8 bytes
 
 Data is DPCM compressed with the usual delta-array.
-00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0022)
+00 01 02 04 08 10 20 40 80 FF FE FC F8 F0 E0 C0 (Z80 Driver offset 0022 Rev 00/01, 001E proto)
 
 
 Notes:
@@ -36,3 +37,18 @@ Notes:
   The to get the original pitch, the sample must be played with 14420 Hz.
 - The bass drum plays with 8201 Hz. (7181 Hz with Gen. SMPS 68k)
 - The SEGA sound is stored as raw PCM and its offset and length are hardcoded into the DAC driver.
+
+Prototype notes:
+- The sound driver is still very similar to the SMPS 68k Type 1b driver used by Golden Axe II.
+  A few modifications were already done:
+  - 1-up fade-in is supported (still with lots of audio artifacts, though)
+  - The code for ring and block pushing SFX are there, as is the sequence command to stop the FM4 channel.
+  - It halts the Z80 while doing any sound processing, just like in the final version. (Vanilla SMPS 68k suspends the Z80 only while doing FM writes.)
+  However, they didn't start stripping features yet, so the SMPS sequences are mostly compatible with Golden Axe II.
+  PSG volume envelopes are also using the common control bytes for SMPS 68k Type 1.
+- The DAC driver is still the generic SMPS 68k DAC driver. A few modifications were made though, so it isn't a binary match.
+  The DAC driver used by the final version of Sonic 1 is faster than the DAC driver used in the proto and most other SMPS 68k games.
+  But since the game developers only adjusted the speed of the bass drum, most DAC sample are higher-pitched in the final version.
+  The samples themselves were not changed.
+- This is the only SMPS 68k Type 1 driver known to have the global Modulation Data array filled in...
+  ... and it even makes use of it! (e.g. in Green Hill Zone)

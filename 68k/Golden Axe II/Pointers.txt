@@ -1,7 +1,7 @@
 General Pointer List:	076000 (W / Beta)
 Music Pointer List:	0760F4 (W / Beta)
 SFX Pointer List:	07BFB4 (W / Beta)
-Mod. Pointer List:	-- invalid, feature removed -- (W / Beta) (points to 076134)
+Mod. Data List:		-- empty -- (W / Beta) (points to 076134)
 PSG Pointer List:	076020 (W / Beta)
 Z80 DAC Driver Offset:	077504 (W / Beta)
 DAC Pointer Table:	07766F (W / Beta) (Z80 Driver: 016B)

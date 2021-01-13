@@ -1,0 +1,17 @@
+; --- SMPS Drum Definition ---
+
+[Main]
+DrumMode = Normal
+DrumIDBase = 81
+
+; Drum Definition
+[Drums]
+81..87	DAC	81
+88	DAC	83	12
+89	DAC	83	15
+8A	DAC	83	1C
+8B	DAC	83	1D
+8C	DAC	83	FF
+8D	DAC	83	FF
+8E	DAC	83	FF
+8F	DAC	83	FF

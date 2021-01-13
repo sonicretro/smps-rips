@@ -32,7 +32,7 @@ F9	RETURN  	        	01
 FA	TICK_MULT	TMULT_CUR	02
 FB	TRANSPOSE	TRNSP_ADD	02
 FC	TICK_MULT	TMULT_ALL	02
-FD	IGNORE  	        	02	; loads Custom Modulation data from global array
+FD	MOD_PRESET	        	02
 FE	SPC_FM3 	        	09
 FF	META_CF 	        	01
 

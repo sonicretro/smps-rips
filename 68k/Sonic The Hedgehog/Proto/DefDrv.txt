@@ -1,0 +1,37 @@
+; --- Sonic the Hedgehog (Prototype) Driver Definition ---
+; SMPS 68k Type 1b
+
+[Settings]
+DefTimingMode = 00
+LockTimingMode = True
+
+[Main]
+PtrFmt = 68k
+InsMode = Default
+;FMChnOrder = 16 0 1 2 4 5 6
+TempoMode = Timeout
+Tempo1Tick = DoTempo
+FMBaseNote = B
+FMBaseOctave = 0
+DetuneOctWrap = False
+NoteOnPrevent = Rest
+DelayFreq = Reset
+ModAlgo = 68k
+EnvMult = 68k	; actually N/A
+VolMode = Algo
+FMFreqs = Def_68k	; actually the driver stores 96 separate frequency values, but the effect is the exactly same
+PSGFreqs = Def_68k
+FM3Freqs = 000h	; not used - the FM3 frequencies are loaded directly from the coordination flag
+
+FadeMode = 68k
+
+FadeOutSteps = $28
+FadeOutDelay = 3
+
+FadeInSteps = $28
+FadeInDelay = 2
+
+[EnvelopeCmds]
+80 = RESET
+83 = HOLD
+85 = LOOP
