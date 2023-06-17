@@ -18,3 +18,4 @@ There is only 1 music bank: 038000
 Notes:
 - Although the sound driver has timing set to VInt (mode 00), all non-empty songs but 02, 04, 05, 06 use the EA-command to adjust the Timer A frequency.
   Most of them set them to a frequency close to 60 Hz. Only the Opening Theme (song 03) sets it to 72 Hz.
+- Thanks to MusicFox for the song names.
